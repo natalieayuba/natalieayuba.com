@@ -1,7 +1,9 @@
 'use client';
 import { useState } from 'react';
 import { Squash as Hamburger } from 'hamburger-react';
-import { NavLinksUl, SocialsUl } from './links';
+import Socials from './Socials';
+import { navLinks } from '@/config';
+import Link from 'next/link';
 
 const NavMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,11 +26,16 @@ const NavMenu = () => {
           menuOpen ? 'left-0' : 'left-full'
         }`}
       >
-        <NavLinksUl
-          className='text-2xl flex flex-col gap-8 mb-10'
-          onClick={() => setMenuOpen(false)}
-        />
-        <SocialsUl large />
+        <ul className={`font-semibold text-2xl flex flex-col gap-8 mb-10`}>
+          {navLinks.map(({ name, url }) => (
+            <li key={url}>
+              <Link href={url} onClick={() => setMenuOpen(false)}>
+                {name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <Socials large />
       </div>
     </div>
   );

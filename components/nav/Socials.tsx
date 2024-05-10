@@ -1,0 +1,25 @@
+import Link from 'next/link';
+import { socials } from '@/config';
+import { FiGithub } from 'react-icons/fi';
+import { AiOutlineLinkedin } from 'react-icons/ai';
+
+const Socials = ({ large }: { large?: boolean }) => {
+  const icons = {
+    Github: <FiGithub />,
+    LinkedIn: <AiOutlineLinkedin />,
+  };
+
+  return (
+    <ul className={`flex gap-4 text-purple ${large ? 'text-3xl' : 'text-2xl'}`}>
+      {socials.map(({ name, url }) => (
+        <li key={name}>
+          <Link href={url} aria-label={name}>
+            {icons[name as keyof typeof icons]}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export default Socials;

@@ -20,7 +20,7 @@ const Avatar = () => {
         { src: '/robo-nat-eyes-closed.svg', interval: 60 },
         { src: '/robo-nat-eyes-half-closed.svg', interval: 30 },
         { src: '/robo-nat-eyes-half-open.svg', interval: 30 },
-        { src: '/robo-nat-eyes-open.svg', interval: 400 },
+        { src: '/robo-nat-eyes-open.svg', interval: 350 },
         { src: '/robo-nat-eyes-half-open.svg', interval: 20 },
         { src: '/robo-nat-eyes-half-closed.svg', interval: 20 },
         { src: '/robo-nat-eyes-closed.svg', interval: 40 },
@@ -45,12 +45,12 @@ const Avatar = () => {
   return (
     <Link
       href='/'
-      onMouseEnter={() => {
+      onMouseOver={() => {
         if (!animate) {
           setHovered(true);
         }
       }}
-      onMouseLeave={() => setHovered(false)}
+      onMouseOut={() => setHovered(false)}
     >
       <Image
         src={src}
