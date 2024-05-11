@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  color: rgba(0, 0, 0, 0.9);
-  background-color: white;
-}
-
 @layer components {
   .margin {
     @apply mx-6 md:mx-12;

@@ -3,9 +3,9 @@ import { headerHeight } from '@/config';
 const Banner = () => {
   return (
     <div
+      id='home'
       className='flex items-center'
       style={{ height: `calc(100vh - ${headerHeight})` }}
-      id='#home'
     >
       <div className='-mt-20'>
         <div className='max-w-[600px]'>

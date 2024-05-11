@@ -36,7 +36,7 @@ const NavLinks = () => {
               height='14'
               viewBox='0 0 80 14'
               fill='none'
-              className='absolute -bottom-5 left-1/2 -translate-x-1/2'
+              className='absolute -bottom-3 left-1/2 -translate-x-1/2'
             >
               <path
                 d={

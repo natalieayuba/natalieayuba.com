@@ -40,7 +40,7 @@ const Avatar = () => {
         alt='Robo-Nat logo'
         width={0}
         height={0}
-        className='h-12 w-auto'
+        className='h-12 w-auto pointer-events-none'
       />
     </Link>
   );

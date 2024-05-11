@@ -4,6 +4,9 @@ module.exports = {
     blue: '#cee9eb',
     purple: '#976393',
     white: '#ffffff',
+    'purple-alpha-60': 'rgba(151,99,147,0.6)',
+    'black-alpha-90': 'rgba(0,0,0,0.9)',
+    'black-alpha-60': 'rgba(0,0,0,0.6)',
   },
   navLinks: [
     {
@@ -56,5 +59,20 @@ module.exports = {
       'M1.5 6.46911C11.71 4.98911 26.84 -0.220894 35.68 5.64911C48.82 14.3691 64.98 10.4991 79.57 8.37911',
     veryWonky:
       'M7.3501 9.33977C10.8901 5.20977 19.1201 4.29977 22.2701 4.42977C28.4701 4.66977 36.5701 10.9998 42.3201 12.2098C44.3401 12.5698 49.0601 13.8898 56.3201 13.8598C63.4901 13.1398 69.5601 8.82977 72.6401 1.50977',
+  },
+  roles: {
+    frontend: 'Frontend Development',
+    backend: 'Backend Development',
+    visualDesign: 'Visual Design',
+    logoDesign: 'Logo Design',
+    prototyping: 'Prototyping',
+  },
+  technologies: {
+    react: 'React',
+    javaScript: 'JavaScript',
+    express: 'Express',
+    spotifyAPI: 'Spotify API',
+    reactNative: 'React Native',
+    tailwindCSS: 'TailwindCSS',
   },
 };

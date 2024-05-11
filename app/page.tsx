@@ -1,11 +1,13 @@
 import Banner from '@/components/Banner';
+import Projects from '@/components/Projects';
 
-const Home = () => {
+const App = () => {
   return (
     <main className='w-full max-w-[1200px] margin transition-all duration-300'>
       <Banner />
+      <Projects />
     </main>
   );
 };
 
-export default Home;
+export default App;
