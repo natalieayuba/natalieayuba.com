@@ -26,10 +26,14 @@ const NavMenu = () => {
           menuOpen ? 'left-0' : 'left-full'
         }`}
       >
-        <ul className={`font-semibold text-2xl flex flex-col gap-8 mb-10`}>
+        <ul className={`font-semibold text-2xl flex flex-col gap-8 mb-12`}>
           {navLinks.map(({ name, url }) => (
             <li key={url}>
-              <Link href={url} onClick={() => setMenuOpen(false)}>
+              <Link
+                href={url}
+                onClick={() => setMenuOpen(false)}
+                className='transition-all duration-100 hover:text-purple'
+              >
                 {name}
               </Link>
             </li>

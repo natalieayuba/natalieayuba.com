@@ -1,4 +1,5 @@
 'use client';
+import config from '@/config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -6,32 +7,16 @@ import { useEffect, useState } from 'react';
 const Avatar = () => {
   const [hovered, setHovered] = useState(false);
   const [animate, setAnimate] = useState(false);
-  const [src, setSrc] = useState('/robo-nat-eyes-open.svg');
+  const [src, setSrc] = useState(config.avatarFrames[0].src);
 
   const delay = (ms: number) =>
     new Promise((resolve) => setTimeout(resolve, ms));
 
   useEffect(() => {
     if (hovered) {
-      const frames = [
-        { src: '/robo-nat-eyes-open.svg', interval: 150 },
-        { src: '/robo-nat-eyes-half-open.svg', interval: 30 },
-        { src: '/robo-nat-eyes-half-closed.svg', interval: 30 },
-        { src: '/robo-nat-eyes-closed.svg', interval: 60 },
-        { src: '/robo-nat-eyes-half-closed.svg', interval: 30 },
-        { src: '/robo-nat-eyes-half-open.svg', interval: 30 },
-        { src: '/robo-nat-eyes-open.svg', interval: 350 },
-        { src: '/robo-nat-eyes-half-open.svg', interval: 20 },
-        { src: '/robo-nat-eyes-half-closed.svg', interval: 20 },
-        { src: '/robo-nat-eyes-closed.svg', interval: 40 },
-        { src: '/robo-nat-eyes-half-closed.svg', interval: 20 },
-        { src: '/robo-nat-eyes-half-open.svg', interval: 20 },
-        { src: '/robo-nat-eyes-open.svg', interval: 150 },
-      ];
-
       const animate = async () => {
         setAnimate(true);
-        for (const frame of frames) {
+        for (const frame of config.avatarFrames) {
           setSrc(frame.src);
           await delay(frame.interval);
         }
@@ -46,9 +31,7 @@ const Avatar = () => {
     <Link
       href='/'
       onMouseOver={() => {
-        if (!animate) {
-          setHovered(true);
-        }
+        if (!animate) setHovered(true);
       }}
       onMouseOut={() => setHovered(false)}
     >

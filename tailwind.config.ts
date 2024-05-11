@@ -11,19 +11,7 @@ const config: Config = {
     colors: {
       blue: colors.blue,
       purple: colors.purple,
-      white: '#fff',
-    },
-    extend: {
-      keyframes: {
-        drawUnderline: {
-          '0%': { 'stroke-dashoffset': '80' },
-          '100%': { 'stroke-dashoffset': '0' },
-        },
-        undrawUnderline: {
-          '0%': { 'stroke-dashoffset': '0' },
-          '100%': { 'stroke-dashoffset': '80' },
-        },
-      },
+      white: colors.white,
     },
   },
   plugins: [],

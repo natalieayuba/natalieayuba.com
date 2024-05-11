@@ -1,6 +1,11 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const Home = () => {
+export const metadata: Metadata = {
+  title: 'Not Found | Natalie Ayuba',
+};
+
+const NotFound = () => {
   return (
     <div>
       <h1>404</h1>
@@ -10,4 +15,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default NotFound;
