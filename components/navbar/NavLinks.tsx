@@ -1,12 +1,33 @@
 'use client';
-import config, { colors, navLinks } from '@/config';
-import Link from 'next/link';
-import { useState } from 'react';
 import Socials from './Socials';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState, type MutableRefObject } from 'react';
+import { colors, navLinks, underlines } from '@/config';
 
-const NavLinks = () => {
-  const [active, setActive] = useState(location.pathname === '/' ? 'Home' : '');
+const NavLinks = ({
+  sectionsRef,
+}: {
+  sectionsRef?: MutableRefObject<HTMLElement[]>;
+}) => {
+  const pathname = usePathname();
+  const [active, setActive] = useState('');
   const [hovered, setHovered] = useState('');
+
+  useEffect(() => setActive(pathname === '/' ? 'Home' : ''), [pathname]);
+
+  useEffect(() => {
+    if (sectionsRef) {
+      const handleScroll = () => {
+        const sections = sectionsRef.current;
+        let index = sections.length;
+        while (--index && window.scrollY + 500 < sections[index].offsetTop) {}
+        setActive(navLinks[index].name);
+      };
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  });
 
   return (
     <div className='hidden md:flex'>
@@ -39,9 +60,7 @@ const NavLinks = () => {
               className='absolute -bottom-3 left-1/2 -translate-x-1/2'
             >
               <path
-                d={
-                  config.underlines[underline as keyof typeof config.underlines]
-                }
+                d={underlines[underline as keyof typeof underlines]}
                 stroke={colors.purple}
                 strokeWidth={3}
                 strokeLinecap='round'

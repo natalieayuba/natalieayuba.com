@@ -1,9 +1,9 @@
 'use client';
-import { useState } from 'react';
-import { Squash as Hamburger } from 'hamburger-react';
 import Socials from './Socials';
-import { navLinks } from '@/config';
 import Link from 'next/link';
+import { useState } from 'react';
+import { navLinks } from '@/config';
+import { Squash as Hamburger } from 'hamburger-react';
 
 const NavMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);

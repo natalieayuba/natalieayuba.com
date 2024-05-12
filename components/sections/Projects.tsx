@@ -2,9 +2,10 @@ import Image from 'next/image';
 import { technologies, roles } from '@/config';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { LuPresentation } from 'react-icons/lu';
-import { Button, ExternalLink } from './Links';
+import { Button, ExternalLink } from '../Links';
+import { forwardRef } from 'react';
 
-const Projects = () => {
+const Projects = forwardRef<HTMLElement>((props, ref) => {
   const projects = [
     {
       name: 'Colourify',
@@ -42,7 +43,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className='flex flex-col py-12 md:py-24' id='projects'>
+    <section id='projects' className='flex flex-col py-12 md:py-24' ref={ref}>
       <h2 className='text-4xl md:text-6xl font-bold text-center md:mb-6'>
         Projects.
       </h2>
@@ -57,7 +58,7 @@ const Projects = () => {
                 <div key={image} className='flex-1'>
                   <Image
                     src={image}
-                    alt={image}
+                    alt={`${project.name} Preview`}
                     width={0}
                     height={0}
                     sizes='100vw'
@@ -69,26 +70,27 @@ const Projects = () => {
             </div>
             <div className='flex flex-col gap-2 w-full md:flex-1'>
               <h3 className='text-2xl md:text-3xl font-bold'>{project.name}</h3>
-              <p className='text-sm text-black-alpha-60 flex gap-x-3 flex-wrap'>
+              <ul className='text-sm text-black-alpha-60 flex flex-wrap'>
                 {project.roles.map((role) => (
-                  <>
-                    <span key={role}>{role}</span>
-                    {project.roles[project.roles.length - 1] !== role && (
-                      <span>•</span>
-                    )}
-                  </>
+                  <li
+                    key={role}
+                    className={`after:content-['•'] after:mx-3 last:after:content-none`}
+                  >
+                    {role}
+                  </li>
                 ))}
-              </p>
+              </ul>
               <p>{project.description}</p>
-              <p className='text-sm text-black-alpha-60 flex gap-x-3 flex-wrap'>
+              <ul className='text-sm text-black-alpha-60 flex flex-wrap'>
                 {project.technologies.map((technology) => (
-                  <>
-                    <span key={technology}>{technology}</span>
-                    {project.technologies[project.technologies.length - 1] !==
-                      technology && <span>•</span>}
-                  </>
+                  <li
+                    key={technology}
+                    className={`after:content-['•'] after:mx-3 last:after:content-none`}
+                  >
+                    {technology}
+                  </li>
                 ))}
-              </p>
+              </ul>
               <div className='mt-4 flex gap-4 flex-wrap'>
                 <Button href={project.projectUrl} text='Read more' />
                 {project.demoUrl && (
@@ -117,8 +119,10 @@ const Projects = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
-};
+});
+
+Projects.displayName = 'Projects';
 
 export default Projects;

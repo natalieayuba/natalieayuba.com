@@ -1,11 +1,15 @@
 'use client';
-import Avatar from './nav/Avatar';
-import NavMenu from './nav/NavMenu';
-import NavLinks from './nav/NavLinks';
-import { headerHeight } from '../config';
-import { useEffect, useState } from 'react';
+import Avatar from './navbar/Avatar';
+import NavMenu from './navbar/NavMenu';
+import NavLinks from './navbar/NavLinks';
+import { headerHeight } from '@/config';
+import { useEffect, useState, type MutableRefObject } from 'react';
 
-const Nav = () => {
+const Header = ({
+  sectionsRef,
+}: {
+  sectionsRef?: MutableRefObject<HTMLElement[]>;
+}) => {
   const [position, setPosition] = useState(window.scrollY);
   const [visible, setVisible] = useState(true);
 
@@ -26,11 +30,11 @@ const Nav = () => {
     >
       <nav className='flex justify-between h-full items-center transition-all duration-300 margin'>
         <Avatar />
-        <NavLinks />
+        <NavLinks sectionsRef={sectionsRef} />
         <NavMenu />
       </nav>
     </header>
   );
 };
 
-export default Nav;
+export default Header;

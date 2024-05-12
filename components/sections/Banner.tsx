@@ -1,11 +1,13 @@
 import { headerHeight } from '@/config';
+import { forwardRef } from 'react';
 
-const Banner = () => {
+const Banner = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <div
+    <section
       id='home'
       className='flex items-center'
       style={{ height: `calc(100vh - ${headerHeight})` }}
+      ref={ref}
     >
       <div className='-mt-20'>
         <div className='max-w-[600px]'>
@@ -24,8 +26,10 @@ const Banner = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
+});
+
+Banner.displayName = 'Banner';
 
 export default Banner;

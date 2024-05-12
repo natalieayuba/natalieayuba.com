@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import Header from '../components/Header';
 import { colors } from '@/config';
 
 const poppins = Poppins({
@@ -19,19 +18,20 @@ export const viewport: Viewport = {
   themeColor: colors.blue,
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang='en-GB' className='scroll-smooth'>
-      <body className={`${poppins.className} leading-relaxed text-black-alpha-90 selection:bg-purple-alpha-60 selection:text-black-alpha-90`}>
-        <Header />
-        <div className='bg-gradient-to-b from-blue to-white flex justify-center'>
-          {children}
-        </div>
+      <body
+        className={`${poppins.className} leading-relaxed text-black-alpha-90 selection:bg-purple-alpha-60 selection:text-black-alpha-90`}
+      >
+        {children}
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
