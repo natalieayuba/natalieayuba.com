@@ -50,6 +50,32 @@ module.exports = {
     { src: '/robo-nat-eyes-half-open.svg', interval: 20 },
     { src: '/robo-nat-eyes-open.svg', interval: 150 },
   ],
+  logos: [
+    {
+      name: 'Stripped Sets',
+      src: '/stripped-sets-logo.png',
+    },
+    {
+      name: "What You Sayin' UEA",
+      src: '/wys-uea-logo.png',
+    },
+    {
+      name: 'Faux Genie',
+      src: '/faux-genie-logo.png',
+    },
+    {
+      name: 'PAST',
+      src: '/past-logo.png',
+    },
+    {
+      name: 'Natural Hair Society',
+      src: '/nhs-logo.png',
+    },
+    {
+      name: 'Kookie Ko',
+      src: '/kookie-ko-logo.png',
+    },
+  ],
   underlines: {
     straight:
       'M6.74023 5.47959C11.8102 5.17959 16.8302 6.01959 21.9002 6.36959C27.7502 6.76959 34.3102 7.02959 39.4602 7.36959C50.7202 8.10959 61.9902 8.89959 73.2602 8.46959',

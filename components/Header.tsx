@@ -10,12 +10,14 @@ const Header = ({
 }: {
   sectionsRef?: MutableRefObject<HTMLElement[]>;
 }) => {
-  const [position, setPosition] = useState(window.scrollY);
+  const [position, setPosition] = useState(
+    typeof window !== 'undefined' && window.scrollY
+  );
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      const moving = window.scrollY;
+      const moving = typeof window !== 'undefined' && window.scrollY;
       setVisible(position > moving);
       setPosition(moving);
     };

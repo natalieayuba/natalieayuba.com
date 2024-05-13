@@ -21,7 +21,7 @@ const NavLinks = ({
       const handleScroll = () => {
         const sections = sectionsRef.current;
         let index = sections.length;
-        while (--index && window.scrollY + 500 < sections[index].offsetTop) {}
+        while (--index && window.scrollY + 700 < sections[index].offsetTop) {}
         setActive(navLinks[index].name);
       };
       window.addEventListener('scroll', handleScroll);

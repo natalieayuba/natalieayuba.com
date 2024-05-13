@@ -4,8 +4,9 @@ import Header from '@/components/Header';
 import Banner from '@/components/sections/Banner';
 import Projects from '@/components/sections/Projects';
 import PageLayout from '@/components/PageLayout';
+import Designs from '@/components/sections/Designs';
 
-const Page = () => {
+const App = () => {
   const sectionsRef = useRef<HTMLElement[]>([]);
   return (
     <>
@@ -21,9 +22,14 @@ const Page = () => {
             sectionsRef.current[1] = el;
           }}
         />
+        <Designs
+          ref={(el: HTMLElement) => {
+            sectionsRef.current[2] = el;
+          }}
+        />
       </PageLayout>
     </>
   );
 };
 
-export default Page;
+export default App;

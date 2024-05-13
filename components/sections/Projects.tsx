@@ -4,6 +4,7 @@ import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { LuPresentation } from 'react-icons/lu';
 import { Button, ExternalLink } from '../Links';
 import { forwardRef } from 'react';
+import Section from './Section';
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   const projects = [
@@ -43,10 +44,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
   ];
 
   return (
-    <section id='projects' className='flex flex-col py-12 md:py-24' ref={ref}>
-      <h2 className='text-4xl md:text-6xl font-bold text-center md:mb-6'>
-        Projects.
-      </h2>
+    <Section title={Projects.displayName} ref={ref}>
       <div className='my-16'>
         {projects.map((project) => (
           <div
@@ -119,7 +117,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
           </div>
         ))}
       </div>
-    </section>
+    </Section>
   );
 });
 
