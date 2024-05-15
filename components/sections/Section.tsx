@@ -10,10 +10,10 @@ const Section = forwardRef<
       className='flex flex-col py-12 md:py-24'
       ref={ref}
     >
-      <h2 className='text-4xl md:text-6xl font-bold text-center md:mb-6'>
+      <h2 className='heading-lg text-center md:mb-6'>
         {title}.
       </h2>
-      <div className='my-16'>{children}</div>
+      <div className='my-2 md:my-16'>{children}</div>
     </section>
   );
 });

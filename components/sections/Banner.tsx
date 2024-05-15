@@ -11,7 +11,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
     >
       <div className='-mt-20'>
         <div className='max-w-[600px]'>
-          <h1 className='text-5xl md:text-8xl flex flex-col font-bold'>
+          <h1 className='heading-xl flex flex-col'>
             <span className='text-lg md:text-4xl font-semibold'>
               Hi there,{' '}
             </span>

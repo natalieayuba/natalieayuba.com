@@ -2,8 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+img {
+  pointer-events: none;
+}
+
 @layer components {
   .margin {
     @apply mx-6 md:mx-12;
+  }
+
+  .heading-xl {
+    @apply text-5xl md:text-8xl font-bold;
+  }
+
+  .heading-lg {
+    @apply text-4xl md:text-6xl font-bold;
+  }
+
+  .heading-md {
+    @apply text-3xl font-bold;
   }
 }

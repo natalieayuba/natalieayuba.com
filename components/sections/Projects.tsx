@@ -5,44 +5,9 @@ import { LuPresentation } from 'react-icons/lu';
 import { Button, ExternalLink } from '../Links';
 import { forwardRef } from 'react';
 import Section from './Section';
+import projects from '@/app/projects/config';
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
-  const projects = [
-    {
-      name: 'Colourify',
-      description:
-        'Colourify is a web application that generates a colour palette from the art of your top albums on Spotify.',
-      images: ['/colourify.png'],
-      roles: [roles.frontend],
-      technologies: [
-        technologies.react,
-        technologies.javaScript,
-        technologies.express,
-        technologies.spotifyAPI,
-        technologies.tailwindCSS,
-      ],
-      projectUrl: '#',
-      codeUrl: 'https://github.com/natalieayuba/colourify',
-      demoUrl: '#',
-    },
-    {
-      name: 'PAST',
-      description:
-        'PAST is a Graded Exercise Therapy (GET) mobile app for people with post-stroke fatigue that allows users to log their daily physical activity and resulting fatigue levels throughout the 6-step therapy programme.',
-      images: ['/past-1.png', '/past-2.png'],
-      roles: [
-        roles.frontend,
-        roles.prototyping,
-        roles.visualDesign,
-        roles.logoDesign,
-      ],
-      technologies: [technologies.reactNative, technologies.javaScript],
-      projectUrl: '#',
-      presentationUrl:
-        'https://docs.google.com/presentation/d/1hIhJQrXa5Qd5Lhggceuda70YpJB00HhdpQeEzL4tc2w/edit#slide=id.p',
-    },
-  ];
-
   return (
     <Section title={Projects.displayName} ref={ref}>
       <div className='my-16'>
@@ -60,7 +25,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                     width={0}
                     height={0}
                     sizes='100vw'
-                    className='w-full h-auto rounded-2xl pointer-events-none shadow-[0px_4px_24px_rgba(0,0,0,0.02)]'
+                    className='w-full h-auto rounded-2xl shadow-[0px_4px_24px_rgba(0,0,0,0.02)]'
                     priority
                   />
                 </div>
@@ -90,27 +55,32 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                 ))}
               </ul>
               <div className='mt-4 flex gap-4 flex-wrap'>
-                <Button href={project.projectUrl} text='Read more' />
-                {project.demoUrl && (
-                  <ExternalLink
-                    href={project.demoUrl}
-                    text='Demo'
-                    icon={<FiExternalLink />}
-                  />
-                )}
-                {project.codeUrl && (
-                  <ExternalLink
-                    href={project.codeUrl}
-                    text='Code'
-                    icon={<FiGithub />}
-                  />
-                )}
-                {project.presentationUrl && (
-                  <ExternalLink
-                    href={project.presentationUrl}
-                    text='Presentation'
-                    icon={<LuPresentation />}
-                  />
+                <Button
+                  href={`/projects/${project.name.toLowerCase()}`}
+                  text='Read more'
+                />
+                {[
+                  {
+                    title: 'Demo',
+                    url: project.demoUrl,
+                    icon: <FiExternalLink />,
+                  },
+                  { title: 'Code', url: project.codeUrl, icon: <FiGithub /> },
+                  {
+                    title: 'Presentation',
+                    url: project.presentationUrl,
+                    icon: <LuPresentation />,
+                  },
+                ].map(
+                  ({ title, url, icon }) =>
+                    url && (
+                      <ExternalLink
+                        key={title}
+                        href={url}
+                        text={title}
+                        icon={icon}
+                      />
+                    )
                 )}
               </div>
             </div>

@@ -10,7 +10,7 @@ const App = () => {
   const sectionsRef = useRef<HTMLElement[]>([]);
   return (
     <>
-      <Header sectionsRef={sectionsRef} />
+      <Header sectionsRef={sectionsRef} activeLink='Home' />
       <PageLayout>
         <Banner
           ref={(el: HTMLElement) => {

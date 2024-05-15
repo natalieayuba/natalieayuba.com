@@ -89,7 +89,6 @@ module.exports = {
   roles: {
     frontend: 'Frontend Development',
     backend: 'Backend Development',
-    visualDesign: 'Visual Design',
     logoDesign: 'Logo Design',
     prototyping: 'Prototyping',
   },
@@ -100,5 +99,6 @@ module.exports = {
     spotifyAPI: 'Spotify API',
     reactNative: 'React Native',
     tailwindCSS: 'TailwindCSS',
+    expo: 'Expo',
   },
 };

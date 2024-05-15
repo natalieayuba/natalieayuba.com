@@ -11,7 +11,7 @@ const NavMenu = () => {
   return (
     <div className='md:hidden'>
       <div
-        className='text-purple z-10 relative -mr-2'
+        className='text-purple z-10 relative -mr-2 hover:scale-110 transition-all duration-150'
         title={`${menuOpen ? 'Close' : 'Open'} menu`}
       >
         <Hamburger
@@ -32,7 +32,7 @@ const NavMenu = () => {
               <Link
                 href={url}
                 onClick={() => setMenuOpen(false)}
-                className='transition-all duration-100 hover:text-purple'
+                className='transition-all duration-150 hover:text-purple'
               >
                 {name}
               </Link>

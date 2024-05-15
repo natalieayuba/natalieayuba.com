@@ -7,17 +7,16 @@ import { colors, navLinks, underlines } from '@/config';
 
 const NavLinks = ({
   sectionsRef,
+  activeLink
 }: {
   sectionsRef?: MutableRefObject<HTMLElement[]>;
+  activeLink?: string
 }) => {
-  const pathname = usePathname();
-  const [active, setActive] = useState('');
+  const [active, setActive] = useState(activeLink || '');
   const [hovered, setHovered] = useState('');
 
-  useEffect(() => setActive(pathname === '/' ? 'Home' : ''), [pathname]);
-
   useEffect(() => {
-    if (sectionsRef) {
+    if (sectionsRef !== undefined) {
       const handleScroll = () => {
         const sections = sectionsRef.current;
         let index = sections.length;
@@ -36,7 +35,7 @@ const NavLinks = ({
           <li key={url} className={'relative'}>
             <Link
               href={url}
-              className={`transition-all duration-100 ${
+              className={`transition-all duration-50 ${
                 active === name ? 'text-purple' : ''
               }`}
               onClick={() => {

@@ -7,8 +7,10 @@ import { useEffect, useState, type MutableRefObject } from 'react';
 
 const Header = ({
   sectionsRef,
+  activeLink
 }: {
   sectionsRef?: MutableRefObject<HTMLElement[]>;
+  activeLink?: string
 }) => {
   const [position, setPosition] = useState(
     typeof window !== 'undefined' && window.scrollY
@@ -32,7 +34,7 @@ const Header = ({
     >
       <nav className='flex justify-between h-full items-center transition-all duration-300 margin'>
         <Avatar />
-        <NavLinks sectionsRef={sectionsRef} />
+        <NavLinks sectionsRef={sectionsRef} activeLink={activeLink}/>
         <NavMenu />
       </nav>
     </header>

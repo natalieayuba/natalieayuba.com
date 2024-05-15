@@ -10,16 +10,18 @@ const Designs = forwardRef<HTMLElement>((props, ref) => {
         {logos.map(({ name, src }) => (
           <div
             key={name}
-            className='sm:min-h-60 p-10 sm:p-[20%] flex items-center justify-center hover:scale-110 transition-all duration-200 cursor-pointer'
+            className='sm:min-h-60 p-10 sm:p-[20%] flex items-center justify-center'
           >
-            <Image
-              src={src}
-              alt={`${name} logo`}
-              width={0}
-              height={0}
-              sizes='100vw'
-              className='w-auto h-auto pointer-events-none'
-            />
+            <div className='hover:scale-110 transition-all duration-200 cursor-pointer'>
+              <Image
+                src={src}
+                alt={`${name} logo`}
+                width={0}
+                height={0}
+                sizes='100vw'
+                className='w-auto h-auto'
+              />
+            </div>
           </div>
         ))}
       </div>
