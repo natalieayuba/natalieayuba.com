@@ -12,26 +12,6 @@ export const Button = ({ text, href }: { text: string; href: string }) => {
   );
 };
 
-export const ExternalLink = ({
-  text,
-  icon,
-  href,
-}: {
-  text: string;
-  icon?: JSX.Element;
-  href: string;
-}) => {
-  return (
-    <Link
-      href={href}
-      className='text-purple font-medium flex gap-2 items-center w-fit transition-all duration-150 hover:brightness-[80%]'
-    >
-      <span className='text-xl'>{icon}</span>
-      {text}
-    </Link>
-  );
-};
-
 export const InlineLink = ({ text, href }: { text: string; href: string }) => {
   return (
     <Link

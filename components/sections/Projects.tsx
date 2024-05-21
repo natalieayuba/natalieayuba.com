@@ -1,15 +1,13 @@
 import Image from 'next/image';
-import { technologies, roles } from '@/config';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import { LuPresentation } from 'react-icons/lu';
-import { Button, ExternalLink } from '../Links';
+import { Button } from '../Links';
 import { forwardRef } from 'react';
-import Section from './Section';
+import SectionLayout from './SectionLayout';
 import projects from '@/app/projects/config';
+import ExternalLinks from '../projects/ExternalLinks';
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <Section title={Projects.displayName} ref={ref}>
+    <SectionLayout title={Projects.displayName} ref={ref}>
       <div className='my-16'>
         {projects.map((project) => (
           <div
@@ -59,35 +57,13 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                   href={`/projects/${project.name.toLowerCase()}`}
                   text='Read more'
                 />
-                {[
-                  {
-                    title: 'Demo',
-                    url: project.demoUrl,
-                    icon: <FiExternalLink />,
-                  },
-                  { title: 'Code', url: project.codeUrl, icon: <FiGithub /> },
-                  {
-                    title: 'Presentation',
-                    url: project.presentationUrl,
-                    icon: <LuPresentation />,
-                  },
-                ].map(
-                  ({ title, url, icon }) =>
-                    url && (
-                      <ExternalLink
-                        key={title}
-                        href={url}
-                        text={title}
-                        icon={icon}
-                      />
-                    )
-                )}
+                <ExternalLinks links={project.links} />
               </div>
             </div>
           </div>
         ))}
       </div>
-    </Section>
+    </SectionLayout>
   );
 });
 

@@ -1,5 +1,5 @@
 'use client';
-import config from '@/config';
+import { avatarFrames } from '@/config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 const Avatar = () => {
   const [hovered, setHovered] = useState(false);
   const [animate, setAnimate] = useState(false);
-  const [src, setSrc] = useState(config.avatarFrames[0].src);
+  const [src, setSrc] = useState(avatarFrames[0].src);
   const [pokeCount, setPokeCount] = useState(0);
   const [poke, setPoke] = useState(false);
 
@@ -31,7 +31,7 @@ const Avatar = () => {
           setTimeout(() => setPokeCount(0), 5000);
         }
 
-        for (const frame of config.avatarFrames) {
+        for (const frame of avatarFrames) {
           setSrc(frame.src);
           await delay(frame.interval);
         }

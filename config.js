@@ -35,6 +35,23 @@ module.exports = {
       url: 'https://www.linkedin.com/in/natalieayuba/',
     },
   ],
+  projectLinks: [
+    {
+      name: 'Demo',
+      title: 'View the live demo',
+      icon: 'externalLink',
+    },
+    {
+      name: 'Code',
+      title: 'View the source code',
+      icon: 'github',
+    },
+    {
+      name: 'Presentation',
+      title: 'View the presentation',
+      icon: 'presentation',
+    },
+  ],
   avatarFrames: [
     { src: '/robo-nat-eyes-open.svg', interval: 80 },
     { src: '/robo-nat-eyes-half-open.svg', interval: 30 },
@@ -90,7 +107,7 @@ module.exports = {
     frontend: 'Frontend Development',
     backend: 'Backend Development',
     logoDesign: 'Logo Design',
-    prototyping: 'Prototyping',
+    wireframing: 'Wireframing',
   },
   technologies: {
     react: 'React',

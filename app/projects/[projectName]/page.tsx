@@ -1,12 +1,10 @@
 import Header from '@/components/Header';
-import { ExternalLink } from '@/components/Links';
 import PageLayout from '@/components/PageLayout';
 import React from 'react';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import { LuPresentation } from 'react-icons/lu';
 import projects from '../config';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import ExternalLinks from '@/components/projects/ExternalLinks';
 
 export async function generateStaticParams() {
   return projects.map((project) => ({ projectName: project.name }));
@@ -50,20 +48,6 @@ const ProjectPage = ({ params }: { params: { projectName: string } }) => {
     },
   ];
 
-  const links = [
-    {
-      title: 'Demo',
-      url: project.demoUrl,
-      icon: <FiExternalLink />,
-    },
-    { title: 'Code', url: project.codeUrl, icon: <FiGithub /> },
-    {
-      title: 'Presentation',
-      url: project.presentationUrl,
-      icon: <LuPresentation />,
-    },
-  ];
-
   return (
     <>
       <Header activeLink='Projects' />
@@ -86,17 +70,7 @@ const ProjectPage = ({ params }: { params: { projectName: string } }) => {
                 </li>
               ))}
               <li>
-                {links.map(
-                  ({ title, url, icon }) =>
-                    url && (
-                      <ExternalLink
-                        key={title}
-                        href={url}
-                        text={title}
-                        icon={icon}
-                      />
-                    )
-                )}
+                <ExternalLinks links={project.links} />
               </li>
             </ul>
           </section>

@@ -7,7 +7,6 @@ import { Squash as Hamburger } from 'hamburger-react';
 
 const NavMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <div className='md:hidden'>
       <div

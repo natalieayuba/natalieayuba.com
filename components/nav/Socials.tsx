@@ -1,16 +1,10 @@
 import Link from 'next/link';
 import { socials } from '@/config';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const Socials = ({ large }: { large?: boolean }) => {
-  const icons = {
-    Github: <FiGithub />,
-    LinkedIn: <FiLinkedin />,
-  };
-
   return (
     <ul className={`flex gap-4 text-purple ${large ? 'text-3xl' : 'text-2xl'}`}>
-      {socials.map(({ name, url }) => (
+      {socials.map(({ name, url, icon }) => (
         <li key={name}>
           <Link
             href={url}
@@ -18,7 +12,7 @@ const Socials = ({ large }: { large?: boolean }) => {
             className='block hover:scale-110'
             title={name}
           >
-            {icons[name as keyof typeof icons]}
+            {icon}
           </Link>
         </li>
       ))}

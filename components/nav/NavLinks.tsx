@@ -1,7 +1,6 @@
 'use client';
 import Socials from './Socials';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useEffect, useState, type MutableRefObject } from 'react';
 import { colors, navLinks, underlines } from '@/config';
 

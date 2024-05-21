@@ -1,4 +1,4 @@
-import Socials from './navbar/Socials';
+import Socials from './nav/Socials';
 
 const Footer = () => {
   return (

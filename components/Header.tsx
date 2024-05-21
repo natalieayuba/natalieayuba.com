@@ -1,7 +1,7 @@
 'use client';
-import Avatar from './navbar/Avatar';
-import NavMenu from './navbar/NavMenu';
-import NavLinks from './navbar/NavLinks';
+import Avatar from './nav/Avatar';
+import NavMenu from './nav/NavMenu';
+import NavLinks from './nav/NavLinks';
 import { headerHeight } from '@/config';
 import { useEffect, useState, type MutableRefObject } from 'react';
 

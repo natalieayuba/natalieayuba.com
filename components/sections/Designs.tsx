@@ -1,11 +1,11 @@
 import { forwardRef } from 'react';
-import Section from './Section';
+import SectionLayout from './SectionLayout';
 import Image from 'next/image';
 import { logos } from '@/config';
 
 const Designs = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <Section title={Designs.displayName} ref={ref}>
+    <SectionLayout title={Designs.displayName} ref={ref}>
       <div className='grid grid-cols-2 lg:grid-cols-3 mt-2'>
         {logos.map(({ name, src }) => (
           <div
@@ -25,7 +25,7 @@ const Designs = forwardRef<HTMLElement>((props, ref) => {
           </div>
         ))}
       </div>
-    </Section>
+    </SectionLayout>
   );
 });
 

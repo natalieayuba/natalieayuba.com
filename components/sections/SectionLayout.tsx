@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-const Section = forwardRef<
+const SectionLayout = forwardRef<
   HTMLElement,
   { title: string | undefined; children: React.ReactNode }
 >(({ title, children }, ref) => {
@@ -18,6 +18,6 @@ const Section = forwardRef<
   );
 });
 
-Section.displayName = 'Section';
+SectionLayout.displayName = 'SectionLayout';
 
-export default Section;
+export default SectionLayout;
