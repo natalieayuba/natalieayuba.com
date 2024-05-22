@@ -3,12 +3,27 @@ import Figure from '@/components/projects/Figure';
 import { roles, technologies } from '@/config';
 import Image from 'next/image';
 
-const projects = [
+export interface Project {
+  name: string;
+  description: string;
+  headerImage: string[];
+  figures?: string[];
+  roles: string[];
+  technologies: string[];
+  startDate: string; // 'YYYY-MM-DD'
+  endDate: string; // 'YYYY-MM-DD'
+  sector: string;
+  links: { demoUrl?: string; presentationUrl?: string; codeUrl?: string };
+  overview: string;
+  content: { heading: string; paragraphs: JSX.Element }[];
+}
+
+const projects: Project[] = [
   {
     name: 'Colourify',
     description:
       'Colourify is a web application that generates a colour palette from the art of your top albums on Spotify.',
-    images: ['/colourify.png'],
+    headerImage: ['/images/colourify.png'],
     roles: [roles.frontend],
     technologies: [
       technologies.react,
@@ -20,10 +35,11 @@ const projects = [
     startDate: '2024-01-01',
     endDate: '2024-05-01',
     links: {
-      codeUrl: 'https://github.com/natalieayuba/colourify'
+      codeUrl: 'https://github.com/natalieayuba/colourify',
     },
     overview: '',
     content: [],
+    sector: 'Music',
   },
   {
     name: 'PAST',
@@ -31,7 +47,10 @@ const projects = [
       'PAST is a Graded Exercise Therapy (GET) mobile app for people with post-stroke fatigue that allows users to log their daily physical activity and resulting fatigue levels throughout the 6-step therapy programme.',
     overview:
       'During my mobile app development internship at the University of East Anglia, my team was given a prompt to develop a mobile app prototype for users with post-stroke fatigue looking to increase their physical activity through Graded Exercise Therapy (GET). The app allows users to track their progress in the 6-step therapy programme, watch recommended exercise videos, and log their daily routine and fatigue levels.',
-    images: ['/past-1.png', '/past-2.png'],
+    headerImage: [
+      '/images/past/past-landing.png',
+      '/images/past/past-calendar-2.png',
+    ],
     roles: [roles.frontend, roles.wireframing, roles.logoDesign],
     technologies: [
       technologies.reactNative,
@@ -48,7 +67,7 @@ const projects = [
     content: [
       {
         heading: 'The prompt',
-        content: (
+        paragraphs: (
           <p>
             Our clients came up with the idea for the PAST mobile app for users
             with post-stroke fatigue after co-authoring a{' '}
@@ -69,7 +88,7 @@ const projects = [
       },
       {
         heading: 'Project scope',
-        content: (
+        paragraphs: (
           <p>
             The objective of the internship was to build a working app prototype
             by the end of the 12 weeks using the scrum methodology. With this
@@ -95,7 +114,7 @@ const projects = [
       },
       {
         heading: 'Process',
-        content: (
+        paragraphs: (
           <>
             <p>
               Our first aim was to understand our client&apos;s requirements and
@@ -123,25 +142,17 @@ const projects = [
               from the GET programme booklet. We also used these colours in the
               app&apos;s theme for consistency.
             </p>
-            {/* <div className='py-16 flex flex-col'>
-              <div className='flex w-[700px] justify-between'>
-                <Image
-                  src='/images/past/past-logo.png'
-                  alt='Past logo'
-                  width={400}
-                  height={148}
-                />
-                <Image
-                  src='/images/past/past-icon.png'
-                  alt='Past icon'
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <caption className='text-sm text-black-alpha-60 mt-4'>
-                1.1 PAST logo and icon
-              </caption>
-            </div> */}
+            <Figure
+              images={[
+                { image: '/images/past/past-logo.png', width: 'w-96' },
+                {
+                  image: '/images/past/past-icon.png',
+                  width: 'w-28',
+                  height: 'h-28',
+                },
+              ]}
+              caption='1.1 PAST logo and icon'
+            />
             <p>
               As a dev team, we had brainstorming sessions to generate ideas on
               how to build the main three features, focusing on building direct
@@ -160,8 +171,8 @@ const projects = [
             </p>
             <Figure
               images={[
-                '/images/past/past-home-1.png',
-                '/images/past/past-home-2.png',
+                { image: '/images/past/past-home-1.png' },
+                { image: '/images/past/past-home-2.png' },
               ]}
               caption='1.2 Past home screen'
               type='mobile'
@@ -178,10 +189,10 @@ const projects = [
             </p>
             <Figure
               images={[
-                '/images/past/past-calendar-1.png',
-                '/images/past/past-calendar-2.png',
+                { image: '/images/past/past-calendar-1.png' },
+                { image: '/images/past/past-calendar-2.png' },
               ]}
-              caption='1.3 Past home screen'
+              caption='1.3 Past calendar screen'
               type='mobile'
             />
             <p>
@@ -193,8 +204,8 @@ const projects = [
               exercises daily by a card on the home screen.
             </p>
             <Figure
-              images={['/images/past/past-exercises.png']}
-              caption='1.4 Past home screen'
+              images={[{ image: '/images/past/past-exercises.png' }]}
+              caption='1.4 Past exercises screen'
               type='mobile'
             />
           </>
@@ -202,7 +213,7 @@ const projects = [
       },
       {
         heading: 'Main takeaways',
-        content: (
+        paragraphs: (
           <>
             <p>
               The prototype was handed over to our clients to take forward so we

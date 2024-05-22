@@ -14,8 +14,8 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
             key={project.name}
             className='flex flex-wrap gap-12 items-center mb-24 md:mt-12 md:mb-24'
           >
-            <div className='flex-1 flex flex-row gap-10 md:flex-none md:w-1/2 md:max-w-md'>
-              {project.images.map((image) => (
+            <div className='flex-1 flex flex-row gap-4 md:gap-10 md:flex-none md:w-1/2 md:max-w-md'>
+              {project.headerImage.map((image) => (
                 <div key={image} className='flex-1'>
                   <Image
                     src={image}

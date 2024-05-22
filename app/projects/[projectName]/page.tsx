@@ -22,7 +22,7 @@ const ProjectPage = ({ params }: { params: { projectName: string } }) => {
     content: JSX.Element,
     className?: string
   ) => (
-    <section className={`mb-16 flex flex-col items-center gap-3 ${className}`}>
+    <section className={`mb-12 flex flex-col items-center gap-3 ${className}`}>
       <h2 className='heading-md self-start'>{heading}</h2>
       {content}
     </section>
@@ -52,11 +52,19 @@ const ProjectPage = ({ params }: { params: { projectName: string } }) => {
     <>
       <Header activeLink='Projects' />
       <PageLayout>
-        <header className='flex flex-col items-center mt-12'>
+        <header className='flex flex-col items-center mt-4 md:mt-20'>
           <h1 className='heading-lg'>{project.name}</h1>
-          <div className='h-80 relative w-full my-12'>
-            {project.images.map((image) => (
-              <Image key={image} src={image} alt={project.name} fill />
+          <div className='w-full my-10 md:mt-20 md:mb-32 flex gap-[6%] justify-center'>
+            {project.headerImage.map((image) => (
+              <Image
+                key={image}
+                src={image}
+                alt={`${project.name} header image`}
+                width='0'
+                height='0'
+                sizes='100vw'
+                className='h-auto w-1/4 rounded-2xl'
+              />
             ))}
           </div>
         </header>
@@ -77,8 +85,8 @@ const ProjectPage = ({ params }: { params: { projectName: string } }) => {
           {section('Overview', <p>{project.overview}</p>, 'mt-0 md:flex-1')}
         </div>
         {project.content &&
-          project.content.map(({ heading, content }) =>
-            section(heading, content)
+          project.content.map(({ heading, paragraphs }) =>
+            section(heading, paragraphs)
           )}
       </PageLayout>
     </>

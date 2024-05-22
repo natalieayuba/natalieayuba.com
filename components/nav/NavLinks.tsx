@@ -3,24 +3,26 @@ import Socials from './Socials';
 import Link from 'next/link';
 import { useEffect, useState, type MutableRefObject } from 'react';
 import { colors, navLinks, underlines } from '@/config';
+import { usePathname } from 'next/navigation';
 
 const NavLinks = ({
   sectionsRef,
-  activeLink
+  activeLink,
 }: {
   sectionsRef?: MutableRefObject<HTMLElement[]>;
-  activeLink?: string
+  activeLink?: string;
 }) => {
   const [active, setActive] = useState(activeLink || '');
   const [hovered, setHovered] = useState('');
 
   useEffect(() => {
-    if (sectionsRef !== undefined) {
+    if (sectionsRef) {
       const handleScroll = () => {
-        const sections = sectionsRef.current;
-        let index = sections.length;
-        while (--index && window.scrollY + 700 < sections[index].offsetTop) {}
-        setActive(navLinks[index].name);
+        sectionsRef.current.forEach((section, index) => {
+          if (section !== null && section.getBoundingClientRect().top < 500) {
+            setActive(navLinks[index].name);
+          }
+        });
       };
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
@@ -37,14 +39,11 @@ const NavLinks = ({
               className={`transition-all duration-50 ${
                 active === name ? 'text-purple' : ''
               }`}
-              onClick={() => {
-                if (active !== name) setActive(name);
-              }}
-              onMouseOver={() => {
-                if (active !== name) setHovered(name);
-              }}
+              onMouseOver={() => setHovered(name)}
               onMouseOut={() => {
-                if (active !== name) setHovered('');
+                if (active !== name) {
+                  setHovered('');
+                }
               }}
             >
               {name}

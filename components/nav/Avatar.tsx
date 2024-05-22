@@ -57,7 +57,14 @@ const Avatar = () => {
             poke ? 'left-24 scale-100' : 'left-6 scale-0'
           }`}
         >
-          <Image src='/ouch.svg' alt='ouch!' width={70} height={44} />
+          <Image
+            src='/images/robo-nat/ouch.svg'
+            alt='ouch!'
+            width={0}
+            height={0}
+            sizes='100vw'
+            className='w-16 h-auto'
+          />
         </div>
         <Image
           src={src}

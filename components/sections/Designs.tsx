@@ -20,6 +20,7 @@ const Designs = forwardRef<HTMLElement>((props, ref) => {
                 height={0}
                 sizes='100vw'
                 className='w-auto h-auto'
+                priority
               />
             </div>
           </div>

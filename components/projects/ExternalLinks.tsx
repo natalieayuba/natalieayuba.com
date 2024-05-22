@@ -19,6 +19,7 @@ const ExternalLinks = ({ links }: { links: ExternalLinks }) => {
           key={link.name}
           href={link.href}
           className='text-purple font-medium flex gap-2 items-center w-fit transition-all duration-150 hover:brightness-[80%]'
+          title={link.title}
         >
           <span className='text-xl'>
             <Icon iconName={link.icon} />
