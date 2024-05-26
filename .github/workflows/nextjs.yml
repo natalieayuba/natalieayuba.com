@@ -24,6 +24,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  UNDER_CONSTRUCTION: 1
+
 jobs:
   # Build job
   build:
