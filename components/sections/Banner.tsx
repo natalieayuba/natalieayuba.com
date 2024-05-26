@@ -21,7 +21,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
             A developer and designer.
           </p>
           <p className='text-base md:text-2xl'>
-            I&#8217;m all about creating engaging and user-friendly web and
+            I&#8217;m all about creating fun, engaging, and user-friendly web and
             mobile experiences.
           </p>
         </div>

@@ -1,17 +1,20 @@
 import PageLayout from '@/components/PageLayout';
 import React from 'react';
-import projects from '../config';
+import projects from './config';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import ExternalLinks from '@/components/projects/ExternalLinks';
 
 export async function generateStaticParams() {
-  return projects.map((project) => ({ projectName: project.name }));
+  return projects.map((project) => ({
+    projectName: project.name.toLowerCase().replace(' ', '-'),
+  }));
 }
 
-const ProjectPage = ({ params }: { params: { projectName: string } }) => {
+const Project = ({ params }: { params: { projectName: string } }) => {
   const project = projects.find(
-    (project) => project.name.toLowerCase() === params.projectName
+    (project) =>
+      project.name.toLowerCase().replace(' ', '-') === params.projectName
   );
 
   if (!project) notFound();
@@ -39,7 +42,7 @@ const ProjectPage = ({ params }: { params: { projectName: string } }) => {
     { heading: 'Roles', data: project.roles.join(', ') },
     {
       heading: 'Technologies',
-      data: project.technologies.join(', '),
+      data: project.technologies ? project.technologies.join(', ') : '',
     },
     {
       heading: 'Project duration',
@@ -67,28 +70,30 @@ const ProjectPage = ({ params }: { params: { projectName: string } }) => {
           ))}
         </div>
       </header>
-      <div className='flex flex-wrap md:flex-row-reverse gap-12 '>
-        <section>
-          <ul className='w-full md:w-[300px]'>
-            {summary.map(({ heading, data }) => (
-              <li key={heading} className='mb-3'>
-                <span className='font-bold text-sm block'>{heading}</span>
-                <span>{data || 'N/A'}</span>
+      <div className='mx-auto max-w-4xl'>
+        <div className='flex flex-wrap md:flex-row-reverse gap-12'>
+          <section>
+            <ul className='w-full md:w-[300px]'>
+              {summary.map(({ heading, data }) => (
+                <li key={heading} className='mb-3'>
+                  <span className='font-bold text-sm block'>{heading}</span>
+                  <span>{data || 'N/A'}</span>
+                </li>
+              ))}
+              <li className='flex gap-4'>
+                <ExternalLinks links={project.links} />
               </li>
-            ))}
-            <li className='flex gap-4'>
-              <ExternalLinks links={project.links} />
-            </li>
-          </ul>
-        </section>
-        {section('Overview', <p>{project.overview}</p>, 'mt-0 md:flex-1')}
+            </ul>
+          </section>
+          {section('Overview', <p>{project.overview}</p>, 'mt-0 md:flex-1')}
+        </div>
+        {project.content &&
+          project.content.map(({ heading, paragraphs }) =>
+            section(heading, paragraphs)
+          )}
       </div>
-      {project.content &&
-        project.content.map(({ heading, paragraphs }) =>
-          section(heading, paragraphs)
-        )}
     </PageLayout>
   );
 };
 
-export default ProjectPage;
+export default Project;

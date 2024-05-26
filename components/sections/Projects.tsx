@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { Button } from '../Links';
 import { forwardRef } from 'react';
 import SectionLayout from './SectionLayout';
-import projects from '@/app/projects/config';
+import projects from '@/app/[projectName]/config';
 import ExternalLinks from '../projects/ExternalLinks';
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
@@ -42,19 +42,21 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                 ))}
               </ul>
               <p>{project.description}</p>
-              <ul className='text-sm text-black-alpha-60 flex flex-wrap'>
-                {project.technologies.map((technology) => (
-                  <li
-                    key={technology}
-                    className={`after:content-['•'] after:mx-3 last:after:content-none`}
-                  >
-                    {technology}
-                  </li>
-                ))}
-              </ul>
+              {project.technologies && (
+                <ul className='text-sm text-black-alpha-60 flex flex-wrap'>
+                  {project.technologies.map((technology) => (
+                    <li
+                      key={technology}
+                      className={`after:content-['•'] after:mx-3 last:after:content-none`}
+                    >
+                      {technology}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <div className='mt-4 flex gap-5 flex-wrap'>
                 <Button
-                  href={`/projects/${project.name.toLowerCase()}`}
+                  href={`/${project.name.toLowerCase()}`}
                   text='Read more'
                 />
                 <ExternalLinks links={project.links} />

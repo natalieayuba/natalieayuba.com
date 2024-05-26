@@ -105,6 +105,8 @@ module.exports = {
     backend: 'Backend Development',
     logoDesign: 'Logo Design',
     wireframing: 'Wireframing',
+    prototyping: 'Prototyping',
+    userResearch: 'User Research',
     serverlessComputing: 'Serverless Computing'
   },
   technologies: {

@@ -8,13 +8,13 @@ export interface Project {
   headerImage: string[];
   figures?: string[];
   roles: string[];
-  technologies: string[];
+  technologies?: string[];
   startDate: string;
   endDate: string;
   sector?: string;
   links: { demoUrl?: string; presentationUrl?: string; codeUrl?: string };
   overview: JSX.Element;
-  content?: { heading: string; paragraphs: JSX.Element }[];
+  content: { heading: string; paragraphs: JSX.Element }[];
 }
 
 const projects: Project[] = [
@@ -75,10 +75,10 @@ const projects: Project[] = [
         paragraphs: (
           <>
             <p>
-              This is a project I’d been tinkering with for a while, so I knew
-              what I wanted it to look like and do. However, since this was my
-              first time building a web app with an API, I wasn’t sure how to
-              approach the implementation, so I decided to do an initial
+              This is a project I&apos;d been tinkering with for a while, so I
+              knew what I wanted it to look like and do. However, since this was
+              my first time building a web app with an API, I wasn&apos;t sure
+              how to approach the implementation, so I decided to do an initial
               research stage to test the concept iteratively. I initially built
               the app in plain JavaScript, HTML and CSS to see if it was
               possible to do so without involving other technologies. However, I
