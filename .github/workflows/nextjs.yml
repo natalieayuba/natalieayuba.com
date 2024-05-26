@@ -24,13 +24,13 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  UNDER_CONSTRUCTION: 1
 
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      UNDER_CONSTRUCTION: 1
     steps:
       - name: Checkout
         uses: actions/checkout@v4
