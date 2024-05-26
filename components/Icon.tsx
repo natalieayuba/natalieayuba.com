@@ -8,7 +8,7 @@ const Icon = ({ iconName }: { iconName: string }) => {
   const icons = {
     github: <FiGithub />,
     linkedin: <FiLinkedin />,
-    externalLink: <FiExternalLink />,
+    demo: <FiExternalLink />,
     presentation: <LuPresentation />
   }
 

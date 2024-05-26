@@ -29,7 +29,7 @@ const NavMenu = () => {
           {navLinks.map(({ name, url }) => (
             <li key={url}>
               <Link
-                href={url}
+                href={name === 'Home' ? '/' : url}
                 onClick={() => setMenuOpen(false)}
                 className='transition-all duration-150 hover:text-purple'
               >

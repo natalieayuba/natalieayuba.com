@@ -39,17 +39,14 @@ module.exports = {
     {
       name: 'Demo',
       title: 'View live demo',
-      icon: 'externalLink',
     },
     {
       name: 'Code',
       title: 'View source code',
-      icon: 'github',
     },
     {
       name: 'Presentation',
       title: 'View presentation',
-      icon: 'presentation',
     },
   ],
   avatarFrames: [
@@ -108,14 +105,16 @@ module.exports = {
     backend: 'Backend Development',
     logoDesign: 'Logo Design',
     wireframing: 'Wireframing',
+    serverlessComputing: 'Serverless Computing'
   },
   technologies: {
     react: 'React',
     javaScript: 'JavaScript',
     express: 'Express',
-    spotifyAPI: 'Spotify API',
+    spotifyWebApi: 'Spotify Web API',
     reactNative: 'React Native',
     tailwindCSS: 'TailwindCSS',
     expo: 'Expo',
+    netlify: 'Netlify',
   },
 };

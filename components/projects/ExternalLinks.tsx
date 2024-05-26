@@ -12,7 +12,7 @@ const ExternalLinks = ({ links }: { links: ExternalLinks }) => {
   return projectLinks.map((link: any) => {
     const key = `${link.name.toLowerCase()}Url`;
     link.href = links[key as keyof ExternalLinks];
-
+    
     return (
       link.href != undefined && (
         <Link
@@ -22,7 +22,7 @@ const ExternalLinks = ({ links }: { links: ExternalLinks }) => {
           title={link.title}
         >
           <span className='text-xl'>
-            <Icon iconName={link.icon} />
+            <Icon iconName={link.name === 'Code' ? 'github' : link.name.toLowerCase()} />
           </span>
           {link.name}
         </Link>

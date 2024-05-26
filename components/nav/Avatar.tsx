@@ -51,10 +51,11 @@ const Avatar = () => {
           if (!animate) setHovered(true);
         }}
         onMouseOut={() => setHovered(false)}
+        className='relative'
       >
         <div
-          className={`absolute transition-all duration-150 top-6 ${
-            poke ? 'left-24 scale-100' : 'left-6 scale-0'
+          className={`absolute transition-all duration-150 top-2 ${
+            poke ? '-right-16 scale-100' : 'right-0 scale-0'
           }`}
         >
           <Image

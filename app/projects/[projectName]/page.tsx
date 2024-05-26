@@ -32,7 +32,7 @@ const ProjectPage = ({ params }: { params: { projectName: string } }) => {
     let months = (startDate.getFullYear() - endDate.getFullYear()) * 12;
     months -= startDate.getMonth();
     months += endDate.getMonth();
-    return `${months <= 0 ? 0 : months} months`;
+    return `${months} ${months === 1 ? 'month' : 'months'}`;
   };
 
   const summary = [
@@ -63,7 +63,9 @@ const ProjectPage = ({ params }: { params: { projectName: string } }) => {
                 width='0'
                 height='0'
                 sizes='100vw'
-                className='h-auto w-1/4 rounded-2xl'
+                className={`h-auto rounded-2xl ${
+                  project.headerImage.length > 1 ? 'w-1/4' : 'w-full max-w-3xl'
+                }`}
               />
             ))}
           </div>
@@ -77,7 +79,7 @@ const ProjectPage = ({ params }: { params: { projectName: string } }) => {
                   <span>{data || 'N/A'}</span>
                 </li>
               ))}
-              <li>
+              <li className='flex gap-4'>
                 <ExternalLinks links={project.links} />
               </li>
             </ul>

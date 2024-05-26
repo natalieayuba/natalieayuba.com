@@ -52,7 +52,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                   </li>
                 ))}
               </ul>
-              <div className='mt-4 flex gap-4 flex-wrap'>
+              <div className='mt-4 flex gap-5 flex-wrap'>
                 <Button
                   href={`/projects/${project.name.toLowerCase()}`}
                   text='Read more'

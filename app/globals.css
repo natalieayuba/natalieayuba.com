@@ -2,8 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-img {
-  pointer-events: none;
+@layer base {
+  img {
+    @apply pointer-events-none;
+  }
 }
 
 @layer components {
