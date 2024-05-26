@@ -15,7 +15,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
             <span className='text-lg md:text-4xl font-semibold'>
               Hi there,{' '}
             </span>
-            I&#8217;m Natalie
+            I&#8217;m Natalie.
           </h1>
           <p className='text-[22px] md:text-[44px] font-bold mb-3'>
             A developer and designer.
