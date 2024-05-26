@@ -1,23 +1,20 @@
-'use client';
-import Header from '@/components/Header';
+import FullScreenLayout from '@/components/FullScreenLayout';
+import { Button } from '@/components/Links';
 import PageLayout from '@/components/PageLayout';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Not Found | Natalie Ayuba',
+  title: 'Page Not Found | Natalie Ayuba',
 };
 
 const NotFound = () => {
   return (
-    <>
-      <Header />
-      <PageLayout>
-        <h1></h1>
-        <p>Not found</p>
-        <Link href='/'>Go back home</Link>
-      </PageLayout>
-    </>
+    <PageLayout fullHeight>
+      <FullScreenLayout heading='404'>
+        <h2 className='text-2xl'>Page Not Found</h2>
+        <Button href='/' text='Go to home' className='mt-6' />
+      </FullScreenLayout>
+    </PageLayout>
   );
 };
 

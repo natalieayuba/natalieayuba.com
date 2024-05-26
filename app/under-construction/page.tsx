@@ -1,4 +1,9 @@
 import PageLayout from '@/components/PageLayout';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Under Construction | Natalie Ayuba',
+};
 
 const UnderConstruction = () => {
   return (

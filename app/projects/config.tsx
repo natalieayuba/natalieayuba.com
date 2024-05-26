@@ -1,7 +1,6 @@
 import { InlineLink } from '@/components/Links';
 import Figure from '@/components/projects/Figure';
 import { roles, technologies } from '@/config';
-import Image from 'next/image';
 
 export interface Project {
   name: string;
