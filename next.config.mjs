@@ -6,13 +6,21 @@ const nextConfig = {
     unoptimized: true,
   },
   redirects() {
-    return [
-      {
-        source: '/((?!under-construction).*)',
-        destination: '/under-construction',
-        permanent: false,
-      },
-    ].filter(Boolean);
+    return process.env.UNDER_CONSTRUCTION === 'true'
+      ? [
+          {
+            source: '/((?!under-construction).*)',
+            destination: '/under-construction',
+            permanent: false,
+          },
+        ]
+      : [
+          {
+            source: '/under-construction',
+            destination: '/',
+            permanent: false,
+          },
+        ];
   },
 };
 
