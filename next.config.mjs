@@ -6,7 +6,7 @@ const nextConfig = {
     unoptimized: true,
   },
   redirects() {
-    return process.env.UNDER_CONSTRUCTION === 'true'
+    return process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'true'
       ? [
           {
             source: '/((?!under-construction).*)',
