@@ -8,7 +8,7 @@ const nextConfig = {
   async redirects() {
     // return process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'true'
     //   ?
-    [
+    return [
       {
         source: '/((?!under-construction).*)',
         destination: '/under-construction',
