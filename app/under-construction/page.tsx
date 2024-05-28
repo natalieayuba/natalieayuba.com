@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 
 const UnderConstruction = () => {
   if (process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'false') {
+    console.log(process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION);
     notFound();
   }
 
