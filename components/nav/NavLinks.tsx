@@ -38,19 +38,16 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
                 active === name ? 'text-purple' : ''
               }`}
               onMouseOver={() => setHovered(name)}
-              onMouseOut={() => {
-                if (active !== name) {
-                  setHovered('');
-                }
-              }}
+              onMouseOut={() => setHovered('')}
+              onClick={() => setActive(name)}
             >
               {name}
             </Link>
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='80'
+              width='82'
               height='14'
-              viewBox='0 0 80 14'
+              viewBox='0 0 82 14'
               fill='none'
               className='absolute -bottom-3 left-1/2 -translate-x-1/2'
             >
