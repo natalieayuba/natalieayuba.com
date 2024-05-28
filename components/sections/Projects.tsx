@@ -7,7 +7,7 @@ import ExternalLinks from '../projects/ExternalLinks';
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <SectionLayout title={Projects.displayName} ref={ref}>
+    <SectionLayout name={Projects.displayName} ref={ref}>
       <div className='my-16'>
         {projects.map((project) => (
           <div
@@ -55,10 +55,9 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                 </ul>
               )}
               <div className='mt-4 flex gap-5 flex-wrap'>
-                <Button
-                  href={`/${project.name.toLowerCase()}`}
-                  text='Read more'
-                />
+                <Button href={`/${project.name.toLowerCase()}`}>
+                  Read more
+                </Button>
                 <ExternalLinks links={project.links} />
               </div>
             </div>

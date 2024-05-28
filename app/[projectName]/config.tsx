@@ -1,18 +1,18 @@
 import { InlineLink } from '@/components/Links';
+import type { ExternalLinksProps } from '@/components/projects/ExternalLinks';
 import Figure from '@/components/projects/Figure';
 import { roles, technologies } from '@/config';
 
-export interface Project {
+interface Project {
   name: string;
   description: string;
   headerImage: string[];
-  figures?: string[];
   roles: string[];
   technologies?: string[];
   startDate: string;
   endDate: string;
   sector?: string;
-  links: { demoUrl?: string; presentationUrl?: string; codeUrl?: string };
+  links: ExternalLinksProps;
   overview: JSX.Element;
   content: { heading: string; paragraphs: JSX.Element }[];
 }
@@ -43,30 +43,27 @@ const projects: Project[] = [
         As an avid Spotify user, I love to seek out stats about my listening
         habits throughout the year while impatiently waiting for the release of
         my Spotify Wrapped, using apps such as{' '}
-        <InlineLink
-          href='https://receiptify.herokuapp.com/'
-          text='Receiptify'
-        />{' '}
-        and <InlineLink href='https://www.instafest.app/' text='Instafest' /> to
-        share my stats with friends online. Though these apps are fun, I
-        couldn’t find any that displayed a user’s top albums (turns out this
-        request isn’t available through the{' '}
-        <InlineLink
-          href='https://developer.spotify.com/documentation/web-api'
-          text='Spotify Web API'
-        />
+        <InlineLink href='https://receiptify.herokuapp.com/'>
+          Receiptify
+        </InlineLink>{' '}
+        and <InlineLink href='https://www.instafest.app/'>Instafest</InlineLink>{' '}
+        to share my stats with friends online. Though these apps are fun, I
+        couldn&apos;t find any that displayed a user&apos;s top albums (turns
+        out this request isn&apos;t available through the{' '}
+        <InlineLink href='https://developer.spotify.com/documentation/web-api'>
+          Spotify Web API
+        </InlineLink>
         ). I especially love the graphic design of album cover art and their
         colour palettes. In fact, the palette used in{' '}
-        <InlineLink
-          href='https://open.spotify.com/album/0oMXn0MNLNyvB4iJPZXOuV'
-          text='Willow Smith’s <COPINGMECHANISM>'
-        />{' '}
+        <InlineLink href='https://open.spotify.com/album/0oMXn0MNLNyvB4iJPZXOuV'>
+          Willow Smith&apos;s &lt;COPINGMECHANISM&gt;
+        </InlineLink>{' '}
         is what inspired this project - an online tool that generates a colour
-        palette from the cover art of the user’s top albums on Spotify. I
+        palette from the cover art of the user&apos;s top albums on Spotify. I
         thought that perhaps this would provide a fun insight into what kind of
-        vibe the user’s music gives off visually - a moody colour palette for
-        the angsty indie listeners, a more vibrant palette for lovers of pop, or
-        a fun mix of random hues.
+        vibe the user&apos;s music gives off visually - a moody colour palette
+        for the angsty indie listeners, a more vibrant palette for lovers of
+        pop, or a fun mix of random hues.
       </>
     ),
     content: [
@@ -85,10 +82,9 @@ const projects: Project[] = [
               later decided to migrate to React as it was easier to manage
               states and components using the framework. I also decided on
               TailwindCSS for ease of styling and{' '}
-              <InlineLink
-                href='https://lokeshdhakar.com/projects/color-thief/'
-                text='Color Thief'
-              />{' '}
+              <InlineLink href='https://lokeshdhakar.com/projects/color-thief/'>
+                Color Thief
+              </InlineLink>{' '}
               to generate the colour palettes.
             </p>
             <p>
@@ -100,27 +96,24 @@ const projects: Project[] = [
               colourify.herokuapp.com), I decided to go with Netlify instead as
               I preferred the look of the URL (colourify.netlify.app was
               unfortunately unavailable so I went with{' '}
-              <InlineLink
-                href='https://mycolourify.netlify.app/'
-                text='mycolourify.netlify.app'
-              />
+              <InlineLink href='https://mycolourify.netlify.app/'>
+                mycolourify.netlify.app
+              </InlineLink>
               ). Using Netlify required me to learn about serverless computing
               and understand Netlify functions to get the Spotify Web API to
               work.
             </p>
             <p>
               Receiptify,{' '}
-              <InlineLink
-                href='https://spotify-profile.herokuapp.com/'
-                text='Spotify Profile'
-              />{' '}
+              <InlineLink href='https://spotify-profile.herokuapp.com/'>
+                Spotify Profile
+              </InlineLink>{' '}
               and{' '}
-              <InlineLink
-                href='https://github.com/JonoMacC/serverless-spotify-auth'
-                text='Spotify Serverless Auth'
-              />{' '}
+              <InlineLink href='https://github.com/JonoMacC/serverless-spotify-auth'>
+                Spotify Serverless Auth
+              </InlineLink>{' '}
               were big inspirations for the implementation of the app, and
-              Recepity and Instafest for the design. I referred to these
+              Receptify and Instafest for the design. I referred to these
               throughout the project, kept track of my tasks in a Notion Kanban
               board, and used Figma for some designs.
             </p>
@@ -158,10 +151,9 @@ const projects: Project[] = [
                         To get an accurate estimate of the user&apos;s top
                         albums, it was necessary to request all of the
                         user&apos;s top tracks, but since the{' '}
-                        <InlineLink
-                          text="Get User's Top Items"
-                          href='https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks'
-                        />{' '}
+                        <InlineLink href='https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks'>
+                          Get User&apos;s Top Items
+                        </InlineLink>{' '}
                         request only returns a max of 50 items at a time, the
                         only solution was to recursively fetch the data, making
                         use of the offset and limit parameters. This
@@ -199,10 +191,9 @@ const projects: Project[] = [
                         I noticed that some Spotify tracks have an album version
                         and a single version, i.e. the exact same song with a
                         shared{' '}
-                        <InlineLink
-                          href='http://isrc.ifpi.org/'
-                          text='International Standard Recording Code (ISRC)'
-                        />
+                        <InlineLink href='http://isrc.ifpi.org/'>
+                          International Standard Recording Code (ISRC)
+                        </InlineLink>
                         , but with different IDs since they were technically
                         released separately, so they&apos;re treated as separate
                         tracks by the API. I tried to get around this by
@@ -210,10 +201,9 @@ const projects: Project[] = [
                         version to ensure that the top tracks were in their
                         album form to group them as accurately as possible.
                         However, this required another request (
-                        <InlineLink
-                          href='https://developer.spotify.com/documentation/web-api/reference/search'
-                          text='Search for Item'
-                        />
+                        <InlineLink href='https://developer.spotify.com/documentation/web-api/reference/search'>
+                          Search for Item
+                        </InlineLink>
                         ) to find the album version of the track by the ISRC,
                         which resulted in a longer response time and a 429 error
                         as the number of requests exceeded the app&apos;s Web
@@ -272,10 +262,9 @@ const projects: Project[] = [
             <p>
               This was a big passion project for me so it was really fun to
               build and even cooler to see it in action (check it out at{' '}
-              <InlineLink
-                href='https://mycolourify.netlify.app/'
-                text='mycolourify.netlify.app'
-              />
+              <InlineLink href='https://mycolourify.netlify.app/'>
+                mycolourify.netlify.app
+              </InlineLink>
               ). I don&apos;t imagine the traffic will exceed the API limit but
               I will keep an eye on the project and request a higher quota from
               Spotify if necessary.
@@ -285,11 +274,9 @@ const projects: Project[] = [
               API app Rainbowify (name tbd), which would generate a grid of
               albums, each with a dominant colour that matches each colour of
               the rainbow, inspired by the{' '}
-              <InlineLink
-                text='TikTok album rainbow
-              trend'
-                href='https://www.tiktok.com/discover/album-rainbow-trend'
-              />
+              <InlineLink href='https://www.tiktok.com/discover/album-rainbow-trend'>
+                TikTok album rainbow trend
+              </InlineLink>
               . Can you tell I&apos;m a big Spotify fan?
             </p>
           </>
@@ -335,12 +322,10 @@ const projects: Project[] = [
           <p>
             Our clients came up with the idea for the PAST mobile app for users
             with post-stroke fatigue after co-authoring a{' '}
-            <InlineLink
-              text='
+            <InlineLink href='https://pre-prod.neurosymptoms.org/wp-content/uploads/2023/03/GET-guide-booklet-version-1-22062010.pdf'>
               self-help guide for a 6-step Graded Exercise Therapy (GET)
-              programme'
-              href='https://pre-prod.neurosymptoms.org/wp-content/uploads/2023/03/GET-guide-booklet-version-1-22062010.pdf'
-            />{' '}
+              programme
+            </InlineLink>{' '}
             to gradually increase physical activity for people with chronic
             fatigue syndrome. They believed users would benefit from a mobile
             app to track their progress in the programme instead of their own

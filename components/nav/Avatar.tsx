@@ -44,38 +44,36 @@ const Avatar = () => {
   }, [hovered]);
 
   return (
-    <>
-      <Link
-        href='/'
-        onMouseOver={() => {
-          if (!animate) setHovered(true);
-        }}
-        onMouseOut={() => setHovered(false)}
-        className='relative'
+    <Link
+      href='/'
+      onMouseOver={() => {
+        if (!animate) setHovered(true);
+      }}
+      onMouseOut={() => setHovered(false)}
+      className='relative'
+    >
+      <div
+        className={`absolute transition-all duration-150 top-2 ${
+          poke ? '-right-16 scale-100' : 'right-0 scale-0'
+        }`}
       >
-        <div
-          className={`absolute transition-all duration-150 top-2 ${
-            poke ? '-right-16 scale-100' : 'right-0 scale-0'
-          }`}
-        >
-          <Image
-            src='/images/robo-nat/ouch.svg'
-            alt='ouch!'
-            width={0}
-            height={0}
-            sizes='100vw'
-            className='w-16 h-auto'
-          />
-        </div>
         <Image
-          src={src}
-          alt='Robo-Nat logo'
+          src='/images/robo-nat/ouch.svg'
+          alt='ouch!'
           width={0}
           height={0}
-          className='h-12 w-auto'
+          sizes='100vw'
+          className='w-16 h-auto'
         />
-      </Link>
-    </>
+      </div>
+      <Image
+        src={src}
+        alt='Robo-Nat logo'
+        width={0}
+        height={0}
+        className='h-12 w-auto'
+      />
+    </Link>
   );
 };
 

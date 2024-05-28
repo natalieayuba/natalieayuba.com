@@ -3,15 +3,13 @@ import Socials from './Socials';
 import Link from 'next/link';
 import { useEffect, useState, type MutableRefObject } from 'react';
 import { colors, navLinks, underlines } from '@/config';
-import { usePathname } from 'next/navigation';
 
-const NavLinks = ({
-  sectionsRef,
-  activeLink,
-}: {
+export interface NavLinksProps {
   sectionsRef?: MutableRefObject<HTMLElement[]>;
   activeLink?: string;
-}) => {
+}
+
+const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
   const [active, setActive] = useState(activeLink || '');
   const [hovered, setHovered] = useState('');
 

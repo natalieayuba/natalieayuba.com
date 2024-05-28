@@ -1,16 +1,21 @@
-import React, { type ReactNode } from 'react';
+import React, { Children, cloneElement, type ReactElement } from 'react';
 
-const FullScreenLayout = ({
-  heading,
-  children,
-}: {
+interface FullScreenLayoutProps {
   heading: string;
-  children: ReactNode;
-}) => {
+  children: ReactElement[];
+}
+
+const FullScreenLayout = ({ heading, children }: FullScreenLayoutProps) => {
   return (
     <div className='my-auto flex flex-col items-center text-center'>
       <h1 className='font-bold text-7xl mb-6 max-w-lg'>{heading}</h1>
-      {children}
+      {Children.map(children, (child) => {
+        return cloneElement(child, {
+          className: `${child.type === 'p' ? 'text-xl' : ''} ${
+            child.props.className
+          }`,
+        });
+      })}
     </div>
   );
 };

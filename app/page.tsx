@@ -7,6 +7,7 @@ import Designs from '@/components/sections/Designs';
 
 const App = () => {
   const sectionsRef = useRef<HTMLElement[]>([]);
+
   return (
     <PageLayout sectionsRef={sectionsRef} activeLink='Home'>
       <Banner

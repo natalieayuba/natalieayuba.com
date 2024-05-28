@@ -5,7 +5,7 @@ import { logos } from '@/config';
 
 const Designs = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <SectionLayout title={Designs.displayName} ref={ref}>
+    <SectionLayout name={Designs.displayName} ref={ref}>
       <div className='grid grid-cols-2 lg:grid-cols-3 mt-2'>
         {logos.map(({ name, src }) => (
           <div

@@ -22,11 +22,7 @@ export const viewport: Viewport = {
   themeColor: colors.blue,
 };
 
-const RootLayout = ({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) => {
+const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <html lang='en-GB' className='scroll-smooth'>
       <body

@@ -2,17 +2,17 @@ import { projectLinks } from '@/config';
 import Link from 'next/link';
 import Icon from '../Icon';
 
-export interface ExternalLinks {
+export interface ExternalLinksProps {
   demoUrl?: string;
   presentationUrl?: string;
   codeUrl?: string;
 }
 
-const ExternalLinks = ({ links }: { links: ExternalLinks }) => {
+const ExternalLinks = ({ links }: { links: ExternalLinksProps }) => {
   return projectLinks.map((link: any) => {
     const key = `${link.name.toLowerCase()}Url`;
-    link.href = links[key as keyof ExternalLinks];
-    
+    link.href = links[key as keyof ExternalLinksProps];
+
     return (
       link.href != undefined && (
         <Link
@@ -22,7 +22,11 @@ const ExternalLinks = ({ links }: { links: ExternalLinks }) => {
           title={link.title}
         >
           <span className='text-xl'>
-            <Icon iconName={link.name === 'Code' ? 'github' : link.name.toLowerCase()} />
+            <Icon
+              iconName={
+                link.name === 'Code' ? 'github' : link.name.toLowerCase()
+              }
+            />
           </span>
           {link.name}
         </Link>

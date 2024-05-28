@@ -1,5 +1,5 @@
 import PageLayout from '@/components/PageLayout';
-import React, { Fragment } from 'react';
+import React from 'react';
 import projects from './config';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';

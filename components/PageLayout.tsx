@@ -2,8 +2,15 @@
 import { headerHeight } from '@/config';
 import Footer from './Footer';
 import Header from './Header';
-import { type MutableRefObject, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { permanentRedirect, usePathname } from 'next/navigation';
+import type { NavLinksProps } from './nav/NavLinks';
+
+interface PageLayoutProps extends NavLinksProps {
+  children: ReactNode;
+  hideHeader?: boolean;
+  fullHeight?: boolean;
+}
 
 const PageLayout = ({
   children,
@@ -11,13 +18,7 @@ const PageLayout = ({
   fullHeight,
   sectionsRef,
   activeLink,
-}: {
-  children: ReactNode;
-  hideHeader?: boolean;
-  fullHeight?: boolean;
-  sectionsRef?: MutableRefObject<HTMLElement[]>;
-  activeLink?: string;
-}) => {
+}: PageLayoutProps) => {
   const pathname = usePathname();
 
   if (

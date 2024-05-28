@@ -1,3 +1,4 @@
+import FullScreenLayout from '@/components/FullScreenLayout';
 import PageLayout from '@/components/PageLayout';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -13,13 +14,10 @@ const UnderConstruction = () => {
 
   return (
     <PageLayout hideHeader fullHeight>
-      <div className='my-auto flex flex-col items-center text-center'>
-        <h1 className='font-bold text-6xl mb-6 max-w-sm'>Under Construction</h1>
-        <div className='text-lg'>
-          <p>My website is currently undergoing some changes.</p>
-          <p>Please come back soon :)</p>
-        </div>
-      </div>
+      <FullScreenLayout heading='Under Construction'>
+        <p>My website is currently undergoing some changes.</p>
+        <p className='mt-1'>Please come back soon :)</p>
+      </FullScreenLayout>
     </PageLayout>
   );
 };

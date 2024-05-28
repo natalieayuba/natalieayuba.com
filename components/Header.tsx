@@ -1,17 +1,11 @@
 'use client';
 import Avatar from './nav/Avatar';
 import NavMenu from './nav/NavMenu';
-import NavLinks from './nav/NavLinks';
+import NavLinks, { type NavLinksProps } from './nav/NavLinks';
 import { headerHeight } from '@/config';
-import { useEffect, useState, type MutableRefObject } from 'react';
+import { useEffect, useState } from 'react';
 
-const Header = ({
-  sectionsRef,
-  activeLink
-}: {
-  sectionsRef?: MutableRefObject<HTMLElement[]>;
-  activeLink?: string
-}) => {
+const Header = ({ sectionsRef, activeLink }: NavLinksProps) => {
   const [position, setPosition] = useState(
     typeof window !== 'undefined' && window.scrollY
   );
@@ -34,7 +28,7 @@ const Header = ({
     >
       <nav className='flex justify-between h-full items-center transition-all duration-300 margin'>
         <Avatar />
-        <NavLinks sectionsRef={sectionsRef} activeLink={activeLink}/>
+        <NavLinks sectionsRef={sectionsRef} activeLink={activeLink} />
         <NavMenu />
       </nav>
     </header>
