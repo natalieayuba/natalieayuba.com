@@ -4,6 +4,7 @@ import projects from './config';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import ExternalLinks from '@/components/projects/ExternalLinks';
+import moment from 'moment';
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -35,11 +36,15 @@ const Project = ({ params }: { params: { projectName: string } }) => {
     </section>
   );
 
-  const duration = (startDate: Date, endDate: Date) => {
-    let months = (startDate.getFullYear() - endDate.getFullYear()) * 12;
-    months -= startDate.getMonth();
-    months += endDate.getMonth();
-    return `${months} ${months === 1 ? 'month' : 'months'}`;
+  const duration = (startDate: string, endDate: string) => {
+    const months = moment(endDate).diff(moment(startDate), 'months');
+
+    if (months > 0) {
+      return `${months} ${months === 1 ? 'month' : 'months'}`;
+    } else {
+      const weeks = moment(endDate).diff(moment(startDate), 'weeks');
+      return `${weeks} ${weeks === 1 ? 'week' : 'weeks'}`;
+    }
   };
 
   const summary = [
@@ -51,7 +56,7 @@ const Project = ({ params }: { params: { projectName: string } }) => {
     },
     {
       heading: 'Project duration',
-      data: duration(new Date(project.startDate), new Date(project.endDate)),
+      data: duration(project.startDate, project.endDate),
     },
   ];
 

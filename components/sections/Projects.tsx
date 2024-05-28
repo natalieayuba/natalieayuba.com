@@ -6,6 +6,19 @@ import projects from '@/app/[projectName]/config';
 import ExternalLinks from '../projects/ExternalLinks';
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
+  const list = (list: string[]) => (
+    <ul className='text-sm text-black-alpha-60'>
+      {list.map((item) => (
+        <li
+          key={item}
+          className={`inline after:content-['•'] after:mx-2 last:after:content-none`}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
     <SectionLayout name={Projects.displayName} ref={ref}>
       <div className='my-16'>
@@ -31,29 +44,9 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
             </div>
             <div className='flex flex-col gap-2 w-full md:flex-1'>
               <h3 className='text-2xl md:text-3xl font-bold'>{project.name}</h3>
-              <ul className='text-sm text-black-alpha-60 flex flex-wrap'>
-                {project.roles.map((role) => (
-                  <li
-                    key={role}
-                    className={`after:content-['•'] after:mx-3 last:after:content-none`}
-                  >
-                    {role}
-                  </li>
-                ))}
-              </ul>
+              {list(project.roles)}
               <p>{project.description}</p>
-              {project.technologies && (
-                <ul className='text-sm text-black-alpha-60 flex flex-wrap'>
-                  {project.technologies.map((technology) => (
-                    <li
-                      key={technology}
-                      className={`after:content-['•'] after:mx-3 last:after:content-none`}
-                    >
-                      {technology}
-                    </li>
-                  ))}
-                </ul>
-              )}
+              {project.technologies && list(project.technologies)}
               <div className='mt-4 flex gap-5 flex-wrap'>
                 <Button href={`/${project.name.toLowerCase()}`}>
                   Read more
