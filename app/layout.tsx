@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import { colors } from '@/config';
+import { colors, description, name, url } from '@/config';
+import type { ReactNode } from 'react';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -10,8 +11,11 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Natalie Ayuba',
-  description: 'A developer and designer portfolio.',
+  title: {
+    template: `%s | ${name}`,
+    default: name,
+  },
+  description,
 };
 
 export const viewport: Viewport = {
@@ -21,7 +25,7 @@ export const viewport: Viewport = {
 const RootLayout = ({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) => {
   return (
     <html lang='en-GB' className='scroll-smooth'>

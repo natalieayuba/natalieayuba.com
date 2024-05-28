@@ -1,8 +1,8 @@
-import { forwardRef } from 'react';
+import { forwardRef, type ReactNode } from 'react';
 
 const SectionLayout = forwardRef<
   HTMLElement,
-  { title: string | undefined; children: React.ReactNode }
+  { title: string | undefined; children: ReactNode }
 >(({ title, children }, ref) => {
   return (
     <section
@@ -10,9 +10,7 @@ const SectionLayout = forwardRef<
       className='flex flex-col py-12 md:py-24'
       ref={ref}
     >
-      <h2 className='heading-lg text-center md:mb-6'>
-        {title}.
-      </h2>
+      <h2 className='heading-lg text-center md:mb-6'>{title}.</h2>
       <div className='my-2 md:my-16'>{children}</div>
     </section>
   );

@@ -1,5 +1,5 @@
 import PageLayout from '@/components/PageLayout';
-import React from 'react';
+import React, { Fragment } from 'react';
 import projects from './config';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -26,7 +26,10 @@ const Project = ({ params }: { params: { projectName: string } }) => {
     content: JSX.Element,
     className?: string
   ) => (
-    <section className={`mb-12 flex flex-col items-center gap-3 ${className}`}>
+    <section
+      key={heading}
+      className={`mb-12 flex flex-col items-center gap-3 ${className}`}
+    >
       <h2 className='heading-md self-start'>{heading}</h2>
       {content}
     </section>

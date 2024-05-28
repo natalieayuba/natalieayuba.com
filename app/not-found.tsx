@@ -4,7 +4,7 @@ import PageLayout from '@/components/PageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Page Not Found | Natalie Ayuba',
+  title: 'Page Not Found',
 };
 
 const NotFound = () => {

@@ -1,4 +1,8 @@
 module.exports = {
+  name: 'Natalie Ayuba',
+  description:
+    'Natalie Ayuba is a frontend developer and designer with a passion for building engaging user experiences.',
+  url: 'https://natalieayuba.github.io',
   headerHeight: '80px',
   colors: {
     blue: '#cee9eb',
@@ -107,7 +111,7 @@ module.exports = {
     wireframing: 'Wireframing',
     prototyping: 'Prototyping',
     userResearch: 'User Research',
-    serverlessComputing: 'Serverless Computing'
+    serverlessComputing: 'Serverless Computing',
   },
   technologies: {
     react: 'React',

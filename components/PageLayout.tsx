@@ -1,7 +1,9 @@
+'use client';
 import { headerHeight } from '@/config';
 import Footer from './Footer';
 import Header from './Header';
-import type { MutableRefObject } from 'react';
+import { type MutableRefObject, type ReactNode } from 'react';
+import { permanentRedirect, usePathname } from 'next/navigation';
 
 const PageLayout = ({
   children,
@@ -10,12 +12,21 @@ const PageLayout = ({
   sectionsRef,
   activeLink,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   hideHeader?: boolean;
   fullHeight?: boolean;
   sectionsRef?: MutableRefObject<HTMLElement[]>;
   activeLink?: string;
 }) => {
+  const pathname = usePathname();
+
+  if (
+    pathname !== '/under-construction' &&
+    process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'true'
+  ) {
+    permanentRedirect('/under-construction');
+  }
+
   return (
     <>
       {!hideHeader && (

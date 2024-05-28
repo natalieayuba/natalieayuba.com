@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { type ReactNode } from 'react';
 
 const FullScreenLayout = ({
   heading,
   children,
 }: {
   heading: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) => {
   return (
     <div className='my-auto flex flex-col items-center text-center'>

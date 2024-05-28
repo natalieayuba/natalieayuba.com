@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
-  title: 'Under Construction | Natalie Ayuba',
+  title: 'Under Construction',
 };
 
 const UnderConstruction = () => {
@@ -18,7 +18,6 @@ const UnderConstruction = () => {
         <div className='text-lg'>
           <p>My website is currently undergoing some changes.</p>
           <p>Please come back soon :)</p>
-          <p>{process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION}</p>
         </div>
       </div>
     </PageLayout>
