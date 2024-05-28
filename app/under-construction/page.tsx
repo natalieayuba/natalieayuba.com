@@ -1,11 +1,16 @@
 import PageLayout from '@/components/PageLayout';
 import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: 'Under Construction | Natalie Ayuba',
 };
 
 const UnderConstruction = () => {
+  if (process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'false') {
+    notFound();
+  }
+
   return (
     <PageLayout hideHeader fullHeight>
       <div className='my-auto flex flex-col items-center text-center'>

@@ -17,7 +17,9 @@ const Project = ({ params }: { params: { projectName: string } }) => {
       project.name.toLowerCase().replace(' ', '-') === params.projectName
   );
 
-  if (!project) notFound();
+  if (!project) {
+    notFound();
+  }
 
   const section = (
     heading: string,

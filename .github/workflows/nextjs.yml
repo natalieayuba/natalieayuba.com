@@ -31,11 +31,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Store environment variables
         env:
           # Setting an environment variable with the value of a configuration variable
           NEXT_PUBLIC_UNDER_CONSTRUCTION: ${{ vars.NEXT_PUBLIC_UNDER_CONSTRUCTION }}
-        run: echo "Under construction is ${{ env.NEXT_PUBLIC_UNDER_CONSTRUCTION }}"
       - name: Detect package manager
         id: detect-package-manager
         run: |
