@@ -53,7 +53,7 @@ const Avatar = () => {
       className='relative'
     >
       <div
-        className={`absolute transition-all duration-150 top-2 ${
+        className={`absolute transition-all duration-150 top-2 cursor-default ${
           poke ? '-right-16 scale-100' : 'right-0 scale-0'
         }`}
       >
