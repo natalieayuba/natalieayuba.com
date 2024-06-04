@@ -3,7 +3,7 @@ module.exports = {
   description:
     'Natalie Ayuba is a frontend developer and designer with a passion for building engaging user experiences.',
   url: 'https://natalieayuba.github.io',
-  headerHeight: '80px',
+  headerHeight: 80,
   colors: {
     blue: '#cee9eb',
     purple: '#976393',
@@ -16,6 +16,11 @@ module.exports = {
     {
       name: 'Home',
       url: '/#home',
+      underline: 'straight',
+    },
+    {
+      name: 'About',
+      url: '/#about',
       underline: 'straight',
     },
     {
@@ -51,6 +56,10 @@ module.exports = {
     {
       name: 'Presentation',
       title: 'View presentation',
+    },
+    {
+      name: 'Prototype',
+      title: 'View prototype',
     },
   ],
   avatarFrames: [

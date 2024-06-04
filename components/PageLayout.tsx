@@ -36,11 +36,11 @@ const PageLayout = ({
       <div
         className='bg-gradient-to-b from-blue to-white flex flex-col justify-between items-center'
         style={{
-          minHeight: hideHeader ? '100vh' : `calc(100vh - ${headerHeight}`,
+          minHeight: hideHeader ? '100vh' : `calc(100vh - ${headerHeight}px`,
         }}
       >
         <main
-          className={`max-w-[1200px] margin transition-all duration-300 ${
+          className={`max-w-[1080px] margin transition-all duration-300 ${
             fullHeight ? 'flex-1 flex' : ''
           }`}
         >
