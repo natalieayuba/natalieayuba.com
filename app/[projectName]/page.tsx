@@ -1,7 +1,7 @@
 import React from 'react';
 import projects from './config';
 import { notFound } from 'next/navigation';
-import ProjectTemplate from '@/components/ProjectTemplate';
+import ProjectTemplate from '@/components/projects/ProjectTemplate';
 
 export async function generateStaticParams() {
   return projects.map((project) => ({

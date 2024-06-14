@@ -6,7 +6,7 @@ const scrollReveal = (
   viewFactor = 0.25
 ) => {
   const options = {
-    origin: 'top',
+    origin: 'bottom',
     distance: '20px',
     delay,
     viewFactor,

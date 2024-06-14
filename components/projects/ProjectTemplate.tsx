@@ -1,38 +1,22 @@
 'use client';
 import moment from 'moment';
-import React, { useEffect, useRef } from 'react';
-import PageLayout from './PageLayout';
-import ExternalLinks from './projects/ExternalLinks';
+import React from 'react';
+import PageLayout from '../PageLayout';
+import ExternalLinks from './ExternalLinks';
 import type { ProjectProps } from '@/app/[projectName]/config';
 import Image from 'next/image';
-import scrollReveal from '@/utils/scrollReveal';
 
 const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
-  const projectRef = useRef<HTMLElement[]>([]);
-  let i = 0;
-
-  useEffect(() => {
-    if (projectRef.current) {
-      Array.from(projectRef.current).forEach((ref, i) =>
-        scrollReveal(ref as HTMLElement)
-      );
-    }
-  }, []);
+  let animationDelay = 500;
 
   const section = (
     heading: string,
     content: JSX.Element,
-    className?: string,
-    index?: number
+    className?: string
   ) => (
     <section
       key={heading}
       className={`mb-12 flex flex-col items-center gap-3 ${className}`}
-      ref={(el: HTMLElement) => {
-        if (index) {
-          projectRef.current[(i += index)] = el;
-        }
-      }}
     >
       <h2 className='heading-md self-start'>{heading}</h2>
       {content}
@@ -64,22 +48,14 @@ const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
   ];
 
   return (
-    <PageLayout activeLink='Projects'>
+    <PageLayout
+      activeLink='Projects'
+      className='animate-glide duration-700 ease-out'
+      style={{ animationDelay: `${(animationDelay += 100)}ms` }}
+    >
       <header className='flex flex-col items-center mt-10 md:mt-20'>
-        <h1
-          className='heading-lg'
-          ref={(el: HTMLHeadingElement) => {
-            projectRef.current[i] = el;
-          }}
-        >
-          {project.name}
-        </h1>
-        <div
-          className='w-full my-10 md:mt-20 md:mb-32 flex gap-[6%] justify-center'
-          ref={(el: HTMLDivElement) => {
-            projectRef.current[(i += 1)] = el;
-          }}
-        >
+        <h1 className='heading-lg'>{project.name}</h1>
+        <div className='w-full my-10 md:mt-20 md:mb-32 flex gap-[6%] justify-center'>
           {project.headerImage.map((image) => (
             <Image
               key={image}
@@ -96,12 +72,7 @@ const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
         </div>
       </header>
       <div className='mx-auto max-w-4xl'>
-        <div
-          className='flex flex-wrap md:flex-row-reverse gap-12'
-          ref={(el: HTMLDivElement) => {
-            projectRef.current[(i += 1)] = el;
-          }}
-        >
+        <div className='flex flex-wrap md:flex-row-reverse gap-12'>
           <section>
             <ul className='w-full md:w-[300px]'>
               {summary.map(
@@ -121,8 +92,8 @@ const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
           {section('Overview', <p>{project.overview}</p>, 'mt-0 md:flex-1')}
         </div>
         {project.content &&
-          project.content.map(({ heading, paragraphs }, index) =>
-            section(heading, paragraphs, '', index)
+          project.content.map(({ heading, paragraphs }) =>
+            section(heading, paragraphs, '')
           )}
       </div>
     </PageLayout>
