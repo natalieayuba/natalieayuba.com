@@ -11,7 +11,7 @@ export const Button = ({ children, href, className }: LinkProps) => {
   return (
     <Link
       href={href}
-      className={`text-purple border rounded font-medium py-3 px-4 block w-fit transition-all duration-150 hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[4px_4px_0_0] ${className}`}
+      className={`text-purple border rounded-md font-medium py-3 px-4 block w-fit transition-all duration-150 hover:shadow-[-3px_4px_0_0] active:translate-y-[2px] active:shadow-[-1px_1px_0_0] ${className}`}
     >
       {children}
     </Link>

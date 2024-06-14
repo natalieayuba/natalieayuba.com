@@ -3,7 +3,7 @@ import type { ExternalLinksProps } from '@/components/projects/ExternalLinks';
 import Figure from '@/components/projects/Figure';
 import { roles, technologies } from '@/config';
 
-interface Project {
+export interface ProjectProps {
   name: string;
   description: string;
   headerImage: string[];
@@ -17,7 +17,7 @@ interface Project {
   content: { heading: string; paragraphs: JSX.Element }[];
 }
 
-const projects: Project[] = [
+const projects: ProjectProps[] = [
   {
     name: 'Colourify',
     description:
@@ -283,6 +283,25 @@ const projects: Project[] = [
         ),
       },
     ],
+  },
+  {
+    name: 'Luxe',
+    description:
+      'Luxe is a conceptual mobile app that allows users to book cinema tickets in advance.',
+    headerImage: [
+      '/images/luxe/luxe-home.png',
+      '/images/luxe/luxe-film-profile.png',
+    ],
+    roles: [roles.wireframing, roles.prototyping, roles.userResearch],
+    startDate: '2023-05',
+    endDate: '2023-08',
+    sector: 'Cinema',
+    links: {
+      prototypeUrl:
+        'https://www.figma.com/proto/FQWXUPngTpqyqzCGiRY3pK/Design-a-movie-ticketing-app-for-a-cinema-(Luxe-Cinema)?node-id=1-505&t=hMTJZxtMw4J8mZZi-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A505',
+    },
+    overview: <></>,
+    content: [],
   },
   {
     name: 'PAST',

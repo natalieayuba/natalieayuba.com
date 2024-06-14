@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import { colors, description, name, url } from '@/config';
+import { colors, description, name } from '@/config';
 import type { ReactNode } from 'react';
 
 const poppins = Poppins({

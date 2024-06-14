@@ -15,22 +15,17 @@ module.exports = {
   navLinks: [
     {
       name: 'Home',
-      url: '/#home',
+      url: '/',
       underline: 'straight',
     },
     {
       name: 'About',
       url: '/#about',
-      underline: 'straight',
+      underline: 'lessStraight',
     },
     {
       name: 'Projects',
       url: '/#projects',
-      underline: 'lessStraight',
-    },
-    {
-      name: 'Designs',
-      url: '/#designs',
       underline: 'wonky',
     },
   ],

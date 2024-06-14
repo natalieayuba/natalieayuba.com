@@ -6,6 +6,7 @@ export interface ExternalLinksProps {
   demoUrl?: string;
   presentationUrl?: string;
   codeUrl?: string;
+  prototypeUrl?: string;
 }
 
 const ExternalLinks = ({ links }: { links: ExternalLinksProps }) => {

@@ -50,11 +50,11 @@ const Avatar = () => {
         if (!animate) setHovered(true);
       }}
       onMouseOut={() => setHovered(false)}
-      className='relative'
+      className='relative animate-pop'
     >
       <div
-        className={`absolute transition-all duration-150 top-2 cursor-default ${
-          poke ? '-right-16 scale-100' : 'right-0 scale-0'
+        className={`absolute cursor-default w-16 h-auto top-2 transition-all duration-200 ${
+          poke ? 'scale-1 -right-16' : 'scale-0 right-0'
         }`}
       >
         <Image
@@ -71,7 +71,7 @@ const Avatar = () => {
         alt='Robo-Nat logo'
         width={0}
         height={0}
-        className='h-12 w-auto'
+        className='h-12 w-auto z-10'
       />
     </Link>
   );

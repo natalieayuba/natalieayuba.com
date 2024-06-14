@@ -2,7 +2,7 @@ import React, { Children, cloneElement, type ReactElement } from 'react';
 
 interface FullScreenLayoutProps {
   heading: string;
-  children: ReactElement[];
+  children: ReactElement;
 }
 
 const FullScreenLayout = ({ heading, children }: FullScreenLayoutProps) => {

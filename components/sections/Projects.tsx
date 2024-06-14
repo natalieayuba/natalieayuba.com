@@ -1,11 +1,23 @@
+'use client';
 import Image from 'next/image';
 import { Button } from '../Links';
-import { forwardRef } from 'react';
+import { forwardRef, useEffect, useRef } from 'react';
 import SectionLayout from './SectionLayout';
 import projects from '@/app/[projectName]/config';
 import ExternalLinks from '../projects/ExternalLinks';
+import scrollReveal from '@/utils/scrollReveal';
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
+  const projectsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (projectsRef.current) {
+      Array.from(projectsRef.current.children).forEach((ref, i) =>
+        scrollReveal(ref as HTMLElement)
+      );
+    }
+  }, []);
+
   const list = (list: string[]) => (
     <ul className='text-sm text-black-alpha-60'>
       {list.map((item) => (
@@ -21,13 +33,16 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
 
   return (
     <SectionLayout name={Projects.displayName} ref={ref}>
-      <div className='my-16'>
+      <div
+        className='my-16 mx-auto [&>*:nth-child(even)]:flex-row-reverse'
+        ref={projectsRef}
+      >
         {projects.map((project) => (
           <div
             key={project.name}
-            className='flex flex-wrap gap-12 items-center mb-24 md:mt-12 md:mb-24'
+            className='flex flex-wrap gap-x-16 gap-y-8 items-center mb-24 md:mt-12 md:mb-32'
           >
-            <div className='flex-1 flex flex-row gap-4 md:gap-10 md:flex-none md:w-1/2 md:max-w-md'>
+            <div className='flex-1 flex flex-row gap-4 md:gap-10 md:flex-none md:w-1/2 md:max-w-lg'>
               {project.headerImage.map((image) => (
                 <div key={image} className='flex-1'>
                   <Image
@@ -36,7 +51,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                     width={0}
                     height={0}
                     sizes='100vw'
-                    className='w-full h-auto rounded-2xl shadow-[0px_4px_24px_rgba(0,0,0,0.02)]'
+                    className='w-full h-auto rounded-3xl shadow-[0px_4px_24px_rgba(0,0,0,0.02)]'
                     priority
                   />
                 </div>

@@ -9,6 +9,31 @@ const config: Config = {
   ],
   theme: {
     colors: colors,
+    keyframes: {
+      pop: {
+        from: {
+          opacity: '0',
+          scale: '0',
+        },
+      },
+      glide: {
+        from: {
+          opacity: '0',
+          transform: 'translateY(-8px)',
+        },
+      },
+      poke: {
+        to: {
+          scale: '1',
+          right: '-64px',
+        },
+      },
+    },
+    animation: {
+      pop: 'pop 200ms ease-in-out backwards',
+      glide: 'glide 200ms ease-in backwards',
+      poke: 'poke 200ms ease-in-out',
+    },
   },
   plugins: [],
 };

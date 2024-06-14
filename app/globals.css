@@ -6,6 +6,14 @@
   img {
     @apply pointer-events-none;
   }
+
+  ::-webkit-scrollbar {
+    @apply w-4;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    @apply bg-purple-alpha-60 rounded-2xl border-4 border-solid border-white hover:bg-purple;
+  }
 }
 
 @layer components {

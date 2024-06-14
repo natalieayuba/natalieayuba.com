@@ -1,7 +1,15 @@
 import { headerHeight } from '@/config';
+import { Reenie_Beanie } from 'next/font/google';
 import { forwardRef } from 'react';
 
+const reenieBeanie = Reenie_Beanie({
+  weight: '400',
+  subsets: ['latin'],
+});
+
 const Banner = forwardRef<HTMLElement>((props, ref) => {
+  let animationDelay = 500;
+
   return (
     <section
       id='home'
@@ -9,22 +17,43 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
       style={{ height: `calc(100vh - ${headerHeight})` }}
       ref={ref}
     >
-      <div className='-mt-20'>
-        <div className='max-w-[600px]'>
-          <h1 className='heading-xl flex flex-col'>
-            <span className='text-lg md:text-4xl font-semibold'>
-              Hi there,{' '}
-            </span>
+      <div
+        className='max-w-[600px] h-screen flex flex-col justify-center py-40'
+        style={{ height: `calc(100vh - ${headerHeight * 2}px` }}
+      >
+        <h1>
+          <span
+            className='text-lg md:text-2xl mb-2 pl-1 font-semibold animate-glide block'
+            style={{ animationDelay: `${(animationDelay += 100)}ms` }}
+          >
+            Hi there,{' '}
+          </span>
+          <span
+            className='animate-glide block heading-xl'
+            style={{ animationDelay: `${(animationDelay += 100)}ms` }}
+          >
             I&#8217;m Natalie.
-          </h1>
-          <p className='text-[22px] md:text-[44px] font-bold mb-3'>
-            A developer and designer.
-          </p>
-          <p className='text-base md:text-2xl'>
-            I&#8217;m all about creating fun, engaging, and user-friendly web and
-            mobile experiences.
-          </p>
-        </div>
+          </span>
+        </h1>
+        <p
+          className='text-[22px] md:text-[44px] -mt-3 font-bold animate-glide'
+          style={{ animationDelay: `${(animationDelay += 100)}ms` }}
+        >
+          A <span className='text-purple font-mono'>developer</span> and{' '}
+          <span
+            className={`${reenieBeanie.className} text-purple text-7xl inline-block translate-y-1`}
+          >
+            designer
+          </span>
+          .
+        </p>
+        <p
+          className='text-base md:text-xl max-w-lg animate-glide'
+          style={{ animationDelay: `${(animationDelay += 100)}ms` }}
+        >
+          I&#8217;m all about creating fun, engaging, and user-friendly web and
+          mobile experiences.
+        </p>
       </div>
     </section>
   );

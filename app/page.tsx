@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import Banner from '@/components/sections/Banner';
 import Projects from '@/components/sections/Projects';
 import PageLayout from '@/components/PageLayout';
-import Designs from '@/components/sections/Designs';
+import About from '@/components/sections/About';
 
 const App = () => {
   const sectionsRef = useRef<HTMLElement[]>([]);
@@ -15,12 +15,12 @@ const App = () => {
           sectionsRef.current[0] = el;
         }}
       />
-      <Projects
+      <About
         ref={(el: HTMLElement) => {
           sectionsRef.current[1] = el;
         }}
       />
-      <Designs
+      <Projects
         ref={(el: HTMLElement) => {
           sectionsRef.current[2] = el;
         }}

@@ -6,7 +6,7 @@ import { type ReactNode } from 'react';
 import { permanentRedirect, usePathname } from 'next/navigation';
 import type { NavLinksProps } from './nav/NavLinks';
 
-interface PageLayoutProps extends NavLinksProps {
+interface PageLayoutProps extends Partial<NavLinksProps> {
   children: ReactNode;
   hideHeader?: boolean;
   fullHeight?: boolean;
@@ -40,7 +40,7 @@ const PageLayout = ({
         }}
       >
         <main
-          className={`max-w-[1080px] margin transition-all duration-300 ${
+          className={`max-w-[1200px] margin transition-all duration-300 ${
             fullHeight ? 'flex-1 flex' : ''
           }`}
         >
