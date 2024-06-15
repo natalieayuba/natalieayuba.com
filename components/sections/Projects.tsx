@@ -62,7 +62,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
               {list(project.roles)}
               <p>{project.description}</p>
               {project.technologies && list(project.technologies)}
-              <div className='mt-4 flex gap-5 flex-wrap'>
+              <div className='mt-4 flex gap-x-5 gap-y-3 flex-wrap'>
                 <Button href={`/${project.name.toLowerCase()}`}>
                   Read more
                 </Button>

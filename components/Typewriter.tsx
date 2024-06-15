@@ -31,7 +31,7 @@ const Typewriter = ({
   return (
     <span className={className}>
       {currentText}
-      {currentIndex < text.length && '|'}
+      {currentText && currentIndex < text.length && '|'}
     </span>
   );
 };
