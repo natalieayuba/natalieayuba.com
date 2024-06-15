@@ -53,25 +53,18 @@ const Avatar = () => {
       className='relative animate-pop'
     >
       <div
-        className={`absolute cursor-default w-16 h-auto top-2 transition-all duration-200 ${
-          poke ? 'scale-1 -right-16' : 'scale-0 right-0'
+        className={`absolute cursor-default top-2  w-16 h-10 transition-all duration-200 ${
+          poke ? 'scale-1 -right-16' : 'scale-0 -right-0'
         }`}
       >
-        <Image
-          src='/images/robo-nat/ouch.svg'
-          alt='ouch!'
-          width={0}
-          height={0}
-          sizes='100vw'
-          className='w-16 h-auto'
-        />
+        <Image src='/images/robo-nat/ouch.svg' alt='ouch!' fill />
       </div>
       <Image
         src={src}
         alt='Robo-Nat logo'
         width={0}
         height={0}
-        className='h-12 w-auto z-10'
+        className='h-12 w-auto relative'
       />
     </Link>
   );
