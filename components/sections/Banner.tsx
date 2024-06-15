@@ -1,4 +1,5 @@
 import { headerHeight } from '@/config';
+import { animationDuration } from '@/utils/navlinkAnimation';
 import { Reenie_Beanie } from 'next/font/google';
 import { forwardRef } from 'react';
 
@@ -8,7 +9,7 @@ const reenieBeanie = Reenie_Beanie({
 });
 
 const Banner = forwardRef<HTMLElement>((props, ref) => {
-  let animationDelay = 500;
+  let animationDelay = animationDuration;
 
   return (
     <section

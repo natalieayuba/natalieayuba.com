@@ -6,7 +6,7 @@ import { type CSSProperties, type ReactNode } from 'react';
 import { permanentRedirect, usePathname } from 'next/navigation';
 import type { NavLinksProps } from './nav/NavLinks';
 
-interface PageLayoutProps extends Partial<NavLinksProps> {
+interface PageLayoutProps extends NavLinksProps {
   children: ReactNode;
   className?: string;
   style?: CSSProperties;

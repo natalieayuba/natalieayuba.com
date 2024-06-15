@@ -3,7 +3,7 @@ import Socials from './Socials';
 import Link from 'next/link';
 import { useEffect, useState, type MutableRefObject } from 'react';
 import { colors, navLinks, underlines } from '@/config';
-
+import { interval } from '@/utils/navlinkAnimation';
 export interface NavLinksProps {
   sectionsRef?: MutableRefObject<HTMLElement[]>;
   activeLink?: string;
@@ -36,7 +36,9 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
             <li
               key={url}
               className={'relative animate-pop'}
-              style={{ animationDelay: `${(animationDelay += 100)}ms` }}
+              style={{
+                animationDelay: `${(animationDelay += interval)}ms`,
+              }}
             >
               <Link
                 href={url}
