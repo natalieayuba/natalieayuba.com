@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { Button } from '../Links';
+import { ButtonStyleLink } from '../Links';
 import { forwardRef, useEffect, useRef } from 'react';
 import SectionLayout from './SectionLayout';
 import projects from '@/app/[projectName]/config';
@@ -63,9 +63,9 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
               <p>{project.description}</p>
               {project.technologies && list(project.technologies)}
               <div className='mt-4 flex gap-x-5 gap-y-3 flex-wrap'>
-                <Button href={`/${project.name.toLowerCase()}`}>
+                <ButtonStyleLink href={`/${project.name.toLowerCase()}`}>
                   Read more
-                </Button>
+                </ButtonStyleLink>
                 <ExternalLinks links={project.links} />
               </div>
             </div>

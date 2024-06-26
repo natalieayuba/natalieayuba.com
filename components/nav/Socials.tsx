@@ -22,7 +22,7 @@ const Socials = ({ large, animationDelay = 0 }: SocialsProps) => {
             className='block hover:scale-110'
             title={name}
           >
-            <Icon iconName={name.toLowerCase()} />
+            <Icon name={name.toLowerCase()} />
           </Link>
         </li>
       ))}

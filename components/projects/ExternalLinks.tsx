@@ -24,9 +24,7 @@ const ExternalLinks = ({ links }: { links: ExternalLinksProps }) => {
         >
           <span className='text-xl'>
             <Icon
-              iconName={
-                link.name === 'Code' ? 'github' : link.name.toLowerCase()
-              }
+              name={link.name === 'Code' ? 'github' : link.name.toLowerCase()}
             />
           </span>
           {link.name}

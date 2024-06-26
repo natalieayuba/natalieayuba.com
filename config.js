@@ -127,4 +127,11 @@ module.exports = {
     expo: 'Expo',
     netlify: 'Netlify',
   },
+  images: {
+    wings:
+      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cfecd1ad-749f-4574-bfbc-dba68d3e6761/dcasvb9-0800367f-2bca-4814-8f18-654dfb46bf1b.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2NmZWNkMWFkLTc0OWYtNDU3NC1iZmJjLWRiYTY4ZDNlNjc2MVwvZGNhc3ZiOS0wODAwMzY3Zi0yYmNhLTQ4MTQtOGYxOC02NTRkZmI0NmJmMWIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TImyC0qM0v7w_COyfFocT1M1kKxjwDXa55Bjg89S838',
+  },
+  audio: {
+    coin: 'https://www.fesliyanstudios.com/play-mp3/6272',
+  },
 };

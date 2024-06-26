@@ -4,6 +4,7 @@ import { forwardRef } from 'react';
 import Typewriter from '../Typewriter';
 import Handwriter from '../Handwriter';
 import useWindowWidth from '@/hooks/useWindowWidth';
+import Game from '../Game';
 
 const Banner = forwardRef<HTMLElement>((props, ref) => {
   const { width } = useWindowWidth();
@@ -16,7 +17,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
   return (
     <section
       id='home'
-      className='flex items-center'
+      className='flex items-center justify-between'
       style={{ height: `calc(100vh - ${headerHeight})` }}
       ref={ref}
     >
@@ -64,14 +65,14 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
           >
             and
           </span>
-          <Handwriter
+          {/* <Handwriter
             text={designerStr}
             delay={(animationDelay += 200)}
             duration={handwriterDuration}
             color={colors.purple}
             letterSpacing={3}
             fontSize={width > 768 ? 24 : 12}
-          />
+          /> */}
           <span
             className='animate-fadeIn -ml-4'
             style={{
@@ -93,6 +94,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
           mobile experiences.
         </p>
       </div>
+      <Game animationDelay={animationDelay + 300} />
     </section>
   );
 });

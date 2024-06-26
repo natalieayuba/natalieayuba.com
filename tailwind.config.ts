@@ -33,12 +33,18 @@ const config: Config = {
           opacity: '0',
         },
       },
+      blinker: {
+        '50%': {
+          opacity: '0',
+        },
+      },
     },
     animation: {
       pop: 'pop 200ms ease-in-out backwards',
       glide: 'glide 200ms ease-in backwards',
       poke: 'poke 200ms ease-in-out',
       fadeIn: 'fadeIn 200ms ease-in-out backwards',
+      blinker: 'blinker 1.25s linear infinite',
     },
   },
   plugins: [],

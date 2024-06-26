@@ -7,12 +7,9 @@ interface LinkProps {
   className?: string;
 }
 
-export const Button = ({ children, href, className }: LinkProps) => {
+export const ButtonStyleLink = ({ children, href, className }: LinkProps) => {
   return (
-    <Link
-      href={href}
-      className={`text-purple border rounded-md font-medium py-3 px-4 block w-fit transition-all duration-150 hover:shadow-[-3px_4px_0_0] active:translate-y-[2px] active:shadow-[-1px_1px_0_0] ${className}`}
-    >
+    <Link href={href} className={`button ${className}`}>
       {children}
     </Link>
   );
