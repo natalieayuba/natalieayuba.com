@@ -1,6 +1,6 @@
 import { colors, headerHeight } from '@/config';
 import { interval, duration } from '@/utils/navlinkAnimation';
-import { forwardRef } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import Typewriter from '../Typewriter';
 import Handwriter from '../Handwriter';
 import useWindowWidth from '@/hooks/useWindowWidth';
@@ -13,6 +13,9 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
   const typewriterSpeed = 150;
   const handwriterDuration = 1000;
   let animationDelay = duration;
+  const [fontSize, setFontSize] = useState(0);
+
+  useEffect(() => (width > 768 ? setFontSize(24) : setFontSize(12)), [width]);
 
   return (
     <section
@@ -42,7 +45,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
             I&#8217;m Natalie.
           </span>
         </h1>
-        <p className='text-[22px] md:text-[44px] -mt-2 font-bold flex gap-[1.5%]'>
+        <p className='text-[22px] md:text-[44px] font-bold flex gap-[1.5%] flex-wrap'>
           <span
             className='animate-fadeIn'
             style={{ animationDelay: `${(animationDelay += 700)}ms` }}
@@ -65,36 +68,40 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
           >
             and
           </span>
-          {/* <Handwriter
-            text={designerStr}
-            delay={(animationDelay += 200)}
-            duration={handwriterDuration}
-            color={colors.purple}
-            letterSpacing={3}
-            fontSize={width > 768 ? 24 : 12}
-          /> */}
-          <span
-            className='animate-fadeIn -ml-4'
-            style={{
-              animationDelay: `${(animationDelay +=
-                handwriterDuration + interval)}ms`,
-              animationDuration: '300ms',
-            }}
-          >
-            .
+          <span className='relative flex-1'>
+            <Handwriter
+              text={designerStr}
+              delay={(animationDelay += 200)}
+              duration={handwriterDuration}
+              color={colors.purple}
+              letterSpacing={3}
+              fontSize={fontSize}
+            />
+            <span
+              className={`animate-fadeIn absolute top-0 ${
+                fontSize === 24 ? 'left-44' : 'left-24'
+              }`}
+              style={{
+                animationDelay: `${(animationDelay +=
+                  handwriterDuration + interval)}ms`,
+                animationDuration: '300ms',
+              }}
+            >
+              .
+            </span>
           </span>
         </p>
         <p
-          className='text-base md:text-xl max-w-lg animate-glide -mt-2'
+          className='text-base md:text-xl max-w-sm md:max-w-lg animate-glide -mt-2'
           style={{
-            animationDelay: `${(animationDelay += 400)}ms`,
+            animationDelay: `${(animationDelay += 300)}ms`,
           }}
         >
           I&#8217;m all about creating fun, engaging, and user-friendly web and
           mobile experiences.
         </p>
       </div>
-      <Game animationDelay={animationDelay + 300} />
+      {/* <Game animationDelay={animationDelay + 300} /> */}
     </section>
   );
 });

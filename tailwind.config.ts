@@ -38,6 +38,11 @@ const config: Config = {
           opacity: '0',
         },
       },
+      fall: {
+        to: {
+          top: '100%',
+        },
+      },
     },
     animation: {
       pop: 'pop 200ms ease-in-out backwards',
@@ -45,6 +50,7 @@ const config: Config = {
       poke: 'poke 200ms ease-in-out',
       fadeIn: 'fadeIn 200ms ease-in-out backwards',
       blinker: 'blinker 1.25s linear infinite',
+      fall: 'fall ease-in infinite',
     },
   },
   plugins: [],
