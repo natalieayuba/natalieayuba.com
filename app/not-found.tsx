@@ -11,12 +11,10 @@ const NotFound = () => {
   return (
     <PageLayout fullHeight>
       <FullScreenLayout heading='404'>
-        <>
-          <p>Page Not Found</p>
-          <ButtonStyleLink href='/' className='mt-6'>
-            Go to home
-          </ButtonStyleLink>
-        </>
+        <p>Page Not Found</p>
+        <ButtonStyleLink href='/' className='mt-6'>
+          Go to home
+        </ButtonStyleLink>
       </FullScreenLayout>
     </PageLayout>
   );

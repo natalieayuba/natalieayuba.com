@@ -24,7 +24,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
       style={{ height: `calc(100vh - ${headerHeight})` }}
       ref={ref}
     >
-      <div
+      {/* <div
         className='max-w-[600px] h-screen flex flex-col justify-center py-40'
         style={{ height: `calc(100vh - ${headerHeight * 2}px` }}
       >
@@ -100,8 +100,8 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
           I&#8217;m all about creating fun, engaging, and user-friendly web and
           mobile experiences.
         </p>
-      </div>
-      {/* <Game animationDelay={animationDelay + 300} /> */}
+      </div> */}
+      <Game animationDelay={animationDelay + 300} />
     </section>
   );
 });

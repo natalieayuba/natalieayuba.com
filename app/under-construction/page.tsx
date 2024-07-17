@@ -15,8 +15,10 @@ const UnderConstruction = () => {
   return (
     <PageLayout hideHeader fullHeight>
       <FullScreenLayout heading='Under Construction'>
-        <p>My website is currently undergoing some changes.</p>
-        <p className='mt-1'>Please come back soon :)</p>
+        <p>
+          My website is currently undergoing some changes. <br />
+          Please come back soon :)
+        </p>
       </FullScreenLayout>
     </PageLayout>
   );

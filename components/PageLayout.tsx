@@ -41,7 +41,7 @@ const PageLayout = ({
         className={`bg-gradient-to-b from-blue to-white flex flex-col justify-between items-center
         }`}
         style={{
-          minHeight: hideHeader ? '100vh' : `calc(100vh - ${headerHeight}px`,
+          minHeight: hideHeader ? '100dvh' : `calc(100dvh - ${headerHeight}px`,
         }}
       >
         <main
