@@ -8,7 +8,7 @@
   }
 
   ::-webkit-scrollbar {
-    @apply w-4;
+    @apply w-4 bg-white;
   }
 
   body::-webkit-scrollbar-thumb {
@@ -37,7 +37,7 @@
     @apply text-purple border rounded-md font-medium py-3 px-4 flex justify-center min-w-32 transition-all duration-150 hover:shadow-[-3px_4px_0_0] active:translate-y-[2px] active:shadow-[-1px_1px_0_0];
   }
 
-  .game-button-hover {
-    @apply hover:opacity-80 transition-opacity duration-100;
+  .scroll-button {
+    @apply hover:translate-y-[-2px] hover:scale-105 active:translate-y-[2px];
   }
 }

@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { colors, description, name } from '@/config';
 import type { ReactNode } from 'react';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -29,6 +30,7 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
         className={`${poppins.className} leading-relaxed bg-blue text-black-alpha-90 selection:bg-purple-alpha-60 selection:text-black-alpha-90`}
       >
         {children}
+        <ScrollToTopButton />
       </body>
     </html>
   );
