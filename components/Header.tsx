@@ -23,7 +23,7 @@ const Header = ({ sectionsRef, activeLink }: NavLinksProps) => {
 
   return (
     <header
-      className='bg-blue sticky flex flex-col justify-between transition-all duration-300 ease-out z-10'
+      className='bg-blue dark:bg-navy sticky flex flex-col justify-between transition-all duration-300 ease-out z-10'
       style={{ height: headerHeight, top: visible ? 0 : `-${headerHeight}px` }}
     >
       <nav className='flex justify-between h-full items-center transition-all duration-300 margin'>

@@ -8,11 +8,11 @@
   }
 
   ::-webkit-scrollbar {
-    @apply w-4 bg-white;
+    @apply w-4 bg-white dark:bg-navy;
   }
 
   body::-webkit-scrollbar-thumb {
-    @apply bg-purple-alpha-60 rounded-2xl border-4 border-solid border-white hover:bg-purple;
+    @apply bg-purple-alpha-60 rounded-2xl border-4 border-solid border-white dark:border-navy hover:bg-purple;
   }
 }
 

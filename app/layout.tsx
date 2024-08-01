@@ -23,11 +23,13 @@ export const viewport: Viewport = {
   themeColor: colors.blue,
 };
 
+const isNighttime = new Date().getHours() > 19 || new Date().getHours() < 6;
+
 const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
-    <html lang='en-GB' className='scroll-smooth'>
+    <html lang='en-GB' className={`scroll-smooth ${isNighttime && ' dark'}`}>
       <body
-        className={`${poppins.className} leading-relaxed bg-blue text-black-alpha-90 selection:bg-purple-alpha-60 selection:text-black-alpha-90`}
+        className={`${poppins.className} leading-relaxed bg-blue dark:bg-navy text-black-alpha-90 dark:text-white-alpha-90 selection:bg-purple-alpha-60 selection:text-black-alpha-90  dark:selection:text-white-alpha-90`}
       >
         {children}
         <ScrollToTopButton />

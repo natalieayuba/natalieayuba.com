@@ -19,7 +19,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
   }, []);
 
   const list = (list: string[]) => (
-    <ul className='text-sm text-black-alpha-60'>
+    <ul className='text-sm text-black-alpha-60 dark:text-white-alpha-60'>
       {list.map((item) => (
         <li
           key={item}

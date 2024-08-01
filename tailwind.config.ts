@@ -7,8 +7,9 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
-    colors: colors,
+    colors,
     keyframes: {
       pop: {
         from: {
@@ -31,16 +32,6 @@ const config: Config = {
       fadeIn: {
         from: {
           opacity: '0',
-        },
-      },
-      blinker: {
-        '50%': {
-          opacity: '0',
-        },
-      },
-      fall: {
-        to: {
-          top: '100%',
         },
       },
     },
