@@ -27,7 +27,7 @@ const isNight = new Date().getHours() > 19 || new Date().getHours() < 6;
 
 const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
-    <html lang='en-GB' className={`scroll-smooth ${isNight && ' dark'}`}>
+    <html lang='en-GB' className={`scroll-smooth${isNight && ' dark'}`}>
       <body
         className={`${poppins.className} leading-relaxed bg-blue dark:bg-navy text-black-alpha-90 dark:text-white-alpha-90 selection:bg-purple-alpha-60 selection:text-black-alpha-90  dark:selection:text-white-alpha-90`}
       >
