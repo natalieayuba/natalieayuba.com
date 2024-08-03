@@ -21,8 +21,7 @@ const ScrollToTopButton = () => {
   }, []);
 
   return (
-    <a
-      href='javascript:void(0)'
+    <button
       title='Scroll to top'
       onClick={scrollToTop}
       className={`${
@@ -35,7 +34,7 @@ const ScrollToTopButton = () => {
         width={48}
         height={48}
       />
-    </a>
+    </button>
   );
 };
 

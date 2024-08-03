@@ -18,8 +18,10 @@ const About = forwardRef<HTMLElement>((props, ref) => {
   ];
 
   useEffect(() => {
-    scrollReveal(contentRef.current as HTMLElement);
-  }, []);
+    if (contentRef.current) {
+      scrollReveal(contentRef.current);
+    }
+  });
 
   return (
     <SectionLayout
@@ -27,7 +29,10 @@ const About = forwardRef<HTMLElement>((props, ref) => {
       ref={ref}
       className='flex justify-center'
     >
-      <div ref={contentRef} className='flex flex-col gap-4 py-12 px-16'>
+      <div
+        ref={contentRef}
+        className='relative flex flex-col gap-4 py-12 px-16'
+      >
         <p>
           Hi, I&apos;m Natalie and I enjoy creating digital experiences to make
           lives a little bit easier or more whimsical. I fell in love with

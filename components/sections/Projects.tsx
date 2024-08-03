@@ -13,10 +13,10 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
   useEffect(() => {
     if (projectsRef.current) {
       Array.from(projectsRef.current.children).forEach((ref, i) =>
-        scrollReveal(ref as HTMLElement)
+        scrollReveal(ref as HTMLDivElement)
       );
     }
-  }, []);
+  });
 
   const list = (list: string[]) => (
     <ul className='text-sm text-black-alpha-60 dark:text-white-alpha-60'>

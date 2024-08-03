@@ -13,8 +13,10 @@ const SectionLayout = forwardRef<HTMLElement, SectionProps>(
     const headingRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
-      scrollReveal(headingRef.current as HTMLElement);
-    }, []);
+      if (headingRef.current) {
+        scrollReveal(headingRef.current);
+      }
+    });
 
     return (
       <section
