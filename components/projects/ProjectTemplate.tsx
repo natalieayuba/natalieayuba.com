@@ -48,7 +48,8 @@ const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
   return (
     <PageLayout
       activeLink='Projects'
-      className='animate-glide duration-700 ease-out'
+      className='animate-glide ease-out'
+      style={{ animationDuration: '300ms' }}
     >
       <header className='mt-4 md:mt-20'>
         <h1 className='heading-lg text-center'>{project.name}</h1>

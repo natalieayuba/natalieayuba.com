@@ -325,18 +325,44 @@ const projects: ProjectProps[] = [
               The first step was to understand the user, which was an
               interesting concept to me as coming from a software development
               background, we tend to focus more on how a feature works rather
-              than who the user is. As preliminary research, I interviewed ten
-              representative users (frequent moviegoers) to understand their
-              main goals and pain points. I also made sure to get a sample that
-              was diverse in age, gender, and disability, to ensure inclusivity.
-              In the course, we were advised to focus on one user group for our
-              first project, so I narrowed it down to users who preferred to
-              avoid queues when booking movie tickets, which was the most common
-              goal found in the research. This user group confirmed initial
-              assumptions in regards to preferring faster options such as
-              self-checkout, but the research also revealed that there was more
-              to it than just convenience. Other pain points included:
+              than who the user is.{' '}
             </p>
+            <p>
+              As preliminary research, I interviewed ten representative users
+              (frequent moviegoers) to understand their main goals and pain
+              points. I also made sure to get a sample that was diverse in age,
+              gender, and disability, to ensure inclusivity. In the course, we
+              were advised to focus on one user group for our first project, so
+              I narrowed it down to users who preferred to avoid queues when
+              booking movie tickets, which was the most common goal found in the
+              research. This user group confirmed initial assumptions in regards
+              to preferring faster options such as self-checkout, but the
+              research also revealed that there was more to it than just
+              convenience. Other pain points included:
+            </p>
+            <div className='flex flex-wrap gap-2'>
+              {[
+                {
+                  heading: 'Time',
+                  description: 'Time can be waisted waiting in queues',
+                },
+                {
+                  heading: 'Judgement',
+                  description:
+                    'Perceived judgement from others when booking tickets in person',
+                },
+                {
+                  heading: 'Accessibility',
+                  description:
+                    'Needing to be aware of and booking accessible seating in advance',
+                },
+              ].map(({ heading, description }) => (
+                <div key={heading}>
+                  <p className='font-semibold text-lg block'>{heading}</p>
+                  <p>{description}</p>
+                </div>
+              ))}
+            </div>
             <p>
               I created a persona to simplify the research into one focused
               user, making sure it was an inclusive amalgamation of the user
@@ -344,9 +370,13 @@ const projects: ProjectProps[] = [
               throughout the entire project to ensure the user remained the
               focus of any design decisions made.
             </p>
+            <Figure
+              caption='1.1. User Persona'
+              images={[{ image: '/images/luxe/luxe-persona.png' }]}
+            />
             <p>
-              At this stage, I was still a bit confused about how what specific
-              features could solve the &apos;s problem, so I performed a
+              At this stage, I was still a bit unsure about how what specific
+              features could solve the user&apos;s problem, so I performed a
               competitive analysis of similar ticketing apps in the market to
               get a feel for existing solutions. I examined direct competitors
               (movie ticketing apps such as the Odeon mobile app) and indirect
@@ -355,12 +385,97 @@ const projects: ProjectProps[] = [
               well-researched, and to find a common booking solution across the
               apps.
             </p>
+            <Figure
+              caption='1.2. Competitive analysis snippet'
+              images={[
+                { image: '/images/luxe/luxe-competitive-analysis-snippet.png' },
+              ]}
+            />
+            <p>
+              Additionally, I created a user journey map to outline each step of
+              the booking process.
+            </p>
+            <Figure
+              caption='1.3. User journey map'
+              images={[{ image: '/images/luxe/luxe-user-journey-map.png' }]}
+            />
           </>
         ),
       },
       {
         heading: 'Designing the app',
-        paragraphs: <p></p>,
+        paragraphs: (
+          <>
+            <p>
+              Based on the user journey identified, I began drafting multiple
+              paper wireframes for each step in the user&apos;s journey to test
+              out different UI solutions and find which ones would best address
+              the user&apos;s pain points.
+            </p>
+            <Figure
+              caption='1.4. Paper wireframes'
+              images={[{ image: '/images/luxe/luxe-paper-wireframes.png' }]}
+            />
+            <p>
+              Once the wireframes were narrowed down to the most suitable
+              solutions, I gathered feedback from users on the overall layout
+              and structure of each screen. With the feedback, I created digital
+              wireframes in Figma which I then turned into a low-fidelity
+              prototype, displaying the primary user flow of the ticket booking
+              process to be tested by users in a usability study.
+            </p>
+            <Figure
+              caption='1.5. Lo-fi prototype'
+              images={[{ image: '/images/luxe/luxe-lo-fi-prototype.png' }]}
+            />
+            <p>
+              My favourite part of the project was adding colour, images, copy
+              and other visual elements to the design. I particularly enjoyed
+              learning about the Gestalt principles and other ways to ensure
+              human psychology was taken into account while designing the
+              prototype. I also made sure to follow accessibility standards as
+              well, keeping colour contrast high enough, according to W3S.
+            </p>
+            <Figure
+              caption='1.6. Sticker sheet'
+              images={[{ image: '/images/luxe/luxe-sticker-sheet.png' }]}
+            />
+            <p>
+              After many iterations of designing, testing, and revising, the
+              final prototype was complete.
+            </p>
+            <Figure
+              caption='1.7. Hi-fi-prototype'
+              images={[{ image: '/images/luxe/luxe-hi-fi-prototype.png' }]}
+            />
+            <Figure
+              caption='1.8. Demo'
+              images={[{ image: '/images/luxe/luxe-demo.gif' }]}
+            />
+          </>
+        ),
+      },
+      {
+        heading: 'Takeaway',
+        paragraphs: (
+          <>
+            <p>
+              This course was a massive learning experience as it taught me to
+              focus more on the user than just the potential solutions and
+              functionality of the app. Keeping the user at the forefront of the
+              design ensured that I remained empathetic rather than methodical.
+              I will definitely make sure to incorporate design thinking into
+              future projects.
+            </p>
+            <p>
+              As for potential improvements, I would&apos;ve loved to learn more
+              about interaction design in my free time and include more motion
+              and animation in the prototype (depending on Figma&apos;s
+              limitations). This definitely would&apos;ve added more character
+              to the designed, ensuring that the user stays engaged.
+            </p>
+          </>
+        ),
       },
     ],
   },

@@ -27,7 +27,7 @@ const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <html lang='en-GB' className={`scroll-smooth ${darkMode && 'dark'}`}>
       <body
-        className={`${poppins.className} leading-relaxed bg-blue dark:bg-navy text-black-alpha-90 dark:text-white-alpha-75 selection:bg-purple-alpha-60 selection:text-black-alpha-90  dark:selection:text-white-alpha-90`}
+        className={`${poppins.className} leading-relaxed bg-blue dark:bg-navy text-black-alpha-75 dark:text-white-alpha-75 selection:bg-purple-alpha-60 selection:text-black-alpha-90  dark:selection:text-white-alpha-90`}
       >
         {children}
         <ScrollToTopButton />

@@ -9,13 +9,13 @@ interface FigureProps {
 
 const Figure = ({ images, caption, type }: FigureProps) => {
   return (
-    <figure className='py-16 flex flex-col items-center w-full'>
+    <figure className='pt-4 pb-4 flex flex-col items-center w-full'>
       <div
         className={`flex-1 flex w-full justify-center ${
           type === 'mobile' ? 'gap-4 md:gap-10' : 'gap-x-32 gap-y-6 flex-wrap'
         }`}
       >
-        {images.map(({ image, width, height }, index) => (
+        {images.map(({ image, width, height }) => (
           <div
             key={image}
             className={
@@ -24,7 +24,7 @@ const Figure = ({ images, caption, type }: FigureProps) => {
           >
             <Image
               src={image}
-              alt={`Past wireframe ${index + 1}`}
+              alt={caption}
               width={0}
               height={0}
               sizes='100vw'
@@ -38,7 +38,7 @@ const Figure = ({ images, caption, type }: FigureProps) => {
           </div>
         ))}
       </div>
-      <figcaption className='secondary-text mt-10'>{caption}</figcaption>
+      <figcaption className='secondary-text mt-4'>{caption}</figcaption>
     </figure>
   );
 };

@@ -45,7 +45,7 @@ const config: Config = {
     },
     extend: {
       boxShadow: {
-        image: '0px 4px 8px rgba(0,0,0,0.05)',
+        image: '0px 4px 8px rgba(0,0,0,0.02)',
       },
     },
   },

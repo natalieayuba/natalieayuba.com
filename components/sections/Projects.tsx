@@ -45,7 +45,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
         {projects.map((project) => (
           <div
             key={project.name}
-            className='flex flex-wrap gap-x-16 gap-y-8 items-center mt-6 mb-16 md:mt-12 md:mb-32'
+            className='flex flex-wrap gap-x-16 gap-y-8 items-center mt-4 mb-16 md:mt-12 md:mb-32'
           >
             {/* <div className='flex-1 flex flex-row gap-4 md:gap-10 md:flex-none md:w-1/2 md:max-w-lg'>
               {project.headerImage.map((image) => (
@@ -68,7 +68,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
               {list(project.roles)}
               <p>{project.description}</p>
               {project.technologies && list(project.technologies)}
-              <div className='mt-4 flex gap-[15px] flex-wrap'>
+              <div className='mt-4 flex gap-[14px] md:4 flex-wrap'>
                 <ButtonStyleLink href={`/${project.name.toLowerCase()}`}>
                   Read case study
                 </ButtonStyleLink>

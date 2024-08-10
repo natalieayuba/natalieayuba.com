@@ -42,7 +42,7 @@
   }
 
   .button {
-    @apply text-purple border rounded-md font-medium py-3 px-4 flex justify-center min-w-32 transition-all duration-150 hover:shadow-[-3px_4px_0_0] active:translate-y-[2px] active:shadow-[-1px_1px_0_0];
+    @apply text-purple border-2 rounded-md font-medium py-3 px-4 flex justify-center min-w-32 transition-all duration-150 hover:shadow-[-3px_4px_0_0] active:translate-y-[2px] active:shadow-[-1px_1px_0_0];
   }
 
   .scroll-button {

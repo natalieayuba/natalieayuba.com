@@ -10,11 +10,13 @@ interface HeaderImageProps {
 const HeaderImage = ({ project, className }: HeaderImageProps) => {
   return (
     <div
-      className={`w-full aspect-video rounded-lg drop-shadow-md flex justify-center items-center gap-2${
+      className={`w-full aspect-video rounded-lg flex justify-center items-center gap-2${
         className ? ` ${className}` : ''
       }`}
       style={{
-        backgroundColor: `color-mix(in srgb, ${project.bgColor}, white 80%)`,
+        backgroundColor: `color-mix(in srgb, ${project.bgColor}, ${
+          project.name === 'Luxe' ? '#ddd 80%' : 'white 82%'
+        })`,
       }}
     >
       {project.headerImage.map((image) => (
