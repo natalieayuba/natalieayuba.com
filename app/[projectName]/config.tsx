@@ -143,7 +143,7 @@ const projects: ProjectProps[] = [
                 would be. After testing this concept with the API, I noticed a
                 few more limitations:
               </p>
-              <ul className='list-inside list-disc'>
+              <ul className='list-disc list-outside '>
                 {[
                   {
                     heading:
@@ -232,9 +232,9 @@ const projects: ProjectProps[] = [
                     ),
                   },
                 ].map(({ heading, paragraph }) => (
-                  <li className='ml-6 mt-2' key={heading}>
-                    <h4 className='font-bold inline-block'>{heading}</h4>
-                    <p className='ml-6'>{paragraph}</p>
+                  <li className='ml-5 mt-2' key={heading}>
+                    <h4 className='heading'>{heading}</h4>
+                    <p>{paragraph}</p>
                   </li>
                 ))}
               </ul>

@@ -3,13 +3,14 @@ import { forwardRef, useEffect, useRef, type ReactNode } from 'react';
 import scrollReveal from '@/utils/scrollReveal';
 
 interface SectionProps {
-  name: string | undefined;
+  name?: string;
+  heading: string;
   children: ReactNode;
   className?: string;
 }
 
 const SectionLayout = forwardRef<HTMLElement, SectionProps>(
-  ({ name, children, className }, ref) => {
+  ({ name, heading, children, className }, ref) => {
     const headingRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
@@ -28,7 +29,7 @@ const SectionLayout = forwardRef<HTMLElement, SectionProps>(
         ref={ref}
       >
         <h2 className='heading-lg text-center mb-6' ref={headingRef}>
-          {name}.
+          {heading}.
         </h2>
         <div className='my-2 md:my-10'>{children}</div>
       </section>

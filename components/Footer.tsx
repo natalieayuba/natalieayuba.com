@@ -12,9 +12,7 @@ const Footer = () => {
       }}
     >
       <Socials />
-      <p className='text-sm text-bl text-black-alpha-60 dark:text-white-alpha-60'>
-        Designed and Developed by Natalie Ayuba
-      </p>
+      <p className='secondary-text'>Designed and Developed by Natalie Ayuba</p>
     </footer>
   );
 };

@@ -34,7 +34,11 @@
   }
 
   .heading-md {
-    @apply heading text-3xl;
+    @apply heading text-2xl;
+  }
+
+  .secondary-text {
+    @apply text-black-alpha-50 dark:text-white-alpha-50 text-sm;
   }
 
   .button {

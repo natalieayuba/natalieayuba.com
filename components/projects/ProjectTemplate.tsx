@@ -4,9 +4,7 @@ import React from 'react';
 import PageLayout from '../PageLayout';
 import ExternalLinks from './ExternalLinks';
 import type { ProjectProps } from '@/app/[projectName]/config';
-import Image from 'next/image';
-import { navLinks } from '@/config';
-import { InlineLink } from '../Links';
+import HeaderImage from './HeaderImage';
 
 const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
   const section = (
@@ -47,49 +45,14 @@ const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
     },
   ];
 
-  const breadcrumbs = (
-    <div className='mb-12'>
-      {[
-        navLinks.find(({ name }) => name === 'Home') as {
-          name: string;
-          url: string;
-        },
-        navLinks.find(({ name }) => name === 'Projects') as {
-          name: string;
-          url: string;
-        },
-      ].map(({ name, url }) => (
-        <span key={name} className={`after:content-['>'] after:mx-2`}>
-          <InlineLink href={url}>{name}</InlineLink>
-        </span>
-      ))}
-      <span>{project.name}</span>
-    </div>
-  );
-
   return (
     <PageLayout
       activeLink='Projects'
       className='animate-glide duration-700 ease-out'
     >
-      <header className='flex flex-col items-center mt-10 md:mt-20'>
-        {breadcrumbs}
-        <h1 className='heading-lg'>{project.name}</h1>
-        <div className='w-full my-10 md:mt-20 md:mb-32 flex gap-[6%] justify-center'>
-          {project.headerImage.map((image) => (
-            <Image
-              key={image}
-              src={image}
-              alt={`${project.name} header image`}
-              width='0'
-              height='0'
-              sizes='100vw'
-              className={`h-auto rounded-2xl ${
-                project.headerImage.length > 1 ? 'w-1/4' : 'w-full max-w-3xl'
-              }`}
-            />
-          ))}
-        </div>
+      <header className='mt-4 md:mt-20'>
+        <h1 className='heading-lg text-center'>{project.name}</h1>
+        <HeaderImage project={project} className='my-10' />
       </header>
       <div className='mx-auto max-w-4xl mb-24'>
         <div className='flex flex-wrap md:flex-row-reverse gap-12'>
@@ -99,7 +62,7 @@ const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
                 ({ heading, data }) =>
                   data && (
                     <li key={heading} className='mb-3'>
-                      <span className='font-bold text-sm block'>{heading}</span>
+                      <span className='secondary-text block'>{heading}</span>
                       <span>{data}</span>
                     </li>
                   )

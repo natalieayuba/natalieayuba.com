@@ -6,6 +6,7 @@ import SectionLayout from './SectionLayout';
 import projects from '@/app/[projectName]/config';
 import ExternalLinks from '../projects/ExternalLinks';
 import scrollReveal from '@/utils/scrollReveal';
+import HeaderImage from '../projects/HeaderImage';
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -19,7 +20,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
   });
 
   const list = (list: string[]) => (
-    <ul className='text-sm text-black-alpha-60 dark:text-white-alpha-60'>
+    <ul className='secondary-text'>
       {list.map((item) => (
         <li
           key={item}
@@ -32,7 +33,11 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
   );
 
   return (
-    <SectionLayout name={Projects.displayName} ref={ref}>
+    <SectionLayout
+      name={Projects.displayName}
+      heading="Things I've made"
+      ref={ref}
+    >
       <div
         className='mx-auto [&>*:nth-child(even)]:flex-row-reverse'
         ref={projectsRef}
@@ -57,23 +62,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                 </div>
               ))}
             </div> */}
-            <div
-              className='w-full rounded-lg aspect-[16/9] drop-shadow-md flex justify-center items-center gap-2'
-              style={{
-                backgroundColor: `color-mix(in srgb, ${project.bgColor}, white 80%)`,
-              }}
-            >
-              {project.headerImage.map((image) => (
-                <Image
-                  key={image}
-                  src={image}
-                  alt=''
-                  width='0'
-                  height='0'
-                  className='h-[80%] w-auto rounded-lg shadow-image'
-                />
-              ))}
-            </div>
+            <HeaderImage project={project} />
             <div className='flex flex-col gap-2 w-full md:flex-1'>
               <h3 className='heading text-2xl md:text-3xl'>{project.name}</h3>
               {list(project.roles)}

@@ -26,6 +26,7 @@ const About = forwardRef<HTMLElement>((props, ref) => {
   return (
     <SectionLayout
       name={About.displayName}
+      heading='About me'
       ref={ref}
       className='flex justify-center'
     >

@@ -15,10 +15,10 @@ module.exports = {
     'purple-alpha-60': 'rgba(151,99,147,0.6)',
     'black-alpha-90': 'rgba(0,0,0,0.9)',
     'black-alpha-75': 'rgba(0,0,0,0.75)',
-    'black-alpha-60': 'rgba(0,0,0,0.6)',
+    'black-alpha-50': 'rgba(0,0,0,0.5)',
     'white-alpha-90': 'rgba(255,255,255,0.90)',
     'white-alpha-75': 'rgba(255,255,255,0.75)',
-    'white-alpha-60': 'rgba(255,255,255,0.6)',
+    'white-alpha-50': 'rgba(255,255,255,0.5)',
   },
   navLinks: [
     {

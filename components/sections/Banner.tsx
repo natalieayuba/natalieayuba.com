@@ -83,7 +83,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
         </span>
       </p>
       <p
-        className='md:text-xl max-w-sm md:max-w-lg animate-glide -mt-1'
+        className='md:text-xl max-w-sm md:max-w-lg animate-glide -mt-2'
         style={{
           animationDelay: `${(animationDelay += 600)}ms`,
           animationDuration: '300ms',
