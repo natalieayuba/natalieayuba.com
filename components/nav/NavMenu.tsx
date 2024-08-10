@@ -23,7 +23,7 @@ const NavMenu = () => {
         />
       </div>
       <div
-        className={`fixed bg-blue dark:bg-navy h-screen w-screen top-0 bottom-0 p-12 pt-40 right-0 transition-left duration-300 ${
+        className={`fixed bg-blue dark:bg-navy h-dvh w-screen top-0 bottom-0 p-12 right-0 transition-left duration-300 flex flex-col justify-center ${
           menuOpen ? 'left-0' : 'left-full'
         }`}
       >

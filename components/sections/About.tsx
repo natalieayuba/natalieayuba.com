@@ -59,9 +59,9 @@ const About = forwardRef<HTMLElement>((props, ref) => {
           enjoyable for humans.
         </p>
         <p>
-          When I&apos;m not coding, I&apos;m usually jamming with friends,
-          binging horror flicks, or building intricately designed mansions on
-          the Sims.
+          When I&apos;m not coding or designing, I&apos;m usually jamming with
+          friends, binging horror flicks, or building intricately designed
+          mansions on the Sims.
         </p>
         <div className='hidden md:block'>
           {angles.map(({ name, position }) => (
