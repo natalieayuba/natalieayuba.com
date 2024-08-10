@@ -14,19 +14,20 @@ const Typewriter = ({
 }: TypewriterProps) => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [delayed, setDelayed] = useState(true);
-  setTimeout(() => setDelayed(false), delay);
 
   useEffect(() => {
-    if (!delayed && currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setCurrentText((prevText) => prevText + text[currentIndex]);
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      }, speed);
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(
+        () => {
+          setCurrentText((prevText) => prevText + text[currentIndex]);
+          setCurrentIndex((prevIndex) => prevIndex + 1);
+        },
+        currentIndex === 0 ? delay : speed
+      );
 
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex, text, speed, delay, delayed]);
+  }, [currentIndex, text, speed, delay]);
 
   return (
     <span className={className}>

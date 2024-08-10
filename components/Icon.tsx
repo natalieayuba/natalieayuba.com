@@ -8,6 +8,8 @@ import {
   FiVolumeX,
   FiVolume2,
   FiRotateCw,
+  FiChevronDown,
+  FiChevronUp,
 } from 'react-icons/fi';
 import { LuPresentation } from 'react-icons/lu';
 
@@ -15,12 +17,14 @@ const Icon = ({ name }: { name: string }) => {
   const icons = {
     github: <FiGithub />,
     linkedin: <FiLinkedin />,
-    demo: <FiExternalLink />,
+    site: <FiExternalLink />,
     presentation: <LuPresentation />,
     prototype: <FiPlay />,
     mute: <FiVolumeX />,
     volume: <FiVolume2 />,
     resize: <FiRotateCw />,
+    scrollDown: <FiChevronDown />,
+    scrollUp: <FiChevronUp />,
   };
 
   return icons[name as keyof IconType];

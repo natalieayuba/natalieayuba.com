@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Icon from '../Icon';
 
 export interface ExternalLinksProps {
-  demoUrl?: string;
+  siteUrl?: string;
   presentationUrl?: string;
   codeUrl?: string;
   prototypeUrl?: string;

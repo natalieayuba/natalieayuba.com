@@ -11,8 +11,9 @@ const NavMenu = () => {
   return (
     <div className='md:hidden'>
       <div
-        className='text-purple z-10 relative -mr-2 hover:scale-110 transition-all duration-150'
+        className='text-purple z-10 relative -mr-2 hover:scale-110 transition-all duration-150 animate-pop'
         title={`${menuOpen ? 'Close' : 'Open'} menu`}
+        style={{ animationDelay: '150ms' }}
       >
         <Hamburger
           rounded
@@ -22,17 +23,17 @@ const NavMenu = () => {
         />
       </div>
       <div
-        className={`fixed bg-blue h-screen w-screen top-0 bottom-0 p-12 pt-40 right-0 transition-left duration-300 ${
+        className={`fixed bg-blue dark:bg-navy h-screen w-screen top-0 bottom-0 p-12 pt-40 right-0 transition-left duration-300 ${
           menuOpen ? 'left-0' : 'left-full'
         }`}
       >
-        <ul className={`font-semibold text-2xl flex flex-col gap-8 mb-12`}>
+        <ul className={`font-semibold text-xl flex flex-col gap-8 mb-12`}>
           {navLinks.map(({ name, url }) => (
             <li key={url}>
               <Link
                 href={name === 'Home' ? '/' : url}
                 onClick={() => setMenuOpen(false)}
-                className='transition-all duration-150 hover:text-purple'
+                className='transition-all duration-150 hover:text-purple inline-block w-full'
               >
                 {name}
               </Link>

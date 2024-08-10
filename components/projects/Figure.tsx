@@ -38,7 +38,7 @@ const Figure = ({ images, caption, type }: FigureProps) => {
           </div>
         ))}
       </div>
-      <figcaption className='text-sm text-black-alpha-60 mt-10'>
+      <figcaption className='text-sm text-black-alpha-60 dark:text-white-alpha-60 mt-10'>
         {caption}
       </figcaption>
     </figure>

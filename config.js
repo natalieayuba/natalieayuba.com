@@ -4,17 +4,21 @@ module.exports = {
     'Natalie Ayuba is a frontend developer and designer with a passion for building engaging user experiences.',
   url: 'https://natalieayuba.github.io',
   headerHeight: 80,
+  darkMode: new Date().getHours() > 19 || new Date().getHours() < 6,
   colors: {
     blue: '#cee9eb',
     purple: '#976393',
+    navy: '#19223e',
     white: '#ffffff',
     black: '#000',
-    navy: '#19223e',
+    'navy-darker': '#0c111f',
     'purple-alpha-60': 'rgba(151,99,147,0.6)',
     'black-alpha-90': 'rgba(0,0,0,0.9)',
+    'black-alpha-75': 'rgba(0,0,0,0.75)',
     'black-alpha-60': 'rgba(0,0,0,0.6)',
+    'white-alpha-90': 'rgba(255,255,255,0.90)',
+    'white-alpha-75': 'rgba(255,255,255,0.75)',
     'white-alpha-60': 'rgba(255,255,255,0.6)',
-    'white-alpha-90': 'rgba(255,255,255,0.9)',
   },
   navLinks: [
     {
@@ -45,8 +49,8 @@ module.exports = {
   ],
   projectLinks: [
     {
-      name: 'Demo',
-      title: 'View live demo',
+      name: 'Site',
+      title: 'View site',
     },
     {
       name: 'Code',

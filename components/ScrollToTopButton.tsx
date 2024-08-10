@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import Icon from './Icon';
 
 const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
@@ -13,7 +13,7 @@ const ScrollToTopButton = () => {
   };
 
   const toggleVisible = () => {
-    window.scrollY > 400 ? setVisible(true) : setVisible(false);
+    window.scrollY > 1000 ? setVisible(true) : setVisible(false);
   };
 
   useEffect(() => {
@@ -25,15 +25,10 @@ const ScrollToTopButton = () => {
       title='Scroll to top'
       onClick={scrollToTop}
       className={`${
-        visible ? 'md:opacity-100' : 'md:opacity-0'
-      } scroll-button fixed bottom-10 right-10 transition-opacity duration-150`}
+        visible ? 'md:opacity-100' : ''
+      } opacity-0 scroll-button fixed bottom-10 right-10 transition-opacity duration-150`}
     >
-      <Image
-        src='/images/scroll-up.svg'
-        alt='Scroll to top'
-        width={48}
-        height={48}
-      />
+      <Icon name='scrollUp' />
     </button>
   );
 };

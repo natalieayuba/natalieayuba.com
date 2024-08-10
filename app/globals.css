@@ -21,16 +21,20 @@
     @apply mx-6 md:mx-12;
   }
 
+  .heading {
+    @apply font-bold dark:text-white-alpha-90;
+  }
+
   .heading-xl {
-    @apply text-5xl md:text-8xl font-bold;
+    @apply heading text-5xl md:text-8xl;
   }
 
   .heading-lg {
-    @apply text-4xl md:text-6xl font-bold;
+    @apply heading text-4xl md:text-6xl;
   }
 
   .heading-md {
-    @apply text-3xl font-bold;
+    @apply heading text-3xl;
   }
 
   .button {
@@ -38,6 +42,6 @@
   }
 
   .scroll-button {
-    @apply hover:translate-y-[-2px] hover:scale-105 active:translate-y-[2px];
+    @apply text-purple rounded-full border-[3px] border-purple text-3xl md:text-4xl hover:translate-y-[-2px] hover:scale-105 active:translate-y-[2px];
   }
 }

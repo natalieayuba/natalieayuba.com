@@ -38,7 +38,7 @@ const PageLayout = ({
         <Header sectionsRef={sectionsRef} activeLink={activeLink} />
       )}
       <div
-        className={`bg-gradient-to-b from-blue dark:from-navy to-white dark:to-black flex flex-col justify-between items-center
+        className={`bg-gradient-to-b from-blue to-white dark:from-navy dark:to-navy-darker flex flex-col justify-between items-center
         }`}
         style={{
           minHeight: hideHeader ? '100dvh' : `calc(100dvh - ${headerHeight}px`,

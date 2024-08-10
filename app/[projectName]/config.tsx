@@ -15,6 +15,7 @@ export interface ProjectProps {
   links: ExternalLinksProps;
   overview: JSX.Element;
   content: { heading: string; paragraphs: JSX.Element }[];
+  bgColor: string;
 }
 
 const projects: ProjectProps[] = [
@@ -23,6 +24,7 @@ const projects: ProjectProps[] = [
     description:
       'Colourify is a tool that generates a colour palette from the cover art of your top albums on Spotify.',
     headerImage: ['/images/colourify.png'],
+    bgColor: '#BBD2A8',
     roles: [roles.frontend, roles.serverlessComputing],
     technologies: [
       technologies.react,
@@ -36,7 +38,7 @@ const projects: ProjectProps[] = [
     sector: 'Music',
     links: {
       codeUrl: 'https://github.com/natalieayuba/colourify',
-      demoUrl: 'https://mycolourify.netlify.app/',
+      siteUrl: 'https://mycolourify.netlify.app/',
     },
     overview: (
       <>
@@ -292,6 +294,7 @@ const projects: ProjectProps[] = [
       '/images/luxe/luxe-home.png',
       '/images/luxe/luxe-film-profile.png',
     ],
+    bgColor: '#D83B4E',
     roles: [roles.wireframing, roles.prototyping, roles.userResearch],
     startDate: '2023-05',
     endDate: '2023-08',
@@ -300,8 +303,66 @@ const projects: ProjectProps[] = [
       prototypeUrl:
         'https://www.figma.com/proto/FQWXUPngTpqyqzCGiRY3pK/Design-a-movie-ticketing-app-for-a-cinema-(Luxe-Cinema)?node-id=1-505&t=hMTJZxtMw4J8mZZi-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A505',
     },
-    overview: <></>,
-    content: [],
+    overview: (
+      <>
+        I decided to take the{' '}
+        <InlineLink href='https://www.coursera.org/professional-certificates/google-ux-design'>
+          Google UX Design Course
+        </InlineLink>{' '}
+        to learn more about industry-level standards and improve my design
+        skills. For my main project, I created a prototype for a conceptual
+        mobile app called Luxe that allows users to book their movie tickets
+        online and reserve seating. Using design thinking, I engaged with every
+        aspect of the UX design process from user research to prototyping.
+      </>
+    ),
+    content: [
+      {
+        heading: 'Understanding the user',
+        paragraphs: (
+          <>
+            <p>
+              The first step was to understand the user, which was an
+              interesting concept to me as coming from a software development
+              background, we tend to focus more on how a feature works rather
+              than who the user is. As preliminary research, I interviewed ten
+              representative users (frequent moviegoers) to understand their
+              main goals and pain points. I also made sure to get a sample that
+              was diverse in age, gender, and disability, to ensure inclusivity.
+              In the course, we were advised to focus on one user group for our
+              first project, so I narrowed it down to users who preferred to
+              avoid queues when booking movie tickets, which was the most common
+              goal found in the research. This user group confirmed initial
+              assumptions in regards to preferring faster options such as
+              self-checkout, but the research also revealed that there was more
+              to it than just convenience. Other pain points included:
+            </p>
+            <p>
+              I created a persona to simplify the research into one focused
+              user, making sure it was an inclusive amalgamation of the user
+              group&apos;s goals and frustrations. This persona was referred to
+              throughout the entire project to ensure the user remained the
+              focus of any design decisions made.
+            </p>
+            <p>
+              At this stage, I was still a bit confused about how what specific
+              features could solve the &apos;s problem, so I performed a
+              competitive analysis of similar ticketing apps in the market to
+              get a feel for existing solutions. I examined direct competitors
+              (movie ticketing apps such as the Odeon mobile app) and indirect
+              competitors (general ticketing/ordering apps such as Eventbrite
+              and Uber Eats) to ensure I was looking at popular apps that are
+              well-researched, and to find a common booking solution across the
+              apps.
+            </p>
+          </>
+        ),
+      },
+      {
+        heading: 'Designing the app',
+        paragraphs: <p></p>,
+      },
+    ],
   },
   {
     name: 'PAST',
@@ -317,6 +378,7 @@ const projects: ProjectProps[] = [
       technologies.javaScript,
       technologies.expo,
     ],
+    bgColor: '#259BBE',
     startDate: '2021-06',
     endDate: '2021-09',
     sector: 'Health',

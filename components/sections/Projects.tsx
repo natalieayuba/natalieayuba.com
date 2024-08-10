@@ -34,15 +34,15 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
   return (
     <SectionLayout name={Projects.displayName} ref={ref}>
       <div
-        className='my-16 mx-auto [&>*:nth-child(even)]:flex-row-reverse'
+        className='mx-auto [&>*:nth-child(even)]:flex-row-reverse'
         ref={projectsRef}
       >
         {projects.map((project) => (
           <div
             key={project.name}
-            className='flex flex-wrap gap-x-16 gap-y-8 items-center mb-24 md:mt-12 md:mb-32'
+            className='flex flex-wrap gap-x-16 gap-y-8 items-center mt-6 mb-16 md:mt-12 md:mb-32'
           >
-            <div className='flex-1 flex flex-row gap-4 md:gap-10 md:flex-none md:w-1/2 md:max-w-lg'>
+            {/* <div className='flex-1 flex flex-row gap-4 md:gap-10 md:flex-none md:w-1/2 md:max-w-lg'>
               {project.headerImage.map((image) => (
                 <div key={image} className='flex-1'>
                   <Image
@@ -56,15 +56,32 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
                   />
                 </div>
               ))}
+            </div> */}
+            <div
+              className='w-full rounded-lg aspect-[16/9] drop-shadow-md flex justify-center items-center gap-2'
+              style={{
+                backgroundColor: `color-mix(in srgb, ${project.bgColor}, white 80%)`,
+              }}
+            >
+              {project.headerImage.map((image) => (
+                <Image
+                  key={image}
+                  src={image}
+                  alt=''
+                  width='0'
+                  height='0'
+                  className='h-[80%] w-auto rounded-lg shadow-image'
+                />
+              ))}
             </div>
             <div className='flex flex-col gap-2 w-full md:flex-1'>
-              <h3 className='text-2xl md:text-3xl font-bold'>{project.name}</h3>
+              <h3 className='heading text-2xl md:text-3xl'>{project.name}</h3>
               {list(project.roles)}
               <p>{project.description}</p>
               {project.technologies && list(project.technologies)}
-              <div className='mt-4 flex gap-x-5 gap-y-3 flex-wrap'>
+              <div className='mt-4 flex gap-[15px] flex-wrap'>
                 <ButtonStyleLink href={`/${project.name.toLowerCase()}`}>
-                  Read more
+                  Read case study
                 </ButtonStyleLink>
                 <ExternalLinks links={project.links} />
               </div>
