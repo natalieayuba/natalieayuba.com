@@ -1,4 +1,4 @@
-import { colors, headerHeight } from '@/config';
+import { headerHeight } from '@/config';
 import { duration } from '@/utils/navlinkAnimation';
 import { forwardRef, useEffect, useState } from 'react';
 import Typewriter from '../Typewriter';
@@ -15,7 +15,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
   const [fontSize, setFontSize] = useState(0);
   let animationDelay = duration;
 
-  useEffect(() => (width > 768 ? setFontSize(24) : setFontSize(12)), [width]);
+  useEffect(() => (width > 768 ? setFontSize(28) : setFontSize(14)), [width]);
 
   return (
     <section
@@ -41,7 +41,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
           I&#8217;m Natalie.
         </span>
       </h1>
-      <p className='heading text-2xl md:text-5xl flex gap-[1.5%] relative'>
+      <p className='heading text-2xl leading-10 md:text-5xl flex gap-[2%] relative'>
         <span
           className='animate-fadeIn'
           style={{ animationDelay: `${(animationDelay += 900)}ms` }}
@@ -68,17 +68,15 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
           text={designerStr}
           delay={(animationDelay += 400)}
           duration={handwriterDuration}
-          color={colors.purple}
-          letterSpacing={3}
           fontSize={fontSize}
         />
         <span
           className={`animate-fadeIn absolute ${
-            fontSize === 24 ? 'right-5' : 'right-2'
+            fontSize === 24 ? 'right-5' : 'right-6'
           }`}
           style={{
-            animationDelay: `${(animationDelay += handwriterDuration + 300)}ms`,
-            animationDuration: '300ms',
+            animationDelay: `${(animationDelay += handwriterDuration + 200)}ms`,
+            animationDuration: '500ms',
           }}
         >
           .

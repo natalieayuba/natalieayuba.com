@@ -1,24 +1,19 @@
+import { colors } from '@/config';
 import React, { useEffect, useRef, useState } from 'react';
 import Vara from 'vara';
 
 interface HandWriterProps {
   text: string;
-  color?: string;
   delay?: number;
   duration?: number;
   fontSize?: number;
-  letterSpacing?: number;
-  strokeWidth?: number;
 }
 
 const Handwriter = ({
   text,
-  color = 'black',
   delay = 0,
-  duration = 1000,
-  fontSize = 24,
-  letterSpacing = 0,
-  strokeWidth = 1.5,
+  duration,
+  fontSize,
 }: HandWriterProps) => {
   const [writing, setWriting] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
@@ -34,38 +29,21 @@ const Handwriter = ({
           {
             text,
             fontSize,
-            strokeWidth,
-            color,
-            letterSpacing,
+            strokeWidth: 1.5,
+            color: colors.purple,
+            letterSpacing: 1,
             duration: count > 2 ? 0 : duration,
             delay: count > 2 ? 0 : delay,
-            y: fontSize === 24 ? 4 : 1.5,
+            y: 1,
           },
         ]
       );
     }
     setWriting(true);
     setCount((count) => count + 1);
-  }, [
-    writing,
-    text,
-    fontSize,
-    strokeWidth,
-    delay,
-    duration,
-    color,
-    letterSpacing,
-  ]);
+  }, [writing, text, fontSize, delay, duration]);
 
-  return (
-    <span
-      id='handwriter'
-      ref={ref}
-      className={`relative overflow-hidden ${
-        fontSize === 24 ? 'w-[184px]' : 'w-[110px]'
-      }`}
-    ></span>
-  );
+  return <span id='handwriter' ref={ref}></span>;
 };
 
 export default Handwriter;
