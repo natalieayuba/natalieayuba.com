@@ -9,16 +9,9 @@ module.exports = {
     blue: '#cee9eb',
     purple: '#976393',
     navy: '#19223e',
-    white: '#ffffff',
-    black: '#000',
+    white: 'white',
+    black: 'black',
     'navy-darker': '#0c111f',
-    'purple-alpha-60': 'rgba(151,99,147,0.6)',
-    'black-alpha-90': 'rgba(0,0,0,0.9)',
-    'black-alpha-75': 'rgba(0,0,0,0.75)',
-    'black-alpha-50': 'rgba(0,0,0,0.5)',
-    'white-alpha-90': 'rgba(255,255,255,0.90)',
-    'white-alpha-75': 'rgba(255,255,255,0.75)',
-    'white-alpha-50': 'rgba(255,255,255,0.5)',
   },
   navLinks: [
     {
@@ -128,12 +121,14 @@ module.exports = {
   technologies: {
     react: 'React',
     javaScript: 'JavaScript',
+    typeScript: 'TypeScript',
     express: 'Express',
     spotifyWebApi: 'Spotify Web API',
     reactNative: 'React Native',
     tailwindCSS: 'TailwindCSS',
     expo: 'Expo',
     netlify: 'Netlify',
+    next: 'Next.js',
   },
   images: {
     wings:

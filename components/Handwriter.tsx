@@ -18,6 +18,7 @@ const Handwriter = ({
   const [writing, setWriting] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
   const [count, setCount] = useState(0);
+  const isLarge = fontSize === 28;
 
   useEffect(() => {
     if (ref.current && writing) {
@@ -34,7 +35,8 @@ const Handwriter = ({
             letterSpacing: 1,
             duration: count > 2 ? 0 : duration,
             delay: count > 2 ? 0 : delay,
-            y: 1,
+            y: isLarge ? 5 : 1,
+            x: isLarge ? 5 : 0,
           },
         ]
       );

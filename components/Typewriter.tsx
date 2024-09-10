@@ -31,7 +31,9 @@ const Typewriter = ({ text, speed = 150, delay = 0 }: TypewriterProps) => {
   }, [currentIndex, text, speed, delay]);
 
   return (
-    <span className={`${ibmPlexMono.className} text-purple leading-[1.7]`}>
+    <span
+      className={`${ibmPlexMono.className} text-purple leading-[1.7] md:leading-[1.75]`}
+    >
       {currentText}
       {currentText && currentIndex < text.length && '|'}
     </span>

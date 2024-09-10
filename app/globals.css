@@ -12,7 +12,7 @@
   }
 
   body::-webkit-scrollbar-thumb {
-    @apply bg-purple-alpha-60 rounded-2xl border-4 border-solid border-white dark:border-navy hover:bg-purple;
+    @apply bg-purple bg-opacity-60 rounded-2xl border-4 border-solid border-white dark:border-navy hover:bg-purple;
   }
 }
 
@@ -22,7 +22,7 @@
   }
 
   .heading {
-    @apply font-bold dark:text-white-alpha-90;
+    @apply font-bold dark:text-white dark:text-opacity-90;
   }
 
   .heading-xl {
@@ -38,7 +38,7 @@
   }
 
   .secondary-text {
-    @apply text-black-alpha-50 dark:text-white-alpha-50 text-sm;
+    @apply text-black text-opacity-60 dark:text-white text-sm;
   }
 
   .button {

@@ -20,6 +20,80 @@ export interface ProjectProps {
 
 const projects: ProjectProps[] = [
   {
+    name: 'Headfirst Bristol',
+    description:
+      'Unsolicited redesign of Headfirst Bristol, a web app for an events ticketing company.',
+    headerImage: ['/images/headfirst2.png'],
+    bgColor: '#BB9EFF',
+    roles: [
+      roles.wireframing,
+      roles.prototyping,
+      roles.logoDesign,
+      roles.frontend,
+    ],
+    technologies: [
+      technologies.next,
+      technologies.typeScript,
+      technologies.tailwindCSS,
+    ],
+    startDate: '2024-04',
+    endDate: '2024-09',
+    sector: 'Events',
+    links: {
+      codeUrl: 'https://github.com/natalieayuba/headfirst',
+      siteUrl: 'https://redesign-headfirst.netlify.app',
+    },
+    overview: (
+      <>
+        Headfirst Bristol is a what&apos;s-on guide and ticketing organisation
+        that highlights local gigs and niche community events in Bristol. Ever
+        since moving to the city, both the Headfirst web and mobile app have
+        been my go-to to find specific community events near me. Because I use
+        the apps so often, my UX-tailored brain has developed quite a few gripes
+        with the usability and styling, so I decided to carry out an unsolicited
+        redesign to see if I could improve upon the user experience.
+        <i className='block mt-2'>
+          Disclaimer: I am not affiliated with Headfirst Bristol in any
+          capacity.
+        </i>
+      </>
+    ),
+    content: [
+      {
+        heading: 'Scope of the project',
+        paragraphs: <></>,
+      },
+      {
+        heading: 'Identifying the problem',
+        paragraphs: <></>,
+      },
+      {
+        heading: 'Heuristic evaluation',
+        paragraphs: <>subheading of identifying the problem</>,
+      },
+      {
+        heading: 'Competitive analysis',
+        paragraphs: <>subheading of identifying the problem</>,
+      },
+      {
+        heading: 'Defining goals and objectives',
+        paragraphs: <></>,
+      },
+      {
+        heading: 'Implementing the design',
+        paragraphs: <></>,
+      },
+      {
+        heading: 'Coding the app',
+        paragraphs: <></>,
+      },
+      {
+        heading: 'Conclusion',
+        paragraphs: <></>,
+      },
+    ],
+  },
+  {
     name: 'Colourify',
     description:
       'Colourify is a tool that generates a colour palette from the cover art of your top albums on Spotify.',
@@ -482,7 +556,7 @@ const projects: ProjectProps[] = [
   {
     name: 'PAST',
     description:
-      'PAST is a Graded Exercise Therapy (GET) mobile app for people with post-stroke fatigue that allows users to log their daily physical activity and resulting fatigue levels throughout the 6-step therapy programme.',
+      'PAST is a mobile app for users with post-stroke fatigue to log their daily physical activity and resulting fatigue levels throughout a physical therapy programme.',
     headerImage: [
       '/images/past/past-landing.png',
       '/images/past/past-calendar-2.png',

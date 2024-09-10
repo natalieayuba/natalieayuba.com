@@ -42,7 +42,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
             I&#8217;m Natalie.
           </span>
         </h1>
-        <p className='heading text-2xl leading-[1.75] md:text-5xl flex gap-2 relative'>
+        <p className='heading text-2xl leading-[1.75] md:leading-[1.85] md:text-5xl flex gap-2 relative'>
           <span
             className='animate-fadeIn'
             style={{ animationDelay: `${(animationDelay += 900)}ms` }}
@@ -72,7 +72,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => {
           />
           <span
             className={`animate-fadeIn absolute ${
-              fontSize === 24 ? 'right-5' : 'left-[310px]'
+              fontSize === 28 ? 'left-[590px]' : 'left-[310px]'
             }`}
             style={{
               animationDelay: `${(animationDelay +=

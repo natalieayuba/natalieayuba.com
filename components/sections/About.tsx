@@ -32,7 +32,7 @@ const About = forwardRef<HTMLElement>((props, ref) => {
     >
       <div
         ref={contentRef}
-        className='relative flex flex-col gap-4 md:px-16 text-justify'
+        className='relative flex flex-col gap-4 md:px-16 md:py-12 text-justify'
       >
         <p>
           I first gained interest in user interfaces when I ventured into the
@@ -63,19 +63,17 @@ const About = forwardRef<HTMLElement>((props, ref) => {
           friends, binging horror flicks, or building intricately designed
           mansions on the Sims.
         </p>
-        <div className='hidden md:block'>
-          {angles.map(({ name, position }) => (
-            <Image
-              key={name}
-              alt={`${name} of frame`}
-              src={`/images/${name.toLowerCase()}-angle.svg`}
-              width={0}
-              height={0}
-              sizes='100vw'
-              className={`absolute h-12 w-auto ${position}`}
-            />
-          ))}
-        </div>
+        {angles.map(({ name, position }) => (
+          <Image
+            key={name}
+            alt={`${name} of frame`}
+            src={`/images/${name.toLowerCase()}-angle.svg`}
+            width={0}
+            height={0}
+            sizes='100vw'
+            className={`absolute h-12 w-auto hidden md:block ${position}`}
+          />
+        ))}
       </div>
     </SectionLayout>
   );
