@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { socials } from '@/config';
 import Icon from '../Icon';
 
@@ -16,14 +15,16 @@ const Socials = ({ large, animationDelay = 0 }: SocialsProps) => {
           className='animate-pop'
           style={{ animationDelay: `${(animationDelay += 100)}ms` }}
         >
-          <Link
+          <a
             href={url}
             aria-label={name}
+            target='_blank'
+            rel='noreferrer noopener'
             className='block hover:scale-110'
             title={name}
           >
             <Icon name={name.toLowerCase()} />
-          </Link>
+          </a>
         </li>
       ))}
     </ul>

@@ -46,7 +46,7 @@ const PageLayout = ({
       >
         <main
           style={style}
-          className={`max-w-[1000px] margin transition-all duration-300 ${
+          className={`container transition-all duration-300 ${
             fullHeight ? 'flex-1 flex' : ''
           }${className ? ` ${className}` : ''}`}
         >

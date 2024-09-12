@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import { colors, darkMode, description, name } from '@/config';
+import { colors, description, name } from '@/config';
 import type { ReactNode } from 'react';
-import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -20,20 +19,21 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: darkMode ? colors.navy : colors.blue,
+  themeColor: colors.blue,
 };
 
-const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
-  return (
-    <html lang='en-GB' className={`scroll-smooth ${darkMode && 'dark'}`}>
-      <body
-        className={`${poppins.className} leading-relaxed bg-blue dark:bg-navy text-black-alpha-75 dark:text-white-alpha-75 selection:bg-purple-alpha-60 selection:text-black-alpha-90  dark:selection:text-white-alpha-90`}
-      >
-        {children}
-        <ScrollToTopButton />
-      </body>
-    </html>
-  );
-};
+const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => (
+  <html
+    lang='en-GB'
+    className={`scroll-smooth`}
+    style={{ cursor: 'url(images/default.png), default' }}
+  >
+    <body
+      className={`${poppins.className} leading-relaxed bg-blue text-black selection:bg-purple selection:bg-opacity-60`}
+    >
+      {children}
+    </body>
+  </html>
+);
 
 export default RootLayout;

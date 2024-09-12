@@ -55,7 +55,7 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
                 xmlns='http://www.w3.org/2000/svg'
                 width='82'
                 height='14'
-                viewBox='0 0 82 14'
+                viewBox='0 0 82 16'
                 fill='none'
                 className='absolute -bottom-3 left-1/2 -translate-x-1/2'
               >

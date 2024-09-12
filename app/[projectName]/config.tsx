@@ -22,8 +22,8 @@ const projects: ProjectProps[] = [
   {
     name: 'Headfirst Bristol',
     description:
-      'Unsolicited redesign of Headfirst Bristol, a web app for an events ticketing company.',
-    headerImage: ['/images/headfirst2.png'],
+      'Conceptual redesign of Headfirst Bristol, a web app for a Bristol-based events ticketing company.',
+    headerImage: ['/images/headfirst-fun.png'],
     bgColor: '#BB9EFF',
     roles: [
       roles.wireframing,
@@ -97,7 +97,7 @@ const projects: ProjectProps[] = [
     name: 'Colourify',
     description:
       'Colourify is a tool that generates a colour palette from the cover art of your top albums on Spotify.',
-    headerImage: ['/images/colourify.png'],
+    headerImage: ['/images/colourify-fun.png'],
     bgColor: '#BBD2A8',
     roles: [roles.frontend, roles.serverlessComputing],
     technologies: [
@@ -364,10 +364,7 @@ const projects: ProjectProps[] = [
     name: 'Luxe',
     description:
       'Luxe is a conceptual mobile app that allows users to book cinema tickets in advance.',
-    headerImage: [
-      '/images/luxe/luxe-home.png',
-      '/images/luxe/luxe-film-profile.png',
-    ],
+    headerImage: ['/images/luxe/luxe-1.png'],
     bgColor: '#D83B4E',
     roles: [roles.wireframing, roles.prototyping, roles.userResearch],
     startDate: '2023-05',
@@ -557,10 +554,7 @@ const projects: ProjectProps[] = [
     name: 'PAST',
     description:
       'PAST is a mobile app for users with post-stroke fatigue to log their daily physical activity and resulting fatigue levels throughout a physical therapy programme.',
-    headerImage: [
-      '/images/past/past-landing.png',
-      '/images/past/past-calendar-2.png',
-    ],
+    headerImage: ['/images/past/past.png'],
     roles: [roles.frontend, roles.wireframing, roles.logoDesign],
     technologies: [
       technologies.reactNative,

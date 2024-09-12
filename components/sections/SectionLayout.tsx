@@ -25,10 +25,10 @@ const SectionLayout = forwardRef<HTMLElement, SectionProps>(
         className={`flex flex-col py-12 md:py-24${
           className ? ` ${className}` : ''
         }`}
-        style={{ minHeight: `calc(100svh - ${headerHeight}px)` }}
+        style={{ paddingTop: headerHeight + 20 }}
         ref={ref}
       >
-        <h2 className='heading-lg text-center mb-6' ref={headingRef}>
+        <h2 className='text-5xl font-bold text-center mb-6' ref={headingRef}>
           {heading}.
         </h2>
         <div className='my-2 md:my-10'>{children}</div>
