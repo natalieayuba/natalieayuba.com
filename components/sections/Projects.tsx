@@ -1,12 +1,13 @@
 'use client';
 import { ButtonStyleLink } from '../Links';
-import { forwardRef, useEffect, useRef } from 'react';
-import SectionLayout from './SectionLayout';
+import { forwardRef, useEffect, useRef, type RefObject } from 'react';
 import projects from '@/app/[projectName]/config';
 import ExternalLinks from '../projects/ExternalLinks';
 import scrollReveal from '@/utils/scrollReveal';
 import HeaderImage from '../projects/HeaderImage';
 import { toUrlParam } from '@/utils/urlUtils';
+import SectionLayout from './SectionLayout';
+import SectionHeader from './SectionHeader';
 
 const Projects = forwardRef<HTMLElement>((props, ref) => {
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -33,11 +34,14 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
   );
 
   return (
-    <SectionLayout name={Projects.displayName} heading='Projects' ref={ref}>
-      <div
-        className='mx-auto [&>*:nth-child(even)]:flex-row-reverse'
-        ref={projectsRef}
-      >
+    <SectionLayout el={Projects} ref={ref}>
+      <SectionHeader
+        className='text-center mb-24'
+        heading={Projects.displayName!}
+        caption="Here lies a collection of my favourite stuff that I've worked on,
+          from solo passion projects to internship work."
+      />
+      <div className='[&>*:nth-child(even)]:flex-row-reverse'>
         {projects.map((project) => (
           <div
             key={project.name}

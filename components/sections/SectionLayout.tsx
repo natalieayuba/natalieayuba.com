@@ -1,16 +1,22 @@
 import { headerHeight } from '@/config';
-import { forwardRef, useEffect, useRef, type ReactNode } from 'react';
+import {
+  forwardRef,
+  useEffect,
+  useRef,
+  type ForwardRefExoticComponent,
+  type ReactNode,
+  type RefAttributes,
+} from 'react';
 import scrollReveal from '@/utils/scrollReveal';
 
 interface SectionProps {
-  name?: string;
-  heading: string;
+  el: ForwardRefExoticComponent<RefAttributes<HTMLElement>>;
   children: ReactNode;
   className?: string;
 }
 
 const SectionLayout = forwardRef<HTMLElement, SectionProps>(
-  ({ name, heading, children, className }, ref) => {
+  ({ el, children, className }, ref) => {
     const headingRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
@@ -21,17 +27,12 @@ const SectionLayout = forwardRef<HTMLElement, SectionProps>(
 
     return (
       <section
-        id={name?.toLowerCase()}
-        className={`flex flex-col py-12 md:py-24${
-          className ? ` ${className}` : ''
-        }`}
-        style={{ paddingTop: headerHeight + 20 }}
+        id={el.name?.toLowerCase()}
         ref={ref}
+        className={`${className ? ` ${className}` : ''}`}
+        style={{ paddingTop: headerHeight + 24 }}
       >
-        <h2 className='text-5xl font-bold text-center mb-6' ref={headingRef}>
-          {heading}.
-        </h2>
-        <div className='my-2 md:my-10'>{children}</div>
+        {children}
       </section>
     );
   }

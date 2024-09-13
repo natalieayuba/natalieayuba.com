@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import SectionLayout from './SectionLayout';
 import Image from 'next/image';
+import SectionHeader from './SectionHeader';
 
 const Playground = forwardRef<HTMLElement>((props, ref) => {
   const logos = [
@@ -31,12 +32,17 @@ const Playground = forwardRef<HTMLElement>((props, ref) => {
   ];
 
   return (
-    <SectionLayout name={Playground.displayName} heading='Playground' ref={ref}>
-      <div className='mt-12 grid grid-cols-3 gap-24'>
+    <SectionLayout el={Playground} ref={ref}>
+      <SectionHeader
+        className='text-center mb-16'
+        heading={Playground.displayName!}
+        caption="Branding and logo design I've done in my free time."
+      />
+      <div className='grid grid-cols-2 gap-12'>
         {logos.map(({ alt, src }) => (
           <div
             key={src}
-            className='relative h-40 hover:scale-[115%] transition-all duration-200'
+            className='relative min-h-20 w-auto hover:scale-[115%] transition-all duration-200'
           >
             <Image alt={alt} src={src} fill className='object-contain' />
           </div>
