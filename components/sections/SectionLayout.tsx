@@ -27,10 +27,9 @@ const SectionLayout = forwardRef<HTMLElement, SectionProps>(
 
     return (
       <section
-        id={el.name?.toLowerCase()}
+        id={el.displayName?.toLowerCase()}
         ref={ref}
-        className={`${className ? ` ${className}` : ''}`}
-        style={{ paddingTop: headerHeight + 24 }}
+        className={`pt-28 ${className ? ` ${className}` : ''}`}
       >
         {children}
       </section>
