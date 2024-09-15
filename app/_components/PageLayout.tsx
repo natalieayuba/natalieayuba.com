@@ -40,15 +40,16 @@ const PageLayout = ({
       <div
         className={`bg-gradient-to-b from-blue to-white dark:from-navy dark:to-navy-darker flex flex-col justify-between items-center
         }`}
-        style={{
-          minHeight: hideHeader ? '100dvh' : `calc(100dvh - ${headerHeight}px`,
-        }}
+        // style={{
+        //   minHeight: hideHeader ? '100dvh' : `calc(100dvh - ${headerHeight}px`,
+        // }}
       >
         <main
           style={style}
-          className={`container transition-all duration-300 ${
-            fullHeight ? 'flex-1 flex' : ''
-          }${className ? ` ${className}` : ''}`}
+          className='container'
+          // className={`container transition-all duration-300 ${
+          //   fullHeight ? 'flex-1 flex' : ''
+          // }${className ? ` ${className}` : ''}`}
         >
           {children}
         </main>
