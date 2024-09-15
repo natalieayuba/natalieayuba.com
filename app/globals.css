@@ -18,8 +18,9 @@
     @apply cursor-text;
   }
 
+  a,
   a *,
-  button * {
+  button {
     @apply cursor-pointer;
   }
 
