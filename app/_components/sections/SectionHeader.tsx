@@ -8,7 +8,7 @@ interface SectionHeaderProps {
 
 const SectionHeader = ({ heading, caption, className }: SectionHeaderProps) => (
   <header {...{ className }}>
-    <h2 className='heading-lg mb-6'>{heading}.</h2>
+    <h2 className='text-5xl font-bold mb-6'>{heading}.</h2>
     {caption && <p className='mx-auto max-w-lg'>{caption}</p>}
   </header>
 );

@@ -23,11 +23,11 @@ const NavMenu = () => {
         />
       </div>
       <div
-        className={`fixed bg-blue dark:bg-navy h-dvh w-screen top-0 bottom-0 p-12 right-0 transition-left duration-300 flex flex-col justify-center ${
+        className={`fixed bg-blue h-dvh w-screen top-0 bottom-0 p-6 right-0 pt-24 transition-left duration-300 ${
           menuOpen ? 'left-0' : 'left-full'
         }`}
       >
-        <ul className={`font-semibold text-xl flex flex-col gap-8 mb-12`}>
+        <ul className={`font-semibold text-xl flex flex-col gap-6 mb-9`}>
           {navLinks.map(({ name, url }) => (
             <li key={url}>
               <Link

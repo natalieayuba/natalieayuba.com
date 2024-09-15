@@ -32,14 +32,12 @@ const About = forwardRef<HTMLElement>((props, ref) => {
             developing in a technical void.
           </p>
           <p>
-            My development background has equipped me with the skills to make
+            My development background has equipped me with the skills to make{' '}
             <strong>functional and technically sound products</strong>, while my
             design skills allow me to create{' '}
             <strong>aesthetically pleasing and intuitive UIs</strong>. I&apos;m
             also passionate about brand design, illustration, and animation,
-            which I try to incorporate into my work where possible. I hope to
-            delight users and improve their experiences with the web, creating
-            positivity in their day to day lives.
+            which I try to incorporate into my work where possible.
           </p>
           <p>
             When I&apos;m not designing or coding, you&apos;ll find me jamming

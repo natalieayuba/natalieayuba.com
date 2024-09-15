@@ -30,7 +30,7 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
 
   return (
     <div className='hidden md:flex'>
-      <ul className={`font-semibold flex gap-10 mr-8`}>
+      <ul className={`font-semibold flex mr-8`}>
         {navLinks.map(({ url, name, underline }) => {
           return (
             <li
@@ -42,7 +42,7 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
             >
               <Link
                 href={url}
-                className={`transition-all duration-50 ${
+                className={`p-4 transition-all duration-50 z-[1] relative ${
                   active === name ? 'text-purple' : ''
                 }`}
                 onMouseOver={() => setHovered(name)}

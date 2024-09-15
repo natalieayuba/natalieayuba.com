@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
-import { colors, description, name } from '@/config';
+import { colors, description, title, url } from '@/config';
 import type { ReactNode } from 'react';
 
 const poppins = Poppins({
@@ -12,10 +12,16 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | ${name}`,
-    default: name,
+    template: `%s | ${title}`,
+    default: title,
   },
   description,
+  openGraph: {
+    title: `${title} | Frontend Developer and UI/UX Designer Portfolio`,
+    description,
+    url,
+    type: 'website',
+  },
 };
 
 export const viewport: Viewport = {
