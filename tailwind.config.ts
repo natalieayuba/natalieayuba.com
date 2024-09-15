@@ -43,6 +43,11 @@ const config: Config = {
       blinker: 'blinker 1.25s linear infinite',
       fall: 'fall ease-in infinite',
     },
+    cursor: {
+      default: 'url(/images/cursors/default.svg), default',
+      text: 'url(/images/cursors/text.svg), text',
+      pointer: 'url(/images/cursors/pointer.svg), pointer',
+    },
     extend: {
       boxShadow: {
         image: '0px 4px 8px rgba(0,0,0,0.02)',

@@ -1,6 +1,6 @@
-import { InlineLink } from '@/components/Links';
-import type { ExternalLinksProps } from '@/components/projects/ExternalLinks';
-import Figure from '@/components/projects/Figure';
+import { InlineLink } from '@/app/_components/Links';
+import type { ExternalLinksProps } from '@/app/[projectName]/_components/ExternalLinks';
+import Figure from '@/app/[projectName]/_components/Figure';
 import { roles, technologies } from '@/config';
 
 export interface ProjectProps {
@@ -23,7 +23,7 @@ const projects: ProjectProps[] = [
     name: 'Headfirst Bristol',
     description:
       'Conceptual redesign of Headfirst Bristol, a web app for a Bristol-based events ticketing company.',
-    headerImage: ['/images/headfirst-fun.png'],
+    headerImage: ['/images/projects/headfirst/headfirst-fun.png'],
     bgColor: '#BB9EFF',
     roles: [
       roles.wireframing,
@@ -97,7 +97,7 @@ const projects: ProjectProps[] = [
     name: 'Colourify',
     description:
       'Colourify is a tool that generates a colour palette from the cover art of your top albums on Spotify.',
-    headerImage: ['/images/colourify-fun.png'],
+    headerImage: ['/images/projects/colourify/colourify-fun.png'],
     bgColor: '#BBD2A8',
     roles: [roles.frontend, roles.serverlessComputing],
     technologies: [
@@ -364,7 +364,7 @@ const projects: ProjectProps[] = [
     name: 'Luxe',
     description:
       'Luxe is a conceptual mobile app that allows users to book cinema tickets in advance.',
-    headerImage: ['/images/luxe/luxe-1.png'],
+    headerImage: ['/images/projects/luxe/luxe-1.png'],
     bgColor: '#D83B4E',
     roles: [roles.wireframing, roles.prototyping, roles.userResearch],
     startDate: '2023-05',
@@ -554,7 +554,7 @@ const projects: ProjectProps[] = [
     name: 'PAST',
     description:
       'PAST is a mobile app for users with post-stroke fatigue to log their daily physical activity and resulting fatigue levels throughout a physical therapy programme.',
-    headerImage: ['/images/past/past.png'],
+    headerImage: ['/images/projects/past/past.png'],
     roles: [roles.frontend, roles.wireframing, roles.logoDesign],
     technologies: [
       technologies.reactNative,

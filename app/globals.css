@@ -3,6 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  /* * {
+    @apply cursor-default;
+  }
+  a,
+  button {
+    @apply cursor-pointer;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span {
+    @apply cursor-text;
+  } */
+
   img {
     @apply pointer-events-none;
   }

@@ -6,27 +6,27 @@ import SectionHeader from './SectionHeader';
 const Playground = forwardRef<HTMLElement>((props, ref) => {
   const logos = [
     {
-      src: 'images/stripped-sets-logo.png',
+      src: '/images/playground/stripped-sets-logo.png',
       alt: 'Stripped Sets logo',
     },
     {
-      src: 'images/wys-uea-logo.png',
+      src: '/images/playground/wys-uea-logo.png',
       alt: "What You Sayin' UEA logo",
     },
     {
-      src: 'images/past/past-logo.png',
+      src: '/images/projects/past/past-logo.png',
       alt: 'PAST app logo',
     },
     {
-      src: 'images/faux-genie-logo.png',
+      src: '/images/playground/faux-genie-logo.png',
       alt: 'Faux Genie logo',
     },
     {
-      src: 'images/nhs-logo.png',
+      src: '/images/playground/nhs-logo.png',
       alt: 'UEA Natural Hair Society logo',
     },
     {
-      src: 'images/kookie-ko-logo.png',
+      src: '/images/playground/kookie-ko-logo.png',
       alt: 'Kookie Ko logo',
     },
   ];

@@ -23,11 +23,7 @@ export const viewport: Viewport = {
 };
 
 const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => (
-  <html
-    lang='en-GB'
-    className={`scroll-smooth`}
-    style={{ cursor: 'url(images/default.png), default' }}
-  >
+  <html lang='en-GB' className='scroll-smooth'>
     <body
       className={`${poppins.className} leading-relaxed bg-blue text-black selection:bg-purple selection:bg-opacity-60`}
     >

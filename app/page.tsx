@@ -4,11 +4,11 @@ import {
   type ForwardRefExoticComponent,
   type RefAttributes,
 } from 'react';
-import Banner from '@/components/sections/Banner';
-import Projects from '@/components/sections/Projects';
-import PageLayout from '@/components/PageLayout';
-import About from '@/components/sections/About';
-import Playground from '@/components/sections/Playground';
+import Banner from './_components/sections/Banner';
+import Projects from './_components/sections/Projects';
+import PageLayout from './_components/PageLayout';
+import About from './_components/sections/About';
+import Playground from './_components/sections/Playground';
 
 const App = () => {
   const sectionsRef = useRef<HTMLElement[]>([]);

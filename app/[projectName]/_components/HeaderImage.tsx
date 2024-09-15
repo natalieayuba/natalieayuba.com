@@ -8,7 +8,7 @@ interface HeaderImageProps {
 }
 
 const HeaderImage = ({ project, className }: HeaderImageProps) => (
-  <div className={` ${className ? ` ${className}` : ''}`}>
+  <div className={`mx-auto ${className ? ` ${className}` : ''}`}>
     {project.headerImage.map((image) => (
       <Image
         key={image}

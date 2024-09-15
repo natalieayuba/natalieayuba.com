@@ -1,9 +1,9 @@
 'use client';
 import moment from 'moment';
 import React from 'react';
-import PageLayout from '../PageLayout';
+import PageLayout from '../../_components/PageLayout';
 import ExternalLinks from './ExternalLinks';
-import type { ProjectProps } from '@/app/[projectName]/config';
+import type { ProjectProps } from '@/app/[projectName]/data';
 import HeaderImage from './HeaderImage';
 
 const ProjectTemplate = ({ project }: { project: ProjectProps }) => {

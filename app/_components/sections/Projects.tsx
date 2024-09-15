@@ -1,10 +1,10 @@
 'use client';
 import { ButtonStyleLink } from '../Links';
-import { forwardRef, useEffect, useRef, type RefObject } from 'react';
-import projects from '@/app/[projectName]/config';
-import ExternalLinks from '../projects/ExternalLinks';
+import { forwardRef, useEffect, useRef } from 'react';
+import projects from '@/app/[projectName]/data';
+import ExternalLinks from '@/app/[projectName]/_components/ExternalLinks';
 import scrollReveal from '@/utils/scrollReveal';
-import HeaderImage from '../projects/HeaderImage';
+import HeaderImage from '@/app/[projectName]/_components/HeaderImage';
 import { toUrlParam } from '@/utils/urlUtils';
 import SectionLayout from './SectionLayout';
 import SectionHeader from './SectionHeader';

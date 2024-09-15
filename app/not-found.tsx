@@ -1,6 +1,6 @@
-import FullScreenLayout from '@/components/FullScreenLayout';
-import { ButtonStyleLink } from '@/components/Links';
-import PageLayout from '@/components/PageLayout';
+import FullScreenLayout from '@/app/_components/FullScreenLayout';
+import { ButtonStyleLink } from '@/app/_components/Links';
+import PageLayout from '@/app/_components/PageLayout';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

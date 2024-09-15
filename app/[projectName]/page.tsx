@@ -1,7 +1,7 @@
 import React from 'react';
-import projects from './config';
+import projects from './data';
 import { notFound } from 'next/navigation';
-import ProjectTemplate from '@/components/projects/ProjectTemplate';
+import ProjectTemplate from './_components/ProjectTemplate';
 import { toUrlParam } from '@/utils/urlUtils';
 
 const Project = ({ params }: { params: { projectName: string } }) => {

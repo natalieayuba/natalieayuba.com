@@ -1,6 +1,6 @@
 import { projectLinks } from '@/config';
 import Link from 'next/link';
-import Icon from '../Icon';
+import Icon from '../../_components/Icon';
 
 export interface ExternalLinksProps {
   siteUrl?: string;

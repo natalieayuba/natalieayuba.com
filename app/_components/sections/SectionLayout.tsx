@@ -1,4 +1,3 @@
-import { headerHeight } from '@/config';
 import {
   forwardRef,
   useEffect,

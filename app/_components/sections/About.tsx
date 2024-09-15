@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef, type RefObject } from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
 import scrollReveal from '@/utils/scrollReveal';
 import SectionLayout from './SectionLayout';
 import SectionHeader from './SectionHeader';
