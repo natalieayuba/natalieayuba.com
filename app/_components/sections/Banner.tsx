@@ -9,7 +9,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => (
     ref={ref}
   >
     <div className='flex-1'>
-      <h1 className='font-semibold text-xl pl-2 mb-3'>
+      <h1 className='font-semibold text-xl pl-1.5 mb-3'>
         Hi, I&#8217;m Natalie :)
       </h1>
       <p className='font-bold text-4xl sm:text-5xl mb-2 [&&]:leading-[120%]'>

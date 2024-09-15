@@ -38,13 +38,16 @@ const Playground = forwardRef<HTMLElement>((props, ref) => {
         heading={Playground.displayName!}
         caption="Branding and logo design I've done in my free time."
       />
-      <div className='grid grid-cols-2 gap-12'>
+      <div className='grid grid-cols-2 sm:grid-cols-3'>
         {logos.map(({ alt, src }) => (
-          <div
-            key={src}
-            className='relative min-h-20 w-auto hover:scale-[115%] transition-all duration-200'
-          >
-            <Image alt={alt} src={src} fill className='object-contain' />
+          <div key={src} className='size-full p-[15%] flex items-center'>
+            <Image
+              alt={alt}
+              src={src}
+              width={0}
+              height={0}
+              className='w-full max-w-64 h-auto'
+            />
           </div>
         ))}
       </div>

@@ -2,6 +2,7 @@ import React, { forwardRef, useEffect, useRef } from 'react';
 import scrollReveal from '@/utils/scrollReveal';
 import SectionLayout from './SectionLayout';
 import SectionHeader from './SectionHeader';
+import Image from 'next/image';
 
 const About = forwardRef<HTMLElement>((props, ref) => {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -14,7 +15,7 @@ const About = forwardRef<HTMLElement>((props, ref) => {
 
   return (
     <SectionLayout el={About} className='flex justify-center' ref={ref}>
-      <div className='flex gap-12'>
+      <div className='lg:flex gap-12'>
         <div className='[&_p]:mb-4 flex-1'>
           <SectionHeader heading='A little about me' />
           <p>
@@ -44,6 +45,15 @@ const About = forwardRef<HTMLElement>((props, ref) => {
             with friends, binging horror flicks, or building intricately
             designed mansions in the Sims.
           </p>
+        </div>
+        <div className='lg:aspect-[1888.8/2,453.54] lg:w-[40%] relative'>
+          <Image
+            src='/images/decals/self-portrait.svg'
+            alt='A self portrait'
+            width={0}
+            height={0}
+            className='w-full h-auto max-w-md mx-auto lg:absolute -right-12'
+          />
         </div>
       </div>
     </SectionLayout>
