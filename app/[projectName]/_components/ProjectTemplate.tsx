@@ -3,7 +3,7 @@ import moment from 'moment';
 import React from 'react';
 import PageLayout from '../../_components/PageLayout';
 import ExternalLinks from './ExternalLinks';
-import type { ProjectProps } from '@/app/[projectName]/data';
+import type { ProjectProps } from '@/app/[projectName]/projects';
 import HeaderImage from './HeaderImage';
 
 const ProjectTemplate = ({ project }: { project: ProjectProps }) => {

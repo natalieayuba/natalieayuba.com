@@ -1,5 +1,5 @@
 import React from 'react';
-import projects from './data';
+import projects from './projects';
 import { notFound } from 'next/navigation';
 import ProjectTemplate from './_components/ProjectTemplate';
 import { toUrlParam } from '@/utils/urlUtils';

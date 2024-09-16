@@ -1,7 +1,7 @@
 'use client';
 import { ButtonStyleLink } from '../Links';
 import { forwardRef, useEffect, useRef } from 'react';
-import projects from '@/app/[projectName]/data';
+import projects from '@/app/[projectName]/projects';
 import ExternalLinks from '@/app/[projectName]/_components/ExternalLinks';
 import scrollReveal from '@/utils/scrollReveal';
 import HeaderImage from '@/app/[projectName]/_components/HeaderImage';

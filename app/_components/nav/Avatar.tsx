@@ -1,55 +1,57 @@
 'use client';
-import { avatarFrames } from '@/config';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Avatar = () => {
-  const [hovered, setHovered] = useState(false);
-  const [animate, setAnimate] = useState(false);
-  const [src, setSrc] = useState(avatarFrames[0].src);
+  const avatarFrames = [
+    { src: '/images/robo-nat/robo-nat-eyes-open.svg', interval: 80 },
+    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 30 },
+    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 30 },
+    { src: '/images/robo-nat/robo-nat-eyes-closed.svg', interval: 60 },
+    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 30 },
+    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 30 },
+    { src: '/images/robo-nat/robo-nat-eyes-open.svg', interval: 250 },
+    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 20 },
+    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 20 },
+    { src: '/images/robo-nat/robo-nat-eyes-closed.svg', interval: 40 },
+    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 20 },
+    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 20 },
+    { src: '/images/robo-nat/robo-nat-eyes-open.svg', interval: 150 },
+  ];
+  const [animating, setAnimating] = useState(false);
+  const [frameIndex, setFrameIndex] = useState(0);
   const [pokeCount, setPokeCount] = useState(0);
   const [poke, setPoke] = useState(false);
 
   const delay = (ms: number) =>
     new Promise((resolve) => setTimeout(resolve, ms));
 
-  useEffect(() => {
-    if (hovered) {
-      const animate = async () => {
-        setAnimate(true);
-
-        if (pokeCount === 3) {
-          setPoke(true);
-          setTimeout(() => setPoke(false), 3000);
-          setPokeCount(0);
-        } else {
-          setPokeCount((p) => p + 1);
-        }
-
-        if (pokeCount === 0) {
-          setTimeout(() => setPokeCount(0), 5000);
-        }
-
-        for (const frame of avatarFrames) {
-          setSrc(frame.src);
-          await delay(frame.interval);
-        }
-
-        setAnimate(false);
-      };
-
-      animate();
+  const animate = async () => {
+    setAnimating(true);
+    if (pokeCount === 3) {
+      setPoke(true);
+      setTimeout(() => setPoke(false), 3000);
+      setPokeCount(0);
+    } else {
+      setPokeCount((p) => p + 1);
     }
-  }, [hovered]);
+    if (pokeCount === 0) {
+      setTimeout(() => setPokeCount(0), 5000);
+    }
+    for (let i = 0; i < avatarFrames.length; i++) {
+      setFrameIndex(i);
+      await delay(avatarFrames[i].interval);
+    }
+    setAnimating(false);
+  };
 
   return (
     <Link
       href='/'
       onMouseOver={() => {
-        if (!animate) setHovered(true);
+        if (!animating) animate();
       }}
-      onMouseOut={() => setHovered(false)}
       className='relative animate-pop'
     >
       <div
@@ -60,7 +62,7 @@ const Avatar = () => {
         <Image src='/images/robo-nat/ouch.svg' alt='ouch!' fill />
       </div>
       <Image
-        src={src}
+        src={avatarFrames[frameIndex].src}
         alt='Robo-Nat logo'
         width={0}
         height={0}

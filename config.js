@@ -40,21 +40,6 @@ module.exports = {
       title: 'View prototype',
     },
   ],
-  avatarFrames: [
-    { src: '/images/robo-nat/robo-nat-eyes-open.svg', interval: 80 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 30 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 30 },
-    { src: '/images/robo-nat/robo-nat-eyes-closed.svg', interval: 60 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 30 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 30 },
-    { src: '/images/robo-nat/robo-nat-eyes-open.svg', interval: 250 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 20 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 20 },
-    { src: '/images/robo-nat/robo-nat-eyes-closed.svg', interval: 40 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 20 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 20 },
-    { src: '/images/robo-nat/robo-nat-eyes-open.svg', interval: 150 },
-  ],
   underlines: {
     straight:
       'M6.74023 5.47959C11.8102 5.17959 16.8302 6.01959 21.9002 6.36959C27.7502 6.76959 34.3102 7.02959 39.4602 7.36959C50.7202 8.10959 61.9902 8.89959 73.2602 8.46959',

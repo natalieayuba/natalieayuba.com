@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import type { ProjectProps } from '@/app/[projectName]/config';
+import type { ProjectProps } from '@/app/[projectName]/projects';
 
 interface HeaderImageProps {
   project: ProjectProps;
@@ -16,7 +16,7 @@ const HeaderImage = ({ project, className }: HeaderImageProps) => (
         alt={`${project.name} header image`}
         width={0}
         height={0}
-        className='w-full h-auto max-w-lg'
+        className='w-full h-auto max-w-lg max-h-[450px]'
       />
     ))}
   </div>
