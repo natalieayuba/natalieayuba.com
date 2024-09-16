@@ -28,14 +28,14 @@ const NavMenu = () => {
         }`}
       >
         <ul className={`font-semibold text-xl flex flex-col gap-6 mb-9`}>
-          {navLinks.map(({ name, url }) => (
-            <li key={url}>
+          {navLinks.map((navLink) => (
+            <li key={navLink}>
               <Link
-                href={name === 'Home' ? '/' : url}
+                href={`/#${navLink.toLowerCase()}`}
                 onClick={() => setMenuOpen(false)}
                 className='transition-all duration-150 hover:text-purple inline-block w-full'
               >
-                {name}
+                {navLink}
               </Link>
             </li>
           ))}

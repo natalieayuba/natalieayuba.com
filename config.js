@@ -11,28 +11,7 @@ module.exports = {
     white: 'white',
     black: '#121212',
   },
-  navLinks: [
-    {
-      name: 'Home',
-      url: '/#home',
-      underline: 'straight',
-    },
-    {
-      name: 'About',
-      url: '/#about',
-      underline: 'lessStraight',
-    },
-    {
-      name: 'Projects',
-      url: '/#projects',
-      underline: 'wonky',
-    },
-    {
-      name: 'Playground',
-      url: '/#playground',
-      underline: 'veryWonky',
-    },
-  ],
+  navLinks: ['Home', 'About', 'Projects', 'Playground'],
   socials: [
     {
       name: 'Github',
@@ -75,32 +54,6 @@ module.exports = {
     { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 20 },
     { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 20 },
     { src: '/images/robo-nat/robo-nat-eyes-open.svg', interval: 150 },
-  ],
-  logos: [
-    {
-      name: 'Stripped Sets',
-      src: '/images/stripped-sets-logo.png',
-    },
-    {
-      name: "What You Sayin' UEA",
-      src: '/images/wys-uea-logo.png',
-    },
-    {
-      name: 'Faux Genie',
-      src: '/images/faux-genie-logo.png',
-    },
-    {
-      name: 'PAST',
-      src: '/images/past/past-logo.png',
-    },
-    {
-      name: 'Natural Hair Society',
-      src: '/images/nhs-logo.png',
-    },
-    {
-      name: 'Kookie Ko',
-      src: '/images/kookie-ko-logo.png',
-    },
   ],
   underlines: {
     straight:
