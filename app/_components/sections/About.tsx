@@ -15,7 +15,7 @@ const About = forwardRef<HTMLElement>((props, ref) => {
 
   return (
     <SectionLayout el={About} className='flex justify-center' ref={ref}>
-      <div className='lg:flex gap-12'>
+      <div className='lg:flex gap-7'>
         <div className='[&_p]:mb-4 flex-1'>
           <SectionHeader heading='A little about me' />
           <p>
@@ -52,7 +52,7 @@ const About = forwardRef<HTMLElement>((props, ref) => {
             alt='A self portrait'
             width={0}
             height={0}
-            className='w-full h-auto max-w-md mx-auto lg:absolute -right-12'
+            className='w-full h-auto max-w-md mx-auto lg:absolute -right-14'
           />
         </div>
       </div>
