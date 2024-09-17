@@ -19,7 +19,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => (
       <h1 className='font-semibold text-xl pl-1.5 mb-3'>
         Hi, I&#8217;m Natalie :)
       </h1>
-      <p className='font-bold text-4xl sm:text-5xl mb-2 [&&]:leading-[120%]'>
+      <p className='heading-lg'>
         A Frontend Developer <br /> & UI/UX Designer.
       </p>
       <p className='text-2xl max-w-md mt-3 leading-snug'>
@@ -28,7 +28,7 @@ const Banner = forwardRef<HTMLElement>((props, ref) => (
     </div>
     <div className='md:flex-1 md:max-w-md px-6 md:px-0 relative'>
       <Image
-        src='/images/projects/headfirst/headfirst-preview.png'
+        src='/images/projects/headfirst/headfirst-preview-image.png'
         alt='Headirst Bristol sneak peak mockup'
         width={0}
         height={0}

@@ -49,7 +49,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
           >
             <PreviewImage project={project} />
             <div className='flex flex-col gap-2 w-full md:flex-1'>
-              <h3 className='heading text-2xl md:text-3xl'>{project.name}</h3>
+              <h3 className='heading-sm'>{project.name}</h3>
               {list(project.role)}
               <p>{project.description}</p>
               {project.technologies && list(project.technologies)}

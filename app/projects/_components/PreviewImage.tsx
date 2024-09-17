@@ -8,12 +8,12 @@ interface PreviewImageProps {
 }
 
 const PreviewImage = ({ project, className }: PreviewImageProps) => {
-  const path = `/images/projects/${project.name.toLowerCase()}`;
+  const src = `/images/projects/${project.name}/${project.name}-preview-image.png`;
   return (
     <div className={`mx-auto relative ${className ? ` ${className}` : ''}`}>
       <Image
         key={project.name}
-        src={`${path}/${project.previewImage}`}
+        src={src}
         alt={`${project.name} preview image`}
         width={0}
         height={0}
