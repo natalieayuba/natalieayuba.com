@@ -25,20 +25,21 @@ const About = forwardRef<HTMLElement>((props, ref) => {
           <p>
             I&apos;ve gained 2+ years professional experience as a{' '}
             <strong>mobile app and full-stack developer</strong>, both with a{' '}
-            <strong>frontend focus</strong>. In these roles, I{' '}
+            <strong>frontend focus</strong>. In these roles I{' '}
             <strong>advocated for usability and accessibility</strong> and{' '}
-            <strong>lead design</strong>
-            sprints with the goal of{' '}
+            <strong>lead design</strong> sprints with the goal of{' '}
             <strong>creating user-friendly products</strong> rather than just
             developing in a technical void.
           </p>
           <p>
-            My development background has equipped me with the skills to make{' '}
-            <strong>functional and technically sound products</strong>, while my
-            design skills allow me to create{' '}
-            <strong>aesthetically pleasing and intuitive UIs</strong>. I&apos;m
-            also passionate about brand design, illustration, and animation,
-            which I try to incorporate into my work where possible.
+            I love to use both my development background and design skills to
+            craft{' '}
+            <strong>
+              technically sound but also aesthetically pleasing products
+            </strong>
+            , creating an easy and enjoyable experience for users. I&apos;m also
+            passionate about brand design, illustration, and animation, which I
+            try to incorporate into my work where possible.
           </p>
           <p>
             When I&apos;m not designing or coding, you&apos;ll find me jamming

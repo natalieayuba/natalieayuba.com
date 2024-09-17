@@ -1,6 +1,4 @@
-import { projectLinks } from '@/config';
-import Link from 'next/link';
-import Icon from '../../_components/Icon';
+import Icon from '@/app/_components/Icon';
 
 export interface ExternalLinksProps {
   siteUrl?: string;
@@ -10,13 +8,34 @@ export interface ExternalLinksProps {
 }
 
 const ExternalLinks = ({ links }: { links: ExternalLinksProps }) => {
-  return projectLinks.map((link: any) => {
+  const externalLinks = [
+    {
+      name: 'Site',
+      title: 'View live site',
+    },
+    {
+      name: 'Code',
+      title: 'View source code',
+    },
+    {
+      name: 'Presentation',
+      title: 'View presentation',
+    },
+    {
+      name: 'Prototype',
+      title: 'View prototype',
+    },
+  ];
+
+  return externalLinks.map((link: any) => {
     const key = `${link.name.toLowerCase()}Url`;
     link.href = links[key as keyof ExternalLinksProps];
 
     return (
       link.href != undefined && (
-        <Link
+        <a
+          target='_blank'
+          rel='noreferrer noopener'
           key={link.name}
           href={link.href}
           className='text-purple font-medium flex gap-2 items-center w-fit transition-all duration-150 hover:brightness-[80%]'
@@ -28,7 +47,7 @@ const ExternalLinks = ({ links }: { links: ExternalLinksProps }) => {
             />
           </span>
           {link.name}
-        </Link>
+        </a>
       )
     );
   });

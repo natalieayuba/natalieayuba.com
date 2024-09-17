@@ -3,8 +3,9 @@ import moment from 'moment';
 import React from 'react';
 import PageLayout from '../../_components/PageLayout';
 import ExternalLinks from './ExternalLinks';
-import type { ProjectProps } from '@/app/[projectName]/projects';
+import Breadcrumbs from './Breadcrumbs';
 import HeaderImage from './HeaderImage';
+import type { ProjectProps } from '../projects';
 
 const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
   const section = (
@@ -33,14 +34,13 @@ const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
   };
 
   const summary = [
-    { heading: 'Sector', data: project.sector },
-    { heading: 'Roles', data: project.roles.join(', ') },
+    { heading: 'Role', data: project.role.join(', ') },
     {
-      heading: 'Technologies',
+      heading: 'Tech stack',
       data: project.technologies ? project.technologies.join(', ') : '',
     },
     {
-      heading: 'Project duration',
+      heading: 'Duration',
       data: duration(project.startDate, project.endDate),
     },
   ];
@@ -51,8 +51,11 @@ const ProjectTemplate = ({ project }: { project: ProjectProps }) => {
       className='animate-glide ease-out'
       style={{ animationDuration: '300ms' }}
     >
-      <header className='mt-4 md:mt-20'>
-        <h1 className='heading-lg text-center'>{project.name}</h1>
+      <header className='pt-28'>
+        <Breadcrumbs />
+        <h1 className='heading-lg text-center mt-6 leading-tight'>
+          {project.tagline}
+        </h1>
         <HeaderImage project={project} className='my-10' />
       </header>
       <div className='mx-auto max-w-4xl mb-24'>

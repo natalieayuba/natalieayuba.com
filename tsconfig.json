@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "config.js",
+    "config.ts",
     "hooks/useScrollReveal.tss"
   ],
   "exclude": ["node_modules"]

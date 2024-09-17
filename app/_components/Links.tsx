@@ -7,21 +7,17 @@ interface LinkProps {
   className?: string;
 }
 
-export const ButtonStyleLink = ({ children, href, className }: LinkProps) => {
-  return (
-    <Link href={href} className={`button ${className}`}>
-      {children}
-    </Link>
-  );
-};
+export const ButtonStyleLink = ({ children, href, className }: LinkProps) => (
+  <Link href={href} className={`button ${className}`}>
+    {children}
+  </Link>
+);
 
-export const InlineLink = ({ children, href }: LinkProps) => {
-  return (
-    <Link
-      href={href}
-      className='text-purple font-medium w-fit transition-all duration-150 hover:brightness-[80%]'
-    >
-      {children}
-    </Link>
-  );
-};
+export const InlineLink = ({ children, href }: LinkProps) => (
+  <Link
+    href={href}
+    className='text-purple font-medium w-fit transition-all duration-150 hover:brightness-[80%]'
+  >
+    {children}
+  </Link>
+);

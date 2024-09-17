@@ -1,22 +1,45 @@
 import { InlineLink } from '@/app/_components/Links';
-import type { ExternalLinksProps } from '@/app/[projectName]/_components/ExternalLinks';
-import Figure from '@/app/[projectName]/_components/Figure';
-import { roles, technologies } from '@/config';
+import Figure from './_components/Figure';
+import type { ExternalLinksProps } from './_components/ExternalLinks';
 
 export interface ProjectProps {
   name: string;
   description: string;
-  headerImage: string[];
-  roles: string[];
+  tagline: string;
+  previewImage: string;
+  headerImage?: string;
+  role: string[];
   technologies?: string[];
   startDate: string;
   endDate: string;
-  sector?: string;
   links: ExternalLinksProps;
   overview: JSX.Element;
   content: { heading: string; paragraphs: JSX.Element }[];
   bgColor: string;
 }
+
+const roles = {
+  frontend: 'Frontend Development',
+  backend: 'Backend Development',
+  logoDesign: 'Logo Design',
+  wireframing: 'Wireframing',
+  prototyping: 'Prototyping',
+  userResearch: 'User Research',
+  serverlessComputing: 'Serverless Computing',
+};
+
+const technologies = {
+  react: 'React',
+  javaScript: 'JavaScript',
+  typeScript: 'TypeScript',
+  express: 'Express',
+  spotifyWebApi: 'Spotify Web API',
+  reactNative: 'React Native',
+  tailwindCSS: 'TailwindCSS',
+  expo: 'Expo',
+  netlify: 'Netlify',
+  next: 'Next.js',
+};
 
 const projects: ProjectProps[] = [
   // {
@@ -25,7 +48,7 @@ const projects: ProjectProps[] = [
   //     'Conceptual redesign of Headfirst Bristol, a web app for a Bristol-based events ticketing company.',
   //   headerImage: ['/images/projects/headfirst/headfirst-fun.png'],
   //   bgColor: '#BB9EFF',
-  //   roles: [
+  //   role: [
   //     roles.wireframing,
   //     roles.prototyping,
   //     roles.logoDesign,
@@ -38,7 +61,6 @@ const projects: ProjectProps[] = [
   //   ],
   //   startDate: '2024-04',
   //   endDate: '2024-09',
-  //   sector: 'Events',
   //   links: {
   //     codeUrl: 'https://github.com/natalieayuba/headfirst',
   //     siteUrl: 'https://redesign-headfirst.netlify.app',
@@ -97,9 +119,11 @@ const projects: ProjectProps[] = [
     name: 'Colourify',
     description:
       'Colourify is a tool that generates a colour palette from the cover art of your top albums on Spotify.',
-    headerImage: ['/images/projects/colourify/colourify-fun.png'],
+    tagline: 'Discover the aesthetic of your music taste with Colourify',
+    previewImage: 'colourify-fun.png',
+    headerImage: 'colourify-fun.png',
     bgColor: '#BBD2A8',
-    roles: [roles.frontend, roles.serverlessComputing],
+    role: [roles.frontend, roles.serverlessComputing],
     technologies: [
       technologies.react,
       technologies.netlify,
@@ -109,7 +133,6 @@ const projects: ProjectProps[] = [
     ],
     startDate: '2024-01',
     endDate: '2024-05',
-    sector: 'Music',
     links: {
       codeUrl: 'https://github.com/natalieayuba/colourify',
       siteUrl: 'https://mycolourify.netlify.app/',
@@ -364,12 +387,13 @@ const projects: ProjectProps[] = [
     name: 'Luxe',
     description:
       'Luxe is a conceptual mobile app that allows users to book cinema tickets in advance.',
-    headerImage: ['/images/projects/luxe/luxe.png'],
+    previewImage: 'luxe2.png',
+    tagline:
+      'Waste no time waiting in queues, and book your tickets online with Luxe',
     bgColor: '#D83B4E',
-    roles: [roles.wireframing, roles.prototyping, roles.userResearch],
+    role: [roles.wireframing, roles.prototyping, roles.userResearch],
     startDate: '2023-05',
     endDate: '2023-08',
-    sector: 'Cinema',
     links: {
       prototypeUrl:
         'https://www.figma.com/proto/FQWXUPngTpqyqzCGiRY3pK/Design-a-movie-ticketing-app-for-a-cinema-(Luxe-Cinema)?node-id=1-505&t=hMTJZxtMw4J8mZZi-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A505',
@@ -554,8 +578,9 @@ const projects: ProjectProps[] = [
     name: 'PAST',
     description:
       'PAST is a mobile app for users with post-stroke fatigue to log their daily physical activity and resulting fatigue levels throughout a physical therapy programme.',
-    headerImage: ['/images/projects/past/past-nother.png'],
-    roles: [roles.frontend, roles.wireframing, roles.logoDesign],
+    previewImage: 'past2.png',
+    tagline: 'Gamify your ... and ....',
+    role: [roles.frontend, roles.wireframing, roles.logoDesign],
     technologies: [
       technologies.reactNative,
       technologies.javaScript,
@@ -564,7 +589,6 @@ const projects: ProjectProps[] = [
     bgColor: '#259BBE',
     startDate: '2021-06',
     endDate: '2021-09',
-    sector: 'Health',
     links: {
       presentationUrl:
         'https://docs.google.com/presentation/d/1hIhJQrXa5Qd5Lhggceuda70YpJB00HhdpQeEzL4tc2w/edit#slide=id.p',

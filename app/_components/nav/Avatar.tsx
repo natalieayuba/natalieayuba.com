@@ -52,15 +52,18 @@ const Avatar = () => {
       onMouseOver={() => {
         if (!animating) animate();
       }}
-      className='relative animate-pop'
+      className=' animate-pop'
     >
-      <div
-        className={`absolute cursor-default top-2  w-16 h-10 transition-all duration-200 ${
-          poke ? 'scale-1 -right-16' : 'scale-0 -right-0'
+      <Image
+        src='/images/robo-nat/ouch.svg'
+        alt='ouch!'
+        width={0}
+        height={0}
+        sizes='100vw'
+        className={`absolute cursor-default h-11 w-auto top-6 transition-all duration-200 ${
+          poke ? 'scale-1 left-[86px]' : 'scale-0 left-5'
         }`}
-      >
-        <Image src='/images/robo-nat/ouch.svg' alt='ouch!' fill />
-      </div>
+      />
       <Image
         src={avatarFrames[frameIndex].src}
         alt='Robo-Nat logo'

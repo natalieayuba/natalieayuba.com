@@ -8,13 +8,13 @@ const Banner = forwardRef<HTMLElement>((props, ref) => (
     className='pt-24 md:h-[700px] gap-y-16 flex items-center relative flex-wrap'
     ref={ref}
   >
-    <Image
+    {/* <Image
       src='/images/decals/banner-line.svg'
       alt='Curve'
       width={0}
       height={0}
       className='w-full max-w-2xl h-auto absolute top-80 left-48'
-    />
+    /> */}
     <div className='flex-1'>
       <h1 className='font-semibold text-xl pl-1.5 mb-3'>
         Hi, I&#8217;m Natalie :)

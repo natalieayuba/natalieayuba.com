@@ -27,13 +27,13 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
   let animationDelay = 0;
 
   useEffect(() => {
-    if (sectionsRef && sectionsRef.current) {
+    if (activeLink === 'Home' && sectionsRef && sectionsRef.current) {
       const handleScroll = () => {
         if (!scrollByClick) {
           sectionsRef.current.forEach((section, index) => {
             if (
-              section.getBoundingClientRect().top <
-              window.innerHeight / 2 - 75
+              section &&
+              section.getBoundingClientRect().top < window.innerHeight / 2 - 75
             ) {
               setActive(navLinks[index]);
             }
