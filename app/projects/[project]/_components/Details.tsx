@@ -21,6 +21,10 @@ const Details = ({ project }: { project: ProjectProps }) => {
       data: project.technologies?.join(', '),
     },
     {
+      heading: 'Tools',
+      data: project.tools?.join(', '),
+    },
+    {
       heading: 'Duration',
       data: duration(project.startDate, project.endDate),
     },
@@ -28,13 +32,16 @@ const Details = ({ project }: { project: ProjectProps }) => {
   ];
 
   return (
-    <div className='mb-12 md:-mt-8 md:flex gap-20 justify-center'>
-      {details.map(({ heading, data }) => (
-        <div key={heading} className='mb-4 md:max-w-52'>
-          <p className='font-semibold mb-1'>{heading}</p>
-          <p className='flex gap-4'>{data}</p>
-        </div>
-      ))}
+    <div className='mb-12 md:-mt-8 md:flex gap-12 justify-center'>
+      {details.map(
+        ({ heading, data }) =>
+          data && (
+            <div key={heading} className='mb-4 w-40'>
+              <p className='font-semibold mb-1'>{heading}</p>
+              <p className='flex gap-4'>{data}</p>
+            </div>
+          )
+      )}
     </div>
   );
 };

@@ -17,29 +17,27 @@ const About = forwardRef<HTMLElement>((props, ref) => {
     <SectionLayout el={About} className='flex justify-center' ref={ref}>
       <div className='lg:flex gap-7'>
         <div className='[&_p]:mb-4 flex-1'>
-          <SectionHeader heading='A little about me' />
+          <SectionHeader heading='About me' />
           <p>
             I&apos;m all about designing for a more inclusive and engaging
             digital world.
           </p>
           <p>
-            I&apos;ve gained 2+ years professional experience as a{' '}
+            So far, I&apos;ve gained 2+ years professional experience as a{' '}
             <strong>mobile app and full-stack developer</strong>, both with a{' '}
             <strong>frontend focus</strong>. In these roles I{' '}
             <strong>advocated for usability and accessibility</strong> and{' '}
-            <strong>lead design</strong> sprints with the goal of{' '}
-            <strong>creating user-friendly products</strong> rather than just
-            developing in a technical void.
+            <strong>led design sprints</strong> with the goal of{' '}
+            <strong>creating products that addressed user needs</strong> rather
+            than just developing in a technical void.
           </p>
           <p>
-            I love to use both my development background and design skills to
-            craft{' '}
-            <strong>
-              technically sound but also aesthetically pleasing products
-            </strong>
-            , creating an easy and enjoyable experience for users. I&apos;m also
-            passionate about brand design, illustration, and animation, which I
-            try to incorporate into my work where possible.
+            I believe the combination of my development background and design
+            skills have given me the ability to know if certain design choices
+            are doable from a technical standpoint, and if they&apos;re
+            beneficial to the user. I&apos;m also passionate about brand design,
+            illustration, and animation, as I believe adding a bit of character
+            can bring any design to life.
           </p>
           <p>
             When I&apos;m not designing or coding, you&apos;ll find me jamming

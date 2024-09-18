@@ -8,7 +8,7 @@ const HeaderImage = ({ projectName }: { projectName: string }) => (
     alt={`${projectName} header image`}
     width={0}
     height={0}
-    className=' my-12 md:my-28 w-full h-auto rounded-2xl shadow-image'
+    className=' my-12 md:my-28 w-full h-auto'
   />
 );
 

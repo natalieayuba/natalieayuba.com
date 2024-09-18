@@ -38,8 +38,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
       <SectionHeader
         className='text-center mb-24'
         heading={Projects.displayName!}
-        caption='Here lies a selection of my favourite projects,
-          from solo passion projects to internship work.'
+        caption='Here lies a selection of solo passion projects, coursework, and internship work.'
       />
       <div className='[&>*:nth-child(even)]:flex-row-reverse'>
         {projects.map((project) => (
@@ -47,7 +46,7 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
             key={project.name}
             className='flex flex-wrap gap-x-16 gap-y-8 items-center mt-4 mb-16 md:mt-12 md:mb-32'
           >
-            <PreviewImage project={project} />
+            <PreviewImage projectName={project.name} />
             <div className='flex flex-col gap-2 w-full md:flex-1'>
               <h3 className='heading-sm'>{project.name}</h3>
               {list(project.role)}

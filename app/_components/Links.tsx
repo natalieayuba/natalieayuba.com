@@ -14,10 +14,12 @@ export const ButtonStyleLink = ({ children, href, className }: LinkProps) => (
 );
 
 export const InlineLink = ({ children, href }: LinkProps) => (
-  <Link
+  <a
+    target='_blank'
+    rel='noreferrer noopener'
     href={href}
     className='text-purple font-medium w-fit transition-all duration-150 hover:brightness-[80%]'
   >
     {children}
-  </Link>
+  </a>
 );

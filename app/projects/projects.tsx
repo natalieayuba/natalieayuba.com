@@ -1,7 +1,7 @@
 import { InlineLink } from '@/app/_components/Links';
-import Figure from './[project]/_components/Figure';
 import type { ExternalLinksProps } from './_components/ExternalLinks';
 import type { ReactNode } from 'react';
+import Figure from './[project]/_components/Figure';
 
 export interface ProjectProps {
   name: string;
@@ -9,10 +9,12 @@ export interface ProjectProps {
   heading: string;
   role: string[];
   technologies?: string[];
+  tools: string[];
   startDate: string;
   endDate: string;
   links: ExternalLinksProps;
   content: { heading: string; paragraphs: ReactNode[] }[];
+  otherProject: string;
 }
 
 export const roles = {
@@ -21,7 +23,6 @@ export const roles = {
   brandDesign: 'Brand Design',
   wireframing: 'Wireframing',
   prototyping: 'Prototyping',
-  userResearch: 'User Research',
   uxResearch: 'UX Research',
   serverlessComputing: 'Serverless Computing',
 };
@@ -36,6 +37,13 @@ export const technologies = {
   expo: 'Expo',
   netlify: 'Netlify',
   next: 'Next.js',
+};
+
+export const tools = {
+  figma: 'Figma',
+  notion: 'Notion',
+  vsCode: 'Visual Studio Code',
+  github: 'GitHub',
 };
 
 const projects: ProjectProps[] = [
@@ -125,12 +133,14 @@ const projects: ProjectProps[] = [
       technologies.spotifyWebApi,
       technologies.tailwindCSS,
     ],
+    tools: [tools.figma, tools.notion, tools.github, tools.vsCode],
     startDate: '2024-01',
     endDate: '2024-05',
     links: {
       codeUrl: 'https://github.com/natalieayuba/colourify',
       siteUrl: 'https://mycolourify.netlify.app/',
     },
+    otherProject: 'Luxe',
     content: [
       {
         heading: 'Overview',
@@ -368,393 +378,388 @@ const projects: ProjectProps[] = [
       },
     ],
   },
-  // {
-  //   name: 'Luxe',
-  //   description:
-  //     'Luxe is a conceptual mobile app that allows users to book cinema tickets in advance.',
-  //   heading:
-  //     'Waste no time waiting in queues, and book your tickets online with Luxe',
-  //   role: [roles.wireframing, roles.prototyping, roles.userResearch],
-  //   startDate: '2023-05',
-  //   endDate: '2023-08',
-  //   links: {
-  //     prototypeUrl:
-  //       'https://www.figma.com/proto/FQWXUPngTpqyqzCGiRY3pK/Design-a-movie-ticketing-app-for-a-cinema-(Luxe-Cinema)?node-id=1-505&t=hMTJZxtMw4J8mZZi-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A505',
-  //   },
-  //   overview: (
-  //     <>
-  //       I decided to take the{' '}
-  //       <InlineLink href='https://www.coursera.org/professional-certificates/google-ux-design'>
-  //         Google UX Design Course
-  //       </InlineLink>{' '}
-  //       to learn more about industry-level standards and improve my design
-  //       skills. For my main project, I created a prototype for a conceptual
-  //       mobile app called Luxe that allows users to book their movie tickets
-  //       online and reserve seating. Using design thinking, I engaged with every
-  //       aspect of the UX design process from user research to prototyping.
-  //     </>
-  //   ),
-  //   content: [
-  //     {
-  //       heading: 'Understanding the user',
-  //       paragraphs: (
-  //         <>
-  //           <p>
-  //             The first step was to understand the user, which was an
-  //             interesting concept to me as coming from a software development
-  //             background, we tend to focus more on how a feature works rather
-  //             than who the user is.{' '}
-  //           </p>
-  //           <p>
-  //             As preliminary research, I interviewed ten representative users
-  //             (frequent moviegoers) to understand their main goals and pain
-  //             points. I also made sure to get a sample that was diverse in age,
-  //             gender, and disability, to ensure inclusivity. In the course, we
-  //             were advised to focus on one user group for our first project, so
-  //             I narrowed it down to users who preferred to avoid queues when
-  //             booking movie tickets, which was the most common goal found in the
-  //             research. This user group confirmed initial assumptions in regards
-  //             to preferring faster options such as self-checkout, but the
-  //             research also revealed that there was more to it than just
-  //             convenience. Other pain points included:
-  //           </p>
-  //           <div className='flex flex-wrap gap-2'>
-  //             {[
-  //               {
-  //                 heading: 'Time',
-  //                 description: 'Time can be waisted waiting in queues',
-  //               },
-  //               {
-  //                 heading: 'Judgement',
-  //                 description:
-  //                   'Perceived judgement from others when booking tickets in person',
-  //               },
-  //               {
-  //                 heading: 'Accessibility',
-  //                 description:
-  //                   'Needing to be aware of and booking accessible seating in advance',
-  //               },
-  //             ].map(({ heading, description }) => (
-  //               <div key={heading}>
-  //                 <p className='font-semibold text-lg block'>{heading}</p>
-  //                 <p>{description}</p>
-  //               </div>
-  //             ))}
-  //           </div>
-  //           <p>
-  //             I created a persona to simplify the research into one focused
-  //             user, making sure it was an inclusive amalgamation of the user
-  //             group&apos;s goals and frustrations. This persona was referred to
-  //             throughout the entire project to ensure the user remained the
-  //             focus of any design decisions made.
-  //           </p>
-  //           <Figure
-  //             caption='1.1. User Persona'
-  //             images={[{ image: '/images/luxe/luxe-persona.png' }]}
-  //           />
-  //           <p>
-  //             At this stage, I was still a bit unsure about how what specific
-  //             features could solve the user&apos;s problem, so I performed a
-  //             competitive analysis of similar ticketing apps in the market to
-  //             get a feel for existing solutions. I examined direct competitors
-  //             (movie ticketing apps such as the Odeon mobile app) and indirect
-  //             competitors (general ticketing/ordering apps such as Eventbrite
-  //             and Uber Eats) to ensure I was looking at popular apps that are
-  //             well-researched, and to find a common booking solution across the
-  //             apps.
-  //           </p>
-  //           <Figure
-  //             caption='1.2. Competitive analysis snippet'
-  //             images={[
-  //               { image: '/images/luxe/luxe-competitive-analysis-snippet.png' },
-  //             ]}
-  //           />
-  //           <p>
-  //             Additionally, I created a user journey map to outline each step of
-  //             the booking process.
-  //           </p>
-  //           <Figure
-  //             caption='1.3. User journey map'
-  //             images={[{ image: '/images/luxe/luxe-user-journey-map.png' }]}
-  //           />
-  //         </>
-  //       ),
-  //     },
-  //     {
-  //       heading: 'Designing the app',
-  //       paragraphs: (
-  //         <>
-  //           <p>
-  //             Based on the user journey identified, I began drafting multiple
-  //             paper wireframes for each step in the user&apos;s journey to test
-  //             out different UI solutions and find which ones would best address
-  //             the user&apos;s pain points.
-  //           </p>
-  //           <Figure
-  //             caption='1.4. Paper wireframes'
-  //             images={[{ image: '/images/luxe/luxe-paper-wireframes.png' }]}
-  //           />
-  //           <p>
-  //             Once the wireframes were narrowed down to the most suitable
-  //             solutions, I gathered feedback from users on the overall layout
-  //             and structure of each screen. With the feedback, I created digital
-  //             wireframes in Figma which I then turned into a low-fidelity
-  //             prototype, displaying the primary user flow of the ticket booking
-  //             process to be tested by users in a usability study.
-  //           </p>
-  //           <Figure
-  //             caption='1.5. Lo-fi prototype'
-  //             images={[{ image: '/images/luxe/luxe-lo-fi-prototype.png' }]}
-  //           />
-  //           <p>
-  //             My favourite part of the project was adding colour, images, copy
-  //             and other visual elements to the design. I particularly enjoyed
-  //             learning about the Gestalt principles and other ways to ensure
-  //             human psychology was taken into account while designing the
-  //             prototype. I also made sure to follow accessibility standards as
-  //             well, keeping colour contrast high enough, according to W3S.
-  //           </p>
-  //           <Figure
-  //             caption='1.6. Sticker sheet'
-  //             images={[{ image: '/images/luxe/luxe-sticker-sheet.png' }]}
-  //           />
-  //           <p>
-  //             After many iterations of designing, testing, and revising, the
-  //             final prototype was complete.
-  //           </p>
-  //           <Figure
-  //             caption='1.7. Hi-fi-prototype'
-  //             images={[{ image: '/images/luxe/luxe-hi-fi-prototype.png' }]}
-  //           />
-  //           <Figure
-  //             caption='1.8. Demo'
-  //             images={[{ image: '/images/luxe/luxe-demo.gif' }]}
-  //           />
-  //         </>
-  //       ),
-  //     },
-  //     {
-  //       heading: 'Takeaway',
-  //       paragraphs: (
-  //         <>
-  //           <p>
-  //             This course was a massive learning experience as it taught me to
-  //             focus more on the user than just the potential solutions and
-  //             functionality of the app. Keeping the user at the forefront of the
-  //             design ensured that I remained empathetic rather than methodical.
-  //             I will definitely make sure to incorporate design thinking into
-  //             future projects.
-  //           </p>
-  //           <p>
-  //             As for potential improvements, I would&apos;ve loved to learn more
-  //             about interaction design in my free time and include more motion
-  //             and animation in the prototype (depending on Figma&apos;s
-  //             limitations). This definitely would&apos;ve added more character
-  //             to the designed, ensuring that the user stays engaged.
-  //           </p>
-  //         </>
-  //       ),
-  //     },
-  //   ],
-  // },
-  // {
-  //   name: 'PAST',
-  //   description:
-  //     'PAST is a mobile app for users with post-stroke fatigue to log their daily physical activity and resulting fatigue levels throughout a physical therapy programme.',
-  //   heading: 'Gamify your ... and ....',
-  //   role: [roles.frontend, roles.wireframing, roles.logoDesign],
-  //   technologies: [
-  //     technologies.reactNative,
-  //     technologies.javaScript,
-  //     technologies.expo,
-  //   ],
-  //   startDate: '2021-06',
-  //   endDate: '2021-09',
-  //   links: {
-  //     presentationUrl:
-  //       'https://docs.google.com/presentation/d/1hIhJQrXa5Qd5Lhggceuda70YpJB00HhdpQeEzL4tc2w/edit#slide=id.p',
-  //   },
-  //   overview: (
-  //     <>
-  //       During my mobile app development internship at the University of East
-  //       Anglia, my team was given a prompt to develop a mobile app prototype for
-  //       users with post-stroke fatigue looking to increase their physical
-  //       activity through Graded Exercise Therapy (GET). The app allows users to
-  //       track their progress in the 6-step therapy programme, watch recommended
-  //       exercise videos, and log their daily routine and fatigue levels.
-  //     </>
-  //   ),
-  //   content: [
-  //     {
-  //       heading: 'The prompt',
-  //       paragraphs: (
-  //         <p>
-  //           Our clients came up with the idea for the PAST mobile app for users
-  //           with post-stroke fatigue after co-authoring a{' '}
-  //           <InlineLink href='https://pre-prod.neurosymptoms.org/wp-content/uploads/2023/03/GET-guide-booklet-version-1-22062010.pdf'>
-  //             self-help guide for a 6-step Graded Exercise Therapy (GET)
-  //             programme
-  //           </InlineLink>{' '}
-  //           to gradually increase physical activity for people with chronic
-  //           fatigue syndrome. They believed users would benefit from a mobile
-  //           app to track their progress in the programme instead of their own
-  //           manual tracking methods to avoid users losing motivation due to the
-  //           amount of data that needed to be logged. A dedicated app could help
-  //           users stay on the right track and follow the programme consistently.
-  //         </p>
-  //       ),
-  //     },
-  //     {
-  //       heading: 'Project scope',
-  //       paragraphs: (
-  //         <p>
-  //           The objective of the internship was to build a working app prototype
-  //           by the end of the 12 weeks using the scrum methodology. With this
-  //           emphasis on implementation, the project was focused on development,
-  //           coding deliverables, and app demos, which we presented to our
-  //           clients at the end of each week-long sprint. Eager to incorporate UX
-  //           design into every project, I suggested that we design wireframes for
-  //           each feature which resulted in a tailored sprint that followed the
-  //           method of{' '}
-  //           <span className='font-semibold'>
-  //             review backlog → design prototypes → code feature → client
-  //             feedback
-  //           </span>
-  //           . We decided to use React Native (with JavaScript and Expo) as the
-  //           main technology for its cross-platform functionality and popularity
-  //           at the time. One of our team member&apos;s also had experience in
-  //           backend development so they became the amin person for this and
-  //           built the backend using Node.js, Express, AWS Cognito, and
-  //           PostgreSQL, while the rest of us shared the frontend
-  //           responsibilities.
-  //         </p>
-  //       ),
-  //     },
-  //     {
-  //       heading: 'Process',
-  //       paragraphs: (
-  //         <>
-  //           <p>
-  //             Our first aim was to understand our client&apos;s requirements and
-  //             how they expected users to use the app. After brainstorming
-  //             sessions and discussing user journeys, we landed on our three big
-  //             features that led the rest of the project. Users needed to be able
-  //             to: (1) follow the programme steps, (2) log their daily routine
-  //             and fatigue levels, and (3) watch recommended exercise videos.
-  //           </p>
-  //           <p>
-  //             I recommended we add a competitive analysis to the backlog because
-  //             I had used similar apps in the past and thought it&apos;d be
-  //             useful to see how our initial ideas compared to competitor
-  //             products. I became responsible for completing this task and
-  //             researched mostly indirect competitors with a similar health
-  //             tracking service as it was difficult to find tracker apps
-  //             specifically for stroke survivors. This analysis helped to confirm
-  //             some initial ideas and introduce new methods of doing things we
-  //             hadn&apos;t thought of before.
-  //           </p>
-  //           <p>
-  //             I also realised that our clients hadn&apos;t provided branding, so
-  //             we added this to the backlog and I became responsible for the logo
-  //             design. I designed a logo and app icon using the colour scheme
-  //             from the GET programme booklet. We also used these colours in the
-  //             app&apos;s theme for consistency.
-  //           </p>
-  //           <Figure
-  //             images={[
-  //               { image: '/images/past/past-logo.png', width: 'w-96' },
-  //               {
-  //                 image: '/images/past/past-icon.png',
-  //                 width: 'w-28',
-  //                 height: 'h-28',
-  //               },
-  //             ]}
-  //             caption='1.1 PAST logo and icon'
-  //           />
-  //           <p>
-  //             As a dev team, we had brainstorming sessions to generate ideas on
-  //             how to build the main three features, focusing on building direct
-  //             solutions to the user&apos;s problems.
-  //           </p>
-  //           <p>
-  //             <span className='block font-medium italic'>
-  //               How would we develop a way for users to follow the programme
-  //               steps?
-  //             </span>{' '}
-  //             Our solution was a home screen with daily tasks for the user to
-  //             complete and a progress bar to indicate their progress in that
-  //             step of the programme. Once the step has been completed, a popup
-  //             alert lets the user know when they&apos;ve progressed to the next
-  //             step.
-  //           </p>
-  //           <Figure
-  //             images={[
-  //               { image: '/images/past/past-home-1.png' },
-  //               { image: '/images/past/past-home-2.png' },
-  //             ]}
-  //             caption='1.2 Past home screen'
-  //             type='mobile'
-  //           />
-  //           <p>
-  //             <span className='block font-medium italic'>
-  //               How would we develop a way for users to log their daily routine
-  //               and fatigue levels?
-  //             </span>{' '}
-  //             We developed a calendar feature with daily logging capabilities
-  //             where users can log their routine and fatigue levels. The calendar
-  //             also has a card on the home screen prompting the use to complete
-  //             this task daily.
-  //           </p>
-  //           <Figure
-  //             images={[
-  //               { image: '/images/past/past-calendar-1.png' },
-  //               { image: '/images/past/past-calendar-2.png' },
-  //             ]}
-  //             caption='1.3 Past calendar screen'
-  //             type='mobile'
-  //           />
-  //           <p>
-  //             <span className='block font-medium italic'>
-  //               How would we show exercise videos to users?
-  //             </span>{' '}
-  //             Our solution to this was a video library of YouTube videos
-  //             supplied by our client. The user is prompted to complete these
-  //             exercises daily by a card on the home screen.
-  //           </p>
-  //           <Figure
-  //             images={[{ image: '/images/past/past-exercises.png' }]}
-  //             caption='1.4 Past exercises screen'
-  //             type='mobile'
-  //           />
-  //         </>
-  //       ),
-  //     },
-  //     {
-  //       heading: 'Main takeaways',
-  //       paragraphs: (
-  //         <>
-  //           <p>
-  //             The prototype was handed over to our clients to take forward so we
-  //             were unable to measure the success of the solution. It
-  //             would&apos;ve been nice to see the product to release and gain
-  //             feedback from end users. Did the product correctly solve user
-  //             problems? Are users more likely to follow the GET programme and
-  //             see results using the app?
-  //           </p>
-  //           <p>
-  //             In general, I also think the app would&apos;ve benefited from a
-  //             user-centred approach. Doing user research to better understand of
-  //             their goals and pain points would&apos;ve helped to avoid
-  //             potential bias from our clients and us as developers. Due to the
-  //             project&apos;s limited scope, we only had our clients to give us
-  //             stakeholder feedback which was still helpful to have feedback at
-  //             all instead of creating from solely a developer perspective.
-  //           </p>
-  //         </>
-  //       ),
-  //     },
-  //   ],
-  // },
+  {
+    name: 'Luxe',
+    description:
+      'Luxe is a conceptual mobile app that allows users to book cinema tickets in advance.',
+    heading:
+      'Waste no time waiting in queues, and book your tickets online with Luxe',
+    role: [roles.wireframing, roles.prototyping, roles.uxResearch],
+    tools: [tools.figma],
+    startDate: '2023-05',
+    endDate: '2023-08',
+    otherProject: 'PAST',
+    links: {
+      prototypeUrl:
+        'https://www.figma.com/proto/FQWXUPngTpqyqzCGiRY3pK/Design-a-movie-ticketing-app-for-a-cinema-(Luxe-Cinema)?node-id=1-505&t=hMTJZxtMw4J8mZZi-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A505',
+    },
+    content: [
+      {
+        heading: 'Overview',
+        paragraphs: [
+          <p key='1'>
+            I decided to take the{' '}
+            <InlineLink href='https://www.coursera.org/professional-certificates/google-ux-design'>
+              Google UX Design Course
+            </InlineLink>{' '}
+            to learn more about industry-level standards and improve my design
+            skills. For my main project, I created a prototype for a conceptual
+            mobile app called Luxe that allows users to book their movie tickets
+            online and reserve seating. Using design thinking, I engaged with
+            every aspect of the UX design process{' '}
+            <strong>from user research to prototyping</strong>.
+          </p>,
+        ],
+      },
+      {
+        heading: 'Understanding the user',
+        paragraphs: [
+          <p key='1'>
+            Empathising with the user was an interesting concept to me as coming
+            from a software development background we tend to
+            functionality-driven, rather than user-driven.
+          </p>,
+          <p key='2'>
+            As a first step, I <strong>interviewed five users</strong> who were
+            frequent moviegoers, making sure to get a sample that was diverse in
+            age, gender, race, and disability. In the course we were advised to
+            focus on one user group for our first project, so I narrowed it down
+            to users who preferred to avoid queues when booking movie tickets,
+            which was the most common goal I discovered from the research. This
+            user group confirmed initial assumptions in regards to preferring
+            faster options such as self-checkout, but the research also revealed
+            that there was more to it than just convenience. Other pain points
+            included:
+          </p>,
+          <div key='3' className='flex gap-5 my-4'>
+            {[
+              'Time waisted waiting in queues',
+              'Social anxiety and perceived judgement from others',
+              "Knowledge of the cinema's accessibility in advance",
+            ].map((point, index) => (
+              <div key='point' className='flex-1 flex font-bold'>
+                <span className='text-4xl mr-3'>{index + 1}</span>
+                <p className='text-lg'>{point}</p>
+              </div>
+            ))}
+          </div>,
+          <p key='4'>
+            I{' '}
+            <strong>
+              created a persona to simplify the research into one focused user
+            </strong>{' '}
+            which was referred to throughout the entire project to ensure the
+            user remained the focus of any design decisions made.
+          </p>,
+          <Figure
+            key='5'
+            caption='1.1. User Persona'
+            images={[{ image: '/images/projects/luxe/luxe-persona.png' }]}
+          />,
+          <p key='6'>
+            Additionally, I performed a competitive analysis of similar
+            ticketing apps in the market to get a feel for existing solutions. I
+            examined direct competitors (movie ticketing apps such as the Odeon
+            mobile app) and indirect competitors (general ticketing/ordering
+            apps such as Eventbrite and Uber Eats) to ensure I was looking at
+            popular apps that are well-researched, and to see if I could find a
+            common booking experience across the apps.
+          </p>,
+          <Figure
+            key='7'
+            caption='1.2. Competitive analysis snippet'
+            images={[
+              {
+                image:
+                  '/images/projects/luxe/luxe-competitive-analysis-snippet.png',
+              },
+            ]}
+          />,
+          <p key='8'>
+            Once I narrowed this down, I also created a user journey map to
+            outline each step of the booking process.
+          </p>,
+          <Figure
+            key='9'
+            caption='1.3. User journey map'
+            images={[
+              { image: '/images/projects/luxe/luxe-user-journey-map.png' },
+            ]}
+          />,
+        ],
+      },
+      {
+        heading: 'Designing the app',
+        paragraphs: [
+          <p key='1'>
+            I began drafting multiple paper wireframes for each step in the
+            user&apos;s journey to test out different UI solutions.
+          </p>,
+          <Figure
+            key='2'
+            caption='1.4. Paper wireframes'
+            images={[
+              { image: '/images/projects/luxe/luxe-paper-wireframes.png' },
+            ]}
+          />,
+          <p key='3'>
+            Once the wireframes were narrowed down to the most suitable
+            solutions, I gathered feedback from users on the overall layout and
+            structure of each screen. I then created digital wireframes in Figma
+            based on the feedback, which I then turned into a low-fidelity
+            prototype, displaying the primary user flow of the ticket booking
+            process to be tested by users in a usability study.
+          </p>,
+          <Figure
+            key='4'
+            caption='1.5. Lo-fi prototype'
+            images={[
+              { image: '/images/projects/luxe/luxe-lo-fi-prototype.png' },
+            ]}
+          />,
+          <p key='5'>
+            My favourite part of the project was adding colour, images, copy and
+            other visual elements to the design. I particularly enjoyed learning
+            about the Gestalt principles and other ways to take take psychology
+            into account while designing the prototype. I made sure to follow
+            accessibility standards as well, keeping colour contrast high enough
+            and text readable.
+          </p>,
+          <Figure
+            key='6'
+            caption='1.6. Sticker sheet'
+            images={[{ image: '/images/projects/luxe/luxe-sticker-sheet.png' }]}
+          />,
+          <p key='7'>
+            After many iterations of designing, testing with users, and
+            revising, the final prototype was complete.
+          </p>,
+          <Figure
+            key='8'
+            caption='1.7. Hi-fi-prototype'
+            images={[
+              { image: '/images/projects/luxe/luxe-hi-fi-prototype.png' },
+            ]}
+          />,
+          <Figure
+            key='9'
+            caption='1.8. Demo'
+            images={[{ image: '/images/projects/luxe/luxe-demo.gif' }]}
+          />,
+        ],
+      },
+      {
+        heading: 'Takeaway',
+        paragraphs: [
+          <p key='1'>
+            This course was a massive learning experience as it taught me to
+            focus more on the user than just the potential solutions and
+            functionality of the app. Keeping the user at the forefront of the
+            design ensured that I remained empathetic rather than methodical. I
+            will definitely make sure to incorporate design thinking into future
+            projects.
+          </p>,
+          <p key='2'>
+            As for potential improvements, I would&apos;ve loved to learn more
+            about interaction design and include more motion and animation in
+            the prototype. This definitely would&apos;ve added more character to
+            the design, making for a more engaging user experience.
+          </p>,
+        ],
+      },
+    ],
+  },
+  {
+    name: 'PAST',
+    description:
+      'PAST is a mobile app for users with post-stroke fatigue to follow a physical therapy programme and track their fatigue levels.',
+    heading: 'Gamify your ... and ....',
+    role: [roles.frontend, roles.wireframing, roles.logoDesign],
+    otherProject: 'Colourify',
+    tools: [tools.figma, tools.vsCode, tools.github],
+    technologies: [
+      technologies.reactNative,
+      technologies.javaScript,
+      technologies.expo,
+    ],
+    startDate: '2021-06',
+    endDate: '2021-09',
+    links: {
+      presentationUrl:
+        'https://docs.google.com/presentation/d/1hIhJQrXa5Qd5Lhggceuda70YpJB00HhdpQeEzL4tc2w/edit#slide=id.p',
+    },
+    content: [
+      {
+        heading: 'Overview',
+        paragraphs: [
+          <p key='1'>
+            During my app development internship, out of a selection of prompts
+            my team chose to develop a mobile app prototype for users with
+            post-stroke fatigue looking to improve their fatigue levels through
+            physical activity. The app guides users through a 6-step Graded
+            Exercise Therapy (GET) programme that prompts users to log their
+            routine and associated fatigue levels, watch recommended exercise
+            videos, and complete other fitness-related goals.
+          </p>,
+        ],
+      },
+      {
+        heading: 'The prompt',
+        paragraphs: [
+          <p key='2'>
+            Our clients came up with the idea for PAST after co-authoring a{' '}
+            <InlineLink href='https://pre-prod.neurosymptoms.org/wp-content/uploads/2023/03/GET-guide-booklet-version-1-22062010.pdf'>
+              GET self-help guide
+            </InlineLink>{' '}
+            to encourage people with chronic fatigue syndrome to gradually
+            increase their physical activity. They believed users would benefit
+            from a mobile app to track their progress in the programme. Users
+            could also show their logs to their healthcare providers to keep
+            track of any changes to their health.
+          </p>,
+        ],
+      },
+      {
+        heading: 'Scope',
+        paragraphs: [
+          <p key='3'>
+            The aim of the internship was to build a working prototype by the
+            end of a 12 week period using the <strong>scrum methodology</strong>
+            . The scope did not include user research, so we reported back to
+            our clients at the end of each sprint with a working product and
+            received feedback from them instead. Eager to incorporate UI design
+            into every project, I suggested that we create{' '}
+            <strong>wireframes</strong> before coding, so we ended up
+            structuring each sprint as follows:{' '}
+            <i>
+              review backlog → design prototype → code feature → client feedback
+            </i>
+            . I leaned into the <strong>main design role</strong> and created
+            many of the wireframes, the app logo, icon, and colour scheme
+            (inspired by the colours in the GET booklet). One of our team
+            member&apos;s lead the backend development due to his experience in
+            the field, while the rest of us shared the frontend
+            responsibilities.
+          </p>,
+          <Figure
+            key='4'
+            rounded={false}
+            images={[
+              { image: '/images/projects/past/past-logo.png', width: 'w-96' },
+              {
+                image: '/images/projects/past/past-icon.png',
+                width: 'w-28',
+                height: 'h-28',
+              },
+            ]}
+            caption='1.1 PAST logo and icon'
+          />,
+        ],
+      },
+      {
+        heading: 'Brainstorming',
+        paragraphs: [
+          <p key='5'>
+            We had an <strong>initial brainstorming session</strong> with our
+            clients where we <strong>conceptualised user goals</strong> and{' '}
+            <strong>crafted a typical user journey</strong>, landing on three
+            big features to focus on. We decided that users would need to be
+            able to: (1) follow the programme steps and associated daily tasks ,
+            (2) log their daily routine and fatigue levels, and (3) watch
+            recommended exercise videos.
+          </p>,
+          <p key='6'>
+            I recommended we add a competitive analysis to the backlog as I
+            thought it&apos;d be useful to see how our initial ideas compared to
+            competitor products. I became responsible for completing this task
+            and researched mostly indirect competitor health logging apps as it
+            was difficult to find apps specifically for stroke survivors. The
+            analysis helped to confirm some initial ideas for the UI, such as
+            using a horizontal scroll on the homepage to list the user&apos;s
+            daily tasks, which is a typical feature seen in similar apps.
+          </p>,
+        ],
+      },
+      {
+        heading: 'Our solution',
+        paragraphs: [
+          <h3 className='block font-semibold text-2xl w-full' key='8'>
+            Home - Following the programme steps
+          </h3>,
+          <p key='8'>
+            We created a home screen that tracks the user&apos;s progress in the
+            programme, what step they&apos;re on and the % of their progress. A
+            daily to-do list displays tasks related to the current step for the
+            user to complete, and once a task is completed it&apos;s greyed out
+            and moved to the back of the list. Once the current step is
+            complete, the user is then progressed to the next step with
+            additional tasks added per step.
+          </p>,
+          <Figure
+            key='10'
+            images={[
+              { image: '/images/projects/past/past-home-1.png' },
+              { image: '/images/projects/past/past-home-2.png' },
+            ]}
+            caption='1.2 Past home screen'
+            type='mobile'
+          />,
+          <h3 className='block font-semibold text-2xl' key='8'>
+            Calendar - Logging daily routine and fatigue levels
+          </h3>,
+          <p key='11'>
+            We developed a calendar logging feature where users can log their
+            daily routine and fatigue levels. Daily logging is also prompted by
+            a card in the home screen&apos;s to-do list.
+          </p>,
+          <Figure
+            key='12'
+            images={[
+              { image: '/images/projects/past/past-calendar-1.png' },
+              { image: '/images/projects/past/past-calendar-2.png' },
+            ]}
+            caption='1.3 Past calendar screen'
+            type='mobile'
+          />,
+          <h3 className='block font-semibold text-2xl' key='8'>
+            Exercises - Watching recommended exercise videos
+          </h3>,
+          <p key='13'>
+            Our solution to this was a video library of YouTube videos supplied
+            by our client. The user is prompted to complete these exercises
+            daily by a card on the home screen from step 4.
+          </p>,
+          <Figure
+            key='14'
+            images={[{ image: '/images/projects/past/past-exercises.png' }]}
+            caption='1.4 Past exercises screen'
+            type='mobile'
+          />,
+        ],
+      },
+      {
+        heading: 'Main takeaways',
+        paragraphs: [
+          <p key='15'>
+            The prototype was handed over to our clients to take forward so we
+            were unable to measure the success of the solution. It would&apos;ve
+            been nice to see the product to release and gain feedback from end
+            users. Did the product correctly solve user problems? Are users more
+            likely to follow the GET programme and see results using the app?
+          </p>,
+          <p key='16'>
+            In general, I also think the app would&apos;ve benefited from a
+            user-centred approach. Doing user research to better understand of
+            their goals and pain points would&apos;ve helped to avoid potential
+            bias from our clients and us as developers. Due to the
+            project&apos;s limited scope, we only had our clients to give us
+            stakeholder feedback which was still helpful to have feedback at all
+            instead of creating from solely a developer perspective.
+          </p>,
+        ],
+      },
+    ],
+  },
 ];
 
 export default projects;

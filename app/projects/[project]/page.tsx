@@ -6,6 +6,7 @@ import PageLayout from '@/app/_components/PageLayout';
 import Breadcrumbs from './_components/Breadcrumbs';
 import HeaderImage from './_components/HeaderImage';
 import Details from './_components/Details';
+import OtherProject from './_components/OtherProject';
 
 const Project = ({ params }: { params: { project: string } }) => {
   const project = projects.find(
@@ -30,16 +31,17 @@ const Project = ({ params }: { params: { project: string } }) => {
         <HeaderImage projectName={project.name} />
       </header>
       <Details project={project} />
-      <div className='mx-auto max-w-xl mt-24 leading-loose'>
+      <div className='mt-24 leading-loose'>
         {project.content.map(({ heading, paragraphs }) => (
-          <section
+          <div
             key={heading}
-            className='mb-16 flex flex-col items-center gap-3'
+            className='mb-16 flex flex-col items-center gap-3 [&>*]:max-w-xl [&>*]:mx-auto'
           >
-            <h2 className='heading-md self-start mb-3'>{heading}</h2>
+            <h2 className='heading-md self-start mb-3 w-full'>{heading}</h2>
             {paragraphs.map((p) => p)}
-          </section>
+          </div>
         ))}
+        <OtherProject otherProject={project.otherProject} />
       </div>
     </PageLayout>
   );

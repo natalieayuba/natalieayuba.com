@@ -94,7 +94,7 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
                   strokeDashoffset={
                     active === navLink || hovered === navLink ? 0 : 80
                   }
-                  className='transition-all duration-150'
+                  className='transition-all duration-200'
                 />
               </svg>
             </li>
