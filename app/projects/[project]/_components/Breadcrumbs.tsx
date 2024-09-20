@@ -1,5 +1,5 @@
 'use client';
-import { InlineLink } from '@/app/_components/Links';
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
@@ -18,16 +18,18 @@ const Breadcrumbs = () => {
 
   return (
     <nav>
-      <ul className='flex justify-center'>
+      <ul className='flex justify-center capitalize'>
         {path.map(({ name, url }) => (
           <li
             key={name}
-            className='after:content-[">"] after:text-black after:text-opacity-60 after:mx-2'
+            className='after:content-[">"] after:secondary-text after:mx-2'
           >
-            <InlineLink href={url}>{name}</InlineLink>
+            <Link href={url} className='link'>
+              {name}
+            </Link>
           </li>
         ))}
-        <li className='capitalize'>{pathname.split('/')[2]}</li>
+        <li>{pathname.split('/')[2]}</li>
       </ul>
     </nav>
   );

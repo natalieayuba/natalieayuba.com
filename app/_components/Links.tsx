@@ -1,5 +1,6 @@
+import { appendClassName } from '@/utils/formatting';
 import Link from 'next/link';
-import React from 'react';
+import React, { type ComponentProps } from 'react';
 
 interface LinkProps {
   children: string;
@@ -13,12 +14,16 @@ export const ButtonStyleLink = ({ children, href, className }: LinkProps) => (
   </Link>
 );
 
-export const InlineLink = ({ children, href }: LinkProps) => (
+export const ExternalLink = ({
+  children,
+  className,
+  ...rest
+}: ComponentProps<'a'>) => (
   <a
     target='_blank'
     rel='noreferrer noopener'
-    href={href}
-    className='text-purple font-medium w-fit transition-all duration-150 hover:brightness-[80%]'
+    className={`link${appendClassName(className)}`}
+    {...rest}
   >
     {children}
   </a>

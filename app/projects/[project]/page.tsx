@@ -37,7 +37,7 @@ const Project = ({ params }: { params: { project: string } }) => {
             key={heading}
             className='mb-16 flex flex-col items-center gap-3 [&>*]:max-w-xl [&>*]:mx-auto'
           >
-            <h2 className='heading-md self-start mb-3 w-full'>{heading}</h2>
+            <h2 className='heading-md self-start mb-0 w-full'>{heading}</h2>
             {paragraphs.map((p) => p)}
           </div>
         ))}

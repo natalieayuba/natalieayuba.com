@@ -2,9 +2,6 @@ import type { Config } from 'tailwindcss';
 import { colors } from './config.ts';
 import { fontSize } from 'tailwindcss/defaultTheme';
 
-const minViewportWidth = 375;
-const maxViewportWidth = 1156;
-
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -54,28 +51,35 @@ const config: Config = {
     boxShadow: {
       image: '0px 4px 8px rgba(0,0,0,0.02)',
     },
-    fontSize: {
-      sm: fontSize.sm,
-      base: fontSize.base,
-      ...Object.fromEntries(
-        Object.entries(fontSize)
-          .slice(3, 9)
-          .map(([key, [value]]) => {
-            const min = Number(value.replace('rem', ''));
-            const max = Number(
-              Object.values(fontSize)[
-                Object.keys(fontSize).findIndex((k) => k === key) + 1
-              ][0].replace('rem', '')
-            );
-            const fluid =
-              (100 * (max - min) * 16) / (maxViewportWidth - minViewportWidth);
-            const relative =
-              (minViewportWidth * max - maxViewportWidth * min) /
-              (minViewportWidth - maxViewportWidth);
-            const val = `${fluid}vw + ${relative}rem`;
-            return [key, `clamp(${min}rem, ${val}, ${max}rem)`];
-          })
-      ),
+    fontSize: ({ theme }) => {
+      const minViewportWidth = 375;
+      const maxViewportWidth =
+        Number(theme('maxWidth.6xl').replace('rem', '')) * 16;
+
+      return {
+        sm: fontSize.sm,
+        base: fontSize.base,
+        ...Object.fromEntries(
+          Object.entries(fontSize)
+            .slice(3, 9)
+            .map(([key, [value]]) => {
+              const min = Number(value.replace('rem', ''));
+              const max = Number(
+                Object.values(fontSize)[
+                  Object.keys(fontSize).findIndex((k) => k === key) + 1
+                ][0].replace('rem', '')
+              );
+              const fluid =
+                (100 * (max - min) * 16) /
+                (maxViewportWidth - minViewportWidth);
+              const relative =
+                (minViewportWidth * max - maxViewportWidth * min) /
+                (minViewportWidth - maxViewportWidth);
+              const val = `${fluid}vw + ${relative}rem`;
+              return [key, `clamp(${min}rem, ${val}, ${max}rem)`];
+            })
+        ),
+      };
     },
   },
   plugins: [],

@@ -1,8 +1,10 @@
-import { InlineLink } from '@/app/_components/Links';
+import { ExternalLink } from '@/app/_components/Links';
 import type { ExternalLinksProps } from './_components/ExternalLinks';
 import type { ReactNode } from 'react';
-import Figure, { FigureImage } from './[project]/_components/Figure';
-import Image from 'next/image';
+import Figure, {
+  FigureImage,
+  MockupVideo,
+} from './[project]/_components/Figure';
 
 export interface ProjectProps {
   name: string;
@@ -150,11 +152,13 @@ const projects: ProjectProps[] = [
             While awaiting the release of my Spotify Wrapped at the end of the
             year, I love to seek out stats about my listening habits using apps
             like{' '}
-            <InlineLink href='https://receiptify.herokuapp.com/'>
+            <ExternalLink href='https://receiptify.herokuapp.com/'>
               Receiptify
-            </InlineLink>{' '}
+            </ExternalLink>{' '}
             and{' '}
-            <InlineLink href='https://www.instafest.app/'>Instafest</InlineLink>
+            <ExternalLink href='https://www.instafest.app/'>
+              Instafest
+            </ExternalLink>
             . Though these apps are fun to use, I have yet to find one
             that&apos;s more visual and makes use of the cover art of the
             user&apos;s listened-to tracks.{' '}
@@ -163,9 +167,9 @@ const projects: ProjectProps[] = [
             I&apos;m a big fan of album cover design and how colours are used to
             convey a particular theme or aesthetic. In fact, the colour palette
             used in{' '}
-            <InlineLink href='https://open.spotify.com/album/0oMXn0MNLNyvB4iJPZXOuV'>
+            <ExternalLink href='https://open.spotify.com/album/0oMXn0MNLNyvB4iJPZXOuV'>
               Willow Smith&apos;s &lt;COPINGMECHANISM&gt;
-            </InlineLink>{' '}
+            </ExternalLink>{' '}
             is what inspired this project that I call Colourify - an online tool
             that generates a colour palette from the cover art of a user&apos;s
             top albums on Spotify. I thought it might be fun to see what kind of
@@ -173,6 +177,12 @@ const projects: ProjectProps[] = [
             palette for the angsty indie listeners, a more vibrant palette for
             lovers of pop, or a fun mix of random hues.
           </p>,
+          <Figure key='3' caption='1.1 Colourify inspo'>
+            <FigureImage
+              src='/images/projects/colourify/colourify-inspo.png'
+              alt='Colourify inspo'
+            />
+          </Figure>,
         ],
       },
       {
@@ -185,9 +195,9 @@ const projects: ProjectProps[] = [
             I later decided to migrate to React as it was easier to manage
             states and components using the framework. I also decided on
             TailwindCSS for ease of styling and{' '}
-            <InlineLink href='https://lokeshdhakar.com/projects/color-thief/'>
+            <ExternalLink href='https://lokeshdhakar.com/projects/color-thief/'>
               Color Thief
-            </InlineLink>{' '}
+            </ExternalLink>{' '}
             (a popular framework for getting colours from images) to generate
             the colour palettes.
           </p>,
@@ -200,22 +210,22 @@ const projects: ProjectProps[] = [
             myapp.herokuapp.com), I decided to go with Netlify instead as I
             preferred the look of the URL (colourify.netlify.app was
             unfortunately unavailable so I went with{' '}
-            <InlineLink href='https://mycolourify.netlify.app/'>
+            <ExternalLink href='https://mycolourify.netlify.app/'>
               mycolourify.netlify.app
-            </InlineLink>
+            </ExternalLink>
             ). Using Netlify required me to implement serverless functions as
             Netlify doesn&apos;t do serverless hosting, which was also a
             learning curve.
           </p>,
           <p key='3'>
             Receiptify,{' '}
-            <InlineLink href='https://spotify-profile.herokuapp.com/'>
+            <ExternalLink href='https://spotify-profile.herokuapp.com/'>
               Spotify Profile
-            </InlineLink>{' '}
+            </ExternalLink>{' '}
             and{' '}
-            <InlineLink href='https://github.com/JonoMacC/serverless-spotify-auth'>
+            <ExternalLink href='https://github.com/JonoMacC/serverless-spotify-auth'>
               Spotify Serverless Auth
-            </InlineLink>{' '}
+            </ExternalLink>{' '}
             were inspirations for the app&apos;s implementation, and Receptify
             and Instafest for the design. I referred to these throughout the
             project, kept track of my tasks in Notion, and used Figma to design
@@ -224,7 +234,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure
             key='4'
-            caption='1.1. Previous designs for the colour palette, one without margins, and one with 10 albums instead of 5'
+            caption='1.2. Previous designs for the colour palette, one without margins, and one with 10 albums instead of 5'
           >
             <FigureImage
               src='/images/projects/colourify/colourify-palette-draft1.png'
@@ -264,9 +274,9 @@ const projects: ProjectProps[] = [
               To get an accurate estimate of the user&apos;s top albums, it was
               necessary to request <i>all</i> of the user&apos;s top tracks.
               However, since the{' '}
-              <InlineLink href='https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks'>
+              <ExternalLink href='https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks'>
                 Get User&apos;s Top Items
-              </InlineLink>{' '}
+              </ExternalLink>{' '}
               request only returns a max of 50 items at a time, the solution was
               to recursively fetch the data, making use of the offset and limit
               parameters. This unfortunately increased the API response time,
@@ -278,7 +288,7 @@ const projects: ProjectProps[] = [
               switching to another time range (”Last month”, “Last 6 months”, or
               “All time”) if they are frustrated with the response time.
             </p>
-            <Figure caption='1.2 Progress bar'>
+            <Figure caption='1.3 Progress bar'>
               <FigureImage
                 src='/images/projects/colourify/colourify-progress-bar.png'
                 alt='Progress bar image'
@@ -311,13 +321,13 @@ const projects: ProjectProps[] = [
               ensure that the top tracks were in their album form to group them
               as accurately as possible. However, this required another request
               (
-              <InlineLink href='https://developer.spotify.com/documentation/web-api/reference/search'>
+              <ExternalLink href='https://developer.spotify.com/documentation/web-api/reference/search'>
                 Search for Item
-              </InlineLink>
+              </ExternalLink>
               ) to find the album version of the track by its{' '}
-              <InlineLink href='http://isrc.ifpi.org/'>
+              <ExternalLink href='http://isrc.ifpi.org/'>
                 International Standard Recording Code
-              </InlineLink>{' '}
+              </ExternalLink>{' '}
               (ISRC), which resulted in a longer response time and a 429 error
               due to reaching Spotify&apos;s request limit. There was also the
               issue of some tracks being on both a regular album and its
@@ -338,7 +348,7 @@ const projects: ProjectProps[] = [
               EP, or compilation.
             </p>
           </div>,
-          <div key='3'>
+          <div key='8'>
             <h3 className='text-xl font-bold mb-1'>
               2. Get a colour palette from each album cover
             </h3>
@@ -353,22 +363,10 @@ const projects: ProjectProps[] = [
               art, and the user&apos;s Colourify Palette is displayed.
             </p>
           </div>,
-          <Figure key='4' caption='1.3 Colourify demo'>
-            <div className='absolute z-0 w-[80%] top-[5%] h-[76%] overflow-hidden border-2'>
-              <video
-                autoPlay
-                loop
-                playsInline
-                poster='/images/projects/colourify/colourify-demo-poster.png'
-                className='scale-125 relative top-10'
-              >
-                <source src='/images/projects/colourify/colourify-demo.mp4' />
-              </video>
-            </div>
-            <FigureImage
-              src='/images/projects/desktop-mockup.png'
-              alt='Desktop mockup'
-              className='z-0'
+          <Figure key='9' caption='1.4 Colourify demo'>
+            <MockupVideo
+              poster='/images/projects/colourify/colourify-demo-poster.png'
+              src='/images/projects/colourify/colourify-demo.mp4'
             />
           </Figure>,
         ],
@@ -379,18 +377,18 @@ const projects: ProjectProps[] = [
           <p key='1'>
             This was a big passion project for me so it was really fun to build
             and even cooler to see it in action (check it out at{' '}
-            <InlineLink href='https://mycolourify.netlify.app/'>
+            <ExternalLink href='https://mycolourify.netlify.app/'>
               mycolourify.netlify.app
-            </InlineLink>
+            </ExternalLink>
             ). I built it in hopes that people would use it to share their
             colour palettes with friends on social media, but I have yet to
             promote it so it gains traction. I also have an idea for a similar
             app called Rainbowify, which would generate a 3x3 grid of album
             covers, each with a dominant background colour that matches each
             colour of the rainbow, inspired by the{' '}
-            <InlineLink href='https://www.tiktok.com/discover/album-rainbow-trend'>
+            <ExternalLink href='https://www.tiktok.com/discover/album-rainbow-trend'>
               TikTok album rainbow trend
-            </InlineLink>
+            </ExternalLink>
             . Can you tell I&apos;m a big Spotify fan?
           </p>,
         ],
@@ -418,9 +416,9 @@ const projects: ProjectProps[] = [
         paragraphs: [
           <p key='1'>
             I decided to take the{' '}
-            <InlineLink href='https://www.coursera.org/professional-certificates/google-ux-design'>
+            <ExternalLink href='https://www.coursera.org/professional-certificates/google-ux-design'>
               Google UX Design Course
-            </InlineLink>{' '}
+            </ExternalLink>{' '}
             to learn more about industry-level standards and improve my design
             skills. For my main project, I created a prototype for a conceptual
             mobile app called Luxe that allows users to book their movie tickets
@@ -627,9 +625,9 @@ const projects: ProjectProps[] = [
         paragraphs: [
           <p key='2'>
             Our clients came up with the idea for PAST after co-authoring a{' '}
-            <InlineLink href='https://pre-prod.neurosymptoms.org/wp-content/uploads/2023/03/GET-guide-booklet-version-1-22062010.pdf'>
+            <ExternalLink href='https://pre-prod.neurosymptoms.org/wp-content/uploads/2023/03/GET-guide-booklet-version-1-22062010.pdf'>
               GET self-help guide
-            </InlineLink>{' '}
+            </ExternalLink>{' '}
             to encourage people with chronic fatigue syndrome to gradually
             increase their physical activity. They believed users would benefit
             from a mobile app to track their progress in the programme. Users

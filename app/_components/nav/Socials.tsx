@@ -1,5 +1,6 @@
 import { appendClassName } from '@/utils/formatting';
 import Icon from '../Icon';
+import { ExternalLink } from '../Links';
 
 interface SocialsProps {
   animationDelay?: number;
@@ -25,18 +26,15 @@ const Socials = ({ animationDelay = 0, className }: SocialsProps) => {
       )}`}
     >
       {socials.map(({ name, url }) => (
-        <a
+        <ExternalLink
           key={name}
           style={{ animationDelay: `${(animationDelay += 100)}ms` }}
           href={url}
-          aria-label={name}
-          target='_blank'
-          rel='noreferrer noopener'
-          className='hover:scale-110 animate-pop'
+          className='hover:brightness-100 hover:scale-110 animate-pop'
           title={name}
         >
           <Icon name={name} />
-        </a>
+        </ExternalLink>
       ))}
     </div>
   );

@@ -16,13 +16,11 @@ const Banner = forwardRef<HTMLElement>((props, ref) => (
       className='w-full max-w-2xl h-auto absolute top-80 left-48'
     /> */}
     <div className='flex-1'>
-      <h1 className='font-semibold text-xl pl-1.5 mb-3'>
+      <h1 className='font-semibold text-lg pl-1.5 mb-3'>
         Hi, I&#8217;m Natalie :)
       </h1>
-      <p className='heading-lg'>
-        A Frontend Developer <br /> & UI/UX Designer.
-      </p>
-      <p className='text-2xl max-w-md mt-3 leading-snug'>
+      <p className='heading-lg'>A Frontend Developer & UI/UX Designer.</p>
+      <p className='text-xl max-w-md mt-3 leading-snug'>
         I create fun, dynamic, and user-centred digital experiences.
       </p>
     </div>

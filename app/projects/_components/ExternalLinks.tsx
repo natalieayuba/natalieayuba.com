@@ -1,4 +1,5 @@
 import Icon from '@/app/_components/Icon';
+import { ExternalLink } from '@/app/_components/Links';
 
 export interface ExternalLinksProps {
   siteUrl?: string;
@@ -33,21 +34,20 @@ const ExternalLinks = ({ links }: { links: ExternalLinksProps }) => {
 
     return (
       link.href != undefined && (
-        <a
-          target='_blank'
-          rel='noreferrer noopener'
+        <ExternalLink
           key={link.name}
           href={link.href}
-          className='text-purple font-medium flex gap-2 items-center w-fit transition-all duration-150 hover:brightness-[80%]'
+          className='flex gap-1.5 items-center'
           title={link.title}
         >
           <span className='text-xl'>
             <Icon
+              size={22}
               name={link.name === 'Code' ? 'github' : link.name.toLowerCase()}
             />
           </span>
           {link.name}
-        </a>
+        </ExternalLink>
       )
     );
   });
