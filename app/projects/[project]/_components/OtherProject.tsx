@@ -49,9 +49,9 @@ const OtherProject = ({ otherProject }: { otherProject: string }) => {
             <path
               d='M335.555 88.3923C297.554 70.0703 265.062 60.3878 223.226 60.3878C172.968 60.3878 122.998 95.7263 86.9375 128.843C42.8462 169.335 2.30176 221.965 2.30176 284.268C2.30176 345.351 36.6712 376.544 83.5147 410.444C129.7 443.867 185.247 466.696 242.829 463.497C310.509 459.737 350.968 405.549 363.56 344.167C373.585 295.294 373.161 237.269 366.36 187.964C363.483 167.107 357.118 145.094 343.956 128.221C328.618 108.556 308.388 93.6438 290.437 76.5681C264.764 52.1482 239.384 27.3421 215.136 1.57837'
               stroke={colors.purple}
-              stroke-width='3'
-              vector-effect='non-scaling-stroke'
-              stroke-linecap='round'
+              strokeWidth='3'
+              vectorEffect='non-scaling-stroke'
+              strokeLinecap='round'
               strokeDasharray={2000}
               strokeDashoffset={hovered ? 0 : 2000}
               className='transition-all ease-in-out duration-700'

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { cloneElement } from 'react';
 import type { IconType } from 'react-icons';
 import {
   FiExternalLink,
@@ -13,7 +13,12 @@ import {
 } from 'react-icons/fi';
 import { LuPresentation } from 'react-icons/lu';
 
-const Icon = ({ name }: { name: string }) => {
+export interface IconProps {
+  name: string;
+  size?: number;
+}
+
+const Icon = ({ name, size }: IconProps) => {
   const icons = {
     github: <FiGithub />,
     linkedin: <FiLinkedin />,
@@ -27,7 +32,9 @@ const Icon = ({ name }: { name: string }) => {
     scrollUp: <FiChevronUp />,
   };
 
-  return icons[name as keyof IconType];
+  return cloneElement(icons[name.toLowerCase() as keyof IconType], {
+    size: size ?? 24,
+  });
 };
 
 export default Icon;

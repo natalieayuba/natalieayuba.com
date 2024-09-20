@@ -14,8 +14,7 @@
   h2,
   h3,
   h4,
-  h5,
-  h6 {
+  figcaption {
     @apply cursor-text;
   }
 
@@ -44,7 +43,7 @@
   }
 
   .heading-lg {
-    @apply font-bold text-4xl sm:text-5xl mb-2 leading-tight md:leading-tight;
+    @apply font-bold text-4xl mb-2 leading-tight;
   }
 
   .heading-md {

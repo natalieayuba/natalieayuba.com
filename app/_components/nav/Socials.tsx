@@ -1,11 +1,12 @@
+import { appendClassName } from '@/utils/formatting';
 import Icon from '../Icon';
 
 interface SocialsProps {
-  large?: boolean;
   animationDelay?: number;
+  className?: string;
 }
 
-const Socials = ({ large, animationDelay = 0 }: SocialsProps) => {
+const Socials = ({ animationDelay = 0, className }: SocialsProps) => {
   const socials = [
     {
       name: 'Github',
@@ -18,26 +19,26 @@ const Socials = ({ large, animationDelay = 0 }: SocialsProps) => {
   ];
 
   return (
-    <ul className={`flex gap-4 text-purple ${large ? 'text-3xl' : 'text-2xl'}`}>
+    <div
+      className={`flex gap-3 items-center text-purple${appendClassName(
+        className
+      )}`}
+    >
       {socials.map(({ name, url }) => (
-        <li
+        <a
           key={name}
-          className='animate-pop'
           style={{ animationDelay: `${(animationDelay += 100)}ms` }}
+          href={url}
+          aria-label={name}
+          target='_blank'
+          rel='noreferrer noopener'
+          className='hover:scale-110 animate-pop'
+          title={name}
         >
-          <a
-            href={url}
-            aria-label={name}
-            target='_blank'
-            rel='noreferrer noopener'
-            className='block hover:scale-110'
-            title={name}
-          >
-            <Icon name={name.toLowerCase()} />
-          </a>
-        </li>
+          <Icon name={name} />
+        </a>
       ))}
-    </ul>
+    </div>
   );
 };
 

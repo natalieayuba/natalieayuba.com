@@ -51,6 +51,7 @@ const About = forwardRef<HTMLElement>((props, ref) => {
             alt='A self portrait'
             width={0}
             height={0}
+            priority
             className='w-full h-auto max-w-md mx-auto lg:absolute -right-14'
           />
         </div>

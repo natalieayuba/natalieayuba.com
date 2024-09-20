@@ -53,7 +53,7 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
 
   return (
     <div className='hidden md:flex'>
-      <ul className={`font-semibold flex mr-8`}>
+      <ul className={`font-semibold flex`}>
         {navLinks.map((navLink, index) => {
           return (
             <li
@@ -101,7 +101,7 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
           );
         })}
       </ul>
-      <Socials animationDelay={animationDelay} />
+      <Socials animationDelay={animationDelay} className='ml-3' />
     </div>
   );
 };

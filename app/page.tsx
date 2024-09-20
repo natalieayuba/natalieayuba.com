@@ -1,9 +1,5 @@
 'use client';
-import {
-  useRef,
-  type ForwardRefExoticComponent,
-  type RefAttributes,
-} from 'react';
+import { useRef } from 'react';
 import Banner from './_components/sections/Banner';
 import Projects from './_components/sections/Projects';
 import PageLayout from './_components/PageLayout';

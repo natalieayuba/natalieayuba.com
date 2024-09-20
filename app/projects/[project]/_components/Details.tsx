@@ -32,11 +32,11 @@ const Details = ({ project }: { project: ProjectProps }) => {
   ];
 
   return (
-    <div className='mb-12 md:-mt-8 md:flex gap-12 justify-center'>
+    <div className='md:mb-12 md:flex gap-12 justify-center'>
       {details.map(
         ({ heading, data }) =>
           data && (
-            <div key={heading} className='mb-4 w-40'>
+            <div key={heading} className='mb-4 md:w-40'>
               <p className='font-semibold mb-1'>{heading}</p>
               <p className='flex gap-4'>{data}</p>
             </div>

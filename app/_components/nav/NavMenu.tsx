@@ -40,7 +40,7 @@ const NavMenu = () => {
             </li>
           ))}
         </ul>
-        <Socials large />
+        <Socials />
       </div>
     </div>
   );

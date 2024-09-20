@@ -11,6 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(url),
   title: {
     template: `%s | ${title}`,
     default: title,
@@ -19,8 +20,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${title} | Frontend Developer and UI/UX Designer Portfolio`,
     description,
-    url,
     type: 'website',
+    url,
   },
 };
 

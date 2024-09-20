@@ -1,7 +1,8 @@
 import { InlineLink } from '@/app/_components/Links';
 import type { ExternalLinksProps } from './_components/ExternalLinks';
 import type { ReactNode } from 'react';
-import Figure from './[project]/_components/Figure';
+import Figure, { FigureImage } from './[project]/_components/Figure';
+import Image from 'next/image';
 
 export interface ProjectProps {
   name: string;
@@ -175,38 +176,36 @@ const projects: ProjectProps[] = [
         ],
       },
       {
-        heading: 'Research & planning',
+        heading: 'Tech stack',
         paragraphs: [
           <p key='1'>
-            This is a project I&apos;d been tinkering with for a while, so I
-            knew what I wanted it to look like and do. However, since this was
-            my first time building a web app with an API, I wasn&apos;t sure how
-            to approach the implementation, so I decided to do an initial
-            research stage to test the concept iteratively. I initially built
-            the app in plain JavaScript, HTML and CSS to see if it was possible
-            to do so without involving other technologies. However, I later
-            decided to migrate to React as it was easier to manage states and
-            components using the framework. I also decided on TailwindCSS for
-            ease of styling and{' '}
+            This was my first time using an API so I decided to test the concept
+            using plain JavaScript, HTML and CSS to see if it was possible to
+            build the app without involving more complex technologies. However,
+            I later decided to migrate to React as it was easier to manage
+            states and components using the framework. I also decided on
+            TailwindCSS for ease of styling and{' '}
             <InlineLink href='https://lokeshdhakar.com/projects/color-thief/'>
               Color Thief
             </InlineLink>{' '}
-            to generate the colour palettes.
+            (a popular framework for getting colours from images) to generate
+            the colour palettes.
           </p>,
           <p key='2'>
-            For hosting, I first planned to deploy with Heroku as the app
-            originally had a backend to use the Spotify Web API, and Heroku
-            allows for server-side hosting. However, after realising that Heroku
-            appends an identifier to your subdomain (i.e.
-            colourify-123456789.herokuapp.com instead of
-            colourify.herokuapp.com), I decided to go with Netlify instead as I
+            This was also my first time hosting a website publicly and that took
+            some time to wrap my head around. I first planned to deploy with
+            Heroku as this service seems to be the go-to for server-side
+            hosting. However, after realising that Heroku appends an identifier
+            to your subdomain (i.e. myapp-123456789.herokuapp.com instead of
+            myapp.herokuapp.com), I decided to go with Netlify instead as I
             preferred the look of the URL (colourify.netlify.app was
             unfortunately unavailable so I went with{' '}
             <InlineLink href='https://mycolourify.netlify.app/'>
               mycolourify.netlify.app
             </InlineLink>
-            ). Using Netlify required me to learn about serverless computing and
-            understand Netlify functions to get the Spotify Web API to work.
+            ). Using Netlify required me to implement serverless functions as
+            Netlify doesn&apos;t do serverless hosting, which was also a
+            learning curve.
           </p>,
           <p key='3'>
             Receiptify,{' '}
@@ -217,128 +216,127 @@ const projects: ProjectProps[] = [
             <InlineLink href='https://github.com/JonoMacC/serverless-spotify-auth'>
               Spotify Serverless Auth
             </InlineLink>{' '}
-            were big inspirations for the implementation of the app, and
-            Receptify and Instafest for the design. I referred to these
-            throughout the project, kept track of my tasks in a Notion Kanban
-            board, and used Figma for some designs.
+            were inspirations for the app&apos;s implementation, and Receptify
+            and Instafest for the design. I referred to these throughout the
+            project, kept track of my tasks in Notion, and used Figma to design
+            the final colour palette image that users can download and share on
+            social media.
           </p>,
+          <Figure
+            key='4'
+            caption='1.1. Previous designs for the colour palette, one without margins, and one with 10 albums instead of 5'
+          >
+            <FigureImage
+              src='/images/projects/colourify/colourify-palette-draft1.png'
+              alt='Colourify palette draft 1'
+            />
+            <FigureImage
+              src='/images/projects/colourify/colourify-palette-draft2.png'
+              alt='Colourify palette draft 2'
+            />
+          </Figure>,
         ],
       },
       {
         heading: 'Process',
         paragraphs: [
           <p key='1'>
-            I broke the app into two overarching tasks to make it more
+            I broke the project down into two main tasks to make it more
             manageable: (1) get the user&apos;s top albums and (2) get a colour
             palette from each album cover.
           </p>,
-          <div key='2'>
-            <h3 className='text-xl font-bold mt-2 mb-1'>
-              1. Get the user&apos;s top five albums
-            </h3>
+          <h3 className='text-xl font-bold w-full' key='2'>
+            Get the user&apos;s top five albums
+          </h3>,
+          <p key='3'>
+            The Spotify Web API has a request to get the user&apos;s top tracks
+            or artists, but not their top albums. The only solution was to get
+            the user&apos;s top tracks and group them by album to get an
+            estimate of what the user&apos;s top albums would be. After testing
+            this concept with the API, I noticed a few more limitations:
+          </p>,
+          <div key='4'>
+            <h4 className='font-semibold'>
+              Grouping by album required requesting all of the user&apos;s top
+              tracks.
+            </h4>
             <p>
-              The Spotify Web API only has a request to get the user&apos;s top
-              tracks or artists, but not their top albums. The only solution was
-              to get the user&apos;s top tracks and group them by album to get
-              an estimate of what the user&apos;s top albums would be. After
-              testing this concept with the API, I noticed a few more
-              limitations:
+              To get an accurate estimate of the user&apos;s top albums, it was
+              necessary to request <i>all</i> of the user&apos;s top tracks.
+              However, since the{' '}
+              <InlineLink href='https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks'>
+                Get User&apos;s Top Items
+              </InlineLink>{' '}
+              request only returns a max of 50 items at a time, the solution was
+              to recursively fetch the data, making use of the offset and limit
+              parameters. This unfortunately increased the API response time,
+              which is especially noticeable when requesting a more data such as
+              when the user chooses the ”All time” time range. To somewhat
+              combat this issue, I included a progress bar with a percentage
+              (tracks fetched / total top tracks) to let the user know how long
+              the request would take. The user can also abort the request by
+              switching to another time range (”Last month”, “Last 6 months”, or
+              “All time”) if they are frustrated with the response time.
             </p>
-            <ul className='list-disc list-outside '>
-              {[
-                {
-                  heading:
-                    'Grouping by album requires requesting all user top tracks',
-                  paragraph: (
-                    <>
-                      To get an accurate estimate of the user&apos;s top albums,
-                      it was necessary to request all of the user&apos;s top
-                      tracks, but since the{' '}
-                      <InlineLink href='https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks'>
-                        Get User&apos;s Top Items
-                      </InlineLink>{' '}
-                      request only returns a max of 50 items at a time, the only
-                      solution was to recursively fetch the data, making use of
-                      the offset and limit parameters. This unfortunately
-                      increased the API response time, which is especially
-                      noticeable when requesting the user&apos;s ”All time” top
-                      tracks (for context, my all time top tracks had a total of
-                      over 5000 tracks). To somewhat combat this issue, I
-                      included a progress bar with a percentage (tracks fetched
-                      / total top tracks) to let the user know how long the
-                      request would take. The user can also abort the request by
-                      switching to another time range (”Last month”, “Last 6
-                      months”, or “All time”) if they are frustrated with the
-                      response time.
-                    </>
-                  ),
-                },
-                {
-                  heading: 'Top tracks ”based on calculated affinity”',
-                  paragraph: (
-                    <>
-                      The top tracks returned by the Get User&apos;s Top Items
-                      request are based on “calculated affinity”, so
-                      they&apos;re not technically the user&apos;s most
-                      listened-to songs, which I noticed when requesting my top
-                      tracks and being surprised by some of the results. This is
-                      something I had to come to terms with because it&apos;s a
-                      feature of the API.
-                    </>
-                  ),
-                },
-                {
-                  heading: 'Same track, different album',
-                  paragraph: (
-                    <>
-                      I noticed that some Spotify tracks have an album version
-                      and a single version, i.e. the exact same song with a
-                      shared{' '}
-                      <InlineLink href='http://isrc.ifpi.org/'>
-                        International Standard Recording Code (ISRC)
-                      </InlineLink>
-                      , but with different IDs since they were technically
-                      released separately, so they&apos;re treated as separate
-                      tracks by the API. I tried to get around this by replacing
-                      the singles with their corresponding album version to
-                      ensure that the top tracks were in their album form to
-                      group them as accurately as possible. However, this
-                      required another request (
-                      <InlineLink href='https://developer.spotify.com/documentation/web-api/reference/search'>
-                        Search for Item
-                      </InlineLink>
-                      ) to find the album version of the track by the ISRC,
-                      which resulted in a longer response time and a 429 error
-                      as the number of requests exceeded the app&apos;s Web API
-                      rate limit. There was also the issue of some tracks being
-                      on both a regular album and the deluxe version, which I
-                      decided to ignore due to the project scope.
-                    </>
-                  ),
-                },
-                {
-                  heading: 'Unwanted tracks',
-                  paragraph: (
-                    <>
-                      The dreaded ASMR track shows up on my “On Repeat“ playlist
-                      quite frequently, so I knew I would want to exclude these
-                      from the top tracks. The only surefire way to know if a
-                      track is ASMR is to check if “asmr“ is included in its
-                      genres. However, some tracks had no genres set so I opted
-                      to exclude all tracks that had variations of “asmr“,
-                      “Asmr“, or name. I also excluded singles and audiobooks,
-                      leaving the top tracks with an album type of album, EP, or
-                      compilation.
-                    </>
-                  ),
-                },
-              ].map(({ heading, paragraph }) => (
-                <li className='ml-5 mt-2' key={heading}>
-                  <h4 className='heading'>{heading}</h4>
-                  <p>{paragraph}</p>
-                </li>
-              ))}
-            </ul>
+            <Figure caption='1.2 Progress bar'>
+              <FigureImage
+                src='/images/projects/colourify/colourify-progress-bar.png'
+                alt='Progress bar image'
+                className='max-w-80'
+              />
+            </Figure>
+          </div>,
+          <div key='5'>
+            <h4 className='font-semibold'>
+              Top tracks are ”based on calculated affinity”.
+            </h4>
+            <p>
+              The top tracks returned by the Get User&apos;s Top Items request
+              are based on “calculated affinity”, so they&apos;re not
+              technically the user&apos;s most listened-to songs, which I
+              noticed when requesting my top tracks and being surprised by some
+              of the results. This is something I had to come to terms with
+              because it&apos;s a feature of the API.
+            </p>
+          </div>,
+          <div key='6'>
+            <h4 className='font-semibold'>
+              Identical tracks on different albums.
+            </h4>
+            <p>
+              Some Spotify tracks have an album version and a single version, so
+              the same song can exist multiple times but be treated as separate
+              tracks by the API with different IDs. I tried to get around this
+              by replacing the singles with their corresponding album version to
+              ensure that the top tracks were in their album form to group them
+              as accurately as possible. However, this required another request
+              (
+              <InlineLink href='https://developer.spotify.com/documentation/web-api/reference/search'>
+                Search for Item
+              </InlineLink>
+              ) to find the album version of the track by its{' '}
+              <InlineLink href='http://isrc.ifpi.org/'>
+                International Standard Recording Code
+              </InlineLink>{' '}
+              (ISRC), which resulted in a longer response time and a 429 error
+              due to reaching Spotify&apos;s request limit. There was also the
+              issue of some tracks being on both a regular album and its
+              corresponding deluxe version, which I decided to ignore to limit
+              the project scope.
+            </p>
+          </div>,
+          <div key='7'>
+            <h4 className='font-semibold'>Unwanted tracks</h4>
+            <p>
+              The dreaded ASMR track shows up on my “On Repeat“ playlist quite
+              frequently, so I knew I would want to exclude these from the top
+              tracks. The only surefire way to know if a track is ASMR is to
+              check if “asmr“ is included in its genres. However, some tracks
+              had no genres set so I opted to exclude all tracks that had
+              variations of “asmr“, “Asmr“, or name. I also excluded singles and
+              audiobooks, leaving the top tracks with an album type of album,
+              EP, or compilation.
+            </p>
           </div>,
           <div key='3'>
             <h3 className='text-xl font-bold mb-1'>
@@ -355,10 +353,28 @@ const projects: ProjectProps[] = [
               art, and the user&apos;s Colourify Palette is displayed.
             </p>
           </div>,
+          <Figure key='4' caption='1.3 Colourify demo'>
+            <div className='absolute z-0 w-[80%] top-[5%] h-[76%] overflow-hidden border-2'>
+              <video
+                autoPlay
+                loop
+                playsInline
+                poster='/images/projects/colourify/colourify-demo-poster.png'
+                className='scale-125 relative top-10'
+              >
+                <source src='/images/projects/colourify/colourify-demo.mp4' />
+              </video>
+            </div>
+            <FigureImage
+              src='/images/projects/desktop-mockup.png'
+              alt='Desktop mockup'
+              className='z-0'
+            />
+          </Figure>,
         ],
       },
       {
-        heading: 'Outcome',
+        heading: 'Conclusion',
         paragraphs: [
           <p key='1'>
             This was a big passion project for me so it was really fun to build
@@ -366,9 +382,12 @@ const projects: ProjectProps[] = [
             <InlineLink href='https://mycolourify.netlify.app/'>
               mycolourify.netlify.app
             </InlineLink>
-            ). I have an idea for a similar app called Rainbowify, which would
-            generate a 3x3 grid of album covers, each with a dominant background
-            colour that matches each colour of the rainbow, inspired by the{' '}
+            ). I built it in hopes that people would use it to share their
+            colour palettes with friends on social media, but I have yet to
+            promote it so it gains traction. I also have an idea for a similar
+            app called Rainbowify, which would generate a 3x3 grid of album
+            covers, each with a dominant background colour that matches each
+            colour of the rainbow, inspired by the{' '}
             <InlineLink href='https://www.tiktok.com/discover/album-rainbow-trend'>
               TikTok album rainbow trend
             </InlineLink>
