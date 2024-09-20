@@ -177,7 +177,7 @@ const projects: ProjectProps[] = [
             palette for the angsty indie listeners, a more vibrant palette for
             lovers of pop, or a fun mix of random hues.
           </p>,
-          <Figure key='3' caption='1.1 Colourify inspo'>
+          <Figure key='3' caption='Colourify inspo'>
             <FigureImage
               src='/images/projects/colourify/colourify-inspo.png'
               alt='Colourify inspo'
@@ -234,7 +234,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure
             key='4'
-            caption='1.2. Previous designs for the colour palette, one without margins, and one with 10 albums instead of 5'
+            caption='Previous designs for the colour palette, one without margins, and one with 10 albums instead of 5'
           >
             <FigureImage
               src='/images/projects/colourify/colourify-palette-draft1.png'
@@ -288,7 +288,7 @@ const projects: ProjectProps[] = [
               switching to another time range (”Last month”, “Last 6 months”, or
               “All time”) if they are frustrated with the response time.
             </p>
-            <Figure caption='1.3 Progress bar'>
+            <Figure caption='Progress bar'>
               <FigureImage
                 src='/images/projects/colourify/colourify-progress-bar.png'
                 alt='Progress bar image'
@@ -363,7 +363,7 @@ const projects: ProjectProps[] = [
               art, and the user&apos;s Colourify Palette is displayed.
             </p>
           </div>,
-          <Figure key='9' caption='1.4 Colourify demo'>
+          <Figure key='9' caption='Colourify demo'>
             <MockupVideo
               poster='/images/projects/colourify/colourify-demo-poster.png'
               src='/images/projects/colourify/colourify-demo.mp4'
@@ -470,7 +470,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure
             key='5'
-            caption='1.1. User Persona'
+            caption='User Persona'
             images={[{ image: '/images/projects/luxe/luxe-persona.png' }]}
           />,
           <p key='6'>
@@ -484,7 +484,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure
             key='7'
-            caption='1.2. Competitive analysis snippet'
+            caption='Competitive analysis snippet'
             images={[
               {
                 image:
@@ -498,7 +498,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure
             key='9'
-            caption='1.3. User journey map'
+            caption='User journey map'
             images={[
               { image: '/images/projects/luxe/luxe-user-journey-map.png' },
             ]}
@@ -514,7 +514,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure
             key='2'
-            caption='1.4. Paper wireframes'
+            caption='Paper wireframes'
             images={[
               { image: '/images/projects/luxe/luxe-paper-wireframes.png' },
             ]}
@@ -529,7 +529,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure
             key='4'
-            caption='1.5. Lo-fi prototype'
+            caption='Lo-fi prototype'
             images={[
               { image: '/images/projects/luxe/luxe-lo-fi-prototype.png' },
             ]}
@@ -544,7 +544,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure
             key='6'
-            caption='1.6. Sticker sheet'
+            caption='Sticker sheet'
             images={[{ image: '/images/projects/luxe/luxe-sticker-sheet.png' }]}
           />,
           <p key='7'>
@@ -553,14 +553,14 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure
             key='8'
-            caption='1.7. Hi-fi-prototype'
+            caption='Hi-fi-prototype'
             images={[
               { image: '/images/projects/luxe/luxe-hi-fi-prototype.png' },
             ]}
           />,
           <Figure
             key='9'
-            caption='1.8. Demo'
+            caption='Demo'
             images={[{ image: '/images/projects/luxe/luxe-demo.gif' }]}
           />,
         ],
@@ -669,7 +669,7 @@ const projects: ProjectProps[] = [
                 height: 'h-28',
               },
             ]}
-            caption='1.1 PAST logo and icon'
+            caption='PAST logo and icon'
           />,
         ],
       },
@@ -718,7 +718,7 @@ const projects: ProjectProps[] = [
               { image: '/images/projects/past/past-home-1.png' },
               { image: '/images/projects/past/past-home-2.png' },
             ]}
-            caption='1.2 Past home screen'
+            caption='Past home screen'
             type='mobile'
           />,
           <h3 className='block font-semibold text-2xl' key='8'>
@@ -735,7 +735,7 @@ const projects: ProjectProps[] = [
               { image: '/images/projects/past/past-calendar-1.png' },
               { image: '/images/projects/past/past-calendar-2.png' },
             ]}
-            caption='1.3 Past calendar screen'
+            caption='Past calendar screen'
             type='mobile'
           />,
           <h3 className='block font-semibold text-2xl' key='8'>
@@ -749,7 +749,7 @@ const projects: ProjectProps[] = [
           <Figure
             key='14'
             images={[{ image: '/images/projects/past/past-exercises.png' }]}
-            caption='1.4 Past exercises screen'
+            caption='Past exercises screen'
             type='mobile'
           />,
         ],
