@@ -19,7 +19,7 @@ const Projects = () => {
   );
 
   return (
-    <section id='projects' className='pt-48'>
+    <section id='projects' className='pt-28 md:pt-48'>
       <SectionHeader
         className='text-center mb-24 scroll-reveal'
         heading='Projects'

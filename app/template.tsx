@@ -17,7 +17,7 @@ const Template = ({ children }: { children: ReactNode }) => {
 
   return (
     <div
-      className={`flex flex-col justify-between items-center min-h-dvh pt-0 md:pt-24
+      className={`flex flex-col justify-between items-center min-h-dvh
     }`}
     >
       <main className='container flex-1 flex flex-col'>{children}</main>

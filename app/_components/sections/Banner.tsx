@@ -1,20 +1,57 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const Banner = () => {
+  const [scrollY, setScrollY] = useState(0);
   let animationDelay = 700;
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <section
       id='home'
-      className='md:h-[700px] gap-x-4 gap-y-16 mb-24 flex items-center relative flex-wrap animate-glide'
+      className='pt-28 md:h-[800px] gap-x-4 gap-y-16 mb-24 flex items-center flex-wrap animate-glide relative'
       style={{ animationDelay: `${animationDelay}ms` }}
     >
+      <div
+        className='hidden min-[1440px]:block absolute w-full pl-20 overflow-hidden top-[500px]'
+        style={{
+          height: `${scrollY}px`,
+          WebkitMaskImage:
+            'linear-gradient(to bottom,black 80%,transparent 100%)',
+          maskImage: 'linear-gradient(to bottom,black 80%,transparent 100%)',
+        }}
+      >
+        <svg
+          width='755'
+          height='501'
+          viewBox='0 0 755 501'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            d='M750 2C746.5 19 776.867 133.799 698.5 195C593.5 277 59 288.5 1.5 499'
+            stroke='#976393'
+            strokeWidth='3'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            vectorEffect='non-scaling-stroke'
+            strokeDasharray='6 6'
+          />
+        </svg>
+      </div>
+
       <div className='flex-1'>
         <h1 className='font-semibold text-lg pl-1.5 mb-3'>
           Hi, I&#8217;m Natalie :)
         </h1>
-        <p className='heading-lg'>A Frontend Developer & UI/UX Designer.</p>
+        <p className='heading-lg'>A Frontend Developer & UI/UX Designer</p>
         <p className='text-xl max-w-lg mt-3 leading-snug'>
           I create fun, dynamic, and user-centred digital experiences.
         </p>
@@ -56,7 +93,6 @@ const Banner = () => {
             }}
           />
         </div>
-
         <div className='flex mt-3 items-start justify-center gap-6 md:absolute min-[1440px]:top-0 right-0'>
           <div
             title="A sneak peak of what I'm currently working on"

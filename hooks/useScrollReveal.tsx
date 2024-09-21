@@ -15,7 +15,7 @@ const useScrollReveal = () => {
             (el as HTMLElement).style.transform = 'translateY(0)';
           }
         },
-        { ...(!isMobile && { rootMargin: '-300px' }) }
+        { ...(!isMobile && { rootMargin: '-350px' }) }
       );
       observer.observe(el);
       return () => observer.disconnect();
