@@ -494,7 +494,7 @@ const projects: ProjectProps[] = [
             Once I narrowed this down, I also created a user journey map to
             outline each step of the booking process.
           </p>,
-          <Figure key='7' caption='User journey map'>
+          <Figure key='9' caption='User journey map'>
             <FigureImage
               src='/images/projects/luxe/luxe-user-journey-map.png'
               alt='User journey map'
@@ -547,13 +547,13 @@ const projects: ProjectProps[] = [
             After many iterations of designing, testing with users, and
             revising, the final prototype was complete.
           </p>,
-          <Figure key='6' caption='Hi-fi-prototype'>
+          <Figure key='8' caption='Hi-fi-prototype'>
             <FigureImage
               src='/images/projects/luxe/luxe-hi-fi-prototype.png'
               alt='Hi-fi-prototype'
             />
           </Figure>,
-          <Figure key='7' caption='Luxe Demo'>
+          <Figure key='9' caption='Luxe Demo'>
             <div className='h-auto mx-auto overflow-hidden relative'>
               <FigureImage
                 src='/images/projects/phone-mockup.png'
@@ -594,7 +594,7 @@ const projects: ProjectProps[] = [
     name: 'PAST',
     description:
       'PAST is a mobile app for users with post-stroke fatigue to follow a physical therapy programme and track their fatigue levels.',
-    heading: 'Gamify your ... and ....',
+    heading: 'A digital companion on your post-stroke journey',
     role: [roles.frontend, roles.wireframing, roles.logoDesign],
     otherProject: 'Colourify',
     tools: [tools.figma, tools.vsCode, tools.github],
@@ -627,7 +627,7 @@ const projects: ProjectProps[] = [
       {
         heading: 'The prompt',
         paragraphs: [
-          <p key='2'>
+          <p key='1'>
             Our clients came up with the idea for PAST after co-authoring a{' '}
             <ExternalLink href='https://pre-prod.neurosymptoms.org/wp-content/uploads/2023/03/GET-guide-booklet-version-1-22062010.pdf'>
               GET self-help guide
@@ -643,7 +643,7 @@ const projects: ProjectProps[] = [
       {
         heading: 'Scope',
         paragraphs: [
-          <p key='3'>
+          <p key='1'>
             The aim of the internship was to build a working prototype by the
             end of a 12 week period using the <strong>scrum methodology</strong>
             . The scope did not include user research, so we reported back to
@@ -662,25 +662,24 @@ const projects: ProjectProps[] = [
             the field, while the rest of us shared the frontend
             responsibilities.
           </p>,
-          <Figure
-            key='4'
-            rounded={false}
-            images={[
-              { image: '/images/projects/past/past-logo.png', width: 'w-96' },
-              {
-                image: '/images/projects/past/past-icon.png',
-                width: 'w-28',
-                height: 'h-28',
-              },
-            ]}
-            caption='PAST logo and icon'
-          />,
+          <Figure key='2' caption='PAST logo and icon'>
+            <FigureImage
+              src='/images/projects/past/past-logo.png'
+              alt='Past logo'
+              className='flex-none max-h-32 w-auto rounded-none'
+            />
+            <FigureImage
+              src='/images/projects/past/past-icon.png'
+              alt='Past icon'
+              className='flex-none max-h-32 w-auto rounded-none'
+            />
+          </Figure>,
         ],
       },
       {
         heading: 'Brainstorming',
         paragraphs: [
-          <p key='5'>
+          <p key='1'>
             We had an <strong>initial brainstorming session</strong> with our
             clients where we <strong>conceptualised user goals</strong> and{' '}
             <strong>crafted a typical user journey</strong>, landing on three
@@ -689,7 +688,7 @@ const projects: ProjectProps[] = [
             (2) log their daily routine and fatigue levels, and (3) watch
             recommended exercise videos.
           </p>,
-          <p key='6'>
+          <p key='2'>
             I recommended we add a competitive analysis to the backlog as I
             thought it&apos;d be useful to see how our initial ideas compared to
             competitor products. I became responsible for completing this task
@@ -704,71 +703,80 @@ const projects: ProjectProps[] = [
       {
         heading: 'Our solution',
         paragraphs: [
-          <h3 className='block font-semibold text-2xl w-full' key='8'>
-            Home - Following the programme steps
-          </h3>,
-          <p key='8'>
-            We created a home screen that tracks the user&apos;s progress in the
-            programme, what step they&apos;re on and the % of their progress. A
-            daily to-do list displays tasks related to the current step for the
-            user to complete, and once a task is completed it&apos;s greyed out
-            and moved to the back of the list. Once the current step is
-            complete, the user is then progressed to the next step with
-            additional tasks added per step.
-          </p>,
-          <Figure
-            key='10'
-            images={[
-              { image: '/images/projects/past/past-home-1.png' },
-              { image: '/images/projects/past/past-home-2.png' },
-            ]}
-            caption='Past home screen'
-            type='mobile'
-          />,
-          <h3 className='block font-semibold text-2xl' key='8'>
-            Calendar - Logging daily routine and fatigue levels
-          </h3>,
-          <p key='11'>
-            We developed a calendar logging feature where users can log their
-            daily routine and fatigue levels. Daily logging is also prompted by
-            a card in the home screen&apos;s to-do list.
-          </p>,
-          <Figure
-            key='12'
-            images={[
-              { image: '/images/projects/past/past-calendar-1.png' },
-              { image: '/images/projects/past/past-calendar-2.png' },
-            ]}
-            caption='Past calendar screen'
-            type='mobile'
-          />,
-          <h3 className='block font-semibold text-2xl' key='8'>
-            Exercises - Watching recommended exercise videos
-          </h3>,
-          <p key='13'>
-            Our solution to this was a video library of YouTube videos supplied
-            by our client. The user is prompted to complete these exercises
-            daily by a card on the home screen from step 4.
-          </p>,
-          <Figure
-            key='14'
-            images={[{ image: '/images/projects/past/past-exercises.png' }]}
-            caption='Past exercises screen'
-            type='mobile'
-          />,
+          <div key='1'>
+            <h3 className='font-bold text-xl'>
+              Home - Following the programme steps
+            </h3>
+            <p>
+              We created a home screen that tracks the user&apos;s progress in
+              the programme, what step they&apos;re on and the % of their
+              progress. A daily to-do list displays tasks related to the current
+              step for the user to complete, and once a task is completed
+              it&apos;s greyed out and moved to the back of the list. Once the
+              current step is complete, the user is then progressed to the next
+              step with additional tasks added per step.
+            </p>
+            <Figure caption='Past home screen'>
+              <FigureImage
+                src='/images/projects/past/past-home-1.png'
+                alt='Past home screen'
+              />
+              <FigureImage
+                src='/images/projects/past/past-home-2.png'
+                alt='Past home screen'
+              />
+            </Figure>
+          </div>,
+          <div key='2'>
+            <h3 className='font-bold text-xl'>
+              Calendar - Logging daily routine and fatigue levels
+            </h3>
+            <p>
+              We developed a calendar logging feature where users can log their
+              daily routine and fatigue levels. Daily logging is also prompted
+              by a card in the home screen&apos;s to-do list.
+            </p>
+            <Figure caption='Past calendar screen'>
+              <FigureImage
+                src='/images/projects/past/past-calendar-1.png'
+                alt='Past calendar screen'
+              />
+              <FigureImage
+                src='/images/projects/past/past-calendar-2.png'
+                alt='Past calendar screen'
+              />
+            </Figure>
+          </div>,
+          <div key='3'>
+            <h3 className='block font-semibold text-2xl'>
+              Exercises - Watching recommended exercise videos
+            </h3>
+            <p>
+              Our solution to this was a video library of YouTube videos
+              supplied by our client. The user is prompted to complete these
+              exercises daily by a card on the home screen from step 4.
+            </p>
+            <Figure caption='Past calendar screen'>
+              <FigureImage
+                src='/images/projects/past/past-exercises.png'
+                alt='Past calendar screen'
+                className='max-w-xs'
+              />
+            </Figure>
+          </div>,
         ],
       },
       {
         heading: 'Main takeaways',
         paragraphs: [
-          <p key='15'>
+          <p key='1'>
             The prototype was handed over to our clients to take forward so we
             were unable to measure the success of the solution. It would&apos;ve
             been nice to see the product to release and gain feedback from end
             users. Did the product correctly solve user problems? Are users more
             likely to follow the GET programme and see results using the app?
           </p>,
-          <p key='16'>
+          <p key='2'>
             In general, I also think the app would&apos;ve benefited from a
             user-centred approach. Doing user research to better understand of
             their goals and pain points would&apos;ve helped to avoid potential

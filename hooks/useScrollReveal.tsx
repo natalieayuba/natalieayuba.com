@@ -1,7 +1,10 @@
 'use client';
 import { useEffect } from 'react';
+import useIsMobile from './useIsMobile';
 
-const useScrollReveal = () =>
+const useScrollReveal = () => {
+  const isMobile = useIsMobile();
+
   useEffect(() => {
     const elements = document.getElementsByClassName('scroll-reveal');
     Array.from(elements).forEach((el) => {
@@ -12,11 +15,12 @@ const useScrollReveal = () =>
             (el as HTMLElement).style.transform = 'translateY(0)';
           }
         },
-        { rootMargin: '-300px' }
+        { ...(!isMobile && { rootMargin: '-300px' }) }
       );
       observer.observe(el);
       return () => observer.disconnect();
     });
   });
+};
 
 export default useScrollReveal;

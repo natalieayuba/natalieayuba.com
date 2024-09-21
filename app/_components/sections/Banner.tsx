@@ -7,7 +7,7 @@ const Banner = () => {
   return (
     <section
       id='home'
-      className='md:h-[700px] gap-y-16 mb-24 flex items-center relative flex-wrap animate-glide'
+      className='md:h-[700px] gap-x-4 gap-y-16 mb-24 flex items-center relative flex-wrap animate-glide'
       style={{ animationDelay: `${animationDelay}ms` }}
     >
       <div className='flex-1'>
@@ -15,11 +15,11 @@ const Banner = () => {
           Hi, I&#8217;m Natalie :)
         </h1>
         <p className='heading-lg'>A Frontend Developer & UI/UX Designer.</p>
-        <p className='text-xl max-w-md mt-3 leading-snug'>
+        <p className='text-xl max-w-lg mt-3 leading-snug'>
           I create fun, dynamic, and user-centred digital experiences.
         </p>
       </div>
-      <div className='md:flex-1 md:max-w-md px-6 md:px-0 relative'>
+      <div className='md:flex-1 md:max-w-[465px] px-6 md:px-0 relative'>
         <Image
           src='/images/projects/headfirst/headfirst-preview-image.png'
           alt='Headirst Bristol sneak peak mockup'
@@ -60,7 +60,11 @@ const Banner = () => {
         <div className='flex mt-3 items-start justify-center gap-6 md:absolute min-[1440px]:top-0 right-0'>
           <div
             title="A sneak peak of what I'm currently working on"
-            className=' min-[1440px]:absolute -right-[250px]'
+            className=' min-[1440px]:absolute -right-[250px] animate-pop'
+            style={{
+              animationDelay: `${(animationDelay += 400)}ms`,
+              animationDuration: '300ms',
+            }}
           >
             <Image
               src='/images/decals/sneak-peak.svg'
@@ -71,7 +75,13 @@ const Banner = () => {
               priority
             />
           </div>
-          <div className='mt-4 min-[1440px]:absolute top-24 -right-48'>
+          <div
+            className='mt-4 min-[1440px]:absolute top-24 -right-48 animate-pop'
+            style={{
+              animationDelay: `${(animationDelay += 400)}ms`,
+              animationDuration: '300ms',
+            }}
+          >
             <div title='Check out my other projects below'>
               <Image
                 src='/images/decals/other-projects.svg'

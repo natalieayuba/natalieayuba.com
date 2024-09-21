@@ -8,6 +8,9 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     colors,
     keyframes: {
@@ -29,19 +32,11 @@ const config: Config = {
           right: '-64px',
         },
       },
-      fadeIn: {
-        from: {
-          opacity: '0',
-        },
-      },
     },
     animation: {
       pop: 'pop 200ms ease-in-out backwards',
       glide: 'glide 500ms ease-out backwards',
       poke: 'poke 200ms ease-in-out',
-      fadeIn: 'fadeIn 200ms ease-in-out backwards',
-      blinker: 'blinker 1.25s linear infinite',
-      fall: 'fall ease-in infinite',
     },
     cursor: {
       default: 'url(/images/cursors/default.svg), default',

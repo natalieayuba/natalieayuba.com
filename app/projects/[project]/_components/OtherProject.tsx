@@ -4,8 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PreviewImage from '../../_components/PreviewImage';
 import { colors } from '@/config';
+import useIsMobile from '@/hooks/useIsMobile';
 
 const OtherProject = ({ otherProject }: { otherProject: string }) => {
+  const isMobile = useIsMobile();
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -31,8 +33,8 @@ const OtherProject = ({ otherProject }: { otherProject: string }) => {
       <Link
         href={`/projects/${otherProject.toLowerCase()}`}
         className='bg-purple w-fit'
-        onMouseOver={() => setHovered(true)}
-        onMouseOut={() => setHovered(false)}
+        onMouseOver={() => setHovered(true && !isMobile)}
+        onMouseOut={() => setHovered(false && !isMobile)}
         title={otherProject}
       >
         <div className='h-72 flex items-center px-10'>
