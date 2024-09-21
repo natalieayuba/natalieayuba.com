@@ -2,13 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const Banner = () => {
-  let animationDelay = 0;
+  let animationDelay = 700;
 
   return (
     <section
       id='home'
       className='md:h-[700px] gap-y-16 mb-24 flex items-center relative flex-wrap animate-glide'
-      style={{ animationDelay: `${(animationDelay += 500)}ms` }}
+      style={{ animationDelay: `${animationDelay}ms` }}
     >
       <div className='flex-1'>
         <h1 className='font-semibold text-lg pl-1.5 mb-3'>
@@ -68,6 +68,7 @@ const Banner = () => {
               width={0}
               height={0}
               className='h-24 w-auto'
+              priority
             />
           </div>
           <div className='mt-4 min-[1440px]:absolute top-24 -right-48'>

@@ -9,6 +9,7 @@ const StickyNotes = ({ notes }: { notes: string[] }) => {
     <div className='my-10 flex gap-8 flex-wrap justify-center items-center'>
       {notes.map((note, index) => (
         <div
+          key={note}
           className='max-w-52 flex-1 aspect-square shadow-md p-4 leading-normal font-medium'
           style={{
             backgroundColor: bgColors[index],

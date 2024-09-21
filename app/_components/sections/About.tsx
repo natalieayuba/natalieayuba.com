@@ -3,7 +3,7 @@ import SectionHeader from './SectionHeader';
 import Image from 'next/image';
 
 const About = () => (
-  <section id='about' className='flex justify-center pt-28'>
+  <section id='about' className='flex justify-center pt-28 scroll-reveal'>
     <div className='lg:flex gap-7'>
       <div className='[&_p]:mb-4 flex-1'>
         <SectionHeader heading='About me' />

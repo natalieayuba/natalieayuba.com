@@ -38,13 +38,11 @@ export const MockupVideo = ({ src, poster }: FigureVideoProps) => {
   useEffect(() => {
     const video = ref.current;
     if (video) {
-      const handleScroll = () => {
-        const rect = video.getBoundingClientRect();
-        setVisible(rect.top < window.innerHeight && rect.bottom > 0);
-      };
-
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
+      const observer = new IntersectionObserver(([entry]) =>
+        setVisible(entry.isIntersecting)
+      );
+      observer.observe(video);
+      return () => observer.disconnect();
     }
   }, []);
 

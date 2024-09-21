@@ -31,7 +31,7 @@ const Playground = () => {
   ];
 
   return (
-    <section id='playground' className='pt-28'>
+    <section id='playground' className='pt-28 scroll-reveal'>
       <SectionHeader
         className='text-center mb-16'
         heading={Playground.displayName!}

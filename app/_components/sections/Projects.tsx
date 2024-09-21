@@ -21,7 +21,7 @@ const Projects = () => {
   return (
     <section id='projects' className='pt-48'>
       <SectionHeader
-        className='text-center mb-24'
+        className='text-center mb-24 scroll-reveal'
         heading='Projects'
         caption='Here lies a selection of solo passion projects, coursework, and internship work.'
       />
@@ -29,7 +29,7 @@ const Projects = () => {
         {projects.map((project) => (
           <div
             key={project.name}
-            className='flex flex-wrap gap-x-16 gap-y-8 items-center mt-4 mb-16 md:mt-12 md:mb-32'
+            className='scroll-reveal flex flex-wrap gap-x-16 gap-y-8 items-center mt-4 mb-16 md:mt-12 md:mb-32'
           >
             <PreviewImage projectName={project.name} />
             <div className='flex flex-col gap-2 w-full md:flex-1'>
