@@ -28,7 +28,9 @@ const Socials = ({ animationDelay = 0, className }: SocialsProps) => {
       {socials.map(({ name, url }) => (
         <ExternalLink
           key={name}
-          style={{ animationDelay: `${(animationDelay += 100)}ms` }}
+          {...(animationDelay && {
+            style: { animationDelay: `${(animationDelay += 100)}ms` },
+          })}
           href={url}
           className='hover:brightness-100 hover:scale-110 animate-pop'
           title={name}

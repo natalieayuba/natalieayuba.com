@@ -1,15 +1,9 @@
 'use client';
 import { appendClassName } from '@/utils/formatting';
 import Image from 'next/image';
-import React, {
-  forwardRef,
-  useEffect,
-  useRef,
-  useState,
-  type RefObject,
-} from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-interface FigureProps {
+export interface FigureProps {
   caption: string;
   children: React.ReactNode;
 }
@@ -102,7 +96,8 @@ const Figure = ({ caption, children }: FigureProps) => {
     <figure className='mt-12 mb-4 w-full [&&]:max-w-none relative'>
       <div className='flex justify-center gap-[5%] w-full'>{children}</div>
       <figcaption className='secondary-text mt-12 text-center mx-auto max-w-xl'>
-        {figureIndex && `1.${figureIndex}. ${caption}`}
+        {figureIndex && `1.${figureIndex}. `}
+        {caption}
       </figcaption>
     </figure>
   );

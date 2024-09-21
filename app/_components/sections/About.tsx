@@ -1,10 +1,9 @@
-import React, { forwardRef, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import scrollReveal from '@/utils/scrollReveal';
-import SectionLayout from './SectionLayout';
 import SectionHeader from './SectionHeader';
 import Image from 'next/image';
 
-const About = forwardRef<HTMLElement>((props, ref) => {
+const About = () => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -14,7 +13,7 @@ const About = forwardRef<HTMLElement>((props, ref) => {
   });
 
   return (
-    <SectionLayout el={About} className='flex justify-center' ref={ref}>
+    <section id='about' className='flex justify-center pt-28'>
       <div className='lg:flex gap-7'>
         <div className='[&_p]:mb-4 flex-1'>
           <SectionHeader heading='About me' />
@@ -56,10 +55,8 @@ const About = forwardRef<HTMLElement>((props, ref) => {
           />
         </div>
       </div>
-    </SectionLayout>
+    </section>
   );
-});
+};
 
 export default About;
-
-About.displayName = 'About';

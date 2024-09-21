@@ -27,7 +27,6 @@ const SectionLayout = forwardRef<HTMLElement, SectionProps>(
     return (
       <section
         id={el.displayName?.toLowerCase()}
-        ref={ref}
         className={`pt-28 ${className ? ` ${className}` : ''}`}
       >
         {children}

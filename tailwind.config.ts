@@ -20,7 +20,7 @@ const config: Config = {
       glide: {
         from: {
           opacity: '0',
-          transform: 'translateY(-8px)',
+          transform: 'translateY(-20px)',
         },
       },
       poke: {
@@ -37,7 +37,7 @@ const config: Config = {
     },
     animation: {
       pop: 'pop 200ms ease-in-out backwards',
-      glide: 'glide 200ms ease-in backwards',
+      glide: 'glide 500ms ease-out backwards',
       poke: 'poke 200ms ease-in-out',
       fadeIn: 'fadeIn 200ms ease-in-out backwards',
       blinker: 'blinker 1.25s linear infinite',
@@ -47,9 +47,6 @@ const config: Config = {
       default: 'url(/images/cursors/default.svg), default',
       text: 'url(/images/cursors/text.svg), text',
       pointer: 'url(/images/cursors/pointer.svg), pointer',
-    },
-    boxShadow: {
-      image: '0px 4px 8px rgba(0,0,0,0.02)',
     },
     fontSize: ({ theme }) => {
       const minViewportWidth = 375;
@@ -80,6 +77,11 @@ const config: Config = {
             })
         ),
       };
+    },
+    extend: {
+      boxShadow: {
+        image: '0px 4px 8px rgba(0,0,0,0.02)',
+      },
     },
   },
   plugins: [],

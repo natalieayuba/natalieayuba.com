@@ -1,16 +1,15 @@
 'use client';
 import Socials from './Socials';
 import Link from 'next/link';
-import { useEffect, useState, type MutableRefObject } from 'react';
+import { useEffect, useState } from 'react';
 import { colors, navLinks } from '@/config';
-import { interval } from '@/utils/navlinkAnimation';
-export interface NavLinksProps {
-  sectionsRef?: MutableRefObject<HTMLElement[]>;
-  activeLink?: string;
-}
+import { usePathname } from 'next/navigation';
 
-const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
-  const [active, setActive] = useState(activeLink || '');
+const NavLinks = () => {
+  const pathname = usePathname();
+  const [active, setActive] = useState(
+    navLinks.find((link) => pathname.includes(link.toLowerCase())) ?? 'Home'
+  );
   const [scrollByClick, setScrollByClick] = useState(false);
   const [hovered, setHovered] = useState('');
   const underlines = {
@@ -27,18 +26,19 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
   let animationDelay = 0;
 
   useEffect(() => {
-    if (activeLink === 'Home' && sectionsRef && sectionsRef.current) {
+    if (pathname === '/' && !scrollByClick) {
       const handleScroll = () => {
-        if (!scrollByClick) {
-          sectionsRef.current.forEach((section, index) => {
-            if (
-              section &&
-              section.getBoundingClientRect().top < window.innerHeight / 2 - 75
-            ) {
-              setActive(navLinks[index]);
-            }
-          });
-        }
+        const sections = navLinks.map((link) =>
+          document.getElementById(link.toLowerCase())
+        );
+        sections.forEach((section, index) => {
+          if (
+            section &&
+            section.getBoundingClientRect().top < window.innerHeight / 2 - 75
+          ) {
+            setActive(navLinks[index]);
+          }
+        });
       };
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
@@ -54,52 +54,54 @@ const NavLinks = ({ sectionsRef, activeLink }: NavLinksProps) => {
   return (
     <div className='hidden md:flex'>
       <ul className={`font-semibold flex`}>
-        {navLinks.map((navLink, index) => {
-          return (
-            <li
-              key={navLink}
-              className={'relative animate-pop'}
-              style={{
-                animationDelay: `${(animationDelay += interval)}ms`,
+        {navLinks.map((navLink, index) => (
+          <li
+            key={navLink}
+            className={'relative animate-pop'}
+            style={{
+              animationDelay: `${(animationDelay += 75)}ms`,
+            }}
+          >
+            <Link
+              href={
+                pathname.includes('projects') && navLink === 'Home'
+                  ? '/'
+                  : `/#${navLink.toLowerCase()}`
+              }
+              className={`p-4 transition-all duration-50 z-[1] relative ${
+                active === navLink ? 'text-purple' : ''
+              }`}
+              onMouseOver={() => setHovered(navLink)}
+              onMouseOut={() => setHovered('')}
+              onClick={() => {
+                setActive(navLink);
+                setScrollByClick(true);
               }}
             >
-              <Link
-                href={`/#${navLink.toLowerCase()}`}
-                className={`p-4 transition-all duration-50 z-[1] relative ${
-                  active === navLink ? 'text-purple' : ''
-                }`}
-                onMouseOver={() => setHovered(navLink)}
-                onMouseOut={() => setHovered('')}
-                onClick={() => {
-                  setActive(navLink);
-                  setScrollByClick(true);
-                }}
-              >
-                {navLink}
-              </Link>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='82'
-                height='14'
-                viewBox='0 0 82 16'
-                fill='none'
-                className='absolute -bottom-3 left-1/2 -translate-x-1/2'
-              >
-                <path
-                  d={Object.values(underlines)[index]}
-                  stroke={colors.purple}
-                  strokeWidth={3}
-                  strokeLinecap='round'
-                  strokeDasharray={80}
-                  strokeDashoffset={
-                    active === navLink || hovered === navLink ? 0 : 80
-                  }
-                  className='transition-all duration-200'
-                />
-              </svg>
-            </li>
-          );
-        })}
+              {navLink}
+            </Link>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='82'
+              height='14'
+              viewBox='0 0 82 16'
+              fill='none'
+              className='absolute -bottom-3 left-1/2 -translate-x-1/2'
+            >
+              <path
+                d={Object.values(underlines)[index]}
+                stroke={colors.purple}
+                strokeWidth={3}
+                strokeLinecap='round'
+                strokeDasharray={80}
+                strokeDashoffset={
+                  active === navLink || hovered === navLink ? 0 : 80
+                }
+                className='transition-all duration-200'
+              />
+            </svg>
+          </li>
+        ))}
       </ul>
       <Socials animationDelay={animationDelay} className='ml-3' />
     </div>

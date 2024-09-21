@@ -1,25 +1,10 @@
-'use client';
 import { ButtonStyleLink } from '../Links';
-import { forwardRef, useEffect, useRef } from 'react';
-import scrollReveal from '@/utils/scrollReveal';
-import { toUrlParam } from '@/utils/urlUtils';
-import SectionLayout from './SectionLayout';
 import SectionHeader from './SectionHeader';
 import projects from '@/app/projects/projects';
 import PreviewImage from '@/app/projects/_components/PreviewImage';
 import ExternalLinks from '@/app/projects/_components/ExternalLinks';
 
-const Projects = forwardRef<HTMLElement>((props, ref) => {
-  const projectsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (projectsRef.current) {
-      Array.from(projectsRef.current.children).forEach((ref, i) =>
-        scrollReveal(ref as HTMLDivElement)
-      );
-    }
-  });
-
+const Projects = () => {
   const list = (list: string[]) => (
     <ul className='secondary-text'>
       {list.map((item) => (
@@ -34,10 +19,10 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
   );
 
   return (
-    <SectionLayout el={Projects} ref={ref}>
+    <section id='projects' className='pt-48'>
       <SectionHeader
         className='text-center mb-24'
-        heading={Projects.displayName!}
+        heading='Projects'
         caption='Here lies a selection of solo passion projects, coursework, and internship work.'
       />
       <div className='[&>*:nth-child(even)]:flex-row-reverse'>
@@ -64,10 +49,8 @@ const Projects = forwardRef<HTMLElement>((props, ref) => {
           </div>
         ))}
       </div>
-    </SectionLayout>
+    </section>
   );
-});
-
-Projects.displayName = 'Projects';
+};
 
 export default Projects;

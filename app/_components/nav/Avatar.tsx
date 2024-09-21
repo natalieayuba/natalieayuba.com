@@ -52,7 +52,7 @@ const Avatar = () => {
       onMouseOver={() => {
         if (!animating) animate();
       }}
-      className=' animate-pop'
+      className='animate-pop'
     >
       <Image
         src='/images/robo-nat/ouch.svg'

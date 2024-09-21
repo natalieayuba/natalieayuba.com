@@ -1,10 +1,11 @@
-import FullScreenLayout from '@/app/_components/FullScreenLayout';
-import PageLayout from '@/app/_components/PageLayout';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import CentredLayout from '../_components/CentredLayout';
+
+const title = 'Under Construction';
 
 export const metadata: Metadata = {
-  title: 'Under Construction',
+  title,
 };
 
 const UnderConstruction = () => {
@@ -13,14 +14,11 @@ const UnderConstruction = () => {
   }
 
   return (
-    <PageLayout hideHeader fullHeight>
-      <FullScreenLayout heading='Under Construction'>
-        <p>
-          My website is currently undergoing some changes. <br />
-          Please come back soon :)
-        </p>
-      </FullScreenLayout>
-    </PageLayout>
+    <CentredLayout
+      heading={title}
+      subheading='My website is currently undergoing some changes.
+          Please come back soon :)'
+    />
   );
 };
 

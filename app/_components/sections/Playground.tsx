@@ -1,9 +1,8 @@
-import React, { forwardRef } from 'react';
-import SectionLayout from './SectionLayout';
+import React from 'react';
 import Image from 'next/image';
 import SectionHeader from './SectionHeader';
 
-const Playground = forwardRef<HTMLElement>((props, ref) => {
+const Playground = () => {
   const logos = [
     {
       src: '/images/playground/stripped-sets-logo.png',
@@ -32,7 +31,7 @@ const Playground = forwardRef<HTMLElement>((props, ref) => {
   ];
 
   return (
-    <SectionLayout el={Playground} ref={ref}>
+    <section id='playground' className='pt-28'>
       <SectionHeader
         className='text-center mb-16'
         heading={Playground.displayName!}
@@ -51,9 +50,9 @@ const Playground = forwardRef<HTMLElement>((props, ref) => {
           </div>
         ))}
       </div>
-    </SectionLayout>
+    </section>
   );
-});
+};
 
 Playground.displayName = 'Playground';
 

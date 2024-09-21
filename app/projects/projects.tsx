@@ -1,10 +1,16 @@
 import { ExternalLink } from '@/app/_components/Links';
 import type { ExternalLinksProps } from './_components/ExternalLinks';
-import type { ReactNode } from 'react';
+import type { ReactElement } from 'react';
 import Figure, {
   FigureImage,
   MockupVideo,
 } from './[project]/_components/Figure';
+import StickyNotes from './[project]/_components/StickyNotes';
+
+export interface ContentProps {
+  heading: string;
+  paragraphs: ReactElement[];
+}
 
 export interface ProjectProps {
   name: string;
@@ -16,7 +22,7 @@ export interface ProjectProps {
   startDate: string;
   endDate: string;
   links: ExternalLinksProps;
-  content: { heading: string; paragraphs: ReactNode[] }[];
+  content: ContentProps[];
   otherProject: string;
 }
 
@@ -399,8 +405,7 @@ const projects: ProjectProps[] = [
     name: 'Luxe',
     description:
       'Luxe is a conceptual mobile app that allows users to book cinema tickets in advance.',
-    heading:
-      'Waste no time waiting in queues, and book your tickets online with Luxe',
+    heading: 'No more waiting in line, book with Luxe to save time',
     role: [roles.wireframing, roles.prototyping, roles.uxResearch],
     tools: [tools.figma],
     startDate: '2023-05',
@@ -420,10 +425,10 @@ const projects: ProjectProps[] = [
               Google UX Design Course
             </ExternalLink>{' '}
             to learn more about industry-level standards and improve my design
-            skills. For my main project, I created a prototype for a conceptual
-            mobile app called Luxe that allows users to book their movie tickets
-            online and reserve seating. Using design thinking, I engaged with
-            every aspect of the UX design process{' '}
+            skills. For my main project, I designed a conceptual mobile app
+            called Luxe that allows users to book their movie tickets in advance
+            and reserve seating. Using design thinking, I engaged with every
+            aspect of the UX design process{' '}
             <strong>from user research to prototyping</strong>.
           </p>,
         ],
@@ -433,8 +438,8 @@ const projects: ProjectProps[] = [
         paragraphs: [
           <p key='1'>
             Empathising with the user was an interesting concept to me as coming
-            from a software development background we tend to
-            functionality-driven, rather than user-driven.
+            from a software development background, we tend to think more about
+            the functionality than the user.
           </p>,
           <p key='2'>
             As a first step, I <strong>interviewed five users</strong> who were
@@ -445,21 +450,17 @@ const projects: ProjectProps[] = [
             which was the most common goal I discovered from the research. This
             user group confirmed initial assumptions in regards to preferring
             faster options such as self-checkout, but the research also revealed
-            that there was more to it than just convenience. Other pain points
-            included:
+            that there was more to it than just convenience. Other{' '}
+            <strong>pain points</strong> included:
           </p>,
-          <div key='3' className='flex gap-5 my-4'>
-            {[
+          <StickyNotes
+            key='3'
+            notes={[
               'Time waisted waiting in queues',
               'Social anxiety and perceived judgement from others',
               "Knowledge of the cinema's accessibility in advance",
-            ].map((point, index) => (
-              <div key='point' className='flex-1 flex font-bold'>
-                <span className='text-4xl mr-3'>{index + 1}</span>
-                <p className='text-lg'>{point}</p>
-              </div>
-            ))}
-          </div>,
+            ]}
+          />,
           <p key='4'>
             I{' '}
             <strong>
@@ -468,11 +469,12 @@ const projects: ProjectProps[] = [
             which was referred to throughout the entire project to ensure the
             user remained the focus of any design decisions made.
           </p>,
-          <Figure
-            key='5'
-            caption='User Persona'
-            images={[{ image: '/images/projects/luxe/luxe-persona.png' }]}
-          />,
+          <Figure key='5' caption='User persona'>
+            <FigureImage
+              src='/images/projects/luxe/luxe-persona.png'
+              alt='User persona'
+            />
+          </Figure>,
           <p key='6'>
             Additionally, I performed a competitive analysis of similar
             ticketing apps in the market to get a feel for existing solutions. I
@@ -482,27 +484,22 @@ const projects: ProjectProps[] = [
             popular apps that are well-researched, and to see if I could find a
             common booking experience across the apps.
           </p>,
-          <Figure
-            key='7'
-            caption='Competitive analysis snippet'
-            images={[
-              {
-                image:
-                  '/images/projects/luxe/luxe-competitive-analysis-snippet.png',
-              },
-            ]}
-          />,
+          <Figure key='7' caption='Competitive analysis snippet'>
+            <FigureImage
+              src='/images/projects/luxe/luxe-competitive-analysis-snippet.png'
+              alt='Competitive analysis snippet'
+            />
+          </Figure>,
           <p key='8'>
             Once I narrowed this down, I also created a user journey map to
             outline each step of the booking process.
           </p>,
-          <Figure
-            key='9'
-            caption='User journey map'
-            images={[
-              { image: '/images/projects/luxe/luxe-user-journey-map.png' },
-            ]}
-          />,
+          <Figure key='7' caption='User journey map'>
+            <FigureImage
+              src='/images/projects/luxe/luxe-user-journey-map.png'
+              alt='User journey map'
+            />
+          </Figure>,
         ],
       },
       {
@@ -512,13 +509,12 @@ const projects: ProjectProps[] = [
             I began drafting multiple paper wireframes for each step in the
             user&apos;s journey to test out different UI solutions.
           </p>,
-          <Figure
-            key='2'
-            caption='Paper wireframes'
-            images={[
-              { image: '/images/projects/luxe/luxe-paper-wireframes.png' },
-            ]}
-          />,
+          <Figure key='2' caption='Paper wireframes'>
+            <FigureImage
+              src='/images/projects/luxe/luxe-paper-wireframes.png'
+              alt='Paper wireframes'
+            />
+          </Figure>,
           <p key='3'>
             Once the wireframes were narrowed down to the most suitable
             solutions, I gathered feedback from users on the overall layout and
@@ -527,13 +523,12 @@ const projects: ProjectProps[] = [
             prototype, displaying the primary user flow of the ticket booking
             process to be tested by users in a usability study.
           </p>,
-          <Figure
-            key='4'
-            caption='Lo-fi prototype'
-            images={[
-              { image: '/images/projects/luxe/luxe-lo-fi-prototype.png' },
-            ]}
-          />,
+          <Figure key='4' caption='Lo-fi prototype'>
+            <FigureImage
+              src='/images/projects/luxe/luxe-lo-fi-prototype.png'
+              alt='Lo-fi prototype'
+            />
+          </Figure>,
           <p key='5'>
             My favourite part of the project was adding colour, images, copy and
             other visual elements to the design. I particularly enjoyed learning
@@ -542,27 +537,36 @@ const projects: ProjectProps[] = [
             accessibility standards as well, keeping colour contrast high enough
             and text readable.
           </p>,
-          <Figure
-            key='6'
-            caption='Sticker sheet'
-            images={[{ image: '/images/projects/luxe/luxe-sticker-sheet.png' }]}
-          />,
+          <Figure key='6' caption='Sticker sheet'>
+            <FigureImage
+              src='/images/projects/luxe/luxe-sticker-sheet.png'
+              alt='Sticker sheet'
+            />
+          </Figure>,
           <p key='7'>
             After many iterations of designing, testing with users, and
             revising, the final prototype was complete.
           </p>,
-          <Figure
-            key='8'
-            caption='Hi-fi-prototype'
-            images={[
-              { image: '/images/projects/luxe/luxe-hi-fi-prototype.png' },
-            ]}
-          />,
-          <Figure
-            key='9'
-            caption='Demo'
-            images={[{ image: '/images/projects/luxe/luxe-demo.gif' }]}
-          />,
+          <Figure key='6' caption='Hi-fi-prototype'>
+            <FigureImage
+              src='/images/projects/luxe/luxe-hi-fi-prototype.png'
+              alt='Hi-fi-prototype'
+            />
+          </Figure>,
+          <Figure key='7' caption='Luxe Demo'>
+            <div className='h-auto mx-auto overflow-hidden relative'>
+              <FigureImage
+                src='/images/projects/phone-mockup.png'
+                alt='Phone mockup'
+                className='w-80 relative z-[1]'
+              />
+              <FigureImage
+                src='/images/projects/luxe/luxe-demo.gif'
+                alt='Luxe Demo'
+                className='absolute top-2.5 left-1/2 -translate-x-1/2 w-[92%] rounded-[40px]'
+              />
+            </div>
+          </Figure>,
         ],
       },
       {

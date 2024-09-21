@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { colors, description, title, url } from '@/config';
 import type { ReactNode } from 'react';
+import Header from './_components/Header';
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -29,11 +30,12 @@ export const viewport: Viewport = {
   themeColor: colors.blue,
 };
 
-const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => (
+const RootLayout = ({ children }: { children: ReactNode }) => (
   <html lang='en-GB' className='scroll-smooth'>
     <body
-      className={`${poppins.className} leading-relaxed bg-blue text-black selection:bg-purple selection:bg-opacity-60`}
+      className={`${poppins.className} leading-relaxed bg-gradient-to-b from-blue to-white text-black selection:bg-purple selection:bg-opacity-60`}
     >
+      {process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'false' && <Header />}
       {children}
     </body>
   </html>
