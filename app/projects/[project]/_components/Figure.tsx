@@ -68,7 +68,7 @@ export const MockupVideo = ({ src, poster }: FigureVideoProps) => {
         </video>
       </div>
       <FigureImage
-        src='/images/projects/desktop-mockup.png'
+        src='/projects/desktop-mockup.png'
         alt='Desktop mockup'
         className='z-0'
       />

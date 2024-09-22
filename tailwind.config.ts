@@ -39,9 +39,9 @@ const config: Config = {
       poke: 'poke 200ms ease-in-out',
     },
     cursor: {
-      default: 'url(/images/cursors/default.svg), default',
-      text: 'url(/images/cursors/text.svg), text',
-      pointer: 'url(/images/cursors/pointer.svg), pointer',
+      default: 'url(/cursors/default.svg), default',
+      text: 'url(/cursors/text.svg), text',
+      pointer: 'url(/cursors/pointer.svg), pointer',
     },
     fontSize: ({ theme }) => {
       const minViewportWidth = 375;

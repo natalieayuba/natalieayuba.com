@@ -10,7 +10,7 @@ const PreviewImage = ({ projectName, className }: PreviewImageProps) => (
   <div className={`mx-auto relative ${className ? ` ${className}` : ''}`}>
     <Image
       key={projectName}
-      src={`/images/projects/${projectName}/${projectName}-preview-image.png`}
+      src={`/projects/${projectName}/${projectName}-preview-image.png`}
       alt={`${projectName} preview image`}
       width={0}
       height={0}

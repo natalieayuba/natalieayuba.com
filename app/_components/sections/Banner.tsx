@@ -24,8 +24,8 @@ const Banner = () => {
         style={{
           height: `${scrollY}px`,
           WebkitMaskImage:
-            'linear-gradient(to bottom,black 80%,transparent 100%)',
-          maskImage: 'linear-gradient(to bottom,black 80%,transparent 100%)',
+            'linear-gradient(to bottom,black 90%,transparent 100%)',
+          maskImage: 'linear-gradient(to bottom,black 90%,transparent 100%)',
         }}
       >
         <svg
@@ -58,7 +58,7 @@ const Banner = () => {
       </div>
       <div className='md:flex-1 md:max-w-[465px] px-6 md:px-0 relative'>
         <Image
-          src='/images/projects/headfirst/headfirst-preview-image.png'
+          src='/projects/headfirst/headfirst-preview-image.png'
           alt='Headirst Bristol sneak peak mockup'
           width={0}
           height={0}
@@ -71,7 +71,7 @@ const Banner = () => {
         />
         <div className='absolute -top-10 right-0 md:-right-8'>
           <Image
-            src='/images/decals/big-sparkle.svg'
+            src='/decals/big-sparkle.svg'
             alt='Big sparkle'
             width={0}
             height={0}
@@ -82,7 +82,7 @@ const Banner = () => {
             }}
           />
           <Image
-            src='/images/decals/little-sparkle.svg'
+            src='/decals/little-sparkle.svg'
             alt='Little sparkle'
             width={0}
             height={0}
@@ -103,7 +103,7 @@ const Banner = () => {
             }}
           >
             <Image
-              src='/images/decals/sneak-peak.svg'
+              src='/decals/sneak-peak.svg'
               alt="A sneak peak of what I'm currently working on"
               width={0}
               height={0}
@@ -120,7 +120,7 @@ const Banner = () => {
           >
             <div title='Check out my other projects below'>
               <Image
-                src='/images/decals/other-projects.svg'
+                src='/decals/other-projects.svg'
                 alt='Check out my other projects below'
                 width={0}
                 height={0}
@@ -133,7 +133,7 @@ const Banner = () => {
               className='w-full flex hover:mt-1 '
             >
               <Image
-                src='/images/decals/arrow.svg'
+                src='/decals/arrow.svg'
                 alt='Down arrow'
                 width={0}
                 height={0}

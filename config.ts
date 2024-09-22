@@ -14,4 +14,4 @@ export const colors = {
   black: '#121212',
 };
 
-export const navLinks = ['Home', 'About', 'Projects', 'Playground'];
+export const navLinks = ['Home', 'About', 'Projects', 'Designs'];

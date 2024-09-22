@@ -15,7 +15,7 @@ const OtherProject = ({ otherProject }: { otherProject: string }) => {
       <div className='absolute -top-20 -left-2'>
         <div title='You might also like'>
           <Image
-            src='/images/decals/you-might-also-like-2.svg'
+            src='/decals/you-might-also-like.svg'
             alt='You might also like'
             width={0}
             height={0}
@@ -23,7 +23,7 @@ const OtherProject = ({ otherProject }: { otherProject: string }) => {
           />
         </div>
         <Image
-          src='/images/decals/arrow2.svg'
+          src='/decals/arrow2.svg'
           alt='Arrow'
           width={0}
           height={0}

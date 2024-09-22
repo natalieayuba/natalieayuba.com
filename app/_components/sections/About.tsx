@@ -24,9 +24,9 @@ const About = () => (
           I believe the combination of my development background and design
           skills have given me the ability to know if certain design choices are
           doable from a technical standpoint, and if they&apos;re beneficial to
-          the user. I&apos;m also passionate about brand design, illustration,
-          and animation, as I believe adding a bit of character can bring any
-          design to life.
+          the user. I&apos;m also passionate about <strong>brand design</strong>
+          , <strong>illustration</strong>, and <strong>animation</strong>, as I
+          believe adding a bit of character can bring any design to life.
         </p>
         <p>
           When I&apos;m not designing or coding, you&apos;ll find me jamming
@@ -36,7 +36,7 @@ const About = () => (
       </div>
       <div className='lg:aspect-[1888.8/2,453.54] lg:w-[40%] relative'>
         <Image
-          src='/images/decals/self-portrait.svg'
+          src='/decals/self-portrait.svg'
           alt='A self portrait'
           width={0}
           height={0}

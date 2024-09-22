@@ -60,7 +60,7 @@ const projects: ProjectProps[] = [
   //   name: 'Headfirst Bristol',
   //   description:
   //     'Conceptual redesign of Headfirst Bristol, a web app for a Bristol-based events ticketing company.',
-  //   headerImage: ['/images/projects/headfirst/headfirst-fun.png'],
+  //   headerImage: ['/projects/headfirst/headfirst-fun.png'],
   //   bgColor: '#BB9EFF',
   //   role: [
   //     roles.wireframing,
@@ -185,7 +185,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure key='3' caption='Colourify inspo'>
             <FigureImage
-              src='/images/projects/colourify/colourify-inspo.png'
+              src='/projects/colourify/colourify-inspo.png'
               alt='Colourify inspo'
             />
           </Figure>,
@@ -243,11 +243,11 @@ const projects: ProjectProps[] = [
             caption='Previous designs for the colour palette, one without margins, and one with 10 albums instead of 5'
           >
             <FigureImage
-              src='/images/projects/colourify/colourify-palette-draft1.png'
+              src='/projects/colourify/colourify-palette-draft1.png'
               alt='Colourify palette draft 1'
             />
             <FigureImage
-              src='/images/projects/colourify/colourify-palette-draft2.png'
+              src='/projects/colourify/colourify-palette-draft2.png'
               alt='Colourify palette draft 2'
             />
           </Figure>,
@@ -296,7 +296,7 @@ const projects: ProjectProps[] = [
             </p>
             <Figure caption='Progress bar'>
               <FigureImage
-                src='/images/projects/colourify/colourify-progress-bar.png'
+                src='/projects/colourify/colourify-progress-bar.png'
                 alt='Progress bar image'
                 className='max-w-80'
               />
@@ -371,8 +371,8 @@ const projects: ProjectProps[] = [
           </div>,
           <Figure key='9' caption='Colourify demo'>
             <MockupVideo
-              poster='/images/projects/colourify/colourify-demo-poster.png'
-              src='/images/projects/colourify/colourify-demo.mp4'
+              poster='/projects/colourify/colourify-demo-poster.png'
+              src='/projects/colourify/colourify-demo.mp4'
             />
           </Figure>,
         ],
@@ -425,7 +425,7 @@ const projects: ProjectProps[] = [
               Google UX Design Course
             </ExternalLink>{' '}
             to learn more about industry-level standards and improve my design
-            skills. For my main project, I designed a conceptual mobile app
+            skills. For one of my projects, I designed a conceptual mobile app
             called Luxe that allows users to book their movie tickets in advance
             and reserve seating. Using design thinking, I engaged with every
             aspect of the UX design process{' '}
@@ -471,7 +471,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure key='5' caption='User persona'>
             <FigureImage
-              src='/images/projects/luxe/luxe-persona.png'
+              src='/projects/luxe/luxe-persona.png'
               alt='User persona'
             />
           </Figure>,
@@ -486,7 +486,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure key='7' caption='Competitive analysis snippet'>
             <FigureImage
-              src='/images/projects/luxe/luxe-competitive-analysis-snippet.png'
+              src='/projects/luxe/luxe-competitive-analysis-snippet.png'
               alt='Competitive analysis snippet'
             />
           </Figure>,
@@ -496,7 +496,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure key='9' caption='User journey map'>
             <FigureImage
-              src='/images/projects/luxe/luxe-user-journey-map.png'
+              src='/projects/luxe/luxe-user-journey-map.png'
               alt='User journey map'
             />
           </Figure>,
@@ -511,7 +511,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure key='2' caption='Paper wireframes'>
             <FigureImage
-              src='/images/projects/luxe/luxe-paper-wireframes.png'
+              src='/projects/luxe/luxe-paper-wireframes.png'
               alt='Paper wireframes'
             />
           </Figure>,
@@ -525,7 +525,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure key='4' caption='Lo-fi prototype'>
             <FigureImage
-              src='/images/projects/luxe/luxe-lo-fi-prototype.png'
+              src='/projects/luxe/luxe-lo-fi-prototype.png'
               alt='Lo-fi prototype'
             />
           </Figure>,
@@ -539,7 +539,7 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure key='6' caption='Sticker sheet'>
             <FigureImage
-              src='/images/projects/luxe/luxe-sticker-sheet.png'
+              src='/projects/luxe/luxe-sticker-sheet.png'
               alt='Sticker sheet'
             />
           </Figure>,
@@ -549,19 +549,19 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure key='8' caption='Hi-fi-prototype'>
             <FigureImage
-              src='/images/projects/luxe/luxe-hi-fi-prototype.png'
+              src='/projects/luxe/luxe-hi-fi-prototype.png'
               alt='Hi-fi-prototype'
             />
           </Figure>,
           <Figure key='9' caption='Luxe Demo'>
             <div className='h-auto mx-auto overflow-hidden relative'>
               <FigureImage
-                src='/images/projects/phone-mockup.png'
+                src='/projects/phone-mockup.png'
                 alt='Phone mockup'
                 className='w-80 relative z-[1]'
               />
               <FigureImage
-                src='/images/projects/luxe/luxe-demo.gif'
+                src='/projects/luxe/luxe-demo.gif'
                 alt='Luxe Demo'
                 className='absolute top-2.5 left-1/2 -translate-x-1/2 w-[92%] rounded-[40px]'
               />
@@ -664,12 +664,12 @@ const projects: ProjectProps[] = [
           </p>,
           <Figure key='2' caption='PAST logo and icon'>
             <FigureImage
-              src='/images/projects/past/past-logo.png'
+              src='/projects/past/past-logo.png'
               alt='Past logo'
               className='flex-none max-h-32 w-auto rounded-none'
             />
             <FigureImage
-              src='/images/projects/past/past-icon.png'
+              src='/projects/past/past-icon.png'
               alt='Past icon'
               className='flex-none max-h-32 w-auto rounded-none'
             />
@@ -718,11 +718,11 @@ const projects: ProjectProps[] = [
             </p>
             <Figure caption='Past home screen'>
               <FigureImage
-                src='/images/projects/past/past-home-1.png'
+                src='/projects/past/past-home-1.png'
                 alt='Past home screen'
               />
               <FigureImage
-                src='/images/projects/past/past-home-2.png'
+                src='/projects/past/past-home-2.png'
                 alt='Past home screen'
               />
             </Figure>
@@ -738,11 +738,11 @@ const projects: ProjectProps[] = [
             </p>
             <Figure caption='Past calendar screen'>
               <FigureImage
-                src='/images/projects/past/past-calendar-1.png'
+                src='/projects/past/past-calendar-1.png'
                 alt='Past calendar screen'
               />
               <FigureImage
-                src='/images/projects/past/past-calendar-2.png'
+                src='/projects/past/past-calendar-2.png'
                 alt='Past calendar screen'
               />
             </Figure>
@@ -758,7 +758,7 @@ const projects: ProjectProps[] = [
             </p>
             <Figure caption='Past calendar screen'>
               <FigureImage
-                src='/images/projects/past/past-exercises.png'
+                src='/projects/past/past-exercises.png'
                 alt='Past calendar screen'
                 className='max-w-xs'
               />

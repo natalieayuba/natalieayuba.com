@@ -5,19 +5,19 @@ import { useState } from 'react';
 
 const Avatar = () => {
   const avatarFrames = [
-    { src: '/images/robo-nat/robo-nat-eyes-open.svg', interval: 80 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 30 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 30 },
-    { src: '/images/robo-nat/robo-nat-eyes-closed.svg', interval: 60 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 30 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 30 },
-    { src: '/images/robo-nat/robo-nat-eyes-open.svg', interval: 250 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 20 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 20 },
-    { src: '/images/robo-nat/robo-nat-eyes-closed.svg', interval: 40 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-closed.svg', interval: 20 },
-    { src: '/images/robo-nat/robo-nat-eyes-half-open.svg', interval: 20 },
-    { src: '/images/robo-nat/robo-nat-eyes-open.svg', interval: 150 },
+    { src: '/avatar/avatar-eyes-open.svg', interval: 80 },
+    { src: '/avatar/avatar-eyes-half-open.svg', interval: 30 },
+    { src: '/avatar/avatar-eyes-half-closed.svg', interval: 30 },
+    { src: '/avatar/avatar-eyes-closed.svg', interval: 60 },
+    { src: '/avatar/avatar-eyes-half-closed.svg', interval: 30 },
+    { src: '/avatar/avatar-eyes-half-open.svg', interval: 30 },
+    { src: '/avatar/avatar-eyes-open.svg', interval: 250 },
+    { src: '/avatar/avatar-eyes-half-open.svg', interval: 20 },
+    { src: '/avatar/avatar-eyes-half-closed.svg', interval: 20 },
+    { src: '/avatar/avatar-eyes-closed.svg', interval: 40 },
+    { src: '/avatar/avatar-eyes-half-closed.svg', interval: 20 },
+    { src: '/avatar/avatar-eyes-half-open.svg', interval: 20 },
+    { src: '/avatar/avatar-eyes-open.svg', interval: 150 },
   ];
   const [animating, setAnimating] = useState(false);
   const [frameIndex, setFrameIndex] = useState(0);
@@ -55,7 +55,7 @@ const Avatar = () => {
       className='animate-pop'
     >
       <Image
-        src='/images/robo-nat/ouch.svg'
+        src='/avatar/ouch.svg'
         alt='ouch!'
         width={0}
         height={0}
