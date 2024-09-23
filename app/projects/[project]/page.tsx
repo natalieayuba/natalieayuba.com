@@ -1,12 +1,12 @@
 import React from 'react';
-import projects from '../projects';
 import { notFound } from 'next/navigation';
 import { toUrlParam } from '@/utils/urlUtils';
-import Breadcrumbs from './_components/Breadcrumbs';
-import HeaderImage from './_components/HeaderImage';
-import Details from './_components/Details';
-import Content from './_components/Content';
-import OtherProject from './_components/OtherProject';
+import Breadcrumbs from './components/Breadcrumbs';
+import HeaderImage from './components/HeaderImage';
+import Details from './components/Details';
+import Content from './components/Content';
+import OtherProject from './components/OtherProject';
+import projects from '@/data/projects';
 
 const Project = ({ params }: { params: { project: string } }) => {
   const project = projects.find(
@@ -18,7 +18,7 @@ const Project = ({ params }: { params: { project: string } }) => {
   }
 
   return (
-    <div className='animate-glide pt-28'>
+    <div className='animate-glide pt-28 container'>
       <header>
         <Breadcrumbs />
         <h1 className='heading-lg text-center mt-10 md:mt-20 max-w-3xl mx-auto'>

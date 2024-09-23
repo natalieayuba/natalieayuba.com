@@ -42,6 +42,8 @@ const config: Config = {
       default: 'url(/cursors/default.svg), default',
       text: 'url(/cursors/text.svg), text',
       pointer: 'url(/cursors/pointer.svg), pointer',
+      'zoom-in': 'url(/cursors/zoom-in.svg), zoom-in',
+      'zoom-out': 'url(/cursors/zoom-out.svg), zoom-out',
     },
     fontSize: ({ theme }) => {
       const minViewportWidth = 375;
@@ -79,7 +81,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
 };
 
 export default config;

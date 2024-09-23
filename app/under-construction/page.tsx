@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import CentredLayout from '../_components/CentredLayout';
+import CentredLayout from '../components/CentredLayout';
 
 const title = 'Under Construction';
 

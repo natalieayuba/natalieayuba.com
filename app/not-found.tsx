@@ -1,6 +1,6 @@
-import { ButtonStyleLink } from '@/app/_components/Links';
+import { ButtonStyleLink } from '@/app/components/Links';
 import type { Metadata } from 'next';
-import CentredLayout from './_components/CentredLayout';
+import CentredLayout from './components/CentredLayout';
 
 const title = 'Page Not Found';
 export const metadata: Metadata = { title };

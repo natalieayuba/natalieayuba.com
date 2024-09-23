@@ -1,8 +1,8 @@
 'use client';
-import Banner from './_components/sections/Banner';
-import Projects from './_components/sections/Projects';
-import About from './_components/sections/About';
-import Playground from './_components/sections/Designs';
+import Banner from './components/sections/Banner';
+import Projects from './components/sections/Projects';
+import About from './components/sections/About';
+import Playground from './components/sections/Designs';
 
 const Home = () => (
   <>
