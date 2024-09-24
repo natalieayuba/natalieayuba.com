@@ -31,7 +31,7 @@ export const viewport: Viewport = {
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => (
-  <html lang='en-GB' className='scroll-smooth'>
+  <html lang='en-GB' className='scroll-smooth overscroll-x-none'>
     <body
       className={`${poppins.className} leading-relaxed bg-gradient-to-b from-blue to-white text-black selection:bg-purple selection:bg-opacity-60`}
     >

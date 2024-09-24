@@ -70,4 +70,12 @@
   .scroll-reveal {
     @apply opacity-0 translate-y-16 transition-all duration-700 ease-in-out;
   }
+
+  .read-more {
+    @apply after:content-["_...read_more"]  after:absolute after:-bottom-1 after:right-0 after:bg-gradient-to-r from-[transparent] to-10% to-white after:pl-3 after:pt-1;
+  }
+
+  .read-less {
+    @apply after:content-["...read_less"];
+  }
 }

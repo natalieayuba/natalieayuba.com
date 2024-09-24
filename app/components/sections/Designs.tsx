@@ -10,6 +10,12 @@ const Designs = () => {
 
   useEffect(() => {
     document.body.style.overflow = showLightbox ? 'hidden' : 'auto';
+    document.body.style.overscrollBehavior = showLightbox ? 'none' : 'auto';
+    document.body.style.touchAction = showLightbox ? 'none' : 'auto';
+
+    showLightbox
+      ? document.addEventListener('touchmove', (e) => e.preventDefault())
+      : document.addEventListener('touchmove', (e) => e.preventDefault());
   }, [showLightbox]);
 
   const handleClick = (index: number) => {
@@ -25,15 +31,15 @@ const Designs = () => {
           heading='Designs'
           caption="Other logo and web designs I've done in my free time."
         />
-        <div className='grid grid-cols-2 sm:grid-cols-4 gap-x-12 gap-y-4'>
+        <div className='grid grid-cols-2 sm:grid-cols-4 gap-8'>
           {designs.map(({ src, title }, index) => (
             <div
               key={src}
               title={title}
               className={`w-full flex cursor-pointer hover:scale-[115%] transition-all duration-200 ${
                 src.includes('web')
-                  ? 'aspect-video shadow-sm h-auto overflow-hidden rounded-sm items-start'
-                  : 'h-full items-center p-[10%]'
+                  ? 'aspect-video shadow-sm h-auto overflow-hidden rounded-sm items-start my-1'
+                  : 'h-full items-center px-[10%]'
               }`}
               onClick={() => handleClick(index)}
             >
@@ -51,7 +57,7 @@ const Designs = () => {
       {showLightbox && (
         <Lightbox
           content={Object.values(designs)}
-          index={selectedIndex}
+          selectedIndex={selectedIndex}
           setSlide={setSelectedIndex}
           close={() => setShowLightbox(false)}
         />

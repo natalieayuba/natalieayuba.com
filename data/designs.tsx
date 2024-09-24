@@ -1,5 +1,11 @@
 import { ExternalLink } from '@/app/components/Links';
-import React from 'react';
+import React, { type ReactNode } from 'react';
+
+export interface DesignProps {
+  title: string;
+  description: ReactNode;
+  src: string;
+}
 
 export const designs = [
   {
@@ -7,17 +13,20 @@ export const designs = [
     description: (
       <>
         A logo I designed as part of a logo contest for{' '}
-        <ExternalLink>Stripped Sets</ExternalLink>, an events management
-        collective that promotes queer and POC performers in Norwich.
+        <ExternalLink href='https://www.instagram.com/stripped_sets/?hl=en'>
+          Stripped Sets
+        </ExternalLink>
+        , an events management collective that promotes queer and POC performers
+        in Norwich.
       </>
     ),
-    src: '/designs/stripped-sets-logo.png',
+    src: '/designs/stripped-sets/stripped-sets-logo.png',
   },
   {
     title: "What You Sayin' UEA",
     description: (
       <>
-        A logo I designed for the live web show What's Up, UEA? created by{' '}
+        A logo I designed for the live web show What&apos;s Up, UEA? created by{' '}
         <ExternalLink href='https://www.instagram.com/ueatv/?hl=en'>
           UEATV
         </ExternalLink>
@@ -35,9 +44,9 @@ export const designs = [
       <>
         I briefly played lead guitar in a band called Faux Genie and also
         designed our logo and branding. Though we only lasted a few months and
-        didn't make it to X Factor, it served as fun graphic design experience.
-        I went for a playful, handwritten style and added some cosmic elements
-        to match the genie/magic vibes.
+        didn&apos;t make it to X Factor, it served as fun graphic design
+        experience. I went for a playful, handwritten style and added some
+        cosmic elements to match the genie/magic vibes.
       </>
     ),
     src: '/designs/faux-genie-logo.png',
@@ -78,7 +87,7 @@ export const designs = [
       <>
         A redesign of the{' '}
         <ExternalLink href='https://www.ueasu.org/'>
-          University of East Anglia's student union website
+          University of East Anglia&apos;s student union website
         </ExternalLink>{' '}
         to simplify the design and address some accessibility issues.
       </>
@@ -94,7 +103,7 @@ export const designs = [
           Kookie Ko
         </ExternalLink>{' '}
         to address some colour contrast issues and update the branding to use
-        more 'doughy' colours in the design.
+        more doughy colours in the design.
       </>
     ),
     src: '/designs/kookie-ko-web.png',

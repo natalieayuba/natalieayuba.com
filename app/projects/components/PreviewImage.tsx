@@ -14,6 +14,7 @@ const PreviewImage = ({ projectName, className }: PreviewImageProps) => (
       alt={`${projectName} preview image`}
       width={0}
       height={0}
+      priority
       className='w-full h-auto max-w-lg max-h-[450px] relative z-[1]'
     />
   </div>
