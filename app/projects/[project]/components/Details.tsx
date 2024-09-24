@@ -1,7 +1,7 @@
 import React from 'react';
 import ExternalLinks from '../../components/ExternalLinks';
 import moment from 'moment';
-import type { ProjectProps } from '@/data/projects';
+import type { ProjectProps } from '@/app/_data/projects';
 
 const Details = ({ project }: { project: ProjectProps }) => {
   const duration = (startDate: string, endDate: string) => {

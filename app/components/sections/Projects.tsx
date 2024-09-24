@@ -2,7 +2,7 @@ import { ButtonStyleLink } from '../Links';
 import SectionHeader from './SectionHeader';
 import PreviewImage from '@/app/projects/components/PreviewImage';
 import ExternalLinks from '@/app/projects/components/ExternalLinks';
-import projects from '@/data/projects';
+import projects from '@/app/_data/projects';
 
 const Projects = () => {
   const list = (list: string[]) => (
@@ -32,7 +32,7 @@ const Projects = () => {
             className='scroll-reveal flex flex-wrap gap-x-16 gap-y-8 items-center mt-4 mb-16 md:mt-12 md:mb-32'
           >
             <PreviewImage projectName={project.name} />
-            <div className='flex flex-col gap-2 w-full md:flex-1'>
+            <div className='flex flex-col gap-2 w-full md:flex-1 max-w-lg'>
               <h3 className='heading-sm'>{project.name}</h3>
               {list(project.role)}
               <p>{project.description}</p>

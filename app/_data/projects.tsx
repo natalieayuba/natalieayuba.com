@@ -261,17 +261,20 @@ const projects: ProjectProps[] = [
             manageable: (1) get the user&apos;s top albums and (2) get a colour
             palette from each album cover.
           </p>,
-          <h3 className='text-xl font-bold w-full' key='2'>
-            Get the user&apos;s top five albums
-          </h3>,
-          <p key='3'>
-            The Spotify Web API has a request to get the user&apos;s top tracks
-            or artists, but not their top albums. The only solution was to get
-            the user&apos;s top tracks and group them by album to get an
-            estimate of what the user&apos;s top albums would be. After testing
-            this concept with the API, I noticed a few more limitations:
-          </p>,
-          <div key='4'>
+          <div key='2'>
+            <h3 className='text-xl font-bold w-full'>
+              1. Get the user&apos;s top five albums
+            </h3>
+            <p>
+              The Spotify Web API has a request to get the user&apos;s top
+              tracks or artists, but not their top albums. The only solution was
+              to get the user&apos;s top tracks and group them by album to get
+              an estimate of what the user&apos;s top albums would be. After
+              testing this concept with the API, I noticed a few more
+              limitations:
+            </p>
+          </div>,
+          <div key='3'>
             <h4 className='font-semibold'>
               Grouping by album required requesting all of the user&apos;s top
               tracks.
@@ -302,7 +305,7 @@ const projects: ProjectProps[] = [
               />
             </Figure>
           </div>,
-          <div key='5'>
+          <div key='4'>
             <h4 className='font-semibold'>
               Top tracks are ”based on calculated affinity”.
             </h4>
@@ -315,7 +318,7 @@ const projects: ProjectProps[] = [
               because it&apos;s a feature of the API.
             </p>
           </div>,
-          <div key='6'>
+          <div key='5'>
             <h4 className='font-semibold'>
               Identical tracks on different albums.
             </h4>
@@ -341,7 +344,7 @@ const projects: ProjectProps[] = [
               the project scope.
             </p>
           </div>,
-          <div key='7'>
+          <div key='6'>
             <h4 className='font-semibold'>Unwanted tracks</h4>
             <p>
               The dreaded ASMR track shows up on my “On Repeat“ playlist quite
@@ -354,7 +357,7 @@ const projects: ProjectProps[] = [
               EP, or compilation.
             </p>
           </div>,
-          <div key='8'>
+          <div key='7'>
             <h3 className='text-xl font-bold mb-1'>
               2. Get a colour palette from each album cover
             </h3>
@@ -369,7 +372,7 @@ const projects: ProjectProps[] = [
               art, and the user&apos;s Colourify Palette is displayed.
             </p>
           </div>,
-          <Figure key='9' caption='Colourify demo'>
+          <Figure key='8' caption='Colourify demo'>
             <MockupVideo
               poster='/projects/colourify/colourify-demo-poster.png'
               src='/projects/colourify/colourify-demo.mp4'

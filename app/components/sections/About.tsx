@@ -1,5 +1,4 @@
 import React from 'react';
-import SectionHeader from './SectionHeader';
 import Image from 'next/image';
 
 const About = () => (
@@ -7,29 +6,26 @@ const About = () => (
     id='about'
     className='container flex justify-center pt-28 scroll-reveal'
   >
-    <div className='lg:flex gap-7'>
-      <div className='[&_p]:mb-4 flex-1'>
-        <SectionHeader heading='About me' />
-        <p>
+    <div className='lg:flex gap-0'>
+      <div className='[&_p]:mb-4 flex-1 leading-loose'>
+        <h2 className='heading-md leading-normal'>
           I&apos;m all about designing for a more inclusive and engaging digital
           world.
-        </p>
+        </h2>
         <p>
           So far, I&apos;ve gained 2+ years professional experience as a{' '}
           <strong>mobile app and full-stack developer</strong>, both with a{' '}
           <strong>frontend focus</strong>. In these roles I{' '}
           <strong>advocated for usability and accessibility</strong> and{' '}
-          <strong>led design sprints</strong> with the goal of{' '}
-          <strong>creating products that addressed user needs</strong> rather
-          than just developing in a technical void.
+          <strong>led design sprints</strong> aiming to create products that put
+          the user first rather than developing in a technical void.
         </p>
         <p>
-          I believe the combination of my development background and design
-          skills have given me the ability to know if certain design choices are
-          doable from a technical standpoint, and if they&apos;re beneficial to
-          the user. I&apos;m also passionate about <strong>brand design</strong>
-          , <strong>illustration</strong>, and <strong>animation</strong>, as I
-          believe adding a bit of character can bring any design to life.
+          Aside from dev and design, I&apos;m also passionate about{' '}
+          <strong>branding</strong>, <strong>illustration</strong>, and{' '}
+          <strong>animation</strong>. I believe adding a bit of character to a
+          design can really bring it to life and create a more enriching
+          experience for users.
         </p>
         <p>
           When I&apos;m not designing or coding, you&apos;ll find me jamming
@@ -37,7 +33,7 @@ const About = () => (
           mansions in the Sims.
         </p>
       </div>
-      <div className='lg:aspect-[1888.8/2,453.54] lg:w-[40%] relative'>
+      <div className='lg:aspect-[1888.8/2,453.54] lg:w-[42%] relative'>
         <Image
           src='/decals/self-portrait.svg'
           alt='A self portrait'

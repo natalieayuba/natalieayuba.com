@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import Image from 'next/image';
 import Icon from '@/app/components/Icon';
-import type { DesignProps } from '@/data/designs';
+import type { DesignProps } from '@/app/_data/designs';
 import useIsMobile from '@/hooks/useIsMobile';
 
 interface LightboxProps {

@@ -1,6 +1,6 @@
 import React, { cloneElement } from 'react';
 import Figure from './Figure';
-import type { ContentProps } from '@/data/projects';
+import type { ContentProps } from '@/app/_data/projects';
 
 const Content = ({ content }: { content: ContentProps[] }) => (
   <div className='mt-24 leading-loose'>

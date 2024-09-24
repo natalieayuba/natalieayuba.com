@@ -6,7 +6,7 @@ import HeaderImage from './components/HeaderImage';
 import Details from './components/Details';
 import Content from './components/Content';
 import OtherProject from './components/OtherProject';
-import projects from '@/data/projects';
+import projects from '@/app/_data/projects';
 
 const Project = ({ params }: { params: { project: string } }) => {
   const project = projects.find(

@@ -32,7 +32,7 @@ const Socials = ({ animationDelay = 0, className }: SocialsProps) => {
             style: { animationDelay: `${(animationDelay += 100)}ms` },
           })}
           href={url}
-          className='hover:brightness-100 hover:scale-110 animate-pop'
+          className='hover:brightness-100 hover:scale-110 transition-none animate-pop'
           title={name}
         >
           <Icon name={name} />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import SectionHeader from './SectionHeader';
 import Lightbox from '../Lightbox';
-import designs from '@/data/designs';
+import designs from '@/app/_data/designs';
 
 const Designs = () => {
   const [showLightbox, setShowLightbox] = useState(false);
@@ -36,10 +36,10 @@ const Designs = () => {
             <div
               key={src}
               title={title}
-              className={`w-full flex cursor-pointer hover:scale-[115%] transition-all duration-200 ${
+              className={`w-full flex cursor-pointer transition-all duration-200 ${
                 src.includes('web')
-                  ? 'aspect-video shadow-sm h-auto overflow-hidden rounded-sm items-start my-1'
-                  : 'h-full items-center px-[10%]'
+                  ? 'aspect-video shadow-sm h-auto hover:scale-110 overflow-hidden rounded-sm items-start my-1'
+                  : 'h-full hover:scale-[115%] items-center px-[10%]'
               }`}
               onClick={() => handleClick(index)}
             >
