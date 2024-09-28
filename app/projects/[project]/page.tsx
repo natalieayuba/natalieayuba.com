@@ -7,8 +7,25 @@ import Details from './components/Details';
 import Content from './components/Content';
 import OtherProject from './components/OtherProject';
 import projects from '@/app/_data/projects';
+import type { Metadata } from 'next';
 
-const Project = ({ params }: { params: { project: string } }) => {
+interface ProjectParamProps {
+  params: { project: string };
+}
+
+export async function generateMetadata({
+  params,
+}: ProjectParamProps): Promise<Metadata> {
+  const project = projects.find(
+    (project) => toUrlParam(project.name) === params.project
+  );
+
+  return {
+    title: project?.name ?? '',
+  };
+}
+
+const Project = ({ params }: ProjectParamProps) => {
   const project = projects.find(
     (project) => toUrlParam(project.name) === params.project
   );

@@ -1,7 +1,7 @@
 export const title = 'Natalie Ayuba';
 
 export const description =
-  "Natalie Ayuba is a frontend developer and UI/UX designer who's all about crafting engaging user experiences.";
+  'Natalie Ayuba is a frontend developer and UI/UX designer who crafts dynamic and engaging user experiences.';
 
 export const url = 'https://natalieayuba.github.io';
 
