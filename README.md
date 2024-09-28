@@ -8,7 +8,4 @@
     <br />
     <a href="https://natalieayuba.github.io">View portfolio</a>
   </p>
-    <a href="https://github.com/natalieayuba/natalieayuba.github.io/actions/workflows/nextjs.yml">
-      <img src="https://github.com/natalieayuba/natalieayuba.github.io/actions/workflows/nextjs.yml/badge.svg" alt='GitHub Pages Status' />
-    </a>
 </div>
