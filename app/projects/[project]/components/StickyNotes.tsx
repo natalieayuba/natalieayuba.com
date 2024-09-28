@@ -1,5 +1,5 @@
 import React from 'react';
-import colors from 'tailwindCSS/colors';
+import colors from 'tailwindcss/colors';
 
 const StickyNotes = ({ notes }: { notes: string[] }) => {
   const bgColors = [colors.yellow[100], colors.cyan[200], colors.pink[200]];
