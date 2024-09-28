@@ -18,7 +18,7 @@ const Project = ({ params }: { params: { project: string } }) => {
   }
 
   return (
-    <div className='animate-glide pt-28 container'>
+    <div className='animate-glideDown pt-28 container'>
       <header>
         <Breadcrumbs />
         <h1 className='heading-lg text-center mt-10 md:mt-20 max-w-3xl mx-auto'>

@@ -2,14 +2,10 @@
 import React, { type ReactNode } from 'react';
 import Footer from './components/Footer';
 import { permanentRedirect, usePathname } from 'next/navigation';
-import useScrollReveal from '@/hooks/useScrollReveal';
 
 const Template = ({ children }: { children: ReactNode }) => {
-  const pathname = usePathname();
-  useScrollReveal();
-
   if (
-    pathname !== '/under-construction' &&
+    usePathname() !== '/under-construction' &&
     process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'true'
   ) {
     permanentRedirect('/under-construction');

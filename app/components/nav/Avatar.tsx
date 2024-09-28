@@ -70,6 +70,7 @@ const Avatar = () => {
         width={0}
         height={0}
         className='h-12 w-auto relative'
+        priority
       />
     </Link>
   );

@@ -54,8 +54,8 @@ const Lightbox = ({
 
     return (
       <button
-        className={`transition-all duration-150 hover:scale-125 h-fit absolute top-[40%] md:top-1/2 md:-translate-y-1/2 invisible z-10 ${
-          visible ? 'md:visible' : 'invisible'
+        className={`transition-all duration-150 hover:scale-125 hidden md:block h-fit z-10 ${
+          visible ? 'md:visible' : 'md:invisible'
         } ${rest.className}`}
         onClick={() =>
           setSlide(direction === 'prev' ? selectedIndex - 1 : selectedIndex + 1)
@@ -66,7 +66,7 @@ const Lightbox = ({
     );
   };
 
-  const handleClick = (e: MouseEvent) => {
+  const handleClick = () => {
     setShowText(!showText);
     setZoomedIn(!zoomedIn);
   };
@@ -117,9 +117,8 @@ const Lightbox = ({
   return (
     <div className='bg-gradient-to-b fixed w-screen h-dvh left-0 z-10'>
       <CloseButton />
-      <ArrowButton direction='prev' className='right-3/4' />
-      <ArrowButton direction='next' className='left-3/4' />
-      <div className='container p-0 md:p-6 flex gap-16 h-full items-center'>
+      <div className='container p-0 md:p-6 flex h-full items-center'>
+        <ArrowButton direction='prev' className='mr-6' />
         <div
           className='container size-full flex items-center overflow-y-hidden overflow-x-scroll md:overflow-hidden snap-x snap-mandatory p-0'
           ref={lightboxRef}
@@ -134,7 +133,7 @@ const Lightbox = ({
               onClick={handleClick}
             >
               <div
-                className='size-full max-w-[90%] max-h-[90%] md:max-h-none  md:max-w-none overflow-hidden relative'
+                className='size-full max-w-[90%] max-h-[90%] md:max-h-none md:max-w-none overflow-hidden relative'
                 onMouseMove={handleMouseMove}
               >
                 <Image
@@ -150,24 +149,25 @@ const Lightbox = ({
           ))}
         </div>
         <div
-          className={`max-w-sm absolute md:relative bottom-0 bg-gradient-to-b md:bg-none from-[transparent] to-20% to-white w-screen left-0 right-0 pt-12 pb-5 md:pb-6 md:pt-14 px-6 transition-opacity duration-200 ${
+          className={`max-w-sm absolute md:relative bottom-0 bg-gradient-to-b md:ml-16 md:bg-none from-[transparent] to-20% to-white w-screen left-0 right-0 pt-12 pb-5 md:pb-6 md:pt-14 px-6 transition-opacity duration-200 ${
             showText ? 'opacity-100' : 'opacity-0 md:opacity-100'
           }`}
         >
           <div
-            className={`max-w-prose mx-auto overflow-hidden text-sm md:text-base md:leading-[1.75] relative after:secondary-text ${
+            className={`max-w-prose mx-auto overflow-hidden text-sm md:text-base relative after:secondary-text ${
               readMore
                 ? 'h-auto max-md:read-less'
                 : 'max-md:h-20 max-md:read-more'
             }`}
             onClick={() => setReadMore(!readMore)}
           >
-            <h3 className='heading-sm text-lg md:mb-2 md:text-xl'>
-              {content[selectedIndex].title}
-            </h3>
-            <p ref={descriptionRef}>{content[selectedIndex].description}</p>
+            <h3 className='heading-sm mb-3'>{content[selectedIndex].title}</h3>
+            <p ref={descriptionRef} className='leading-relaxed'>
+              {content[selectedIndex].description}
+            </p>
           </div>
         </div>
+        <ArrowButton direction='next' className='ml-6' />
       </div>
     </div>
   );

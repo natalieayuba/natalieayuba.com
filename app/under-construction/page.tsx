@@ -3,10 +3,7 @@ import { notFound } from 'next/navigation';
 import CentredLayout from '../components/CentredLayout';
 
 const title = 'Under Construction';
-
-export const metadata: Metadata = {
-  title,
-};
+export const metadata: Metadata = { title };
 
 const UnderConstruction = () => {
   if (process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'false') {

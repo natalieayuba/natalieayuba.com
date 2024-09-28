@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 interface SectionHeaderProps {
   heading: string;
@@ -6,11 +6,17 @@ interface SectionHeaderProps {
   className?: string;
 }
 
-const SectionHeader = ({ heading, caption, className }: SectionHeaderProps) => (
-  <header {...{ className }}>
-    <h2 className='heading-md'>{heading}</h2>
-    {caption && <p className='mx-auto max-w-md'>{caption}</p>}
-  </header>
+const SectionHeader = forwardRef<HTMLHeadingElement, SectionHeaderProps>(
+  ({ heading, caption, className }, ref) => (
+    <header {...{ className }}>
+      <h2 ref={ref} className='heading-md'>
+        {heading}
+      </h2>
+      {caption && <p className='mx-auto max-w-md'>{caption}</p>}
+    </header>
+  )
 );
+
+SectionHeader.displayName = 'SectionHeader';
 
 export default SectionHeader;

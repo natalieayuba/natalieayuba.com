@@ -20,23 +20,29 @@ const config: Config = {
           scale: '0',
         },
       },
-      glide: {
+      glideDown: {
         from: {
           opacity: '0',
           transform: 'translateY(-20px)',
         },
       },
-      poke: {
-        to: {
-          scale: '1',
-          right: '-64px',
+      glideUp: {
+        from: {
+          opacity: '0',
+          transform: 'translateY(64px)',
+        },
+      },
+      fadeIn: {
+        from: {
+          opacity: '0',
         },
       },
     },
     animation: {
       pop: 'pop 200ms ease-in-out backwards',
-      glide: 'glide 500ms ease-out backwards',
-      poke: 'poke 200ms ease-in-out',
+      glideDown: 'glideDown 500ms ease-out backwards',
+      glideUp: 'glideUp 700ms ease-in-out backwards',
+      fadeIn: 'fadeIn 1000ms ease-in-out backwards',
     },
     cursor: {
       default: 'url(/cursors/default.svg), default',
@@ -49,6 +55,7 @@ const config: Config = {
       const minViewportWidth = 375;
       const maxViewportWidth =
         Number(theme('maxWidth.6xl').replace('rem', '')) * 16;
+      const baseLeading = 1.5;
 
       return {
         sm: fontSize.sm,
@@ -56,7 +63,7 @@ const config: Config = {
         ...Object.fromEntries(
           Object.entries(fontSize)
             .slice(3, 9)
-            .map(([key, [value]]) => {
+            .map(([key, [value]], index) => {
               const min = Number(value.replace('rem', ''));
               const max = Number(
                 Object.values(fontSize)[
@@ -69,8 +76,9 @@ const config: Config = {
               const relative =
                 (minViewportWidth * max - maxViewportWidth * min) /
                 (minViewportWidth - maxViewportWidth);
-              const val = `${fluid}vw + ${relative}rem`;
-              return [key, `clamp(${min}rem, ${val}, ${max}rem)`];
+              const size = `${fluid}vw + ${relative}rem`;
+              const leading = baseLeading - 0.05 * (index + 1);
+              return [key, [`clamp(${min}rem, ${size}, ${max}rem)`, leading]];
             })
         ),
       };
@@ -78,6 +86,9 @@ const config: Config = {
     extend: {
       boxShadow: {
         image: '0px 4px 8px rgba(0,0,0,0.02)',
+      },
+      screens: {
+        'min-doodles': '1572px',
       },
     },
   },

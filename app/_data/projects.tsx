@@ -262,7 +262,7 @@ const projects: ProjectProps[] = [
             palette from each album cover.
           </p>,
           <div key='2'>
-            <h3 className='text-xl font-bold w-full'>
+            <h3 className='heading-xs'>
               1. Get the user&apos;s top five albums
             </h3>
             <p>
@@ -358,7 +358,7 @@ const projects: ProjectProps[] = [
             </p>
           </div>,
           <div key='7'>
-            <h3 className='text-xl font-bold mb-1'>
+            <h3 className='heading-xs'>
               2. Get a colour palette from each album cover
             </h3>
             <p>
@@ -707,9 +707,7 @@ const projects: ProjectProps[] = [
         heading: 'Our solution',
         paragraphs: [
           <div key='1'>
-            <h3 className='font-bold text-xl'>
-              Home - Following the programme steps
-            </h3>
+            <h3 className='heading-xs'>Home - Following the programme steps</h3>
             <p>
               We created a home screen that tracks the user&apos;s progress in
               the programme, what step they&apos;re on and the % of their
@@ -731,7 +729,7 @@ const projects: ProjectProps[] = [
             </Figure>
           </div>,
           <div key='2'>
-            <h3 className='font-bold text-xl'>
+            <h3 className='heading-xs'>
               Calendar - Logging daily routine and fatigue levels
             </h3>
             <p>
@@ -751,7 +749,7 @@ const projects: ProjectProps[] = [
             </Figure>
           </div>,
           <div key='3'>
-            <h3 className='block font-semibold text-2xl'>
+            <h3 className='heading-xs'>
               Exercises - Watching recommended exercise videos
             </h3>
             <p>

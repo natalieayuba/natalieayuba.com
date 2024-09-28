@@ -10,7 +10,7 @@ const StickyNotes = ({ notes }: { notes: string[] }) => {
       {notes.map((note, index) => (
         <div
           key={note}
-          className='max-w-52 flex-1 aspect-square shadow-md p-4 leading-normal font-medium'
+          className='max-w-52 flex-1 aspect-square shadow-md p-4 font-medium'
           style={{
             backgroundColor: bgColors[index],
             rotate: `${rotations[index]}deg`,
