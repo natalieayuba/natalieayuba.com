@@ -14,7 +14,7 @@ interface ProjectParamProps {
 }
 
 export async function generateStaticParams() {
-  return [{ project: '' }];
+  return projects.map(({ name }) => ({ project: name }));
 }
 
 export async function generateMetadata({
@@ -24,9 +24,7 @@ export async function generateMetadata({
     (project) => toUrlParam(project.name) === params.project
   );
 
-  return {
-    title: project?.name ?? '',
-  };
+  return { title: project ? project.name : '' };
 }
 
 const Project = ({ params }: ProjectParamProps) => {
