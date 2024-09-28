@@ -7,7 +7,7 @@ export const metadata: Metadata = { title };
 
 const NotFound = () => (
   <CentredLayout heading='404' subheading={title}>
-    <ButtonStyleLink href='/' className='mt-10'>
+    <ButtonStyleLink href='/' className='mt-12'>
       Go to home
     </ButtonStyleLink>
   </CentredLayout>

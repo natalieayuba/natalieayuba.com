@@ -66,7 +66,7 @@ const Projects = forwardRef<
         ref={headingRef}
         className='text-center mb-24'
         heading='Projects'
-        caption='Here lies a selection of solo passion projects, coursework, and internship work.'
+        caption='Here lies a collection of solo passion projects, coursework, and internship work.'
       />
       <div className='md:[&>*:nth-child(even)]:flex-row-reverse flex flex-col gap-16'>
         {projects.map((project) => (

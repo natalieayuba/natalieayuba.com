@@ -19,8 +19,8 @@ const About = forwardRef<
       id='about'
       className='container flex justify-center pt-28 min-doodles:pt-0 min-doodles:h-screen items-center'
     >
-      <div className='flex flex-wrap relative' ref={containerRef}>
-        <div className='flex-1 min-w-[300px] max-w-prose'>
+      <div className='lg:flex  flex-wrap relative' ref={containerRef}>
+        <div className='flex-1 max-w-prose lg:max-w-none'>
           <h2 className='heading-md' ref={headingRef}>
             I&apos;m all about designing for a more engaging digital world.
           </h2>
@@ -55,14 +55,17 @@ const About = forwardRef<
             </p>
           </div>
         </div>
-        <div className='flex-1 relative animate-fadeIn' style={animationStyles}>
+        <div
+          className='lg:aspect-[1888.8/2,453.54] lg:w-[42%] relative animate-fadeIn'
+          style={animationStyles}
+        >
           <Image
             src='/decals/self-portrait.svg'
             alt='A self portrait'
             width={0}
             height={0}
             priority
-            className='w-full h-auto min-w-96'
+            className='w-full h-auto max-w-md mx-auto lg:absolute -right-14'
           />
         </div>
         <TransitionCurve

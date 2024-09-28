@@ -36,7 +36,7 @@ const Details = ({ project }: { project: ProjectProps }) => {
       {details.map(
         ({ heading, data }) =>
           data && (
-            <div key={heading} className='mb-4 md:w-40'>
+            <div key={heading} className='mb-4 md:max-w-40'>
               <p className='font-semibold mb-1'>{heading}</p>
               <p className='flex gap-4'>{data}</p>
             </div>

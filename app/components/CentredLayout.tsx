@@ -11,8 +11,8 @@ const CentredLayout = ({
   subheading,
   children,
 }: CentredLayoutProps) => (
-  <div className='flex flex-col items-center flex-1 justify-center text-center'>
-    <h1 className='heading-lg'>{heading}</h1>
+  <div className='flex flex-col pt-28 items-center flex-1 justify-center text-center'>
+    <h1 className='heading-lg mb-2'>{heading}</h1>
     <p className='max-w-md'>{subheading}</p>
     {children}
   </div>

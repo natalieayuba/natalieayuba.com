@@ -669,12 +669,12 @@ const projects: ProjectProps[] = [
             <FigureImage
               src='/projects/past/past-logo.png'
               alt='Past logo'
-              className='flex-none max-h-32 w-auto rounded-none'
+              className='flex-grow-0 max-h-32 w-auto rounded-none'
             />
             <FigureImage
               src='/projects/past/past-icon.png'
               alt='Past icon'
-              className='flex-none max-h-32 w-auto rounded-none'
+              className='flex-grow-0 max-h-32 w-auto rounded-none'
             />
           </Figure>,
         ],

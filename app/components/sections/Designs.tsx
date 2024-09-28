@@ -52,7 +52,7 @@ const Designs = forwardRef<HTMLHeadingElement>((props, headingRef) => {
             : 'h-full hover:scale-[115%] items-center px-[10%]'
         }`}
         style={{
-          animationDuration: '300ms',
+          animationDuration: '500ms',
           animationDelay: `${index * 75}ms`,
           animationPlayState: visible ? 'running' : 'paused',
         }}
@@ -63,8 +63,8 @@ const Designs = forwardRef<HTMLHeadingElement>((props, headingRef) => {
           src={design.src}
           width={0}
           height={0}
+          sizes='100vw'
           className='w-full max-w-64'
-          priority
         />
       </div>
     );

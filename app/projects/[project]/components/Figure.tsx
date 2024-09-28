@@ -55,14 +55,14 @@ export const MockupVideo = ({ src, poster }: FigureVideoProps) => {
 
   return (
     <>
-      <div className='absolute z-0 w-[80%] top-[5%] h-[76%] overflow-hidden border-2'>
+      <div className='absolute z-0 w-[80%] aspect-[4/3] overflow-hidden'>
         <video
           loop
           playsInline
           muted
           ref={ref}
           poster={poster}
-          className='scale-125 relative top-10'
+          className='scale-125 absolute top-[11%]'
         >
           <source src={src} />
         </video>
@@ -92,7 +92,9 @@ const Figure = ({ caption, children }: FigureProps) => {
 
   return (
     <figure className='mt-12 mb-4 w-full [&&]:max-w-none relative'>
-      <div className='flex justify-center gap-[5%] w-full'>{children}</div>
+      <div className='flex justify-center gap-[5%] w-full flex-wrap'>
+        {children}
+      </div>
       <figcaption className='secondary-text mt-12 text-center mx-auto max-w-xl'>
         {figureIndex && `1.${figureIndex}. `}
         {caption}
