@@ -13,6 +13,10 @@ interface ProjectParamProps {
   params: { project: string };
 }
 
+export async function generateStaticParams() {
+  return [{ project: '' }];
+}
+
 export async function generateMetadata({
   params,
 }: ProjectParamProps): Promise<Metadata> {
