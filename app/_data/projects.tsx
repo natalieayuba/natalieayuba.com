@@ -225,7 +225,7 @@ const projects: ProjectProps[] = [
           </p>,
           <p key='3'>
             Receiptify,{' '}
-            <ExternalLink href='https://spotify-profile.herokuapp.com/'>
+            <ExternalLink href='https://github.com/bchiang7/spotify-profile'>
               Spotify Profile
             </ExternalLink>{' '}
             and{' '}
@@ -242,14 +242,13 @@ const projects: ProjectProps[] = [
             key='4'
             caption='Previous designs for the colour palette, one without margins, and one with 10 albums instead of 5'
           >
-            <FigureImage
-              src='/projects/colourify/colourify-palette-draft1.png'
-              alt='Colourify palette draft 1'
-            />
-            <FigureImage
-              src='/projects/colourify/colourify-palette-draft2.png'
-              alt='Colourify palette draft 2'
-            />
+            {[...Array(2)].map((n, i) => (
+              <FigureImage
+                key={i}
+                src={`/projects/colourify/colourify-palette-draft${i + 1}.png`}
+                alt='Colourify palette draft'
+              />
+            ))}
           </Figure>,
         ],
       },
@@ -429,9 +428,9 @@ const projects: ProjectProps[] = [
             </ExternalLink>{' '}
             to learn more about industry-level standards and improve my design
             skills. For one of my projects, I designed a conceptual mobile app
-            called Luxe that allows users to book their movie tickets in advance
-            and reserve seating. Using design thinking, I engaged with every
-            aspect of the UX design process{' '}
+            called Luxe that allows users to book movie tickets in advance and
+            reserve seating. Using design thinking, I engaged with every aspect
+            of the UX design process{' '}
             <strong>from user research to prototyping</strong>.
           </p>,
         ],
@@ -440,32 +439,23 @@ const projects: ProjectProps[] = [
         heading: 'Understanding the user',
         paragraphs: [
           <p key='1'>
-            Empathising with the user was an interesting concept to me as coming
-            from a software development background, we tend to think more about
-            the functionality than the user.
-          </p>,
-          <p key='2'>
             As a first step, I <strong>interviewed five users</strong> who were
-            frequent moviegoers, making sure to get a sample that was diverse in
-            age, gender, race, and disability. In the course we were advised to
-            focus on one user group for our first project, so I narrowed it down
-            to users who preferred to avoid queues when booking movie tickets,
-            which was the most common goal I discovered from the research. This
-            user group confirmed initial assumptions in regards to preferring
-            faster options such as self-checkout, but the research also revealed
-            that there was more to it than just convenience. Other{' '}
-            <strong>pain points</strong> included:
+            frequent moviegoers, and gathered data about their experience
+            purchasing cinema tickets. This user group confirmed initial
+            assumptions in regards to users preferring faster options such as
+            self-checkout, but the research also revealed other{' '}
+            <strong>pain points</strong>:
           </p>,
           <StickyNotes
             key='3'
             notes={[
               'Time waisted waiting in queues',
               'Social anxiety and perceived judgement from others',
-              "Knowledge of the cinema's accessibility in advance",
+              "Needing knowledge of the cinema's accessibility in advance",
             ]}
           />,
           <p key='4'>
-            I{' '}
+            I then{' '}
             <strong>
               created a persona to simplify the research into one focused user
             </strong>{' '}
@@ -485,7 +475,7 @@ const projects: ProjectProps[] = [
             mobile app) and indirect competitors (general ticketing/ordering
             apps such as Eventbrite and Uber Eats) to ensure I was looking at
             popular apps that are well-researched, and to see if I could find a
-            common booking experience across the apps.
+            standardised booking experience across the apps.
           </p>,
           <Figure key='7' caption='Competitive analysis snippet'>
             <FigureImage
@@ -494,8 +484,9 @@ const projects: ProjectProps[] = [
             />
           </Figure>,
           <p key='8'>
-            Once I narrowed this down, I also created a user journey map to
-            outline each step of the booking process.
+            Once I gained an understanding of a standard booking experience, I
+            created a user journey map to outline each step of the booking
+            process.
           </p>,
           <Figure key='9' caption='User journey map'>
             <FigureImage
@@ -510,35 +501,37 @@ const projects: ProjectProps[] = [
         paragraphs: [
           <p key='1'>
             I began drafting multiple paper wireframes for each step in the
-            user&apos;s journey to test out different UI solutions.
+            user&apos;s journey to test out different solutions.
           </p>,
-          <Figure key='2' caption='Paper wireframes'>
+          <Figure
+            key='2'
+            caption='Paper wireframes testing out different layouts for the home screen'
+          >
             <FigureImage
               src='/projects/luxe/luxe-paper-wireframes.png'
               alt='Paper wireframes'
             />
           </Figure>,
           <p key='3'>
-            Once the wireframes were narrowed down to the most suitable
-            solutions, I gathered feedback from users on the overall layout and
-            structure of each screen. I then created digital wireframes in Figma
-            based on the feedback, which I then turned into a low-fidelity
-            prototype, displaying the primary user flow of the ticket booking
-            process to be tested by users in a usability study.
+            I narrowed each screen down to the most suitable solutions and
+            gathered feedback from users on the layout each screen. I then
+            created digital wireframes based on the feedback and then a
+            low-fidelity prototype, displaying the primary user flow of the
+            ticket booking process to be tested by users in a usability study.
           </p>,
-          <Figure key='4' caption='Lo-fi prototype'>
+          <Figure key='4' caption='Prototype'>
             <FigureImage
               src='/projects/luxe/luxe-lo-fi-prototype.png'
               alt='Lo-fi prototype'
             />
           </Figure>,
           <p key='5'>
-            My favourite part of the project was adding colour, images, copy and
-            other visual elements to the design. I particularly enjoyed learning
-            about the Gestalt principles and other ways to take take psychology
-            into account while designing the prototype. I made sure to follow
-            accessibility standards as well, keeping colour contrast high enough
-            and text readable.
+            My favourite part of the project were the visual design side of
+            things, adding colour, images, copy, and other visual elements to
+            the design. I particularly enjoyed learning about the Gestalt
+            principles and other ways to enhance the UI. I made sure to follow
+            accessibility standards as well, keeping colour contrast high and
+            text readable.
           </p>,
           <Figure key='6' caption='Sticker sheet'>
             <FigureImage
@@ -550,11 +543,17 @@ const projects: ProjectProps[] = [
             After many iterations of designing, testing with users, and
             revising, the final prototype was complete.
           </p>,
-          <Figure key='8' caption='Hi-fi-prototype'>
-            <FigureImage
-              src='/projects/luxe/luxe-hi-fi-prototype.png'
-              alt='Hi-fi-prototype'
-            />
+          <Figure key='8' caption='Luxe mockups'>
+            <div className='grid grid-cols-4 gap-[2%] w-full pb-10'>
+              {[...Array(7)].map((n, i) => (
+                <FigureImage
+                  key={i}
+                  src={`/projects/luxe/luxe-mockup-0${i + 1}.png`}
+                  alt='Hi-fi-prototype'
+                  className='w-auto rounded-none'
+                />
+              ))}
+            </div>
           </Figure>,
           <Figure key='9' caption='Luxe Demo'>
             <div className='h-auto mx-auto overflow-hidden relative'>
@@ -577,11 +576,13 @@ const projects: ProjectProps[] = [
         paragraphs: [
           <p key='1'>
             This course was a massive learning experience as it taught me to
-            focus more on the user than just the potential solutions and
-            functionality of the app. Keeping the user at the forefront of the
-            design ensured that I remained empathetic rather than methodical. I
-            will definitely make sure to incorporate design thinking into future
-            projects.
+            focus more on the problem rather than the solutions. Keeping the
+            user at the forefront of the design ensured that I remained
+            empathetic rather than methodical. This also meant that I
+            didn&apos;t have rack my brain to figure out what the app needed, I
+            had users to refer back to whenever a design decision needed
+            clarification. I will definitely make sure to incorporate design
+            thinking into future projects.
           </p>,
           <p key='2'>
             As for potential improvements, I would&apos;ve loved to learn more
@@ -617,13 +618,13 @@ const projects: ProjectProps[] = [
         heading: 'Overview',
         paragraphs: [
           <p key='1'>
-            During my app development internship, out of a selection of prompts
-            my team chose to develop a mobile app prototype for users with
-            post-stroke fatigue looking to improve their fatigue levels through
-            physical activity. The app guides users through a 6-step Graded
-            Exercise Therapy (GET) programme that prompts users to log their
-            routine and associated fatigue levels, watch recommended exercise
-            videos, and complete other fitness-related goals.
+            During my scrum app development internship, my team and I chose a
+            prompt to develop a mobile app prototype for users with post-stroke
+            fatigue looking to improve their fatigue levels through physical
+            activity. The app guides users through a 6-step Graded Exercise
+            Therapy (GET) programme that prompts them to log their routine and
+            associated fatigue levels, watch recommended exercise videos, and
+            complete other fitness-related goals to boost physical strength.
           </p>,
         ],
       },
@@ -646,37 +647,45 @@ const projects: ProjectProps[] = [
       {
         heading: 'Scope',
         paragraphs: [
-          <p key='1'>
-            The aim of the internship was to build a working prototype by the
-            end of a 12 week period using the <strong>scrum methodology</strong>
-            . The scope did not include user research, so we reported back to
-            our clients at the end of each sprint with a working product and
-            received feedback from them instead. Eager to incorporate UI design
-            into every project, I suggested that we create{' '}
-            <strong>wireframes</strong> before coding, so we ended up
-            structuring each sprint as follows:{' '}
-            <i>
-              review backlog → design prototype → code feature → client feedback
-            </i>
-            . I leaned into the <strong>main design role</strong> and created
-            many of the wireframes, the app logo, icon, and colour scheme
-            (inspired by the colours in the GET booklet). One of our team
-            member&apos;s lead the backend development due to his experience in
-            the field, while the rest of us shared the frontend
-            responsibilities.
-          </p>,
-          <Figure key='2' caption='PAST logo and icon'>
-            <FigureImage
-              src='/projects/past/past-logo.png'
-              alt='Past logo'
-              className='flex-grow-0 max-h-32 w-auto rounded-none'
-            />
-            <FigureImage
-              src='/projects/past/past-icon.png'
-              alt='Past icon'
-              className='flex-grow-0 max-h-32 w-auto rounded-none'
-            />
-          </Figure>,
+          <div key='1'>
+            <p>
+              The aim of the internship was to build a working prototype by the
+              end of a 12 week period using the{' '}
+              <strong>scrum methodology</strong>. The scope did not include user
+              research, so we reported back to our clients at the end of each
+              sprint with a working product and received feedback from them
+              instead. Eager to incorporate UI design into every project, I
+              suggested that we create <strong>wireframes</strong> before
+              coding, so we ended up structuring each sprint as follows:{' '}
+              <i>
+                review backlog → design prototype → code feature → client
+                feedback
+              </i>
+              . I leaned into the <strong>main design role</strong> and created
+              many of the wireframes, the app logo, icon, and colour scheme
+              (inspired by the colours in the GET booklet). One of our team
+              member&apos;s lead the backend development due to his experience
+              in the field, while the rest of us shared the frontend
+              responsibilities.
+            </p>
+            <Figure caption='An initial sticker sheet I created in Figma to aid our designs'>
+              <FigureImage
+                src={`/projects/past/past-sticker-sheet.png`}
+                alt={`Past sticker sheet`}
+                className=''
+              />
+            </Figure>
+            <Figure caption='PAST logo and icon'>
+              {['logo', 'icon'].map((img) => (
+                <FigureImage
+                  key={img}
+                  src={`/projects/past/past-${img}.png`}
+                  alt={`Past ${img}`}
+                  className='flex-grow-0 max-h-32 w-auto rounded-none'
+                />
+              ))}
+            </Figure>
+          </div>,
         ],
       },
       {
@@ -692,14 +701,15 @@ const projects: ProjectProps[] = [
             recommended exercise videos.
           </p>,
           <p key='2'>
-            I recommended we add a competitive analysis to the backlog as I
-            thought it&apos;d be useful to see how our initial ideas compared to
-            competitor products. I became responsible for completing this task
-            and researched mostly indirect competitor health logging apps as it
-            was difficult to find apps specifically for stroke survivors. The
-            analysis helped to confirm some initial ideas for the UI, such as
-            using a horizontal scroll on the homepage to list the user&apos;s
-            daily tasks, which is a typical feature seen in similar apps.
+            I recommended we add a <strong>competitive analysis</strong> to the
+            backlog as I thought it&apos;d be useful to see how our initial
+            ideas compared to competitor products. I became responsible for
+            completing this task and researched mostly indirect competitor
+            health logging apps as it was difficult to find apps specifically
+            for stroke survivors. The analysis helped to confirm some initial
+            ideas for the UI, such as using a horizontal scroll on the homepage
+            to list the user&apos;s daily tasks, which is a typical feature seen
+            in similar apps.
           </p>,
         ],
       },
@@ -709,23 +719,22 @@ const projects: ProjectProps[] = [
           <div key='1'>
             <h3 className='heading-xs'>Home - Following the programme steps</h3>
             <p>
-              We created a home screen that tracks the user&apos;s progress in
-              the programme, what step they&apos;re on and the % of their
-              progress. A daily to-do list displays tasks related to the current
-              step for the user to complete, and once a task is completed
-              it&apos;s greyed out and moved to the back of the list. Once the
-              current step is complete, the user is then progressed to the next
-              step with additional tasks added per step.
+              We created a home screen that prompts the user to complete daily
+              tasks associated with their current step while tracking their
+              progress in the programme. Once the current step is complete, the
+              user is then progressed to the next step with additional tasks
+              added which could be either one-off or daily tasks depending on
+              the step.
             </p>
             <Figure caption='Past home screen'>
-              <FigureImage
-                src='/projects/past/past-home-1.png'
-                alt='Past home screen'
-              />
-              <FigureImage
-                src='/projects/past/past-home-2.png'
-                alt='Past home screen'
-              />
+              {[...Array(2)].map((n, i) => (
+                <FigureImage
+                  key={i}
+                  src={`/projects/past/past-home-mockup-0${i + 1}.png`}
+                  alt='Past home screen'
+                  className='rounded-none'
+                />
+              ))}
             </Figure>
           </div>,
           <div key='2'>
@@ -733,58 +742,63 @@ const projects: ProjectProps[] = [
               Calendar - Logging daily routine and fatigue levels
             </h3>
             <p>
-              We developed a calendar logging feature where users can log their
-              daily routine and fatigue levels. Daily logging is also prompted
-              by a card in the home screen&apos;s to-do list.
+              The app includes a calendar with a daily routine and fatigue
+              tracker. Daily logging is also prompted by a card in the home
+              screen&apos;s to-do list.
             </p>
-            <Figure caption='Past calendar screen'>
-              <FigureImage
-                src='/projects/past/past-calendar-1.png'
-                alt='Past calendar screen'
-              />
-              <FigureImage
-                src='/projects/past/past-calendar-2.png'
-                alt='Past calendar screen'
-              />
-            </Figure>
           </div>,
-          <div key='3'>
+          <Figure key='3' caption='Calendar logging feature'>
+            {[...Array(5)].map((n, i) => (
+              <FigureImage
+                key={i}
+                src={`/projects/past/past-calendar-mockup-0${i + 1}.png`}
+                alt='Past calendar screen'
+                className='rounded-none'
+              />
+            ))}
+          </Figure>,
+          <div key='4'>
             <h3 className='heading-xs'>
               Exercises - Watching recommended exercise videos
             </h3>
             <p>
-              Our solution to this was a video library of YouTube videos
-              supplied by our client. The user is prompted to complete these
-              exercises daily by a card on the home screen from step 4.
+              We also created a video library of YouTube videos supplied by our
+              client. The videos are unlocked in step 4 when the user is ready
+              to complete daily exercise. Users are also prompted to complete
+              these exercises daily by a card on the home screen.
             </p>
-            <Figure caption='Past calendar screen'>
-              <FigureImage
-                src='/projects/past/past-exercises.png'
-                alt='Past calendar screen'
-                className='max-w-xs'
-              />
-            </Figure>
           </div>,
+          <Figure key='5' caption='Past exercises screens'>
+            {[...Array(4)].map((n, i) => (
+              <FigureImage
+                key={i}
+                src={`/projects/past/past-exercises-mockup-0${i + 1}.png`}
+                alt='Past exercises screens'
+                className='rounded-none'
+              />
+            ))}
+          </Figure>,
         ],
       },
       {
-        heading: 'Main takeaways',
+        heading: 'Conclusion',
         paragraphs: [
           <p key='1'>
-            The prototype was handed over to our clients to take forward so we
-            were unable to measure the success of the solution. It would&apos;ve
-            been nice to see the product to release and gain feedback from end
-            users. Did the product correctly solve user problems? Are users more
-            likely to follow the GET programme and see results using the app?
+            The final prototype was handed over to our clients so we were unable
+            to measure the success of the solution. It would&apos;ve been nice
+            to see the product to release and gain feedback from end users.
+            I&apos;m curious to know if consistent use of the app would solve
+            our users problems and help them decrease fatigue levels and improve
+            their fitness.
           </p>,
           <p key='2'>
             In general, I also think the app would&apos;ve benefited from a
-            user-centred approach. Doing user research to better understand of
+            user-centred approach. Doing user research to better understand
             their goals and pain points would&apos;ve helped to avoid potential
             bias from our clients and us as developers. Due to the
             project&apos;s limited scope, we only had our clients to give us
             stakeholder feedback which was still helpful to have feedback at all
-            instead of creating from solely a developer perspective.
+            instead of creating from solely a developer&apos;s perspective.
           </p>,
         ],
       },

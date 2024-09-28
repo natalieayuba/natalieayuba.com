@@ -39,7 +39,7 @@ const Designs = forwardRef<HTMLHeadingElement>((props, headingRef) => {
     index: number;
   }) => {
     const ref = useRef<HTMLDivElement>(null);
-    const visible = useObserver(ref, '-300px');
+    const visible = useObserver(ref, '0px');
 
     return (
       <div
@@ -53,7 +53,7 @@ const Designs = forwardRef<HTMLHeadingElement>((props, headingRef) => {
         }`}
         style={{
           animationDuration: '500ms',
-          animationDelay: `${index * 75}ms`,
+          animationDelay: `${(index + 1) * 100}ms`,
           animationPlayState: visible ? 'running' : 'paused',
         }}
         onClick={() => handleClick(index)}
@@ -74,14 +74,14 @@ const Designs = forwardRef<HTMLHeadingElement>((props, headingRef) => {
     <>
       <section
         id='designs'
-        className='container pt-28 md:pt-0 md:pb-60 md:h-screen flex flex-col justify-end'
+        className='container pt-28 xl:pt-0 xl:pb-60 xl:h-screen flex flex-col justify-end'
         ref={ref}
       >
         <SectionHeader
           ref={headingRef}
           className='text-center mb-12'
           heading='Designs'
-          caption="Other logo and web designs I've done in my free time."
+          caption="Logo and web designs I've done for fun."
         />
         <div className='grid grid-cols-2 sm:grid-cols-4 gap-8'>
           {designs.map((design, index) => (

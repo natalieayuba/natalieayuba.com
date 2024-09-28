@@ -6,7 +6,7 @@ const StickyNotes = ({ notes }: { notes: string[] }) => {
   const rotations = [2, -3, 4];
 
   return (
-    <div className='my-10 flex gap-8 flex-wrap justify-center items-center'>
+    <div className='leading-normal my-10 flex gap-8 flex-wrap justify-center items-center'>
       {notes.map((note, index) => (
         <div
           key={note}

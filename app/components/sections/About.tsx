@@ -19,7 +19,7 @@ const About = forwardRef<
       id='about'
       className='container flex justify-center pt-28 min-doodles:pt-0 min-doodles:h-screen items-center'
     >
-      <div className='lg:flex  flex-wrap relative' ref={containerRef}>
+      <div className='lg:flex flex-wrap relative' ref={containerRef}>
         <div className='flex-1 max-w-prose lg:max-w-none'>
           <h2 className='heading-md' ref={headingRef}>
             I&apos;m all about designing for a more engaging digital world.

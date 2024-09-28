@@ -92,10 +92,10 @@ const Figure = ({ caption, children }: FigureProps) => {
 
   return (
     <figure className='mt-12 mb-4 w-full [&&]:max-w-none relative'>
-      <div className='flex justify-center gap-[5%] w-full flex-wrap'>
+      <div className='flex justify-center gap-[2.5vw] w-full flex-wrap'>
         {children}
       </div>
-      <figcaption className='secondary-text mt-12 text-center mx-auto max-w-xl'>
+      <figcaption className='secondary-text my-8 text-center mx-auto max-w-xl'>
         {figureIndex && `1.${figureIndex}. `}
         {caption}
       </figcaption>
