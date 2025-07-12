@@ -6,6 +6,7 @@ import {
   FiExternalLink,
   FiGithub,
   FiLinkedin,
+  FiMail,
   FiPlay,
   FiX,
 } from 'react-icons/fi';
@@ -15,22 +16,19 @@ export interface IconProps {
   name: string;
   size?: number;
 }
-
-const Icon = ({ name, size }: IconProps) => {
-  const icons = {
-    github: <FiGithub />,
-    linkedin: <FiLinkedin />,
-    site: <FiExternalLink />,
-    presentation: <LuPresentation />,
-    prototype: <FiPlay />,
-    close: <FiX />,
-    prev: <FiChevronLeft />,
-    next: <FiChevronRight />,
-  };
-
-  return cloneElement(icons[name.toLowerCase() as keyof IconType], {
-    size: size ?? 24,
-  });
+const icons = {
+  github: <FiGithub />,
+  linkedin: <FiLinkedin />,
+  email: <FiMail />,
+  site: <FiExternalLink />,
+  presentation: <LuPresentation />,
+  prototype: <FiPlay />,
+  close: <FiX />,
+  prev: <FiChevronLeft />,
+  next: <FiChevronRight />,
 };
+
+const Icon = ({ name, size = 24 }: IconProps) =>
+  cloneElement(icons[name as keyof IconType], { size });
 
 export default Icon;

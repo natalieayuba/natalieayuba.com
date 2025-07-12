@@ -27,7 +27,7 @@ const NavMenu = () => {
           menuOpen ? 'left-0' : 'left-full'
         }`}
       >
-        <ul className={`font-semibold text-xl flex flex-col gap-6 mb-9`}>
+        <ul className={`font-medium text-xl flex flex-col gap-6 mb-9`}>
           {navLinks.map((navLink) => (
             <li key={navLink}>
               <Link

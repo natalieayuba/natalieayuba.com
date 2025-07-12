@@ -35,7 +35,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => (
     <body
       className={`${poppins.className} bg-gradient-to-b from-blue to-white text-black selection:bg-purple selection:bg-opacity-60`}
     >
-      {process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'false' && <Header />}
+      <Header />
       {children}
     </body>
   </html>

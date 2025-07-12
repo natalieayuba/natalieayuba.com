@@ -53,7 +53,7 @@ const NavLinks = () => {
 
   return (
     <div className='hidden md:flex'>
-      <ul className={`font-semibold flex`}>
+      <ul className={`font-medium flex`}>
         {navLinks.map((navLink, index) => (
           <li
             key={navLink}
