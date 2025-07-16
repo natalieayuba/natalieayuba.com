@@ -56,7 +56,7 @@ const OtherProject = ({ otherProject }: { otherProject: string }) => {
               strokeLinecap='round'
               strokeDasharray={2000}
               strokeDashoffset={hovered ? 0 : 2000}
-              className='transition-all ease-in-out duration-700'
+              className='transition-[stroke-dashoffset] ease-in-out duration-700'
             />
           </svg>
         </div>

@@ -1,48 +1,42 @@
-import { appendClassName } from '@/utils/formatting';
-import Icon from '../Icon';
-import { ExternalLink } from '../Links';
+import { defaultAnimationInterval } from "@/config";
+import { Hyperlink } from "../Hyperlink";
+import Icon from "../Icon";
 
 interface SocialsProps {
   animationDelay?: number;
-  className?: string;
 }
 
-const socials = [
+export const socials = [
   {
-    icon: 'email',
-    title: 'Send me an email',
-    url: 'mailto:natalieayuba@hotmail.com',
+    icon: "github",
+    title: "Github",
+    url: "https://github.com/natalieayuba",
   },
   {
-    icon: 'github',
-    title: 'Github',
-    url: 'https://github.com/natalieayuba',
-  },
-  {
-    icon: 'linkedin',
-    title: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/natalieayuba/',
+    icon: "linkedin",
+    title: "LinkedIn",
+    url: "https://www.linkedin.com/in/natalieayuba/",
   },
 ];
 
-const Socials = ({ animationDelay = 0, className }: SocialsProps) => (
-  <div
-    className={`flex gap-4 items-center text-purple${appendClassName(
-      className
-    )}`}
-  >
-    {socials.map(({ icon, title, url }) => (
-      <ExternalLink
+const Socials = ({ animationDelay }: SocialsProps) => (
+  <div className="flex items-center gap-4 text-purple">
+    {socials.map(({ icon, title, url }, index) => (
+      <Hyperlink
         key={icon}
         {...(animationDelay && {
-          style: { animationDelay: `${(animationDelay += 100)}ms` },
+          style: {
+            animationDelay: `${
+              animationDelay + defaultAnimationInterval * index
+            }ms`,
+          },
         })}
         href={url}
-        className='hover:brightness-100 hover:scale-110 transition-none animate-pop'
+        className="animate-pop transition-none hover:scale-110 hover:brightness-100"
         title={title}
       >
         <Icon name={icon} />
-      </ExternalLink>
+      </Hyperlink>
     ))}
   </div>
 );

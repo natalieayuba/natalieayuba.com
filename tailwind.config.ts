@@ -37,12 +37,27 @@ const config: Config = {
           opacity: '0',
         },
       },
+      glow: {
+        '0%': {
+          opacity: '1',
+          scale: '1',
+        },
+        '50%': {
+          opacity: '0.9',
+          scale: '0.98',
+        },
+        '100%': {
+          opacity: '1',
+          scale: '1',
+        },
+      },
     },
     animation: {
       pop: 'pop 200ms ease-in-out backwards',
       glideDown: 'glideDown 500ms ease-out backwards',
       glideUp: 'glideUp 700ms ease-in-out backwards',
       fadeIn: 'fadeIn 1000ms ease-in-out backwards',
+      glow: 'pop 200ms ease-in-out backwards, glow 1000ms ease-in-out infinite',
     },
     cursor: {
       default: 'url(/cursors/default.svg), default',
@@ -50,6 +65,7 @@ const config: Config = {
       pointer: 'url(/cursors/pointer.svg), pointer',
       'zoom-in': 'url(/cursors/zoom-in.svg), zoom-in',
       'zoom-out': 'url(/cursors/zoom-out.svg), zoom-out',
+      mailto: 'url(/cursors/mailto.svg), pointer',
     },
     fontSize: ({ theme }) => {
       const minViewportWidth = 375;

@@ -1,7 +1,7 @@
-'use client';
-import { appendClassName } from '@/utils/formatting';
-import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
+"use client";
+import { appendClassName } from "@/utils/utils";
+import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
 
 export interface FigureProps {
   caption: string;
@@ -26,8 +26,8 @@ export const FigureImage = ({ src, alt, className }: FigureImageProps) => (
     alt={alt}
     width={0}
     height={0}
-    sizes='100vw'
-    className={`rounded-3xl flex-1 h-auto${appendClassName(className)}`}
+    sizes="100vw"
+    className={`flex-1 rounded-3xl h-auto${appendClassName(className)}`}
   />
 );
 
@@ -39,7 +39,7 @@ export const MockupVideo = ({ src, poster }: FigureVideoProps) => {
     const video = ref.current;
     if (video) {
       const observer = new IntersectionObserver(([entry]) =>
-        setVisible(entry.isIntersecting)
+        setVisible(entry.isIntersecting),
       );
       observer.observe(video);
       return () => observer.disconnect();
@@ -55,47 +55,47 @@ export const MockupVideo = ({ src, poster }: FigureVideoProps) => {
 
   return (
     <>
-      <div className='absolute z-0 w-[80%] aspect-[4/3] overflow-hidden'>
+      <div className="absolute z-0 aspect-[4/3] w-[80%] overflow-hidden">
         <video
           loop
           playsInline
           muted
           ref={ref}
           poster={poster}
-          className='scale-125 absolute top-[11%]'
+          className="absolute top-[11%] scale-125"
         >
           <source src={src} />
         </video>
       </div>
       <FigureImage
-        src='/projects/desktop-mockup.png'
-        alt='Desktop mockup'
-        className='z-0'
+        src="/projects/desktop-mockup.png"
+        alt="Desktop mockup"
+        className="z-0"
       />
     </>
   );
 };
 
-MockupVideo.displayName = 'MockupVideo';
+MockupVideo.displayName = "MockupVideo";
 
 const Figure = ({ caption, children }: FigureProps) => {
   const [figureIndex, setFigureIndex] = useState(0);
 
   useEffect(() => {
-    const captions = document.getElementsByTagName('figcaption');
+    const captions = document.getElementsByTagName("figcaption");
     setFigureIndex(
       Array.from(captions).findIndex(({ innerText }) =>
-        innerText.includes(caption)
-      ) + 1
+        innerText.includes(caption),
+      ) + 1,
     );
   }, [caption]);
 
   return (
-    <figure className='mt-12 mb-4 w-full [&&]:max-w-none relative'>
-      <div className='flex justify-center gap-[2.5vw] w-full flex-wrap'>
+    <figure className="relative mb-4 mt-12 w-full [&&]:max-w-none">
+      <div className="flex w-full flex-wrap justify-center gap-[2.5vw]">
         {children}
       </div>
-      <figcaption className='secondary-text my-8 text-center mx-auto max-w-xl'>
+      <figcaption className="secondary-text mx-auto my-8 max-w-xl text-center">
         {figureIndex && `1.${figureIndex}. `}
         {caption}
       </figcaption>

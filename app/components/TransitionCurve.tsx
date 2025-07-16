@@ -1,6 +1,6 @@
-import React, { useEffect, useState, type RefObject } from 'react';
-import Image from 'next/image';
-import { appendClassName } from '@/utils/formatting';
+import { appendClassName } from "@/utils/utils";
+import Image from "next/image";
+import { useEffect, useState, type RefObject } from "react";
 
 interface TransitionCurveProps {
   from: RefObject<HTMLElement>;
@@ -26,15 +26,15 @@ const TransitionCurve = ({
     const handleResize = () => {
       if (from.current) {
         const { top } = (
-          typeof to === 'string' ? document.querySelector(to) : to.current
+          typeof to === "string" ? document.querySelector(to) : to.current
         )!.getBoundingClientRect();
         const { bottom } = from.current.getBoundingClientRect();
         setCurveHeight(top - bottom);
       }
     };
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     handleResize();
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   });
 
   useEffect(() => {
@@ -46,30 +46,30 @@ const TransitionCurve = ({
         }
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   });
 
   return (
     <div
-      className={`hidden min-doodles:block absolute overflow-hidden top-full ${appendClassName(
-        className
+      className={`absolute top-full hidden overflow-hidden min-doodles:block ${appendClassName(
+        className,
       )}`}
       style={{
         width,
         height: scrollY,
         maxHeight: curveHeight,
         WebkitMaskImage:
-          'linear-gradient(to bottom,black 95%,transparent 100%)',
-        maskImage: 'linear-gradient(to bottom,black 95%,transparent 100%)',
+          "linear-gradient(to bottom,black 95%,transparent 100%)",
+        maskImage: "linear-gradient(to bottom,black 95%,transparent 100%)",
       }}
     >
       <Image
         src={`/decals/${curve}`}
-        alt='Transition curve'
+        alt="Transition curve"
         width={0}
         height={0}
-        style={{ width: '100%', height: curveHeight }}
+        style={{ width: "100%", height: curveHeight }}
         unoptimized
       />
     </div>

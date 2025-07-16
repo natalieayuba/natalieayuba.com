@@ -15,6 +15,7 @@ const Breadcrumbs = () => {
       url: '/#projects',
     },
   ];
+  // get this from the pathname?...
 
   return (
     <nav>

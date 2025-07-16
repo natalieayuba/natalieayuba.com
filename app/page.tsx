@@ -1,9 +1,9 @@
-'use client';
-import Banner from './components/sections/Banner';
-import Projects from './components/sections/Projects';
-import About from './components/sections/About';
-import Designs from './components/sections/Designs';
-import { useRef } from 'react';
+"use client";
+import { useRef } from "react";
+import About from "./components/sections/About";
+import Banner from "./components/sections/Banner";
+import Play from "./components/sections/Play";
+import Work from "./components/sections/Work";
 
 const Home = () => {
   const aboutHeadingRef = useRef<HTMLHeadingElement>(null);
@@ -13,11 +13,8 @@ const Home = () => {
     <>
       <Banner aboutHeadingRef={aboutHeadingRef} />
       <About ref={aboutHeadingRef} projectsHeadingRef={projectsHeadingRef} />
-      <Projects
-        ref={projectsHeadingRef}
-        designsHeadingRef={designsHeadingRef}
-      />
-      <Designs ref={designsHeadingRef} />
+      <Work ref={projectsHeadingRef} designsHeadingRef={designsHeadingRef} />
+      <Play ref={designsHeadingRef} />
     </>
   );
 };

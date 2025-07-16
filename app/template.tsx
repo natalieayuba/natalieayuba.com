@@ -2,6 +2,7 @@
 import React, { type ReactNode } from 'react';
 import Footer from './components/Footer';
 import { permanentRedirect, usePathname } from 'next/navigation';
+import Header from './components/Header';
 
 const Template = ({ children }: { children: ReactNode }) => {
   if (
@@ -12,13 +13,16 @@ const Template = ({ children }: { children: ReactNode }) => {
   }
 
   return (
-    <div
-      className={`flex flex-col justify-between items-center min-h-dvh
+    <>
+      <Header />
+      <div
+        className={`flex flex-col justify-between items-center min-h-dvh
     }`}
-    >
-      <main className='flex-1 flex flex-col'>{children}</main>
-      <Footer />
-    </div>
+      >
+        <main className='flex-1 flex flex-col'>{children}</main>
+        <Footer />
+      </div>
+    </>
   );
 };
 

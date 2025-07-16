@@ -1,7 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { useRef, type RefObject } from 'react';
-import TransitionCurve from '../TransitionCurve';
+import { getAnimationDelay } from "@/utils/utils";
+import Image from "next/image";
+import { useRef, type RefObject } from "react";
+import { navLinks } from "../nav/NavLinks";
+import TransitionCurve from "../TransitionCurve";
 
 const Banner = ({
   aboutHeadingRef,
@@ -9,126 +10,106 @@ const Banner = ({
   aboutHeadingRef: RefObject<HTMLHeadingElement>;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const sneakPeakRef = useRef<HTMLDivElement>(null);
-  let animationDelay = 700;
+  const sneakPeakRef = useRef<HTMLImageElement>(null);
+  const animationInterval = 350;
 
   return (
     <section
-      id='home'
+      id={navLinks[0].name.toLowerCase()}
       ref={ref}
-      className='container pt-28 min-h-[90vh] gap-x-4 gap-y-16 flex items-center flex-wrap animate-glideDown relative'
-      style={{ animationDelay: `${animationDelay}ms` }}
+      className="container relative mb-16 min-h-[90vh] pt-28 md:pt-52"
     >
-      <div className='flex-1'>
-        <h1 className='font-semibold text-lg pl-1 mb-1.5'>
-          Hi, I&#8217;m Natalie :)
+      <div className="mb-32 md:mb-44">
+        <h1
+          className="heading-xl animate-glideUp text-center [&&]:mb-[2%]"
+          style={getAnimationDelay(1, animationInterval)}
+        >
+          Hi, I&#8217;m Natalie 👋🏾
         </h1>
-        <p className='heading-lg mb-2.5'>
-          A Frontend Developer & UI/UX Designer
-        </p>
-        <p className='text-xl max-w-lg'>
-          I create fun, dynamic, and user-centred digital experiences.
+        <p
+          className="mx-auto max-w-3xl animate-glideUp text-center text-xl leading-[1.5]"
+          style={getAnimationDelay(2, animationInterval)}
+        >
+          A frontend developer & designer bringing digital products to life with
+          character, charm, and a touch of whimsy.
         </p>
       </div>
-      <div
-        ref={sneakPeakRef}
-        className='md:flex-1 md:max-w-[465px] px-6 md:px-0 relative'
-      >
+      <div className="relative select-none">
         <Image
-          src='/projects/headfirst/headfirst-preview-image.png'
-          alt='Headirst Bristol sneak peak mockup'
+          src="/projects/headfirst/headfirst-preview-image.png"
+          alt="Headirst Bristol sneak peak mockup"
           width={0}
           height={0}
-          className='w-full relative md:left-6 animate-pop'
-          style={{
-            animationDuration: '400ms',
-            animationDelay: `${(animationDelay += 500)}ms`,
-          }}
+          className="relative left-[7.5%] mt-[10%] w-full animate-glideUp"
+          style={getAnimationDelay(3, animationInterval)}
+          ref={sneakPeakRef}
           priority
         />
-        <TransitionCurve
-          from={sneakPeakRef}
-          to={aboutHeadingRef}
-          curve='banner-line.svg'
-          className='right-[43%]'
-          width={750}
-          delta={0}
-        />
-        <div className='absolute -top-12 right-0 md:-right-8'>
+        <div className="absolute inset-0 left-[12%] right-[12%]">
           <Image
-            src='/decals/little-sparkle.svg'
-            alt='Little sparkle'
+            src="/decals/sneak-peak.svg"
+            title="A sneak peak of what I'm currently working on"
+            alt="A sneak peak of what I'm currently working on"
+            width={0}
+            height={0}
+            className="absolute -left-14 -top-24 w-48 animate-pop"
+            style={getAnimationDelay(4.5, animationInterval)}
+            priority
+          />
+          <Image
+            src="/decals/arrow2.svg"
+            alt="Arrow"
+            width={0}
+            height={0}
+            className="absolute -left-10 -top-4 w-8 animate-pop"
+            style={getAnimationDelay(4.5, animationInterval)}
+            priority
+          />
+          <Image
+            src="/decals/big-sparkle.svg"
+            alt="Big sparkle"
+            width={0}
+            height={0}
+            className="absolute -right-12 -top-12 w-auto animate-pop"
+            style={getAnimationDelay(5.5, animationInterval)}
+          />
+          <Image
+            src="/decals/little-sparkle.svg"
+            alt="Little sparkle"
             width={0}
             height={0}
             unoptimized
-            className='w-5 h-auto -ml-6 animate-pop'
-            style={{
-              animationDelay: `${(animationDelay += 700)}ms`,
-              animationDuration: '200ms',
-            }}
+            className="absolute -top-14 right-1 w-auto animate-pop"
+            style={getAnimationDelay(6, animationInterval)}
           />
           <Image
-            src='/decals/big-sparkle.svg'
-            alt='Big sparkle'
+            src="/decals/other-projects.svg"
+            alt="Check out my other projects below"
+            title="Check out my other projects below"
             width={0}
             height={0}
-            className='w-10 -mt-6 h-auto animate-pop'
-            style={{
-              animationDelay: `${(animationDelay += 300)}ms`,
-              animationDuration: '200ms',
-            }}
+            className="absolute -bottom-24 -right-10 h-20 w-auto animate-pop lg:-right-36 lg:bottom-24"
+            style={getAnimationDelay(7, animationInterval)}
+          />
+          <Image
+            src="/decals/arrow.svg"
+            alt="Arrow"
+            width={0}
+            height={0}
+            className="absolute -bottom-36 -right-7 w-5 animate-pop lg:-right-24 lg:bottom-10"
+            style={getAnimationDelay(7, animationInterval)}
+            priority
           />
         </div>
-        <div className='flex mt-5 items-start justify-center gap-6 md:absolute min-doodles:top-0 right-0'>
-          <div
-            title="A sneak peak of what I'm currently working on"
-            className=' min-doodles:absolute -right-[250px] animate-pop'
-            style={{
-              animationDelay: `${(animationDelay += 400)}ms`,
-              animationDuration: '300ms',
-            }}
-          >
-            <Image
-              src='/decals/sneak-peak.svg'
-              alt="A sneak peak of what I'm currently working on"
-              width={0}
-              height={0}
-              className='h-24 w-auto'
-              priority
-            />
-          </div>
-          <div
-            className='mt-4 min-doodles:absolute top-24 -right-48 animate-pop'
-            style={{
-              animationDelay: `${(animationDelay += 400)}ms`,
-              animationDuration: '300ms',
-            }}
-          >
-            <div title='Check out my other projects below'>
-              <Image
-                src='/decals/other-projects.svg'
-                alt='Check out my other projects below'
-                width={0}
-                height={0}
-                className='h-20 w-auto'
-              />
-            </div>
-            <Link
-              href='#projects'
-              title='Click to scroll to projects'
-              className='w-full flex hover:mt-1 '
-            >
-              <Image
-                src='/decals/arrow.svg'
-                alt='Down arrow'
-                width={0}
-                height={0}
-                className='ml-auto w-auto'
-              />
-            </Link>
-          </div>
-        </div>
       </div>
+      <TransitionCurve
+        from={sneakPeakRef}
+        to={aboutHeadingRef}
+        curve="banner-line.svg"
+        className="left-40"
+        width={420}
+        delta={0}
+      />
     </section>
   );
 };

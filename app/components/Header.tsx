@@ -1,21 +1,19 @@
-import Avatar from './nav/Avatar';
-import NavLinks from './nav/NavLinks';
-import NavMenu from './nav/NavMenu';
-import { headerHeight } from '@/config';
+import Avatar from "./nav/Avatar";
+import NavLinks from "./nav/NavLinks";
+import NavMenu from "./nav/NavMenu";
+import Utilities from "./nav/Utilities";
 
 const Header = () => (
   <header
-    className='bg-blue bg-opacity-95 backdrop-blur-sm rounded-b-xl container fixed left-0 right-0 z-10'
-    style={{
-      height: headerHeight,
-      WebkitBackdropFilter: 'blur(4px)',
-    }}
+    className="container fixed left-0 right-0 z-10 h-20 rounded-b-xl bg-blue bg-opacity-95 backdrop-blur-sm"
+    style={{ WebkitBackdropFilter: "blur(4px)" }}
   >
-    <nav className='flex justify-between h-full items-center'>
+    <div className="flex h-full items-center">
       <Avatar />
-      <NavLinks />
+      <NavLinks className="hidden lg:flex" />
+      <Utilities className="hidden flex-1 justify-end gap-6 lg:flex" />
       <NavMenu />
-    </nav>
+    </div>
   </header>
 );
 

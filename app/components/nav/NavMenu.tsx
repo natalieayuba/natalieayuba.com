@@ -1,19 +1,22 @@
-'use client';
-import Socials from './Socials';
-import Link from 'next/link';
-import { useState } from 'react';
-import { navLinks } from '@/config';
-import { Squash as Hamburger } from 'hamburger-react';
+"use client";
+import { formatClassNames } from "@/utils/utils";
+import { Squash as Hamburger } from "hamburger-react";
+import { useEffect, useState } from "react";
+import NavLinks from "./NavLinks";
+import Utilities from "./Utilities";
 
 const NavMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+  }, [menuOpen]);
+
   return (
-    <div className='md:hidden'>
+    <div className="lg:hidden">
       <div
-        className='text-purple z-10 relative -mr-2 hover:scale-110 transition-all duration-150 animate-pop'
-        title={`${menuOpen ? 'Close' : 'Open'} menu`}
-        style={{ animationDelay: '150ms' }}
+        className="relative z-10 -mr-2 text-purple transition-transform duration-150 hover:scale-110"
+        title={`${menuOpen ? "Close" : "Open"} menu`}
       >
         <Hamburger
           rounded
@@ -23,24 +26,16 @@ const NavMenu = () => {
         />
       </div>
       <div
-        className={`fixed bg-blue h-dvh w-screen top-0 bottom-0 p-6 right-0 pt-24 transition-left duration-300 ${
-          menuOpen ? 'left-0' : 'left-full'
-        }`}
+        className={formatClassNames([
+          "fixed bottom-0 right-0 top-0 -z-10 flex h-dvh w-screen flex-col bg-blue pt-24 transition-[left] duration-300",
+          menuOpen ? "left-0" : "left-full",
+        ])}
       >
-        <ul className={`font-medium text-xl flex flex-col gap-6 mb-9`}>
-          {navLinks.map((navLink) => (
-            <li key={navLink}>
-              <Link
-                href={`/#${navLink.toLowerCase()}`}
-                onClick={() => setMenuOpen(false)}
-                className='transition-all duration-150 hover:text-purple inline-block w-full'
-              >
-                {navLink}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <Socials />
+        <NavLinks
+          className="flex flex-col text-lg"
+          onClick={() => setMenuOpen(!menuOpen)}
+        />
+        <Utilities className="flex flex-1 flex-col items-center justify-end gap-6 p-6 [&>a]:w-full" />
       </div>
     </div>
   );

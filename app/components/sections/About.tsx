@@ -2,6 +2,7 @@ import React, { forwardRef, useRef, type RefObject } from 'react';
 import Image from 'next/image';
 import TransitionCurve from '../TransitionCurve';
 import useObserver from '@/hooks/useObserver';
+import { navLinks } from '../nav/NavLinks';
 
 const About = forwardRef<
   HTMLHeadingElement,
@@ -16,7 +17,7 @@ const About = forwardRef<
 
   return (
     <section
-      id='about'
+      id={navLinks[1].name.toLowerCase()}
       className='container flex justify-center pt-28 min-doodles:pt-0 min-doodles:h-screen items-center'
     >
       <div className='lg:flex flex-wrap relative' ref={containerRef}>
