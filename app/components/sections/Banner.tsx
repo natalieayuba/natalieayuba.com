@@ -20,19 +20,25 @@ const Banner = ({
       ref={ref}
       className="container relative mb-16 pt-28 md:pt-52"
     >
-      <div className="mb-32 md:mb-44">
+      <div className="mb-32 text-center md:mb-44">
         <h1
-          className="heading-xl animate-glideUp text-center [&&]:mb-[2%]"
+          className="heading-xl animate-glideUp [&&]:mb-[2%]"
           style={getAnimationDelay(1, animationInterval)}
         >
           Hi, I&#8217;m Natalie 👋🏾
         </h1>
         <p
-          className="mx-auto max-w-3xl animate-glideUp text-center text-xl leading-[1.5]"
+          className="mx-auto max-w-3xl animate-glideUp text-xl leading-[1.5]"
           style={getAnimationDelay(2, animationInterval)}
         >
           A frontend developer & designer bringing digital products to life with
           character, charm, and a touch of whimsy.
+        </p>
+        <p
+          style={getAnimationDelay(2, animationInterval)}
+          className="mt-2 animate-glideUp"
+        >
+          (I also like telling stories through art, writing, and music.)
         </p>
       </div>
       <div className="relative select-none">

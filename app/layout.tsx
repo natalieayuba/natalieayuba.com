@@ -17,19 +17,18 @@ export const merriweather_sans = Merriweather_Sans({
   variable: "--font-merriweather-sans",
 });
 
-const author = "Natalie Ayuba";
-const defaultTitle = `${author} | Frontend Developer & Designer`;
+const title = "Natalie Ayuba";
 const description =
-  "Natalie Ayuba is a frontend developer and designer based in Bristol.";
+  "Natalie Ayuba is a frontend developer, designer, and multidisciplinary creative based in Bristol.";
 
 export const metadata: Metadata = {
   title: {
-    template: `${author} | %s`,
-    default: defaultTitle,
+    template: `${title} | %s`,
+    default: title,
   },
   description,
   openGraph: {
-    title: defaultTitle,
+    title,
     description,
     type: "website",
     url: "natalieayuba.com",
