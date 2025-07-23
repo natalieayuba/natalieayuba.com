@@ -1,6 +1,6 @@
 import projects, { type ProjectProps } from "@/app/_configs/projects";
-import ExternalLinks from "@/app/projects/components/ExternalLinks";
-import PreviewImage from "@/app/projects/components/PreviewImage";
+import ExternalLinks from "@/app/work/components/ExternalLinks";
+import PreviewImage from "@/app/work/components/PreviewImage";
 import useObserver from "@/hooks/useObserver";
 import Image from "next/image";
 import { forwardRef, useRef, type RefObject } from "react";

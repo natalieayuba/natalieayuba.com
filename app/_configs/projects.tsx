@@ -2,9 +2,9 @@ import { Hyperlink } from "@/app/components/Hyperlink";
 import Figure, {
   FigureImage,
   MockupVideo,
-} from "@/app/projects/[project]/components/Figure";
-import StickyNotes from "@/app/projects/[project]/components/StickyNotes";
-import type { ExternalLinksProps } from "@/app/projects/components/ExternalLinks";
+} from "@/app/work/[project]/components/Figure";
+import StickyNotes from "@/app/work/[project]/components/StickyNotes";
+import type { ExternalLinksProps } from "@/app/work/components/ExternalLinks";
 import type { ReactElement } from "react";
 
 export interface ContentProps {
