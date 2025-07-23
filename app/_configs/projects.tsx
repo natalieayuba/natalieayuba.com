@@ -42,7 +42,7 @@ export const technologies = {
   typeScript: "TypeScript",
   spotifyWebApi: "Spotify Web API",
   reactNative: "React Native",
-  tailwindCSS: "TailwindCSS",
+  tailwindCSS: "Tailwind CSS",
   expo: "Expo",
   netlify: "Netlify",
   next: "Next.js",
@@ -198,7 +198,7 @@ const projects: ProjectProps[] = [
             build the app without involving more complex technologies. However,
             I later decided to migrate to React as it was easier to manage
             states and components using the framework. I also decided on
-            TailwindCSS for ease of styling and{" "}
+            Tailwind CSS for ease of styling and{" "}
             <Hyperlink href="https://lokeshdhakar.com/projects/color-thief/">
               Color Thief
             </Hyperlink>{" "}

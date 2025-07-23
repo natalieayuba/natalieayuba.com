@@ -34,12 +34,6 @@ const Banner = ({
           A frontend developer & designer bringing digital products to life with
           character, charm, and a touch of whimsy.
         </p>
-        <p
-          style={getAnimationDelay(2, animationInterval)}
-          className="mt-2 animate-glideUp"
-        >
-          (I also like telling stories through art, writing, and music.)
-        </p>
       </div>
       <div className="relative select-none">
         <Image

@@ -40,7 +40,7 @@ interface NavLinksProps {
 const NavLinks = ({ className, onClick }: NavLinksProps) => {
   const pathname = usePathname();
   const [active, setActive] = useState(
-    navLinks.find(({ name }) => pathname.includes(name.toLowerCase())) ??
+    navLinks.find(({ name }) => pathname.includes(name.toLowerCase()))?.name ??
       "Home",
   );
   const [scrollByClick, setScrollByClick] = useState(false);

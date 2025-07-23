@@ -31,7 +31,7 @@ const Details = ({ project }: { project: ProjectProps }) => {
   ];
 
   return (
-    <div className="justify-center gap-12 md:mb-12 md:flex">
+    <div className="justify-center gap-10 text-sm md:mb-12 md:flex">
       {details.map(
         ({ heading, data }) =>
           data && (
