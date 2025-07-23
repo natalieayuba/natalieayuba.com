@@ -1,7 +1,8 @@
-import projects, { type ProjectProps } from "@/app/_data/projects";
+import projects, { type ProjectProps } from "@/app/_configs/projects";
 import ExternalLinks from "@/app/projects/components/ExternalLinks";
 import PreviewImage from "@/app/projects/components/PreviewImage";
 import useObserver from "@/hooks/useObserver";
+import Image from "next/image";
 import { forwardRef, useRef, type RefObject } from "react";
 import Button from "../Button";
 import { navLinks } from "../nav/NavLinks";
@@ -42,7 +43,14 @@ const Work = forwardRef<
       >
         <PreviewImage projectName={project.name} />
         <div className="flex w-full max-w-lg flex-1 flex-col gap-2">
-          <h3 className="heading-sm mb-[0.25em]">{project.name}</h3>
+          <div className="relative mb-3 h-8" title={project.name}>
+            <Image
+              alt={`${project.name} logo`}
+              src={`/projects/${project.name.toLowerCase()}/${project.name.toLowerCase()}-logo${project.name === "PAST" ? "-simple" : ""}.png`}
+              fill
+              className="object-contain object-left"
+            />
+          </div>
           {list(project.role)}
           <p>{project.description}</p>
           {project.technologies && list(project.technologies)}
@@ -78,8 +86,7 @@ const Work = forwardRef<
         from={containerRef}
         to={designsHeadingRef}
         curve="projects-line.svg"
-        width={250}
-        className="left-80"
+        position={{ left: "15%", right: "50%", top: "99.4%" }}
         delta={0.8}
       />
     </section>

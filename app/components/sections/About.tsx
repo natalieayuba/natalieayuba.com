@@ -1,87 +1,91 @@
-import React, { forwardRef, useRef, type RefObject } from 'react';
-import Image from 'next/image';
-import TransitionCurve from '../TransitionCurve';
-import useObserver from '@/hooks/useObserver';
-import { navLinks } from '../nav/NavLinks';
+import Image from "next/image";
+import { forwardRef, useRef, type RefObject } from "react";
+import { navLinks } from "../nav/NavLinks";
+import TransitionCurve from "../TransitionCurve";
+
+const techStack = ["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma"];
 
 const About = forwardRef<
   HTMLHeadingElement,
   { projectsHeadingRef: RefObject<HTMLHeadingElement> }
 >(({ projectsHeadingRef }, headingRef) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const visible = useObserver(containerRef, '-500px');
-  const animationStyles = {
-    animationPlayState: visible ? 'running' : 'paused',
-    animationDelay: '1000ms',
-  };
 
   return (
     <section
       id={navLinks[1].name.toLowerCase()}
-      className='container flex justify-center pt-28 min-doodles:pt-0 min-doodles:h-screen items-center'
+      className="container flex items-center justify-center pt-28 min-doodles:h-screen min-doodles:pt-0"
     >
-      <div className='lg:flex flex-wrap relative' ref={containerRef}>
-        <div className='flex-1 max-w-prose lg:max-w-none'>
-          <h2 className='heading-md' ref={headingRef}>
-            I&apos;m all about designing for a more engaging digital world.
+      <div className="relative gap-8 lg:flex" ref={containerRef}>
+        <div className="mb-4 max-w-prose flex-1 lg:max-w-none">
+          <h2 className="heading-md" ref={headingRef}>
+            About me
           </h2>
-          <div
-            className='leading-relaxed [&_p]:mb-[1rem] animate-fadeIn'
-            style={animationStyles}
-          >
+          <div className="leading-relaxed [&_p]:mb-[1rem]">
             <p>
-              I fell in love with UIs during the golden age of YouTube and
-              Tumblr. I&apos;ve seen almost every iteration of these sites since
-              their birth and it was fascinating to watch their UIs adapt and
-              change with the times. This fascination led me to the world of{' '}
-              <strong>software development</strong> where I&apos;ve{' '}
-              <strong>gained 2+ years of professional experience</strong>.
+              With a strong foundation in both software development and art &
+              design, I create interfaces that are not only performant and
+              functional, but also pleasing to the eye. I bring brand identities
+              to life using visual design, illustration, and animation where it
+              adds meaning and impact. If you&apos;re lookin for something
+              on-brand and full of personality — I&apos;ve got you.
             </p>
             <p>
-              At work I have always been a big{' '}
-              <strong>advocate for design thinking</strong> and{' '}
-              <strong>led design sprints</strong> to ensure we were{' '}
-              <strong>
-                developing with usability and accessibility in mind
-              </strong>
-              , not just functionality. I&apos;m also passionate about{' '}
-              <strong>branding</strong>, <strong>illustration</strong>, and{' '}
-              <strong>animation</strong>. I love to add a bit of character to a
-              design to bring it to life.
+              I&apos;m also a big advocate for design thinking. I ensure every
+              product I create not only meets client needs, but is intuitive and
+              thoughtfully-crafted for your users, delivering the best user
+              experience possible.
             </p>
             <p>
-              Outside work, you&apos;ll find me jamming with friends, binging
-              horror flicks, or building intricately designed mansions in the
-              Sims.
+              When I&apos;m not coding, you&apos;ll find me jamming with
+              friends, watching horror flicks, or building intricately designed
+              mansions in the Sims.
             </p>
           </div>
+          <div title="My tech stack">
+            <Image
+              src="/decals/my-tech-stack.svg"
+              alt="My tech stack"
+              width={0}
+              height={0}
+              className="mx-auto mt-6 w-auto"
+            />
+          </div>
+          <div className="mt-2 flex justify-center">
+            {techStack.map((name) => (
+              <div title={name} key={name}>
+                <Image
+                  src={`/icons/${name.split(/[ .]+/)[0].toLowerCase()}-icon.svg`}
+                  alt={`${name} icon`}
+                  width={80}
+                  height={80}
+                />
+              </div>
+            ))}
+          </div>
         </div>
-        <div
-          className='lg:aspect-[1888.8/2,453.54] lg:w-[42%] relative animate-fadeIn'
-          style={animationStyles}
-        >
+        <div className="relative flex-1">
           <Image
-            src='/decals/self-portrait.svg'
-            alt='A self portrait'
+            src="/decals/self-portrait.svg"
+            alt="An illustrted self portrait"
             width={0}
             height={0}
+            className="w-full -rotate-3"
             priority
-            className='w-full h-auto max-w-md mx-auto lg:absolute -right-14'
           />
         </div>
         <TransitionCurve
           from={containerRef}
           to={projectsHeadingRef}
-          curve='about-line.svg'
+          curve="about-line.svg"
           delta={0.6}
-          width={400}
-          className='right-40'
+          position={{ left: "50%", right: "25%", top: "88%" }}
         />
       </div>
     </section>
   );
 });
 
-About.displayName = 'About';
+About.displayName = "About";
 
 export default About;

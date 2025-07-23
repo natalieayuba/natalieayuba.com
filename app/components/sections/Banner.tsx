@@ -1,5 +1,6 @@
 import { getAnimationDelay } from "@/utils/utils";
 import Image from "next/image";
+import Link from "next/link";
 import { useRef, type RefObject } from "react";
 import { navLinks } from "../nav/NavLinks";
 import TransitionCurve from "../TransitionCurve";
@@ -17,7 +18,7 @@ const Banner = ({
     <section
       id={navLinks[0].name.toLowerCase()}
       ref={ref}
-      className="container relative mb-16 min-h-[90vh] pt-28 md:pt-52"
+      className="container relative mb-16 pt-28 md:pt-52"
     >
       <div className="mb-32 md:mb-44">
         <h1
@@ -91,24 +92,28 @@ const Banner = ({
             className="absolute -bottom-24 -right-10 h-20 w-auto animate-pop lg:-right-36 lg:bottom-24"
             style={getAnimationDelay(7, animationInterval)}
           />
-          <Image
-            src="/decals/arrow.svg"
-            alt="Arrow"
-            width={0}
-            height={0}
-            className="absolute -bottom-36 -right-7 w-5 animate-pop lg:-right-24 lg:bottom-10"
+          <Link
+            href="#work"
             style={getAnimationDelay(7, animationInterval)}
-            priority
-          />
+            className="absolute -bottom-36 -right-7 animate-pop lg:-right-24 lg:bottom-10"
+          >
+            <Image
+              src="/decals/arrow.svg"
+              alt="Arrow"
+              width={0}
+              height={0}
+              className="w-5"
+              priority
+            />
+          </Link>
         </div>
       </div>
       <TransitionCurve
         from={sneakPeakRef}
         to={aboutHeadingRef}
         curve="banner-line.svg"
-        className="left-40"
-        width={420}
-        delta={0}
+        position={{ left: "10%", right: "50%" }}
+        delta={0.2}
       />
     </section>
   );

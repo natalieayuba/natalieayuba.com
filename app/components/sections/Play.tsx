@@ -1,4 +1,4 @@
-import designs, { type DesignProps } from "@/app/_data/designs";
+import designs, { type DesignProps } from "@/app/_configs/designs";
 import useObserver from "@/hooks/useObserver";
 import Image from "next/image";
 import { forwardRef, useEffect, useRef, useState } from "react";
@@ -6,7 +6,7 @@ import Lightbox from "../Lightbox";
 import { navLinks } from "../nav/NavLinks";
 import SectionHeader from "./SectionHeader";
 
-const Play = forwardRef<HTMLHeadingElement>((props, headingRef) => {
+const Play = forwardRef<HTMLHeadingElement>((_, headingRef) => {
   const ref = useRef<HTMLElement>(null);
   const [showLightbox, setShowLightbox] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -82,7 +82,7 @@ const Play = forwardRef<HTMLHeadingElement>((props, headingRef) => {
           ref={headingRef}
           className="mb-12 text-center"
           heading={navLinks[3].name}
-          caption="Logo and web designs I've done for fun."
+          caption="Other things I've made for fun."
         />
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
           {designs.map((design, index) => (

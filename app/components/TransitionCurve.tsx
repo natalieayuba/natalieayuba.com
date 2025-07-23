@@ -1,4 +1,3 @@
-import { appendClassName } from "@/utils/utils";
 import Image from "next/image";
 import { useEffect, useState, type RefObject } from "react";
 
@@ -6,8 +5,7 @@ interface TransitionCurveProps {
   from: RefObject<HTMLElement>;
   to: RefObject<HTMLElement> | string;
   curve: string;
-  width: number;
-  className?: string;
+  position: { left: string; right: string; top?: string };
   delta: number;
 }
 
@@ -15,8 +13,7 @@ const TransitionCurve = ({
   from,
   to,
   curve,
-  className,
-  width,
+  position,
   delta,
 }: TransitionCurveProps) => {
   const [scrollY, setScrollY] = useState(0);
@@ -52,16 +49,16 @@ const TransitionCurve = ({
 
   return (
     <div
-      className={`absolute top-full hidden overflow-hidden min-doodles:block ${appendClassName(
-        className,
-      )}`}
+      className="absolute top-full hidden overflow-hidden min-doodles:block"
       style={{
-        width,
         height: scrollY,
         maxHeight: curveHeight,
         WebkitMaskImage:
           "linear-gradient(to bottom,black 95%,transparent 100%)",
         maskImage: "linear-gradient(to bottom,black 95%,transparent 100%)",
+        left: position.left,
+        right: position.right,
+        top: position.top,
       }}
     >
       <Image

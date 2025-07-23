@@ -26,10 +26,10 @@ const NavMenu = () => {
         />
       </div>
       <div
-        className={formatClassNames([
+        className={formatClassNames(
           "fixed bottom-0 right-0 top-0 -z-10 flex h-dvh w-screen flex-col bg-blue pt-24 transition-[left] duration-300",
           menuOpen ? "left-0" : "left-full",
-        ])}
+        )}
       >
         <NavLinks
           className="flex flex-col text-lg"

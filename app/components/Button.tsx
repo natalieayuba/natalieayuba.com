@@ -11,10 +11,10 @@ interface ButtonProps {
 
 const Button = ({ children, className, ...rest }: ButtonProps) => (
   <Link
-    className={formatClassNames([
+    className={formatClassNames(
       "flex h-12 items-center justify-center rounded-md border-2 px-4 font-medium text-purple transition-[colors,transform,box-shadow] duration-150 hover:shadow-[-3px_4px_0_0] active:translate-y-0.5 active:shadow-[-1px_1px_0_0]",
       className,
-    ])}
+    )}
     {...rest}
   >
     {children}

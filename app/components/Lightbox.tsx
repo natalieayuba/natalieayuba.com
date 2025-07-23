@@ -1,14 +1,14 @@
-import React, {
+import type { DesignProps } from "@/app/_configs/config";
+import Icon from "@/app/components/Icon";
+import useIsMobile from "@/hooks/useIsMobile";
+import Image from "next/image";
+import {
   useEffect,
   useRef,
   useState,
   type ComponentProps,
   type MouseEvent,
-} from 'react';
-import Image from 'next/image';
-import Icon from '@/app/components/Icon';
-import type { DesignProps } from '@/app/_data/designs';
-import useIsMobile from '@/hooks/useIsMobile';
+} from "react";
 
 interface LightboxProps {
   content: DesignProps[];
@@ -32,13 +32,13 @@ const Lightbox = ({
 
   const CloseButton = () => (
     <button
-      className={`absolute top-0 right-0 p-6 hover:scale-110 z-10 transition-all duration-200 ${
-        showText ? 'opacity-100' : 'opacity-0 md:opacity-100'
+      className={`absolute right-0 top-0 z-10 p-6 transition-all duration-200 hover:scale-110 ${
+        showText ? "opacity-100" : "opacity-0 md:opacity-100"
       }`}
-      title='Close'
+      title="Close"
       onClick={close}
     >
-      <Icon name='close' />
+      <Icon name="close" />
     </button>
   );
 
@@ -46,19 +46,19 @@ const Lightbox = ({
     direction,
     ...rest
   }: {
-    direction: 'prev' | 'next' | string;
-  } & ComponentProps<'button'>) => {
+    direction: "prev" | "next" | string;
+  } & ComponentProps<"button">) => {
     const visible =
-      (direction === 'prev' && selectedIndex > 0) ||
-      (direction === 'next' && selectedIndex < content.length - 1);
+      (direction === "prev" && selectedIndex > 0) ||
+      (direction === "next" && selectedIndex < content.length - 1);
 
     return (
       <button
-        className={`transition-all duration-150 hover:scale-125 hidden md:block h-fit z-10 ${
-          visible ? 'md:visible' : 'md:invisible'
+        className={`z-10 hidden h-fit transition-all duration-150 hover:scale-125 md:block ${
+          visible ? "md:visible" : "md:invisible"
         } ${rest.className}`}
         onClick={() =>
-          setSlide(direction === 'prev' ? selectedIndex - 1 : selectedIndex + 1)
+          setSlide(direction === "prev" ? selectedIndex - 1 : selectedIndex + 1)
         }
       >
         <Icon name={direction} size={40} />
@@ -82,8 +82,8 @@ const Lightbox = ({
         img.style.left = `${el.offsetWidth - x * 2}px`;
         img.style.top = `${el.offsetHeight - y * 2}px`;
       } else {
-        img.style.left = '0px';
-        img.style.top = '0px';
+        img.style.left = "0px";
+        img.style.top = "0px";
       }
     }
   };
@@ -95,7 +95,7 @@ const Lightbox = ({
         lightboxRef.current.scrollLeft % lightboxRef.current.clientWidth === 0)
     ) {
       setSlide(
-        lightboxRef.current.scrollLeft / lightboxRef.current.clientWidth
+        lightboxRef.current.scrollLeft / lightboxRef.current.clientWidth,
       );
     }
   };
@@ -115,25 +115,25 @@ const Lightbox = ({
   }, [selectedIndex]);
 
   return (
-    <div className='bg-gradient-to-b fixed w-screen h-dvh left-0 z-10'>
+    <div className="fixed left-0 z-10 h-dvh w-screen bg-gradient-to-b">
       <CloseButton />
-      <div className='container p-0 md:p-6 flex h-full items-center'>
-        <ArrowButton direction='prev' className='mr-6' />
+      <div className="container flex h-full items-center p-0 md:p-6">
+        <ArrowButton direction="prev" className="mr-6" />
         <div
-          className='container size-full flex items-center overflow-y-hidden overflow-x-scroll md:overflow-hidden snap-x snap-mandatory p-0'
+          className="container flex size-full snap-x snap-mandatory items-center overflow-y-hidden overflow-x-scroll p-0 md:overflow-hidden"
           ref={lightboxRef}
           onScroll={handleScroll}
         >
           {content.map(({ title, src }) => (
             <div
               key={title}
-              className={`flex-shrink-0 size-full flex items-center justify-center snap-center select-none ${
-                zoomedIn ? 'cursor-zoom-out' : 'cursor-zoom-in'
+              className={`flex size-full flex-shrink-0 select-none snap-center items-center justify-center ${
+                zoomedIn ? "cursor-zoom-out" : "cursor-zoom-in"
               }`}
               onClick={handleClick}
             >
               <div
-                className='size-full max-w-[90%] max-h-[90%] md:max-h-none md:max-w-none overflow-hidden relative'
+                className="relative size-full max-h-[90%] max-w-[90%] overflow-hidden md:max-h-none md:max-w-none"
                 onMouseMove={handleMouseMove}
               >
                 <Image
@@ -141,7 +141,7 @@ const Lightbox = ({
                   src={src}
                   fill
                   className={`object-contain ${
-                    zoomedIn ? 'md:scale-[250%] ' : ''
+                    zoomedIn ? "md:scale-[250%]" : ""
                   }`}
                 />
               </div>
@@ -149,25 +149,25 @@ const Lightbox = ({
           ))}
         </div>
         <div
-          className={`max-w-sm absolute md:relative bottom-0 bg-gradient-to-b md:ml-16 md:bg-none from-[transparent] to-20% to-white w-screen left-0 right-0 pt-12 pb-5 md:pb-6 md:pt-14 px-6 transition-opacity duration-200 ${
-            showText ? 'opacity-100' : 'opacity-0 md:opacity-100'
+          className={`absolute bottom-0 left-0 right-0 w-screen max-w-sm bg-gradient-to-b from-[transparent] to-white to-20% px-6 pb-5 pt-12 transition-opacity duration-200 md:relative md:ml-16 md:bg-none md:pb-6 md:pt-14 ${
+            showText ? "opacity-100" : "opacity-0 md:opacity-100"
           }`}
         >
           <div
-            className={`max-w-prose mx-auto overflow-hidden text-sm md:text-base relative after:secondary-text ${
+            className={`after:secondary-text relative mx-auto max-w-prose overflow-hidden text-sm md:text-base ${
               readMore
-                ? 'h-auto max-md:read-less'
-                : 'max-md:h-20 max-md:read-more'
+                ? "max-md:read-less h-auto"
+                : "max-md:read-more max-md:h-20"
             }`}
             onClick={() => setReadMore(!readMore)}
           >
-            <h3 className='heading-sm mb-3'>{content[selectedIndex].title}</h3>
-            <p ref={descriptionRef} className='leading-relaxed'>
+            <h3 className="heading-sm mb-3">{content[selectedIndex].title}</h3>
+            <p ref={descriptionRef} className="leading-relaxed">
               {content[selectedIndex].description}
             </p>
           </div>
         </div>
-        <ArrowButton direction='next' className='ml-6' />
+        <ArrowButton direction="next" className="ml-6" />
       </div>
     </div>
   );

@@ -77,11 +77,10 @@ const NavLinks = ({ className, onClick }: NavLinksProps) => {
         <Link
           key={navLink.name}
           href={navLink.url}
-          title={navLink.name}
-          className={formatClassNames([
+          className={formatClassNames(
             "duration-50 z-[1] flex animate-pop justify-center font-medium transition-colors hover:text-purple",
             active === navLink.name && "text-purple",
-          ])}
+          )}
           style={{
             animationDelay: `${defaultAnimationInterval * index + 1}ms`,
           }}

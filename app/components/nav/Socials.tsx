@@ -20,7 +20,7 @@ export const socials = [
 ];
 
 const Socials = ({ animationDelay }: SocialsProps) => (
-  <div className="flex items-center gap-4 text-purple">
+  <div className="flex items-center gap-4">
     {socials.map(({ icon, title, url }, index) => (
       <Hyperlink
         key={icon}
@@ -32,7 +32,7 @@ const Socials = ({ animationDelay }: SocialsProps) => (
           },
         })}
         href={url}
-        className="animate-pop transition-none hover:scale-110 hover:brightness-100"
+        className="animate-pop transition-none hover:scale-110 [&&]:hover:brightness-100"
         title={title}
       >
         <Icon name={icon} />
