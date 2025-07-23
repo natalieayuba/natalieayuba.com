@@ -1,4 +1,4 @@
-import type { DesignProps } from "@/app/_configs/config";
+import type { DesignProps } from "@/app/_configs/designs";
 import Icon from "@/app/components/Icon";
 import useIsMobile from "@/hooks/useIsMobile";
 import Image from "next/image";
