@@ -1,4 +1,5 @@
 import { colors } from "@/config";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { Merriweather_Sans, Poppins } from "next/font/google";
 import type { ReactNode } from "react";
@@ -46,6 +47,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => (
   >
     <body className="bg-gradient-to-b from-blue to-white text-black text-opacity-90 selection:bg-purple selection:bg-opacity-60">
       {children}
+      <Analytics />
     </body>
   </html>
 );
