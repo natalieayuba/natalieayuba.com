@@ -1,12 +1,11 @@
 "use client";
-import { permanentRedirect, usePathname } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 import { type ReactNode } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
 const Template = ({ children }: { children: ReactNode }) => {
   const underConstruction =
-    usePathname() !== "/under-construction" &&
     process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === "true";
 
   if (underConstruction) {
