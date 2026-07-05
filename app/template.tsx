@@ -1,25 +1,23 @@
-'use client';
-import React, { type ReactNode } from 'react';
-import Footer from './components/Footer';
-import { permanentRedirect, usePathname } from 'next/navigation';
-import Header from './components/Header';
+"use client";
+import { permanentRedirect, usePathname } from "next/navigation";
+import { type ReactNode } from "react";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 const Template = ({ children }: { children: ReactNode }) => {
-  if (
-    usePathname() !== '/under-construction' &&
-    process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === 'true'
-  ) {
-    permanentRedirect('/under-construction');
+  const underConstruction =
+    usePathname() !== "/under-construction" &&
+    process.env.NEXT_PUBLIC_UNDER_CONSTRUCTION === "true";
+
+  if (underConstruction) {
+    permanentRedirect("/under-construction");
   }
 
   return (
     <>
-      <Header />
-      <div
-        className={`flex flex-col justify-between items-center min-h-dvh
-    }`}
-      >
-        <main className='flex-1 flex flex-col'>{children}</main>
+      {!underConstruction && <Header />}
+      <div className={`} flex min-h-dvh flex-col items-center justify-between`}>
+        <main className="flex flex-1 flex-col">{children}</main>
         <Footer />
       </div>
     </>
