@@ -1,8 +1,8 @@
 "use client";
 import { permanentRedirect, usePathname } from "next/navigation";
 import { type ReactNode } from "react";
+import Header from "../components/Header/Header";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
 
 const Template = ({ children }: { children: ReactNode }) => {
   if (

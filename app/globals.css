@@ -2,6 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --blue: #cee9eb;
+  --purple: #976393;
+  --white: #fff;
+  --navy: #1a2a3e;
+
+  --colour-bg: var(--blue);
+  --colour-fg: var(--navy);
+  --colour-accent: var(--purple);
+
+  --breakpoint-mobile: 20rem;
+  --breakpoint-tablet: 48rem;
+
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.5rem;
+}
+
+[data-theme="dark"] {
+  --colour-fg: var(--white);
+  --colour-bg: var(--navy);
+
+  body {
+    background: var(--colour-bg);
+  }
+}
+
+body {
+  color: var(--colour-fg);
+  background: linear-gradient(var(--colour-bg), var(--white));
+
+  &::selection {
+    background-color: color-mix(in srgb, var(--colour-accent) 60%, transparent);
+  }
+}
+
+.icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
 @layer base {
   html {
     @apply cursor-default;
@@ -44,7 +86,7 @@
   }
 
   .heading {
-    @apply mb-[0.75em] font-bold text-black text-opacity-100;
+    @apply mb-[0.75em] font-bold text-navy text-opacity-100;
   }
 
   .heading-xl {
@@ -68,7 +110,7 @@
   }
 
   .secondary-text {
-    @apply text-sm text-black text-opacity-60;
+    @apply text-sm text-navy text-opacity-60;
   }
 
   .read-more {

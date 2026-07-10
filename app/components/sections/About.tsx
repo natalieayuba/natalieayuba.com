@@ -10,7 +10,6 @@ const About = forwardRef<
   { projectsHeadingRef: RefObject<HTMLHeadingElement> }
 >(({ projectsHeadingRef }, headingRef) => {
   const containerRef = useRef<HTMLDivElement>(null);
-
   return (
     <section
       id={navLinks[1].name.toLowerCase()}

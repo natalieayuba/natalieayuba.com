@@ -112,6 +112,7 @@ const config: Config = {
       },
     },
   },
+  darkMode: ["variant", '[data-mode="dark"]'],
 };
 
 export default config;

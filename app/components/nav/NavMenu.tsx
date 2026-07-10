@@ -1,6 +1,5 @@
 "use client";
 import { formatClassNames } from "@/utils/utils";
-import { Squash as Hamburger } from "hamburger-react";
 import { useEffect, useState } from "react";
 import NavLinks from "./NavLinks";
 import Utilities from "./Utilities";
@@ -18,12 +17,12 @@ const NavMenu = () => {
         className="relative z-10 -mr-2 text-purple transition-transform duration-150 hover:scale-110"
         title={`${menuOpen ? "Close" : "Open"} menu`}
       >
-        <Hamburger
+        {/* <Hamburger
           rounded
           toggled={menuOpen}
           toggle={() => setMenuOpen(!menuOpen)}
           size={30}
-        />
+        /> */}
       </div>
       <div
         className={formatClassNames(

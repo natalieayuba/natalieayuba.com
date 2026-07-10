@@ -1,6 +1,6 @@
 import { colors } from "@/config";
-import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
+import { ThemeProvider } from "next-themes";
 import { Merriweather_Sans, Poppins } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
@@ -20,7 +20,7 @@ export const merriweather_sans = Merriweather_Sans({
 
 const title = "Natalie Ayuba";
 const description =
-  "Natalie Ayuba is a frontend developer, designer, and multidisciplinary creative based in Bristol.";
+  "Natalie Ayuba is a developer, designer, and multidisciplinary creative based in Bristol.";
 
 export const metadata: Metadata = {
   title: {
@@ -44,10 +44,11 @@ const RootLayout = ({ children }: { children: ReactNode }) => (
   <html
     lang="en-GB"
     className={`${poppins.variable} ${merriweather_sans.variable} overscroll-x-none scroll-smooth antialiased`}
+    suppressHydrationWarning
   >
-    <body className="bg-gradient-to-b from-blue to-white text-black text-opacity-90 selection:bg-purple selection:bg-opacity-60">
-      {children}
-      <Analytics />
+    <body>
+      <ThemeProvider attribute="data-theme">{children}</ThemeProvider>
+      {/* <Analytics /> */}
     </body>
   </html>
 );
