@@ -6,6 +6,7 @@ export const VolumeToggle = ({ className }: { className?: string }) => {
 
   return (
     <button
+      type="button"
       className={className}
       onClick={() => setMuted(!muted)}
       aria-label="Volume"

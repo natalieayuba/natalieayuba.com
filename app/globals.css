@@ -33,12 +33,14 @@
 body {
   color: var(--colour-fg);
   background: linear-gradient(var(--colour-bg), var(--white));
+  font-family: var(--font-poppins), "Arial", sans-serif;
 
   &::selection {
     background-color: color-mix(in srgb, var(--colour-accent) 60%, transparent);
   }
 }
 
+/* TODO: Make this reusable */
 .icon {
   width: 3.5rem;
   height: 3.5rem;

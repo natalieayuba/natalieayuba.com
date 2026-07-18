@@ -1,3 +1,4 @@
+import { Container } from "@/components/Container/Container";
 import { MobileNav } from "@/components/MobileNav/MobileNav";
 import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import { VolumeToggle } from "@/components/VolumeToggle/VolumeToggle";
@@ -30,7 +31,7 @@ const Header = () => {
     ));
 
   return (
-    <header className={styles.header}>
+    <Container as="header" className={styles.container}>
       <div className={styles.left}>
         <MobileNav className={styles.mobileNav} />
         <VolumeToggle className={styles.volume} />
@@ -51,7 +52,7 @@ const Header = () => {
       <div className={styles.right}>
         <ThemeToggle />
       </div>
-    </header>
+    </Container>
   );
 };
 

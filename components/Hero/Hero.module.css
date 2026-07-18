@@ -1,0 +1,52 @@
+.container {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  font-family: var(--font-raccoon);
+  text-align: center;
+  line-height: 0.75;
+  position: relative;
+  pointer-events: none;
+  user-select: none;
+}
+
+.forename {
+  font-size: 33vw;
+}
+
+.surname {
+  font-size: 40vw;
+}
+
+.subheading {
+  margin-top: 4%;
+  font-size: 3.25vw;
+}
+
+.image {
+  position: absolute;
+  bottom: -5%;
+  right: 50%;
+  transform: translateX(50%);
+  width: 18%;
+}
+
+.whimsical-container {
+  position: relative;
+}
+
+.whimsical-text {
+  visibility: hidden;
+}
+
+.whimsical-handwritten {
+  position: absolute;
+  left: 0;
+  top: -25%;
+  width: 98%;
+}
