@@ -7,9 +7,10 @@ export const ThemeToggle = () => {
 
   return (
     <button
+      type="button"
       onClick={() => setTheme(oppositeTheme)}
       aria-label="Theme"
-      title={`Change to ${oppositeTheme} mode`}
+      title={`Switch to ${oppositeTheme} mode`}
       role="switch"
       aria-checked={theme === "dark"}
     >
