@@ -1,0 +1,42 @@
+.container {
+  padding-block: 5rem;
+
+  @media (min-width: 48rem) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.heading {
+  font-size: 20.4vw;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (min-width: 48rem) {
+    /* font-size: clamp(4rem, 20.4vw, 20.4rem); */
+    font-size: 6vw;
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: left;
+  }
+}
+
+.paragraph {
+  max-width: 60ch;
+  margin-bottom: 1rem;
+  margin-inline: auto;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  flex: 1;
+}
+
+.portrait {
+  width: 100%;
+}

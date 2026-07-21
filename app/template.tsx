@@ -16,7 +16,7 @@ const Template = ({ children }: { children: ReactNode }) => {
     <>
       {usePathname() !== "/under-construction" && <Header />}
       <div className={`} flex min-h-dvh flex-col items-center justify-between`}>
-        <main className="flex flex-1 flex-col">{children}</main>
+        <main className="flex w-full flex-1 flex-col">{children}</main>
         <Footer />
       </div>
     </>

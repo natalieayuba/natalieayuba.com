@@ -1,7 +1,7 @@
 "use client";
+import { About } from "@/components/About/About";
 import { Hero } from "@/components/Hero/Hero";
 import { useRef } from "react";
-import About from "./components/sections/About";
 import Play from "./components/sections/Play";
 import Work from "./components/sections/Work";
 
@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <About ref={aboutHeadingRef} projectsHeadingRef={projectsHeadingRef} />
+      <About />
       <Work ref={projectsHeadingRef} designsHeadingRef={designsHeadingRef} />
       <Play ref={designsHeadingRef} />
     </>
