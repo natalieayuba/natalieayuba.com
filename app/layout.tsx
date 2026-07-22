@@ -2,7 +2,6 @@ import { colors } from "@/config";
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { Merriweather_Sans, Poppins } from "next/font/google";
-import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import "./globals.css";
 
@@ -17,18 +16,6 @@ export const merriweather_sans = Merriweather_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-merriweather-sans",
-});
-
-const chunkyPlayful = localFont({
-  src: "../assets/fonts/ChunkyPlayful.otf",
-  variable: "--font-chunky",
-  display: "swap",
-});
-
-const rocketRaccoon = localFont({
-  src: "../assets/fonts/RocketRaccoon.ttf",
-  variable: "--font-raccoon",
-  display: "swap",
 });
 
 const title = "Natalie Ayuba";
@@ -56,7 +43,7 @@ export const viewport: Viewport = {
 const RootLayout = ({ children }: { children: ReactNode }) => (
   <html
     lang="en-GB"
-    className={`${poppins.variable} ${merriweather_sans.variable} ${chunkyPlayful.variable} ${rocketRaccoon.variable} overscroll-x-none scroll-smooth antialiased`}
+    className={`${poppins.variable} ${merriweather_sans.variable} overscroll-x-none scroll-smooth antialiased`}
     suppressHydrationWarning
   >
     <body>

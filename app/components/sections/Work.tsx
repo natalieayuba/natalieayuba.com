@@ -5,7 +5,6 @@ import useObserver from "@/hooks/useObserver";
 import Image from "next/image";
 import { forwardRef, useRef, type RefObject } from "react";
 import Button from "../Button";
-import { navLinks } from "../nav/NavLinks";
 import SectionHeader from "./SectionHeader";
 
 const Work = forwardRef<
@@ -66,14 +65,14 @@ const Work = forwardRef<
 
   return (
     <section
-      id={navLinks[2].name.toLowerCase()}
+      id="work"
       className="container relative pt-28 md:pt-48"
       ref={containerRef}
     >
       <SectionHeader
         ref={headingRef}
         className="mb-24 text-center"
-        heading={navLinks[2].name}
+        heading="Work"
         caption="Here lies a collection of solo passion projects, coursework, and internship work."
       />
       <div className="flex flex-col gap-16 md:[&>*:nth-child(even)]:flex-row-reverse">
