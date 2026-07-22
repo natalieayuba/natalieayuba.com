@@ -1,0 +1,6 @@
+.paragraph {
+  margin-bottom: 0.75rem;
+  text-align: justify;
+  max-width: 60ch;
+  margin-inline: auto;
+}

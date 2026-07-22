@@ -6,7 +6,6 @@ import Image from "next/image";
 import { forwardRef, useRef, type RefObject } from "react";
 import Button from "../Button";
 import { navLinks } from "../nav/NavLinks";
-import TransitionCurve from "../TransitionCurve";
 import SectionHeader from "./SectionHeader";
 
 const Work = forwardRef<
@@ -82,13 +81,6 @@ const Work = forwardRef<
           <Project key={project.name} project={project} />
         ))}
       </div>
-      <TransitionCurve
-        from={containerRef}
-        to={designsHeadingRef}
-        curve="projects-line.svg"
-        position={{ left: "15%", right: "50%", top: "99.4%" }}
-        delta={0.8}
-      />
     </section>
   );
 });

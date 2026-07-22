@@ -16,10 +16,11 @@ export const Hero = () => (
           alt="Natalie Ayuba"
           className={styles.heading}
           loading="eager"
+          aria-hidden
         />
         <Image
           src={hero}
-          alt="Hero image"
+          alt="A cute little illustrated portrait of me"
           className={styles.image}
           loading="eager"
         />

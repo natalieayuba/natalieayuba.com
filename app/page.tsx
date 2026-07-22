@@ -13,8 +13,8 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <About />
       <Work ref={projectsHeadingRef} designsHeadingRef={designsHeadingRef} />
+      <About />
       <Play ref={designsHeadingRef} />
     </>
   );

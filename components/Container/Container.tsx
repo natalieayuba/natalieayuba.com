@@ -2,7 +2,7 @@ import clsx from "clsx";
 import type { ElementType, ReactNode } from "react";
 import styles from "./Container.module.css";
 
-interface ContainerProps {
+export interface ContainerProps {
   children: ReactNode;
   className?: string;
   as?: ElementType;

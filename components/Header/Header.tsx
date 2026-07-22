@@ -10,8 +10,8 @@ import styles from "./Header.module.css";
 
 export const navlinks = [
   { label: "Home", href: "#" },
-  { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -31,28 +31,30 @@ const Header = () => {
     ));
 
   return (
-    <Container as="header" className={styles.container}>
-      <div className={styles.left}>
-        <MobileNav className={styles.mobileNav} />
-        <VolumeToggle className={styles.volume} />
-      </div>
+    <header className={styles.header}>
+      <Container className={styles.container}>
+        <div className={styles.left}>
+          <MobileNav className={styles.mobileNav} />
+          <VolumeToggle className={styles.volume} />
+        </div>
 
-      <div className={styles.center}>
-        <nav className={styles.navlinks}>
-          {renderNavLinks(navlinks.slice(0, 2))}
-          <Image src={avatar} alt="Avatar" loading="eager" />
-          {renderNavLinks(navlinks.slice(2, 4))}
-        </nav>
+        <div className={styles.center}>
+          <nav className={styles.navlinks}>
+            {renderNavLinks(navlinks.slice(0, 2))}
+            <Image src={avatar} alt="Avatar" loading="eager" />
+            {renderNavLinks(navlinks.slice(2, 4))}
+          </nav>
 
-        <Link href="/" className={styles.mobileLogo}>
-          <Image src={avatar} alt="Avatar" loading="eager" />
-        </Link>
-      </div>
+          <Link href="/" className={styles.mobileLogo}>
+            <Image src={avatar} alt="Avatar" loading="eager" />
+          </Link>
+        </div>
 
-      <div className={styles.right}>
-        <ThemeToggle />
-      </div>
-    </Container>
+        <div className={styles.right}>
+          <ThemeToggle />
+        </div>
+      </Container>
+    </header>
   );
 };
 
