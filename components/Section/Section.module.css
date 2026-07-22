@@ -1,0 +1,8 @@
+.container {
+  --base-padding: 3rem;
+  padding-block: calc(var(--base-padding) + var(--header-height));
+
+  @media (min-width: 48rem) {
+    --base-padding: 6rem;
+  }
+}

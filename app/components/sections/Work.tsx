@@ -5,13 +5,11 @@ import useObserver from "@/hooks/useObserver";
 import Image from "next/image";
 import { forwardRef, useRef, type RefObject } from "react";
 import Button from "../Button";
-import { navLinks } from "../nav/NavLinks";
-import TransitionCurve from "../TransitionCurve";
 import SectionHeader from "./SectionHeader";
 
 const Work = forwardRef<
   HTMLHeadingElement,
-  { designsHeadingRef: RefObject<HTMLHeadingElement> }
+  { designsHeadingRef: RefObject<HTMLHeadingElement | null> }
 >(({ designsHeadingRef }, headingRef) => {
   const containerRef = useRef<HTMLElement>(null);
 
@@ -30,7 +28,7 @@ const Work = forwardRef<
 
   const Project = ({ project }: { project: ProjectProps }) => {
     const ref = useRef<HTMLDivElement>(null);
-    const visible = useObserver(ref, "-300px");
+    const visible = useObserver(ref as RefObject<HTMLElement>, "-300px");
 
     return (
       <div
@@ -67,14 +65,14 @@ const Work = forwardRef<
 
   return (
     <section
-      id={navLinks[2].name.toLowerCase()}
+      id="work"
       className="container relative pt-28 md:pt-48"
       ref={containerRef}
     >
       <SectionHeader
         ref={headingRef}
         className="mb-24 text-center"
-        heading={navLinks[2].name}
+        heading="Work"
         caption="Here lies a collection of solo passion projects, coursework, and internship work."
       />
       <div className="flex flex-col gap-16 md:[&>*:nth-child(even)]:flex-row-reverse">
@@ -82,13 +80,6 @@ const Work = forwardRef<
           <Project key={project.name} project={project} />
         ))}
       </div>
-      <TransitionCurve
-        from={containerRef}
-        to={designsHeadingRef}
-        curve="projects-line.svg"
-        position={{ left: "15%", right: "50%", top: "99.4%" }}
-        delta={0.8}
-      />
     </section>
   );
 });

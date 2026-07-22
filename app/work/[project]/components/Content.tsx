@@ -18,7 +18,7 @@ const Content = ({ content }: { content: ContentProps[] }) => (
           ) : p.type === Figure ? (
             p
           ) : (
-            cloneElement(p, { className: "max-w-prose" })
+            cloneElement(p)
           ),
         )}
       </div>
