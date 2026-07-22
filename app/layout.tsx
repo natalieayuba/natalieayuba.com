@@ -1,7 +1,8 @@
 import { colors } from "@/config";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
-import { Merriweather_Sans, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
 
@@ -10,12 +11,6 @@ const poppins = Poppins({
   display: "swap",
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
-});
-
-export const merriweather_sans = Merriweather_Sans({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-merriweather-sans",
 });
 
 const title = "Natalie Ayuba";
@@ -43,12 +38,12 @@ export const viewport: Viewport = {
 const RootLayout = ({ children }: { children: ReactNode }) => (
   <html
     lang="en-GB"
-    className={`${poppins.variable} ${merriweather_sans.variable} overscroll-x-none scroll-smooth antialiased`}
+    className={`${poppins.variable} overscroll-x-none scroll-smooth antialiased`}
     suppressHydrationWarning
   >
     <body>
-      <ThemeProvider attribute="data-theme">{children}</ThemeProvider>
-      {/* <Analytics /> */}
+      <ThemeProvider>{children}</ThemeProvider>
+      <Analytics />
     </body>
   </html>
 );

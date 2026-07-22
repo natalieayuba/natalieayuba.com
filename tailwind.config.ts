@@ -69,7 +69,6 @@ const config: Config = {
     },
     fontFamily: {
       sans: ["var(--font-poppins)"],
-      colourify: ["var(--font-merriweather-sans)"],
     },
     fontSize: ({ theme }) => {
       const minViewportWidth = 375;
@@ -112,7 +111,6 @@ const config: Config = {
       },
     },
   },
-  darkMode: ["variant", '[data-mode="dark"]'],
 };
 
 export default config;

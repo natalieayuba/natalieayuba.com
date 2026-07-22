@@ -7,6 +7,7 @@ export const ThemeToggle = () => {
 
   return (
     <button
+      suppressHydrationWarning
       type="button"
       onClick={() => setTheme(oppositeTheme)}
       aria-label="Theme"
