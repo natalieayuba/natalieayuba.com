@@ -9,7 +9,7 @@ import SectionHeader from "./SectionHeader";
 
 const Work = forwardRef<
   HTMLHeadingElement,
-  { designsHeadingRef: RefObject<HTMLHeadingElement> }
+  { designsHeadingRef: RefObject<HTMLHeadingElement | null> }
 >(({ designsHeadingRef }, headingRef) => {
   const containerRef = useRef<HTMLElement>(null);
 
@@ -28,7 +28,7 @@ const Work = forwardRef<
 
   const Project = ({ project }: { project: ProjectProps }) => {
     const ref = useRef<HTMLDivElement>(null);
-    const visible = useObserver(ref, "-300px");
+    const visible = useObserver(ref as RefObject<HTMLElement>, "-300px");
 
     return (
       <div
