@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import "./globals.css";
 
@@ -11,6 +12,12 @@ const poppins = Poppins({
   display: "swap",
   weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
+});
+
+const rocketRaccoon = localFont({
+  src: "../assets/fonts/RocketRaccoon.ttf",
+  variable: "--font-raccoon",
+  display: "swap",
 });
 
 const title = "Natalie Ayuba";
@@ -38,7 +45,7 @@ export const viewport: Viewport = {
 const RootLayout = ({ children }: { children: ReactNode }) => (
   <html
     lang="en-GB"
-    className={`${poppins.variable} overscroll-x-none scroll-smooth antialiased`}
+    className={`${poppins.variable} ${rocketRaccoon.variable} overscroll-x-none scroll-smooth antialiased`}
     suppressHydrationWarning
   >
     <body>
