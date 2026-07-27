@@ -1,5 +1,4 @@
-import React from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 
 interface PreviewImageProps {
   projectName: string;
@@ -8,18 +7,18 @@ interface PreviewImageProps {
 
 const PreviewImage = ({ projectName, className }: PreviewImageProps) => (
   <div
-    className={`flex-1 max-w-lg mx-auto relative ${
-      className ? ` ${className}` : ''
+    className={`relative mx-auto max-w-lg flex-1 ${
+      className ? ` ${className}` : ""
     }`}
   >
     <Image
       key={projectName}
-      src={`/projects/${projectName.toLowerCase()}/${projectName.toLowerCase()}-preview-image.png`}
+      src={`/projects/${projectName.toLowerCase()}/${projectName.toLowerCase()}-thumbnail.png`}
       alt={`${projectName} preview image`}
       width={0}
       height={0}
       priority
-      className='w-full h-auto'
+      className="h-auto w-full"
     />
   </div>
 );

@@ -48,6 +48,12 @@ img {
   height: auto;
 }
 
+@media (min-width: 48rem) {
+  :root {
+    --header-height: 5rem;
+  }
+}
+
 /* TODO: Make this reusable */
 .icon {
   width: 3.5rem;

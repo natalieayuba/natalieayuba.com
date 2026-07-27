@@ -1,5 +1,7 @@
 .container {
   min-height: 100vh;
+  max-width: 80rem;
+  margin-inline: auto;
 }
 
 .portrait {

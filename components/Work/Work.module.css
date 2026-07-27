@@ -1,0 +1,89 @@
+.container {
+  container-type: inline-size;
+  position: relative;
+  max-width: 80rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.heading-container {
+  max-width: 80rem;
+  container-type: inline-size;
+  margin-inline: auto;
+}
+
+.heading {
+  font-size: 18.4cqw;
+  text-align-last: justify;
+  font-family: var(--font-raccoon);
+  line-height: 0.75;
+  margin-bottom: 2rem;
+}
+
+.subheading {
+  text-align: center;
+}
+
+.grid {
+  columns: 2;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.grid-cell {
+  margin-bottom: 2.5rem;
+  display: block;
+  break-inside: avoid;
+
+  &:nth-child(4n),
+  &:nth-child(4n + 2) {
+    rotate: -5deg;
+  }
+
+  &:nth-child(3n) {
+    rotate: 5deg;
+  }
+
+  &:nth-child(3n + 1) {
+    rotate: -5deg;
+  }
+
+  &:nth-child(3n + 2) {
+    rotate: 0deg;
+  }
+  /* transition: scale 150ms ease-out;
+
+  &:hover {
+    scale: 1.1;
+  } */
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.critic {
+  height: 30dvh;
+  width: auto;
+  position: sticky;
+  bottom: 0;
+  margin-left: -5%;
+}
+
+@media (min-width: 48rem) {
+  .heading {
+    margin-bottom: 4rem;
+  }
+
+  .grid {
+    columns: 3;
+    margin-top: 6rem;
+    gap: 4rem;
+  }
+
+  .critic {
+    margin-left: -20%;
+  }
+}

@@ -1,8 +1,5 @@
 .container {
   padding-inline: 1.5rem;
-  width: 100%;
-  max-width: 80rem;
-  margin-inline: auto;
 
   @media (min-width: 48rem) {
     padding-inline: 2rem;
