@@ -34,6 +34,23 @@
   margin-bottom: 2.5rem;
   display: block;
   break-inside: avoid;
+
+  &:nth-child(4n),
+  &:nth-child(4n + 2) {
+    rotate: -5deg;
+  }
+
+  &:nth-child(3n) {
+    rotate: 5deg;
+  }
+
+  &:nth-child(3n + 1) {
+    rotate: -5deg;
+  }
+
+  &:nth-child(3n + 2) {
+    rotate: 0deg;
+  }
   /* transition: scale 150ms ease-out;
 
   &:hover {
