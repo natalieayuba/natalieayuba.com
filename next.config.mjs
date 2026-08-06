@@ -1,5 +1,8 @@
+import createMDX from "@next/mdx";
+
 const nextConfig = {
   reactStrictMode: true,
+  pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     unoptimized: true,
   },
@@ -48,4 +51,6 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+const withMDX = createMDX();
+
+export default withMDX(nextConfig);
