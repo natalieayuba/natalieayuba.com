@@ -1,0 +1,32 @@
+.container {
+  container-type: inline-size;
+  max-width: 80rem;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.heading {
+  font-family: var(--font-raccoon);
+  text-align: center;
+  font-size: 12.5cqw;
+  line-height: 1;
+  margin-bottom: 3rem;
+}
+
+.subheading {
+  text-align: center;
+}
+
+.button {
+  font-weight: 500;
+  font-size: large;
+  display: block;
+  margin-top: 1.5rem;
+  color: var(--colour-accent);
+  width: fit-content;
+  margin-inline: auto;
+
+  &:hover {
+    scale: 1.05;
+  }
+}
